@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<title>Gráficos C3</title>
+	<meta charset="utf-8">
+	 
+	<!-- Isso é necessário para funcionar a versão mobile -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	 
+	<!-- links -->
+	<link rel="stylesheet" type="text/css" href="c3.css">
+	<script src="d3.js"></script>
+	<script src="c3.js"></script>
+	 
+</head>
+<body>
+
+	<!-- grafico de area -->
+	<div id="area-spline">Erro</div>
+	<script>
+		var area_spline = c3.generate({
+			bindto: "#area-spline",
+			data: {
+				type:"area-spline",	// area , spline, bar
+				columns: [
+					['dado1',0,1,2],
+					['dado2',1,2,0]
+				],
+				names: {
+					dado1: 'Titulo 1',
+					dado2: 'Titulo 2'
+				},
+		        colors: {
+		        	dado1: '#999999',
+		        	dado2: '#ffb31a',
+		        }
+			},
+			axis: {
+				x: {
+					type: 'category',
+					categories: ['2015','2016','2017'],
+					multiline: false,
+					tick:{
+						rotate: -45
+					},
+					height: 80
+				},
+				y: {
+		        	label: {
+		        		text: 'Titulo',
+		        		position: 'outer-middle'
+		        	}
+		        }
+		    }
+		});
+	</script>
+
+	<!-- grafico de bar -->
+	<div id="bar">Erro</div>
+	<script>
+		var bar = c3.generate({
+			bindto: "#bar",
+			data: {
+				type:"bar",	// area , spline
+				columns: [
+					['dado1',0,1,2],
+					['dado2',1,2,0]
+				],
+				names: {
+					dado1: 'Titulo 1',
+					dado2: 'Titulo 2'
+				},
+		    /*    colors: {
+		        	dado1: '#999999',
+		        	dado2: '#ffb31a',
+		        } */
+			},
+			color: {
+				pattern: ['#999999','#ffb31a']
+			},
+			bar: {
+				width: {
+					ratio: 0.2
+				}
+			},
+			axis: {
+				x: {
+					type: 'category',
+					categories: ['2015','2016','2017'],
+					multiline: false,
+					tick:{
+						rotate: -45
+					},
+					height: 80
+				},
+				y: {
+		        	label: {
+		        		text: 'Titulo',
+		        		position: 'outer-middle'
+		        	}
+		        }
+		    }
+		});
+	</script>
+
+	<!-- grafico tipos -->
+	<div id="tipos">Erro</div>
+	<script>
+		var tipos = c3.generate({
+			bindto: "#tipos",
+			data: {
+				x : 'x',
+				columns: [
+					['x', '2010-02-02','2010-02-03','2010-02-04','2010-02-05','2010-02-06','2010-02-07'],
+					['data1', 35, 230, 120, 233, 150, 250],
+					['data2', 50, 20, 10, 40, 15, 25],
+					['data3', 33, 222, 111, 200, 121, 211],
+					['data4', 32, 20, 34, 40, 15, 40]
+				],
+				type: 'spline',
+				types: {
+					data2: 'area',
+					data3: 'area-spline',
+					data4: 'bar'
+				},
+				names: {
+					data1: 'Name 1',
+					data2: 'Name 2',
+					data3: 'Name 3',
+					data4: 'Name 4'
+				}
+			},
+			bar: {
+				width: {
+					ratio: 0.2
+				}
+			},
+			axis: {
+				x: {
+					type: 'category',
+					tick: {
+						rotate: -45,
+						multiline: false
+					},
+					height: 100
+				}
+			}
+		});
+	</script>
+
+	<!-- grafico pie -->
+	<div id="pie">Erro</div>
+	<script>
+		var pie = c3.generate({
+			bindto: "#pie",
+			data: {
+				type : 'pie',
+				columns: [
+					["dado1", 3],
+					["dado2", 3],
+					["dado3", 4]
+				],
+				names: {
+					dado1: 'Titulo 1',
+					dado2: 'Titulo 2',
+					dado3: 'Titulo 3'
+				},
+		        colors: {
+		        	dado1: '#999999',
+		        	dado2: '#ffb31a',
+		        	dado3: '#000'
+		        }
+			},
+		});
+	</script>
+
+</body>
+</html>

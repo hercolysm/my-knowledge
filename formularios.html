@@ -1,0 +1,195 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<title>Seu produto</title>
+	<meta charset="utf-8">
+	 
+	<!-- Isso é necessário para funcionar a versão mobile -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	 
+	<!-- CSS -->
+	<link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
+	<!-- Scripts - Atente-se na ordem das chamadas -->
+	<script type="text/javascript" src="//code.jquery.com/jquery-2.0.3.min.js"></script>
+	<script type="text/javascript" src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+</body>
+</head>
+<body>
+
+	<form role="form">
+		<fieldset>
+			<div class="form-group">
+				<label for="ipt1">Campo simples</label>
+				<input class="form-control" id="ipt1" type="email" placeholder="Insira seu texto aqui">
+				<p class="help-block">Exemplo de texto de ajuda.</p>
+			</div>
+			<div class="form-group">
+				<label for="exampleSelect">Seletor</label>
+				<select class="form-control" id="exampleSelect">
+					<option value="">Escolha uma opção</option>
+					<option value="">Isso mesmo :D</option>
+				</select>
+			</div>
+			<div class="form-group">
+				<label for="exampleInputPassword1">Campo de senha</label>
+				<input class="form-control" id="exampleInputPassword1" type="password" placeholder="Senha">
+			</div>
+			<div class="form-group">
+				<label for="exampleInputFile">Campo para envio de arquivo</label>
+				<input id="exampleInputFile" type="file">
+			</div>
+			<div class="checkbox">
+				<input id="checkbox-1" type="checkbox">
+				<label for="checkbox-1">Marque aqui</label>
+			</div>
+			<div class="checkbox">
+				<input id="checkbox-2" type="checkbox">
+				<label for="checkbox-2">Marque aqui</label>
+			</div>
+			<div class="checkbox">
+				<input id="checkbox-3" type="checkbox">
+				<label for="checkbox-3">Marque aqui</label>
+			</div>
+			<div class="radio">
+				<input name="radios" id="radio-button-1" type="radio">
+				<label for="radio-button-1">Ou aqui</label>
+			</div>
+			<div class="radio">
+				<input name="radios" id="radio-button-2" type="radio">
+				<label for="radio-button-2">Ou aqui</label>
+			</div>
+			<div class="radio">
+				<input name="radios" id="radio-button-3" type="radio">
+				<label for="radio-button-3">Ou aqui</label>
+			</div>
+			<div class="box-actions">
+				<button class="btn btn-primary" type="submit">Enviar</button>
+			</div>
+		</fieldset>
+	</form>
+
+	<form class="form-horizontal" role="form">
+		<div class="form-group">
+			<label class="col-lg-2 control-label" for="inputEmail1">Email</label>
+			<div class="col-lg-10">
+				<input class="form-control" id="inputEmail1" type="email" placeholder="Email">
+			</div>
+		</div>
+		<div class="form-group">
+			<label class="col-lg-2 control-label" for="inputPassword1">Senha</label>
+			<div class="col-lg-10">
+				<input class="form-control" id="inputPassword1" type="password" placeholder="Senha">
+			</div>
+		</div>
+		<div class="form-group">
+			<div class="col-lg-offset-2 col-lg-10">
+				<div class="checkbox">
+					<input id="checkbox-x" type="checkbox">
+					<label for="checkbox-x">Me manter conectado</label>
+				</div>
+			</div>
+		</div>
+		<div class="form-group">
+			<div class="col-lg-offset-2 col-lg-10">
+				<button class="btn btn-primary" type="submit">Entrar</button>
+			</div>
+		</div>
+	</form>
+
+	<form class="form-inline" role="form">
+		<div class="form-group">
+			<label class="sr-only" for="exampleInputEmail2">Endereço de email</label>
+			<input class="form-control" id="exampleInputEmail2" type="email" placeholder="Digite seu email">
+		</div>
+		<div class="form-group">
+			<label class="sr-only" for="exampleInputPassword2">Senha</label>
+			<input class="form-control" id="exampleInputPassword2" type="password" placeholder="Senha">
+		</div>
+		<div class="checkbox">
+			<input id="checkbox-y" type="checkbox">
+			<label for="checkbox-y">Me manter conectado</label>
+		</div>
+		<button class="btn btn-primary" type="submit">Entrar</button>
+	</form>
+
+	<form>
+		<select name="select-simples" class="form-control">
+			<option value="MG">Minas Gerais</option>
+			<option value="SP">São Paulo</option>
+			<option value="RJ">Rio de Janeiro</option>
+		</select>
+	</form>
+	<br>
+	<form>
+		<select name="select-simples-grande" class="form-control" style="width:300px">
+			<option value="ac">Acre</option>
+			<option value="al">Alagoas</option>
+			<option value="ap">Amapá</option>
+			<option value="am">Amazonas</option>
+			<option value="ba">Bahia</option>
+			<option value="ce">Ceará</option>
+			<option value="df">Distrito Federal</option>
+			<option value="es">Espirito Santo</option>
+			<option value="go">Goiás</option>
+			<option value="ma">Maranhão</option>
+			<option value="ms">Mato Grosso do Sul</option>
+			<option value="mt">Mato Grosso</option>
+			<option value="mg">Minas Gerais</option>
+			<option value="pa">Pará</option>
+			<option value="pb">Paraíba</option>
+			<option value="pr">Paraná</option>
+			<option value="pe">Pernambuco</option>
+			<option value="pi">Piauí</option>
+			<option value="rj">Rio de Janeiro</option>
+			<option value="rn">Rio Grande do Norte</option>
+			<option value="rs">Rio Grande do Sul</option>
+			<option value="ro">Rondônia</option>
+			<option value="rr">Roraima</option>
+			<option value="sc">Santa Catarina</option>
+			<option value="sp">São Paulo</option>
+			<option value="se">Sergipe</option>
+			<option value="to">Tocantins</option>
+		</select>
+	</form>
+	<br>
+	<form>
+		<select name="select-multiplo-placeholder" class="form-control" style="width:300px" multiple="" placeholder="Selecione um estado">
+			<option value="MG">Minas Gerais</option>
+			<option value="SP">São Paulo</option>
+			<option value="RJ">Rio de Janeiro</option>
+		</select>
+	</form>
+
+	<button class="btn btn-xs btn-default" type="button">Default</button>
+	<button class="btn btn-xs btn-primary" type="button">Primary</button>
+	<button class="btn btn-xs btn-success" type="button">Success</button>
+	<button class="btn btn-xs btn-info" type="button">Info</button>
+	<button class="btn btn-xs btn-warning" type="button">Warning</button>
+	<button class="btn btn-xs btn-danger" type="button">Danger</button>
+	<br>
+	<br>
+	<button class="btn btn-sm btn-default" type="button">Default</button>
+	<button class="btn btn-sm btn-primary" type="button">Primary</button>
+	<button class="btn btn-sm btn-success" type="button">Success</button>
+	<button class="btn btn-sm btn-info" type="button">Info</button>
+	<button class="btn btn-sm btn-warning" type="button">Warning</button>
+	<button class="btn btn-sm btn-danger" type="button">Danger</button>
+	<br>
+	<br>
+	<button class="btn btn-default" type="button">Default</button>
+	<button class="btn btn-primary" type="button">Primary</button>
+	<button class="btn btn-success" type="button">Success</button>
+	<button class="btn btn-info" type="button">Info</button>
+	<button class="btn btn-warning" type="button">Warning</button>
+	<button class="btn btn-danger" type="button">Danger</button>
+	<br>
+	<br>
+	<button class="btn btn-lg btn-default" type="button">Default</button>
+	<button class="btn btn-lg btn-primary" type="button">Primary</button>
+	<button class="btn btn-lg btn-success" type="button">Success</button>
+	<button class="btn btn-lg btn-info" type="button">Info</button>
+	<button class="btn btn-lg btn-warning" type="button">Warning</button>
+	<button class="btn btn-lg btn-danger" type="button">Danger</button>
+</body>
+</html>
