@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+	<title>Navbar</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="Navbar">
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<script src="js/jquery-3.1.1.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<style type="text/css">
+		/*.navbar {
+			margin-bottom: 0px;
+			min-height: 30px;
+		}*/
+		
+		.menu{
+			width: 100% !important;
+			background: #001f4a !important;
+			border-radius: 0 !important;
+			border:0px solid #001f4a;
+		}
+		.menu .link-toggle{
+			height: 41px !important;
+		}
+		.menu .dropdown-toggle{
+			height: 41px !important;
+		}
+		.menu .navbar-nav li a{
+			/*position: relative !important;
+			bottom:0.5em !important;*/
+			color:#fff !important;
+			padding-top: 8px !important;
+			padding-bottom: 15px !important;
+		}
+		.menu .navbar-nav .active a {
+			color: #fff;
+			background-color: #003687;
+		}
+		.menu .dropdown-menu{
+			/*position: relative;
+			bottom:0.5em !important;*/
+			background:#001f4a !important;
+		}
+		.menu .dropdown-menu li a:hover{
+			background:#003687 !important; 
+		}
+		.menu .navbar-default .navbar-nav>.open>a, .navbar-default .navbar-nav>.open>a:focus, .navbar-default .navbar-nav>.open>a:hover{
+			background-color:#003687 !important; 
+			color: #fff;
+		} 
+
+		
+		@media(max-width: 768px){
+		  .menu .navbar-toggle{background-color: #001f4a !important; border-color: #001f4a !important;}
+		  .menu .navbar-toggle:focus{background-color: #003687 !important; border-color: #003687 !important;}
+		  .menu .icon-bar{background-color:#fff!important;}
+		  .menu .navbar-collapse{border-color: #001f4a !important;}
+		  .menu a{color:#fff !important;}
+		  .menu .dropdown-toggle:hover{background:#003687 !important;}
+		  .menu .dropdown-toggle:focus{background:#003687 !important;}
+		}
+
+		@media(min-width: 768px){
+			.navbar-brand{padding: 10px; height: 41px !important; color: #fff !important;}
+			.menu{min-height:35px !important;}
+			.menu .navbar-collapse .navbar-nav>li>a:hover, .navbar-nav>li>a:focus{background-color:#003687 !important;}
+		 	.menu .navbar-collapse .navbar-nav .open>a,.navbar-nav .open>a:hover, .navbar-nav .open>a:focus{background-color: #003687 !important;}
+			.menu .navbar-nav>li>.dropdown-menu{margin-top: -6px;}
+		}
+
+		.dropdown-menu>li>a {
+			color: #001f4a;
+		}
+	/*	#main{
+			padding: 0px;
+			position: relative;
+			top: 35px;
+		}*/
+	</style>
+</head>
+<body>
+
+	<nav class="navbar navbar-default menu">
+		<div class="container-fluid">
+			<!-- Logo e Botao qnd mobile display -->
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#idNavbar" aria-expanded="false">
+					<span class="sr-only">Navegação</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="#">Teste
+					<!--<img src="logo">-->
+				</a>
+			</div>
+
+			<!-- navbar body -->
+			<div class="collapse navbar-collapse" id="idNavbar">
+				<ul class="nav navbar-nav">
+					<li class="active"><a href="#" class="link-toggle">Link <span class="sr-only">(atual)</span></a></li>
+					<li><a href="#" class="link-toggle">Link</a></li>
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+						<ul class="dropdown-menu">
+							<li><a href="#">Action</a></li>
+							<li><a href="#">Another action</a></li>
+							<li><a href="#">Something else here</a></li>
+							<li role="separator" class="divider"></li>
+							<li><a href="#">Separated link</a></li>
+							<li role="separator" class="divider"></li>
+							<li><a href="#">One more separated link</a></li>
+						</ul>
+					</li>
+				</ul>
+			<!--	<form class="navbar-form navbar-left">
+					<div class="form-group">
+						<input type="text" class="form-control" placeholder="Search">
+					</div>
+					<button type="submit" class="btn btn-default">Submit</button>
+				</form>
+				<button type="button" class="btn btn-default navbar-btn">Sign in</button>-->
+				<ul class="nav navbar-nav navbar-right">
+					<li><a href="#" class="link-toggle">Link</a></li>
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+						<ul class="dropdown-menu">
+							<li><a href="#">Action</a></li>
+							<li><a href="#">Another action</a></li>
+							<li><a href="#">Something else here</a></li>
+							<li role="separator" class="divider"></li>
+							<li><a href="#">Separated link</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div><!-- /.navbar-body -->
+		</div><!-- /.container-fluid -->
+	</nav><!-- / fim navbar -->
+
+</body>
+</html>
