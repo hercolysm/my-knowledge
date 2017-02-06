@@ -7,8 +7,10 @@
 	<meta name="description" content="Ensina a criar um datepicker">
 	<link rel="stylesheet" href="css/bootstrap.min.css">
 	<link rel="stylesheet" href="css/jquery-ui.min.css">
+	<link rel="stylesheet" href="css/jquery-clockpicker.min.css">
 	<script src="js/jquery-3.1.1.min.js"></script>
 	<script src="js/jquery-ui.min.js"></script>
+	<script src="js/jquery-clockpicker.min.js"></script>
 </head>
 <body>
 	<div class="container"><!-- container -->
@@ -63,6 +65,58 @@
 
 </script>
 <!-- fim input datepicker -->
+
+<input type="text" name="" id="comBtn">
+<script type="text/javascript">
+	$(function(){
+		$("#comBtn").datepicker({
+			dateFormat: 'dd/mm/yy',
+			dayNames: ['Domingo','Segunda','Terça','Quarta','Quinta','Sexta','Sábado'],
+			dayNamesMin: ['D','S','T','Q','Q','S','S','D'],
+			dayNamesShort: ['Dom','Seg','Ter','Qua','Qui','Sex','Sáb','Dom'],
+			monthNames: ['Janeiro','Fevereiro','Março','Abril','Maio','Junho','Julho','Agosto','Setembro','Outubro','Novembro','Dezembro'],
+			monthNamesShort: ['Jan','Fev','Mar','Abr','Mai','Jun','Jul','Ago','Set','Out','Nov','Dez'],
+			nextText: 'Próximo',
+			prevText: 'Anterior',
+			/*maxDate: 0
+			showOn: "button",
+			buttonImage: "css/images/ui-icons_444444_256x240.png",
+			buttonImageOnly: true*/
+		});
+	});
+</script>
+
+<br><br>
+<!-- clockpiker -->
+<div class="input-group clockpicker col-md-3">
+    <input type="text" class="form-control" value="" style="z-index: 1;">
+    <span class="input-group-addon">
+        <span class="glyphicon glyphicon-time"></span>
+    </span>
+</div>
+<script type="text/javascript">
+	$('.clockpicker').clockpicker({
+		placement: 'right',
+		align: 'top',
+		autoclose: false,
+		donetext: 'Pronto',
+		'default': 'now'
+	});
+</script>
+<!-- fim clockpiker -->
+
+<br><br>
+<!-- clockpiker -->
+<div class="input-group clockpicker" data-placement="bottom" data-align="left" data-autoclose="true">
+	<input type="text" class="form-control" value="13:14" style="z-index: 1;">
+	<span class="input-group-addon">
+		<span class="glyphicon glyphicon-time"></span>
+	</span>
+</div>
+<script type="text/javascript">
+	$('.clockpicker').clockpicker();
+</script>
+<!-- fim clockpiker -->
 
 	</div><!-- fim container -->
 </body>
