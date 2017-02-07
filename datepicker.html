@@ -8,6 +8,7 @@
 	<link rel="stylesheet" href="css/bootstrap.min.css">
 	<link rel="stylesheet" href="css/jquery-ui.min.css">
 	<link rel="stylesheet" href="css/jquery-clockpicker.min.css">
+	<link rel="stylesheet" href="css/font-awesome.min.css">
 	<script src="js/jquery-3.1.1.min.js"></script>
 	<script src="js/jquery-ui.min.js"></script>
 	<script src="js/jquery-clockpicker.min.js"></script>
@@ -66,7 +67,12 @@
 </script>
 <!-- fim input datepicker -->
 
-<input type="text" name="" id="comBtn">
+<div class="input-group col-md-3">
+	<input type="text" class="form-control" name="" id="comBtn">
+	<label for="comBtn" class="input-group-addon">
+		<span class="fa fa-calendar"></span>
+	</label>
+</div>
 <script type="text/javascript">
 	$(function(){
 		$("#comBtn").datepicker({
