@@ -1,0 +1,89 @@
+<a href="javascript:void(0)" id="selecionarTodos" class="pull-right">selecionar todos </a>
+<a href="javascript:void(0)" id="desmarcarTodos" class="pull-right">desmarcar todos </a>
+<a href="javascript:void(0)" id="excluirSelecionados" class="pull-right">apagar selecionados </a>
+<table class="table table-bordered table-striped">
+ 	<thead>
+ 		<tr>
+ 			<th>id_empresa</th>
+ 			<th>empresa</th>
+ 			<th>pesquisador</th>
+ 			<th>data</th>
+ 			<th><input type="checkbox" name="toggle" class="desmarcarTodos selecionarTodos"></th>
+ 		</tr>
+ 	</thead>
+ 	<tbody>
+ 		<tr>
+ 			<td>teste</td>
+ 			<td>teste</td>
+ 			<td>teste</td>
+ 			<td>teste</td>
+ 			<td><input type="checkbox" class="check_excluir desmarcarTodos selecionarTodos" value="0"></td>
+ 		</tr>
+ 		<tr>
+ 			<td>teste2</td>
+ 			<td>teste2</td>
+ 			<td>teste2</td>
+ 			<td>teste2</td>
+ 			<td><input type="checkbox" class="check_excluir desmarcarTodos selecionarTodos" value="1"></td>
+ 		</tr>
+ 		<tr>
+ 			<td>teste3</td>
+ 			<td>teste3</td>
+ 			<td>teste3</td>
+ 			<td>teste3</td>
+ 			<td><input type="checkbox" class="check_excluir desmarcarTodos selecionarTodos" value="2"></td>
+ 		</tr>
+ 	</tbody>
+ </table>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script type="text/javascript">
+
+	$(document).ready(function(){
+
+		//apagar selecionados
+		$("#excluirSelecionados").click(function(){
+			var checks = $(".check_excluir:checked");
+			var form = $('<form>');
+			form.append(checks.clone());
+			var valores = form.serialize();
+			$.post("excluir_selecionados.php",valores,function(resposta){
+				checks.each(function(){
+					$(this).closest('tr').remove();
+				})
+			});
+		});
+
+		// forma 1
+
+		//selecionar todos
+		$("#selecionarTodos").click(function(){
+			$(".selecionarTodos").prop("checked",true);
+		});
+		//desmarcar todos
+		$("#desmarcarTodos").click(function(){
+			$(".selecionarTodos").prop("checked",false);
+		});
+
+		// forma 2
+
+		//selecionar todos
+		$("#selecionarTodos").click(function(){
+			$(".selecionarTodos").attr("checked","checked");
+			return false;
+		});
+		//desmarcar todos
+		$("#desmarcarTodos").click(function(){
+			$(".selecionarTodos").removeAttr("checked");
+			return false;
+		});
+
+		// selecionar/desmarcar todos
+		$("input[name=toggle]").change(function(){
+			if (this.checked) {
+				$(".selecionarTodos").prop("checked",true);
+			} else {
+				$(".selecionarTodos").prop("checked",false);
+			}
+		});
+	});
+</script>
