@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+	<title>Swal</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="Exemplos de alertas da biblioteca swal">
+	<link rel="stylesheet" href="css/sweetalert.css">
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
+	<script type="text/javascript" src="js/sweetalert.min.js"></script>
+</head>
+<body>
+	<div class="container"><!-- container -->
+
+<a href="#" onclick="swal('titulo','mensagem aqui')">mensagem</a>
+
+<a href="#" class="apagar" val="teste">apagar</a>
+<script type="text/javascript">
+	$(function(){
+		// apaga um registro
+		$(document).on("click" , ".apagar", function(){
+			var value = $(this).attr("val");
+			swal({
+				type: "warning",
+				title: "Você Tem Certeza ?", 
+				text: "Você realmente deseja excluir este registro?",
+				showCancelButton: true,
+				confirmButtonColor: "#DD6B55",
+				confirmButtonText: "Excluir",
+				cancelButtonText: "Cancelar",
+				closeOnConfirm: false,
+				closeOnCancel: false
+			},
+			function(isConfirm) {
+				if (isConfirm) { 
+					$.ajax({
+						type:"get",
+						data:{"name":value},
+						url:"index.php?action=acao&go=controle&",
+					});
+					swal({
+						title: "Deletando !",
+						text: "<i class='fa fa-spinner fa-spin'></i>",
+						type: 'success',
+						html: true,
+						showConfirmButton: false
+					});
+					setTimeout(function(){
+						location.reload();
+					},1000);
+				} 
+				else {  
+					swal("Cancelado", "", "error");   
+				}
+			});
+		});
+	});
+</script>
+
+<a href="#" class="informar" val="teste">informar</a>
+<script type="text/javascript">
+	$(function(){
+		// exemplo de msg swal
+		$(document).on("click", ".informar", function(){
+			var value = $(this).attr("val");
+			swal({
+				type: "info", // warning, error e success
+				title: "titulo",
+				text: "texto da informação <b>aqui</b>",
+				html: true,
+				confirmButtonColor: "#DD6B55",
+				confirmButtonText: "blz"
+				// imageUrl: "images/thumbs-up.jpg"
+				// showLoaderOnConfirm: true
+			});
+		});
+	});
+</script>
+
+<a href="#" class="timer">temporário</a>
+<script type="text/javascript">
+	$(function(){
+		// msg temporaria
+		$(document).on("click", ".timer", function(){
+			swal({
+				title: "teste",
+				showConfirmButton: false,
+				timer: 2000
+			});
+		});
+	});
+</script>
+
+	</div><!-- fim container -->
+</body>
+</html>

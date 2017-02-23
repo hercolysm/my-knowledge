@@ -40,7 +40,7 @@
 		$html .= "<li class='active'>
 					<a>
 						Página
-						<select name='paginas' style='color:blue;'>";
+						<select name='paginas' style='color:#337ab7;'>";
 			for ($pg=1; $pg <= $total_paginas ; $pg++):
 				if ($pagina==$pg){$selected="selected";}else{$selected="";}
 				$html .= "<option value='?pagina=".$pg."' ".$selected.">".$pg."</option>";
