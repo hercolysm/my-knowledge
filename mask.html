@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+	<title>Máscaras</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="Máscaras para campos de formulários">
+	<link rel="stylesheet" href="">
+	<script src="js/jquery-3.1.1.min.js"></script>
+	<script src="js/jquery-mask.js"></script>
+</head>
+<body>
+	<div class="container"><!-- container -->
+		<form method="get" action="#">
+			<input type="text" class="data" placeholder="data" name="data">
+			<input type="text" class="hora" placeholder="hora" name="hora">
+			<input type="text" class="data_hora" placeholder="data_hora" name="data_hora">
+			<input type="text" class="cep" placeholder="cep" name="cep">
+			<input type="text" class="telefone" placeholder="telefone" name="telefone">
+			<input type="text" class="cpf" placeholder="cpf" name="cpf">
+			<input type="text" class="cnpj" placeholder="cnpj" name="cnpj">
+			<input type="text" class="preco" placeholder="preco" name="preco">
+			<input type="text" class="ip_address" placeholder="ip_address" name="ip_address">
+			<input type="text" class="percent" placeholder="percent" name="percent">
+			<input type="text" class="placeholder" name="placeholder">
+			<button type="submit">Submit</button>
+		</form>
+	</div><!-- fim container -->
+</body>
+</html>
+
+<script type="text/javascript">
+$(document).ready(function(){
+	$(".data").mask('00/00/0000'/*, {clearIfNotMatch: true} , {selectOnFocus: true}*/);
+	$('.hora').mask('00:00:00');
+	$('.data_hora').mask('00/00/0000 00:00:00');
+	$('.cpf').mask('000.000.000-00', {reverse: true});
+	$('.cnpj').mask('00.000.000/0000-00', {reverse: true});
+	$('.preco').mask("#.##0,00", {reverse: true});
+	$('.percent').mask('##0,00%', {reverse: true});
+	$('.placeholder').mask("00/00/0000", {placeholder: "__/__/____"});
+	$('.ip_address').mask('0ZZ.0ZZ.0ZZ.0ZZ', {
+		translation: {
+			'Z': {
+				pattern: /[0-9]/, optional: true
+			}
+		}
+	});
+
+	// .telefone
+	var nonoDigito = function (val) {
+		return val.replace(/\D/g, '').length === 11 ? '(00) 00000-0000' : '(00) 0000-00009';
+	},
+	spOptions = {
+		onKeyPress: function(val, e, field, options) {
+			field.mask(nonoDigito.apply({}, arguments), options);
+		}
+	};
+	$('.telefone').mask(nonoDigito, spOptions);
+
+	// .cep
+	var options =  {
+		onComplete: function(cep) {
+			alert('CEP Ok!:' + cep);
+		},
+		onKeyPress: function(cep, event, currentField, options){
+			console.log('An key was pressed!:', cep, ' event: ', event,
+				'currentField: ', currentField, ' options: ', options);
+		},
+		onChange: function(cep){
+			console.log('cep changed! ', cep);
+		},
+		onInvalid: function(val, e, f, invalid, options){
+			var error = invalid[0];
+			console.log ("Digit: ", error.v, " is invalid for the position: ", error.p, ". We expect something like: ", error.e);
+		}
+	};
+	$('.cep').mask('00000-000', options);
+});
+</script>
+
+<script type="text/javascript">
+	/**
+	* Applies the mask to the matching selector elements.
+	*
+	* @selector elements to be masked.
+	* @mask should be a string or a function.
+	* @options should be an object.
+	**/
+	//$(selector).mask(mask [, options]);
+
+	/**
+	* Seek and destroy.
+	*
+	* @selector elements to be masked.
+	**/
+	//$(selector).unmask();
+
+	/**
+	* Gets the value of the field without the mask.
+	*
+	* @selector elements to be masked.
+	**/
+	//$(selector).cleanVal();
+
+	/**
+	* Applies the mask to the matching selector elements.
+	*
+	* @selector optional: elements to be masked. The default behaviour it's to lookup for all elements with data-mask attribute.
+	**/
+	//$.applyDataMask([selector]);
+</script>
