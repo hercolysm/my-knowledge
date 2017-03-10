@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+	<title>Barra de progresso</title>
+	<link rel="shortcut icon" href="nome_icone.ico">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="">
+	<link rel="stylesheet" href="css/jquery-ui.min.css">
+	<script src="js/jquery-3.1.1.min.js"></script>
+	<script src="js/jquery-ui.min.js"></script>
+</head>
+<body>
+	<div class="container"><!-- container -->	
+		<br>
+		<div id="progressbardeterminate"></div>
+		<br>
+		<div id="progressbarindeterminate"></div>
+		<br>
+		<div id="progressbarcuston">
+			<center class="progress-label-inner">Aguarde...</center>
+		</div>
+		<br>
+		<div id="dialog" title="Baixar Arquivo">
+			<div class="progress-label-out">Iniciando download...</div>
+			<div id="progressbar"></div>
+		</div>
+		<button id="downloadButton">Download</button>
+	</div><!-- fim container -->
+</body>
+</html>
+
+<!-- script barras simples -->
+<script type="text/javascript">
+	$(function(){
+
+		// 32%
+		$("#progressbardeterminate").progressbar({
+			value: 32
+		});
+
+		// indefinido
+		$("#progressbarindeterminate").progressbar({
+			value: false
+		});
+
+	});
+</script>
+
+<!-- barra dinamica -->
+<!-- css label da barra dinamica (dentro) -->
+<style type="text/css">
+	.ui-progressbar-value {
+		background: #58CB73;
+		/* background-image: url(img/image.gif); altera fundo da barra */
+	}
+	.ui-progressbar {
+		position: relative;
+	}
+	.progress-label-inner {
+		position: absolute;
+		left: 5%;
+		top: 6px;
+		font-weight: bold;
+		text-shadow: 1px 1px 0 #fff;
+	}
+</style>
+<!-- script barra dinamica -->
+<script type="text/javascript">
+	$(function(){
+
+		//
+		var progressbar = $( "#progressbarcuston" ),
+		progressLabel = $( ".progress-label-inner" );
+
+		progressbar.progressbar({
+			value: false,
+			change: function() {
+				progressLabel.text( progressbar.progressbar( "value" ) + "%" );
+			},
+			complete: function() {
+				progressLabel.text( "Completo" );
+			}
+		});
+
+		function progress() {
+			var val = progressbar.progressbar( "value" ) || 0;
+
+			progressbar.progressbar( "value", val + 2 );
+
+			if ( val < 99 ) {
+				setTimeout( progress, 800 );
+			}
+		}
+
+		setTimeout( progress, 2000 );
+
+	});
+</script>
+
+<!-- dialog + barra -->
+<!-- css dialog + barra -->
+<style type="text/css">
+	#progressbar {
+		margin-top: 20px;
+	}
+
+	.progress-label {
+		font-weight: bold;
+		text-shadow: 1px 1px 0 #fff;
+	}
+
+	.ui-dialog-titlebar-close {
+		display: none;
+	}
+</style>
+<!-- script dialog + barra -->
+<script type="text/javascript">
+	$( function() {
+
+		//
+		var progressTimer,
+		progressbar = $( "#progressbar" ),
+		progressLabel = $( ".progress-label-out" ),
+		dialogButtons = [{
+			text: "Cancelar Download",
+			click: closeDownload
+		}],
+		dialog = $( "#dialog" ).dialog({
+			autoOpen: false,
+			closeOnEscape: false,
+			resizable: false,
+			buttons: dialogButtons,
+			open: function() {
+				progressTimer = setTimeout( progress, 2000 );
+			},
+			beforeClose: function() {
+				downloadButton.button( "option", {
+					disabled: false,
+					label: "Download"
+				});
+			}
+		}),
+		downloadButton = $( "#downloadButton" )
+		.button()
+		.on( "click", function() {
+			$( this ).button( "option", {
+				disabled: true,
+				label: "Downloading..."
+			});
+			dialog.dialog( "open" );
+		});
+
+		progressbar.progressbar({
+			value: false,
+			change: function() {
+				progressLabel.text( "Progresso Atual: " + progressbar.progressbar( "value" ) + "%" );
+			},
+			complete: function() {
+				progressLabel.text( "Download finalizado com sucesso!" );
+				dialog.dialog( "option", "buttons", [{
+					text: "Fechar",
+					click: closeDownload
+				}]);
+				$(".ui-dialog button").last().trigger( "focus" );
+			}
+		});
+
+		function progress() {
+			var val = progressbar.progressbar( "value" ) || 0;
+
+			progressbar.progressbar( "value", val + Math.floor( Math.random() * 3 ) );
+
+			if ( val <= 99 ) {
+				progressTimer = setTimeout( progress, 500 );
+			}
+		}
+
+		function closeDownload() {
+			clearTimeout( progressTimer );
+			dialog
+			.dialog( "option", "buttons", dialogButtons )
+			.dialog( "close" );
+			progressbar.progressbar( "value", false );
+			progressLabel
+			.text( "Iniciando download..." );
+			downloadButton.trigger( "focus" );
+		}
+	} );
+</script>

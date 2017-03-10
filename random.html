@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+	<title>Random</title>
+	<link rel="shortcut icon" href="nome_icone.ico">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="">
+	<link rel="stylesheet" href="css/jquery-ui.min.css">
+	<script src="js/jquery-3.1.1.min.js"></script>
+	<script src="js/jquery-ui.min.js"></script>
+</head>
+<body>
+	<div class="container"><!-- container -->
+
+		<button id="random-color">Random Color</button>
+		<div id="color" style="width: 100px; height: 35px; border: #000 dotted 1px; font-size: 2.25em; display: inline-block;"></div>
+
+		<br><br>
+
+		<button id="random-number">Random Number</button>
+		<span id="number">0</span>
+
+		<br><br>
+
+		<button id="random-letra">Random Letra</button>
+		<span id="letra">a</span>
+
+	</div><!-- fim container -->
+</body>
+</html>
+
+<script type="text/javascript">
+	$(function(){
+		
+		// random color
+		$("#random-color")
+			.button()
+			.click(function(){
+				$("#color").css({
+					"background": "#" + Math.floor( Math.random() * 16777215 ).toString( 16 )
+				});
+		});
+
+		// random number
+		$("#random-number")
+			.button()
+			.click(function(){
+				var newNumber = Math.floor( (Math.random() * 100) + 1) ; // numeros de (1 - 100)
+				$(this).next().text(newNumber);
+			});
+
+		// random letra
+		$("#random-letra")
+			.button()
+			.click(function(){
+				var letra = Math.random().toString(36).replace(/[^a-z]+/g, '').substr(0, 1);
+				$(this).next().text(letra);
+		});
+
+	});
+</script>
