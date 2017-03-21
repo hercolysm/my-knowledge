@@ -31,6 +31,15 @@
 	$(":animated");		// seleciona elementos que estão em progresso de animação
 	$(":header");		// seleciona todos elemento q são headers, ex: h1, h2, h3...
 
+//	SELETORES de FILTRO AVANÇADOS
+	$(":nth-child(even)");	// seleciona ocorrências pares
+	$(":nth-child(odd)");	// seleciona ocorrências ímpares
+	$(":nth-child(3)");		// seleciona terceira ocorrência
+	$(":nth-child(2n)");	// seleciona ocorrências pares
+	$(":nth-child(2n+1)");	// seleciona ocorrências ímpares
+	$(":nth-child(3n)");	// seleciona de 3 em 3 (0,3,6..)
+	$(":nth-child(3n+1)");	// seleciona de 3 em 3 (1,4,7..)
+
 //	SELETORES de CONTEÚDO
 	$("td:parent");		// seleciona pai do elemento (tr)
 	$("td:contains(txt)");// seleciona 'td' com esse txt
@@ -52,6 +61,12 @@
 	$(":disabled");		// seleciona inputs desabilitados
 	$(":checked");		// seleciona inputs checked
 	$(":selected");		// seleciona inputs selected
+
+// SELETORES de BUSCA
+	.find();			// busca descendentes de um elemento
+	.siblings();		// busca os irmãos de um elemento
+	.children();		// busca os filhos de um elemento
+	.parents();			// busca o pai de um elemento
 
 // MANIPULAÇÃO de ATRIBUTOS
 	.attr("attr"); 			// retorna atributo
@@ -126,20 +141,45 @@
 	.trigger();			// aciona um evento de um elemento
 	.delegate();		// associa eventos a um grupo de elementos
 	.undelegate();		// (criados antes ou depois do carregamento)
+	.serialize();		// cria uma string no padrão url
 
 // EFEITOS
-	.hide();
-	.show();
-	.toggle();
-	.fadeOut();
-	.fadeIn();
-	.fadeTo(,);
-	.fadeToggle();
-	.slideUp();
-	.slideDown();
-	.slideToggle();
+	.hide();			// esconde um elemento
+	.show();			// mostra um elemento
+	.toggle();			// alternador mostra/esconde
+	.fadeOut();			// deixa transparente e esconde
+	.fadeIn();			// tira transparencia e mostra
+	.fadeTo(,);			// deixa com transparencia definida
+	.fadeToggle();		// alternador mostra/esconde (com tranparencia)
+	.slideUp();			// esconde de baixo p/ cima
+	.slideDown();		// mostra de cima p/ baixo
+	.slideToggle();		// alternador mostra/esconde
 
+// OUTRAS FUNÇÕES JQUERY
+	.delay();			// aplica um atraso
+	.ready();			// qnd elemento for carregado
+	.each();			// executa p/ cada elemento
+	.next();			// seleciona elemento seguinte
+	.substr(inicio,fim);// corta uma string
+	.load();			// carrega url dentro de um elemento
 
+// EXEMPLOS
+	$(document).ready(function(){
+		$(":button").click(function(){
+			// criam uma img
+			var img = $("<img/>",{
+				src: 'img/foto.png',
+				title: 'titulo',
+				click: function(){
+					alert("teste");
+				}
+			})
+		});
+		// add img no body
+		$("body").append(img);
 
+		// cria tr
+		var tr = $("<ul/>").append($(<"li/">).append("txt"));
+	});
 
 </script>
