@@ -29,3 +29,4 @@ ALTER TABLE nome_tabela ADD COLUMN nome_coluna tipo(t); /* add coluna na tabela 
 ALTER TABLE nome_tabela DROP COLUMN nome_coluna; /* remove coluna da tabela */
 ALTER TABLE nome_tabela MODIFY COLUMN nome_coluna tipo()t; /* modifica uma coluna  (MySQL) */
 ALTER TABLE nome_tabela ALTER COLUMN nome_coluna tipo()t; /* modifica uma coluna  (SQL) */
+ALTER TABLE nome_tabela ADD FOREIGN KEY (id) REFERENCES tabela_referencia (id_ref) ON DELETE CASCADE; /* cria chave estrageira, como delete automatico */
