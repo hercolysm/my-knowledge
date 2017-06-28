@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+	<title></title>
+	<link rel="shortcut icon" href="nome_icone.ico">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="">
+	<link rel="stylesheet" href="">
+	<script src="js/jquery-3.1.1.min.js"></script>
+	<script src="js/jquery-geolocation.edit.min.js"></script>
+	<style>
+		#mapa {
+			width: 320px;
+			height: 200px;
+			border: 1px solid gray;
+		}
+	</style>
+</head>
+<body>
+	<div class="container"><!-- container -->
+		<div id="mapa"></div>
+		Latitude: <input type="text" id="lat">
+		Longitude: <input type="text" id="lng">
+	</div><!-- fim container -->
+</body>
+</html>
+
+<script>
+	$("#mapa").geolocate({
+		lat: "#lat",
+		lng: "#lng"
+	});
+</script>
