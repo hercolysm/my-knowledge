@@ -32,3 +32,6 @@ ALTER TABLE nome_tabela ALTER COLUMN nome_coluna tipo()t; /* modifica uma coluna
 ALTER TABLE nome_tabela ADD FOREIGN KEY (id) REFERENCES tabela_referencia (id_ref) ON DELETE CASCADE; /* cria chave estrageira, como delete automatico */
 ALTER TABLE nome_tabela DROP FOREIGN KEY (foreign_key_name); /* apaga uma chave estrangeira */ 
 ALTER TABLE nome_tabela ENGINE=InnoDB /* altera o motor de busca da tabela */
+SHOW FULL TABLES IN nome_do_banco WHERE TABLE_TYPE LIKE 'VIEW'; /* mostra todas as views */
+CREATE VIEW nome_view AS select * from nome_tabela where .. /* cria uma view */
+DROP VIEW nome_view; /* deleta uma view */
