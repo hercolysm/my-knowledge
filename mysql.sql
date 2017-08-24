@@ -35,3 +35,5 @@ ALTER TABLE nome_tabela ENGINE=InnoDB /* altera o motor de busca da tabela */
 SHOW FULL TABLES IN nome_do_banco WHERE TABLE_TYPE LIKE 'VIEW'; /* mostra todas as views */
 CREATE VIEW nome_view AS select * from nome_tabela where .. /* cria uma view */
 DROP VIEW nome_view; /* deleta uma view */
+CREATE OR REPLACE VIEW nome_view AS select * from nome_tabela where .. /* edita uma view */
+SHOW FULL PROCESSLIST /* mostra lista de processos */
