@@ -1,0 +1,7 @@
+diskpart
+rescan
+list disk
+select disk 0
+list partition
+select partition 0
+delete partition override

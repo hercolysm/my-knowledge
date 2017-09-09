@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<title>Carousel</title>
+	<meta charset="utf-8">
+	 
+	<!-- Isso é necessário para funcionar a versão mobile -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	 
+	<!-- CSS -->
+	<link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
+	<!-- Scripts - Atente-se na ordem das chamadas -->
+	<script type="text/javascript" src="//code.jquery.com/jquery-2.0.3.min.js"></script>
+	<script type="text/javascript" src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+</head>
+<body>
+	<!-- carousel -->
+	<div class="carousel slide" id="carousel-example-generic" data-ride="carousel">
+		<!-- Indicators -->
+		<ol class="carousel-indicators">
+			<li class="active" data-slide-to="0" data-target="#carousel-example-generic"></li>
+			<li data-slide-to="1" data-target="#carousel-example-generic"></li>
+			<li data-slide-to="2" data-target="#carousel-example-generic"></li>
+		</ol>
+ 
+		<!-- Wrapper for slides -->
+		<div class="carousel-inner">
+			<div class="item active">
+				<img alt="" src="http://31.media.tumblr.com/6c5d3876dd9858685cc8b584503101b1/tumblr_mve3kz3WG21st5lhmo1_1280.jpg">
+				<div class="carousel-caption">
+					<h3>Primeiro Slide</h3>
+				</div>
+			</div>
+			<div class="item">
+				<img alt="" src="http://24.media.tumblr.com/23e3f4bb271b8bdc415275fb7061f204/tumblr_mve3rvxwaP1st5lhmo1_1280.jpg">
+				<div class="carousel-caption">
+					<h3>Segundo Slide</h3>
+				</div>
+			</div>
+			<div class="item">
+				<img alt="" src="http://31.media.tumblr.com/098217f18533a8971385d0c59004d810/tumblr_muuj37kqN21st5lhmo1_1280.jpg">
+				<div class="carousel-caption">
+					<h3>Terceiro Slide</h3>
+				</div>
+			</div>
+		</div>
+ 
+		<!-- Controls -->
+		<a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+			<span class="ico-direction-left"></span>
+		</a>
+		<a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+			<span class="ico-direction-right"></span>
+		</a>
+	</div>
+	<!-- fim carousel -->
+</body>
+</html>

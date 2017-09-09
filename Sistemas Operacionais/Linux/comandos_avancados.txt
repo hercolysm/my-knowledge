@@ -1,0 +1,26 @@
+
+# permitir acesso ao servidor na maquina virtual
+
+sudo iptables -I INPUT -p tcp --dport 80 -j ACCEPT
+// insere regra para 
+// entrada (pacotes destinados a sockets locais, pacotes detinados a propria maquina)
+// define o protocolo tcp na port 80
+// define o alvo da regra, deixa o pacote passar
+
+# listar processos
+
+ps aux | grep "busca"
+
+
+# encerrar processos
+
+kill 0000
+
+
+# lista estado de armazenamento dos arquivos de sistema
+
+df -H
+
+uname -r # ver a versão atual do kernel
+
+dnf list <nome_pacote> # lista um pacote ou grupos de pacotes (tmb atualiza pacotes desatualizados)

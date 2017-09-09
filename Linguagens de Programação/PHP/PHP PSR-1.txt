@@ -1,0 +1,108 @@
+PHP PSR-1
+
+Fonte: www.php-fig.org/psr/
+
+-Usar sempre
+	<?php ou <=
+
+-Formatação recomendada
+	UTF-8 sem BOM
+
+-Separar responsabilidades
+	Classes, funções, Contantes
+	Gerar Saida, Alterar Configurações
+
+-Namespaces
+	namespace App_Models_Nomearquivo (até PHP 5.2)
+	namespace App\Models
+
+-Classes, Interfaces e Traits
+	NomeClasseControllerCada
+	Nome do arquivo = Nome da classe
+	Um arquivo para cada classe
+
+-Métodos
+	function camelCase()
+	{
+		//action here	
+	}
+
+-Contantes
+	const LETRAS_MAIUSCULAS = 'value';
+
+-Variáveis
+	private $NomeVariavel, $nomeVariavel, $nome_variavel
+
+
+PHP PSR-2
+
+-Deixar linha em branco no final, se arquivo for só PHP, ocultar o fechamento ?>
+
+-TAB de indentação de 4 espaços
+
+-Máximo 120 caracteres por linha
+
+-Quebra de linha entre trenchos de códigos
+
+-Keywords sempre em minusculas (null, true, false)
+
+-Sempre usar visibilidade em variaveis e metodos (public, private, protected)
+
+-Não usar => var $variavel = "test";
+
+-Não usar -> private $_variavel = "test";
+
+-Parametros
+	private function nomeFunction($parametro1, $paremetro2, $parametro3)...
+
+-Ordem ideal para usar: abstract ou final > visibilidade > static > function > nomeFuncao
+	static => 	private static function exemplo(){} // depois da visibilidade
+	abstract => abstract private function exemplo(){} // antes da visibilidade
+	fianl =>	final private static function exemplo(){} // antes da visibilidade
+
+-Estruturas
+
+	if () {
+		// action
+	} elseif () {
+		// action
+	} else {
+		// action
+	}
+
+	switch () {
+		case 0:
+			// action
+			break;
+		case 1:
+		case 2:
+			// action
+			break;
+		default:
+			// action
+			break;
+	}
+
+	while () {
+		// action
+	}
+
+	do {
+		// action
+	} while ();
+
+	for ($i = 0; $i < 10; $i++) {
+		// action
+	}
+
+	foreach ($array as $index => $value) {
+		// action
+	}
+
+	try {
+		// action
+	} catch (Exception $e) {
+		// action
+	} catch (Throwable $t) {
+		// action
+	}

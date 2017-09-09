@@ -1,11 +1,11 @@
 <?php
-	require_once "controller/conexao.php";
+	require_once "conexao.php";
 
 	/**
 	* recebe uma conexao, uma sql e o total de linhas(opcional)
 	* retorna uma lista e sua paginacao
 	**/
-	function listar($_pdo,$sql,$linhas_por_pagina=2) {
+	function listar($_pdo, $sql, $linhas_por_pagina = 2) {
 		// recebe pagina atual do get
 		$pagina = isset($_GET['pagina']) ? (int)$_GET['pagina'] : 1;
 		// recebe qnt de linhas do get

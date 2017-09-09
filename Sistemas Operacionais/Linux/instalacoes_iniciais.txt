@@ -1,0 +1,36 @@
+# sudo su // logar como root
+
+# yum makecache // 
+
+# yum check-update // busca atualizacoes
+
+# yum update // atualiza o sistema
+
+Instalação do Apache
+
+# yum install httpd // instala servidor apache
+# service httpd start // inicia o servico
+# chkconfig httpd on // configura na inicializacao do sistema
+
+Instalacao do Mysql
+
+# yum install mysql-server // instala mysql
+# mysql_install_db //
+# (mysql --initialize) // 
+# service mysqld start // inicia o servico
+# chkconfig mysqld on // configura na inicializacao do sistema
+# mysqladmin -u root password "nova_senha" // define a senha para root
+# mysqladmin -u root -p password "nova_senha" // alteracao de senha
+
+Instalação do PHP
+
+# yum install php mysql-php // instala o php
+# yum install php-pdo // instala o pdo
+# yum install php-pdo_mysql // instala o pdo mysql
+
+rpm -qa // listar todos os pacotes instalados
+
+Desativar SELINUX
+
+# vim /etc/sysconfig/selinux
+# SELINUX=disabled

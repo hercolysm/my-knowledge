@@ -1,0 +1,9 @@
+#windows
+
+-alternar a senha de um usuário
+
+-abra o 'prompt de comando' (como administrador)
+
+>sqlcmd -S NOMESERVIDOR\NOMEINSTANCIA
+>sp_password @old = null, @newv = 'nova_senha', @loginame = 'sa'
+>go

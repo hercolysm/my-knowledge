@@ -1,0 +1,17 @@
+Principais Comandos no Linux
+
+ cd => acessa: caminho/
+ ls -alh => lista detalhadamente arquivos e diretorios
+ cp => copia: arquivo /caminho
+ cp -r -> copia um diretorio 
+ mv => move ou renomeia: arquivo /caminho
+ rm => exclui: arquivo
+ mkdir => cria diretório
+ rmdir => exclui diretório vazio
+ rm -r => exclui diretório
+
+ man => manual
+ info => informações
+
+ df -h => lista dispositivos e partições montadas
+# /dev/sdb1 7,5G  5,0G  2,6G  66% /run/media/hercolys/HERCOLYS8GB

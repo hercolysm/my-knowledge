@@ -1,0 +1,49 @@
+Permissões no Linux
+
+Tipo	Permissões 	Links 	Proprietário 	Grupo 	Tamanho Data e Hora 	Nome
+
+-	rw-rw-r--. 	1 	user 		group 	245 	jul 17 21:04 	comandos_avancados.txt
+-	rw-rw-r--. 	1 	user 		group 	452 	mai 17 22:54 	comandos_basicos.txt
+
+d = diretório
+- = arquivo comum de usuário
+c = arquivo de caractere
+b = arquivo de bloco
+l = link
+
+Proprietário	Grupo	Outros
+rwx		rw-	r-x
+
+r = read (leitura)		4
+w = write (escrita)		2
+x = execution (execução)	1
+- = sem permissão		0
+
+Comando chmod - alterar as permissões de acesso a arquivos e diretórios
+
+Modo de permissões octal
+
+Sintaxe:
+chmod [permissões] [arquivo ou diretório]
+Origem dos números:
+
+1= ligado / 0= desligado
+
+read		write		execution
+r--		-w-		--x
+100 = 4		010 = 2		001 = 1
+
+Comando chown - alterar o dono de um arquivo ou diretório
+Sintaxe:
+	sudo chown usuario <caminho-arquivo>
+
+Comando chgrp - alterar o grupo de um arquivo ou diretório
+Sintaxe:
+	sudo chgrp grupo <caminho-arquivo>
+
+Comando addgroup ou groupadd - adicionar um novo grupo
+Sintaxe:
+	sudo groupadd <nome-grupo>
+
+Comando passwd <nome-usuario> - alterar a senha de um usuário
+Comando passwd <nome-usuario> -d - remove a senha de um usuário

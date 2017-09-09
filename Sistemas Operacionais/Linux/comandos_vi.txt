@@ -1,0 +1,39 @@
+Comandos no vi
+
+ a => editar
+ i => editar
+ :wq => salvar e sair
+ :x => salvar e sair
+ :q => sair
+ :q! => sair (ignora mudancas)
+ :e! => desfaz tudo que nao esta salvo (ignora mudancas)
+ u => desfazer ultima operacao
+ . => refazer ultima operacao
+
+ /busca => (do comeco)
+ ?busca => (do final)
+ n => proxima
+ N => inverte
+
+ 0 => comeco da linha
+ $ => final da linha
+ g => inicio do arquivo
+ G => final do arquivo
+ 12G => vai pra linha 12
+ x => apaga um caractere
+ dw => apaga resto da palavra
+ dd => apaga uma linha
+ 5dd => apaga 5 linhas
+ dG => apaga ate o final do documento
+ yy => copia uma linha
+ 2yy => copia duas linhas
+ p => cola abaixo
+ P => cola cima
+ O => nova linha p/ edicao acima
+ o => nova linha p/ edicao abaixo
+
+ :set nu => numero de linhas
+ :set nonu => oculta linhas
+ :set list => caracteres ocultos
+ :set nolist => oculta
+ :set all => mostra todas as configuracoes
