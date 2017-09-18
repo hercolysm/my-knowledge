@@ -1,0 +1,43 @@
+Iptables
+
+# módulos do kernel
+lsmod // listar
+rmmod // desativar
+insmod // levantar
+
+ex: ip_tables (debian) e iptables_nat (fedora)
+
+iptables // protocolos ipv4
+ip6tables // protocolos ipv6
+
+# salvar as regras atuais
+iptables-save > /bin/rc.firewall
+
+# restaurar regras salvas pelo iptables-save
+iptables-restore
+
+# adicionar arquivo na inicialização
+// add chamada no fim do arquivo /etc/rc.d/rc.local
+
+
+iptables -t [tabela] [comando] [ação] [alvo]
+
+Tabelas
+-t filter (padrão)
+-t nat
+-t mangle
+
+Chains Padrões
+- FORWARD
+
+Comandos
+-A - append no fim da lista
+-I - insere no inicio da lista
+-D - deleta da lista
+-L - lista
+-P - altera politica padrão das chains (ACCEPT, REJECT, DROP)
+-F - remove todas as entradas sem alterar a politica padrão
+-R - substitui regra já adicionada por outra
+-N - cria nova chain
+-E - renomeia nova chain
+-X - deleta nova chain

@@ -1,0 +1,15 @@
+Instalação Node.js
+
+- baixar arquivo zip no site nodejs.org
+
+- cd Download/
+
+- tar xvf node-v8.4.0-linux-x64.tar.xz
+
+- cd node-v8.4.0-linux-x64
+
+- cp -rfp bin/* /bin
+
+- cp -rfp lib/* /lib
+
+- node -v
