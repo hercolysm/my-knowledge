@@ -5,7 +5,7 @@ Command line instructions
 
 Git global setup
 
-git config --global user.name "HERCOLYS MORAES ARAÚJO"
+git config --global user.name "HERCOLYS MORAES ARAÃšJO"
 git config --global user.email "hercolysm@gmail.com"
 
 Create a new repository
@@ -77,3 +77,24 @@ collaborate (see also: git help workflows)
 'git help -a' and 'git help -g' list available subcommands and some
 concept guides. See 'git help <command>' or 'git help <concept>'
 to read about a specific subcommand or concept.
+
+/* trabalhando com branch */
+
+# Criar um novo branch
+git branch <nome_branch>
+
+# Listar os branchs
+git branch --list
+
+# Selecionar um branch
+git checkout <nome_branch>
+
+# Criar e selecionar branch
+git checkout -b <nome_branch>
+
+# Fazer merge
+git checkout master
+git merger <nome_branch>
+
+# Deletar um branch
+git branch -d <nome_branch>
