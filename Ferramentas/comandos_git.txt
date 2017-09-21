@@ -98,3 +98,14 @@ git merger <nome_branch>
 
 # Deletar um branch
 git branch -d <nome_branch>
+
+# Listar os branchs remotos
+git branch -r
+
+# Deletar um branch remoto
+git branch <nome_origin> <nome_branch> --delete
+
+# Sincronizar com os novos branch do remoto
+git fetch
+git checkout <nome_branch>
+git pull origin <nome_branch>
