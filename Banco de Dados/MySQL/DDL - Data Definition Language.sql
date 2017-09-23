@@ -44,6 +44,7 @@ CREATE TABLE nome_tabela (
 RENAME TABLE tabela TO novo_nome; /* renomeia tabela */
 
 ALTER TABLE nome_tabela ADD COLUMN nome_coluna tipo(t); /* add coluna na tabela */
+ALTER TABLE nome_tabela CHANGE nome_coluna novo_nome tipo(t); /* renomeia coluna da tabela */
 ALTER TABLE nome_tabela DROP COLUMN nome_coluna; /* remove coluna da tabela */
 ALTER TABLE nome_tabela MODIFY COLUMN nome_coluna tipo()t; /* modifica uma coluna  (MySQL) */
 ALTER TABLE nome_tabela ALTER COLUMN nome_coluna tipo()t; /* modifica uma coluna  (SQL) */
