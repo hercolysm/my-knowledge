@@ -20,7 +20,7 @@ iptables-restore
 // add chamada no fim do arquivo /etc/rc.d/rc.local
 
 
-iptables -t [tabela] [comando] [ação] [alvo]
+iptables -t [tabela] [comando] [ação] -j [alvo]
 
 Tabelas
 -t filter (padrão)
@@ -28,7 +28,9 @@ Tabelas
 -t mangle
 
 Chains Padrões
+- INPUT
 - FORWARD
+- OUTPUT
 
 Comandos
 -A - append no fim da lista
@@ -41,3 +43,14 @@ Comandos
 -N - cria nova chain
 -E - renomeia nova chain
 -X - deleta nova chain
+
+Ação
+-p - define o protocolo (tcp, icmp, udp)
+-i - define a interface de entrada (lo, eth0, eth+)(INPUT, FORWARD)
+-o - define a interface de saída (lo, eth0, eth+)(OUTPUT, FORWARD)
+-s - define a origem do pacote
+-d - define o destino do pacote
+-j - define 0 alvo (ACCEPT, DROP, REJECT, LOG)
+! - define exclusao
+---sport porta de origem
+--dport porta de destino
