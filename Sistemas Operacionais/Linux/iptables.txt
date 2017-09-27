@@ -54,3 +54,61 @@ Ação
 ! - define exclusao
 ---sport porta de origem
 --dport porta de destino
+
+Comandos Iniciais
+
+# listar as regras
+iptables -t filter -L
+iptables -t nat -L
+iptables -t mangle -L
+
+# configurar alvo padrão para DROP
+iptables -P INPUT DROP
+iptables -P FORWARD DROP
+iptables -P OUTPUT DROP
+
+# liberar tráfego de entrada de Interface de Lookback(lo)
+iptables -t filter -A INPUT -i lo -j ACCEPT
+
+# bloquear acesso a um site
+iptables -t filter -A FORWARD -s 10.0.30.0/8 -d www.redtube.com -j DROP
+
+# bloquaer pacotes vindos de um host
+iptables -t filter -A FORWARD -s www.hacker.com -d 10.0.30.0 -j DROP
+
+# liberar pacotes vindo de um host
+iptables -t filter -A FORWARD -s www.uol.com -d 10.0.30.0 -j ACCEPT
+
+# direcionar pacotes vindos de qualquer rede pela interface eth2, para o pc 10.0.30.47
+iptables -t nat -A PREROUTING -i eth2 -j DNAT -to 10.0.30.47
+
+# alterar endereço de origem de qualquer pacote que sair da rede pela interface eth2, para 192.168.0.33
+iptables -t nat -A PREROUTING -o eth2 -j SNAT -to 192.168.0.33
+
+# rejeitar pacotes de interface eth1
+iptables -t filter -A FORWARD -i eth1 -j REJECT
+
+# descartar os pacotes que entram por qualquer interface, exceto eth0
+iptables -t filter -A FORWARD -i ! eth0 -j DROP
+
+# deletar segunda regra da chain FORWARD
+iptables -t filter -D FORWARD 2
+
+# listar segunda regra das chains OUTPUT
+iptables -t filter -L OUTPUT
+
+# descartar pacotes oriundos do IP 10.0.80.32 destinado ao IP 10.0.30.4
+iptables -t filter -A FORWARD -s 10.0.80.32 -d 10.0.30.4 -j DROP
+
+# descartar pacotes TCP da porta 80
+iptables -t filter -A INPUT -p tcp --dport 80 -j DROP
+
+# arquivar em log pacotes destinados a porta 25 e após descartá-los
+iptables -f filter -A INPUT -p tcp --dport 25 -j LOG
+iptables -f filter -A INPUT -p tcp --dport 25 -j DROP
+
+
+Tabela NAT
+
+# Habilitar a função de redirecionamento de pacotes (FORWARD) no kernel
+echo "1" >/proc/sys/net/ipv4/ip_forward
