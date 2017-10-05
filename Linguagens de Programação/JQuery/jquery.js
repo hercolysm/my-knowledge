@@ -183,3 +183,7 @@
 	});
 
 </script>
+
+// FUNÇÕES DE ARRAY
+var data_mysql = "2017-10-02";
+var data = data_mysql.split('-').reverse().join('/');
