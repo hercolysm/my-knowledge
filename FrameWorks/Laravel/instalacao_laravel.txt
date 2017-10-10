@@ -11,10 +11,22 @@ php composer-setup.php --install-dir=bin --filename=composer // instalacao local
 
 mv composer.phar /usr/local/bin/composer // instalacao global
 
-# Criar projeto
 
+# Criar projeto
 composer create-project --prefer-dist laravel/laravel nome_do_projeto
+cd nome_do_projeto/
 
 # Gerar APP_KEY
-
 php artisan key:generate
+
+# Definir nome da aplicação
+php artisan app:name "Nome do app"
+
+# Criar controller
+php artisan make:controller NomeController --resource
+
+# Criar migration
+php artisan make:migration create_table_nome_tabela
+
+# Verificar status
+php artisan migrate:status

@@ -43,3 +43,21 @@ ECDSA host key for 192.168.86.157 has changed and you have requested strict chec
 Host key verification failed.
 
 sed -i 14d /home/desenv/.ssh/known_hosts
+
+// listar key
+ls -al ~/.ssh
+
+// criar SSH key
+ssh-keygen -t rsa -b 4096 -C "comentario sobre a chave"
+-t tipo de chave
+-b total de bits. 2048 ou 4096
+Passphrase => senha de acesso SSH
+
+id_rsa -> chave privada
+id_rsa.pub -> chave pública
+
+// permissao somente leitura para chave privada
+chmod 400 ~/.ssh/id_rsa
+
+// copiar chave pública para o servidor (~/.ssh/authorized_keys\)
+cat ~/.ssh/id_rsa.pub | ssh user@123.45.56.78 "mkdir -p ~/.ssh && cat >>  ~/.ssh/authorized_keys"
