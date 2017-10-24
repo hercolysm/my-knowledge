@@ -1,0 +1,57 @@
+============================== Conectar uma tabela do MySQL a uma planilha do excel ==============================
+
+- Baixar o Connector/ODBC 5.3.4 (32 ou 64 bits -> verificar arquitetura do Microsoft Excel que será usado)
+link: https://cdn.mysql.com//Downloads/Connector-ODBC/5.3/mysql-connector-odbc-5.3.9-win32.msi
+
+- Instalar o driver baixado
+(instalação simples)
+
+- Acessar o aplicativo do Connector
+
+->Painel de Controle
+->Ferramentas Administrativas
+->Fontes de Dados ODBC (32 ou 64 bits)
+
+- Criar uma nova Fonte de Dados do tipo dBASE Files
+
+->tipo dBASE Files
+->Adicionar
+->MySQL ODBC 5.3 ANSI Driver
+->Concluir
+
+- Configurar a conexão com o banco de dados
+
+->Data Source Name= Apelido
+->Description= Descrição
+->TCP/IP Server= ip do servidor
+->Port= Porta usada
+->User= usuario do mysql
+->Password= senha do mysql
+->Database= banco de dados
+->Finalizar
+
+- Abrir Microsoft Excel
+
+->Abrir um novo documento em branco
+->Acessar aba Dados
+->Conexões Existentes
+->Procurar Mais...
+->Nova fonte de dados...
+->Outros/Avançados
+->Microsoft OLE DB Provider for ODBC Drivers
+
+Na janela Propriedades de associação de dados
+
+->Usar nome da fonte de dados
+->Selecionar a fonte pelo apelido
+->Usuario mysql
+->Senha mysql
+->Selecionar tabela desejada
+
+Na janela Importar Dados
+
+->modo Tabela
+->Na planilha existente
+->Ok
+
+link de referência: https://www.guiadoexcel.com.br/conectar-mysql-no-excel-como-conectar-o-banco-de-dados-mysql/
