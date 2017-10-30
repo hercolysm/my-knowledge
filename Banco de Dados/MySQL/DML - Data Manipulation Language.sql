@@ -1,4 +1,5 @@
 SELECT * FROM tabela ORDER BY coluna asc (ou desc); /* ordena */
+SELECT * FROM tabela ORDER BY CAST(coluna as SIGNED); /* converte campo numero e ordena */
 SELECT * FROM tabela WHERE val <= 2016; /* maior ou igual */
 SELECT * FROM tabela WHERE val != (ou <>) 2016; /* diferente */
 SELECT * FROM tabela WHERE val BETWEEN 2014 and 2015; /* entre */
