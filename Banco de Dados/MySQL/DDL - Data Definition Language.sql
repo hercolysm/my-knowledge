@@ -22,7 +22,8 @@ CREATE TABLE nome_tabela (
 	hora TIME,
 	data_hora DATETIME NOT NULL DEFAULT NOW(),
 	valor DECIMAL(9,2),
-	preco FLOAT(9,2)
+	preco FLOAT(9,2),
+	opcoes ENUM('opcao1', 'opcao2', 'opcao3', 'opcao4')
 );
 RENAME TABLE tabela TO novo_nome; /* renomeia tabela */
 ALTER TABLE nome_tabela ADD COLUMN nome_coluna tipo(t); /* add coluna na tabela */
