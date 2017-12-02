@@ -109,3 +109,15 @@ git branch <nome_origin> <nome_branch> --delete
 git fetch
 git checkout <nome_branch>
 git pull origin <nome_branch>
+
+# create a new repository on the command line
+echo "# Updater" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git remote add origin https://github.com/hercolysm/Updater.git
+git push -u origin master
+
+# push an existing repository from the command line
+git remote add origin https://github.com/hercolysm/Updater.git
+git push -u origin master

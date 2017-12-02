@@ -7,8 +7,11 @@ Principais Comandos no Linux
  mv => move ou renomeia: arquivo /caminho
  rm => exclui: arquivo
  mkdir => cria diretório
+ mkdir -p => cria diretórios recursivamente (não gera erro caso já exista)
+ mkdir -v => cria e emite uma mensagem para cada diretório criado
  rmdir => exclui diretório vazio
- rm -r => exclui diretório
+ rm -r => exclui diretório vazio e recursivamente
+
 
  man => manual
  info => informações

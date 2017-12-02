@@ -22,11 +22,46 @@ php artisan key:generate
 # Definir nome da aplicação
 php artisan app:name "Nome do app"
 
+# Liberar permissão de escrita para outros usuários (apache, httpd)
+chmod 646 storage/logs/laravel.log
+
+# Liberar permissão de escrita e execução para outros usuários (apache, httpd)
+chmod 647 -R storage/framework/sessions/
+chmod 647 -R storage/framework/views/
+
+# Liberar permissão máxima
+chmod 777 /var/www/html/updater/bootstrap/cache/
+
 # Criar controller
 php artisan make:controller NomeController --resource
 
-# Criar migration
+>> Migrations <<
+
+# Cria tabela de controle da migrations
+php artisan migrate:install
+
+# Criar nova migration
 php artisan make:migration create_table_nome_tabela
 
-# Verificar status
+# Verificar status das migrations
 php artisan migrate:status
+
+# Executa todas as migrations
+php artisan migrate
+
+# Desfaz a última operação de migrate
+php artisan migrate:rollback --step=1
+
+# Desfaz todas as migrations
+php artisan migrate:reset
+
+# Desfaz todas as migrations e executa todas novamente
+php artisan migrate:refresh (recria o banco)
+php artisan migrate:refresh --step=5 (desfaz e recria as ultimas 5
+
+# Criar nova model
+php artisan make:model NovaModel (--migration ou -m)
+
+(Updater)
+# Liberar permissão de escrita para outros usuários (apache, httpd)
+chmod 646 storage/app

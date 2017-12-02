@@ -60,3 +60,7 @@ Desativar SELINUX
 # vim /etc/sysconfig/selinux
 
 # SELINUX=disabled
+
+
+Instalar o terminator
+# yum install terminator
