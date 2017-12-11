@@ -1,0 +1,37 @@
+MongoDB
+
+# instalar
+
+dnf install mongodb mongodb-server
+
+# iniciar serviço
+
+service mongod start
+
+# iniciar client
+
+mongod --dbpath /var/www/html/app/data/
+
+# iniciar servidor
+
+cd /
+mongo
+
+// adicionar dependência a um projeto NodeJS
+npm install -S mongodb
+
+# comando basicos
+
+// lista BD's
+> show databases
+
+// cria BD
+> use nome_banco_de_dados
+
+// cria e insere na tabela
+> db.nome_tabela.insert({"col1" : "val1", "col2" : "val2"})
+
+// mostra conteudo da tabela
+> db.message.find().pretty()
+
+
