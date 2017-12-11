@@ -1,82 +1,88 @@
 Comandos do GIT
 
-Command line instructions
 
+# clonar repositório
 
-Git global setup
-
-git config --global user.name "HERCOLYS MORAES ARAÚJO"
-git config --global user.email "hercolysm@gmail.com"
-
-Create a new repository
-
-git clone https://gitlab.com/HERCOLYSM/ProjetoX.git
-cd ProjetoX
+git clone https://gitlab.com/USER/app.git
+cd app
 touch README.md
 git add README.md
 git commit -m "add README"
 git push -u origin master
 
-Existing folder
 
-cd existing_folder
+# criar novo repositório
+
+mkdir app
+cd app
+echo "# App" >> README.md
 git init
-git remote add origin https://gitlab.com/HERCOLYSM/ProjetoX.git
-git add .
+git remote add origin https://gitlab.com/USER/app.git
+git add README.md
 git commit -m "Initial commit"
 git push -u origin master
 
-Existing Git repository
 
-cd existing_repo
-git remote add origin https://gitlab.com/HERCOLYSM/ProjetoX.git
+# adicionar repositório de origem
+
+cd app
+git remote add origin https://gitlab.com/USER/app.git
 git push -u origin --all
 git push -u origin --tags
 
 
-$ git
-usage: git [--version] [--help] [-C <path>] [-c name=value]
-           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]
-           [-p | --paginate | --no-pager] [--no-replace-objects] [--bare]
-           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]
+
+# configurações globais
+
+git config --global user.name "HERCOLYS MORAES ARAÚJO"
+git config --global user.email "hercolysm@gmail.com"
+
+
+# outros comandos
+
+git [--version] [--help] [-C <path>] [-c name=value]
+    [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]
+    [-p | --paginate | --no-pager] [--no-replace-objects] [--bare]
+    [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]
            <command> [<args>]
 
-These are common Git commands used in various situations:
 
-start a working area (see also: git help tutorial)
-   clone      Clone a repository into a new directory
-   init       Create an empty Git repository or reinitialize an existing one
+# start a working area
+    clone      Clone a repository into a new directory
+    init       Create an empty Git repository or reinitialize an existing one
 
-work on the current change (see also: git help everyday)
-   add        Add file contents to the index
-   mv         Move or rename a file, a directory, or a symlink
-   reset      Reset current HEAD to the specified state
-   rm         Remove files from the working tree and from the index
+# work on the current change
+    add        Add file contents to the index
+    mv         Move or rename a file, a directory, or a symlink
+    reset      Reset current HEAD to the specified state
+    rm         Remove files from the working tree and from the index
 
-examine the history and state (see also: git help revisions)
-   bisect     Use binary search to find the commit that introduced a bug
-   grep       Print lines matching a pattern
-   log        Show commit logs
-   show       Show various types of objects
-   status     Show the working tree status
+# examine the history and state
+    bisect     Use binary search to find the commit that introduced a bug
+    grep       Print lines matching a pattern
+    log        Show commit logs
+    show       Show various types of objects
+    status     Show the working tree status
 
-grow, mark and tweak your common history
-   branch     List, create, or delete branches
-   checkout   Switch branches or restore working tree files
-   commit     Record changes to the repository
-   diff       Show changes between commits, commit and working tree, etc
-   merge      Join two or more development histories together
-   rebase     Reapply commits on top of another base tip
-   tag        Create, list, delete or verify a tag object signed with GPG
+# grow, mark and tweak your common history
+    branch     List, create, or delete branches
+    checkout   Switch branches or restore working tree files
+    commit     Record changes to the repository
+    diff       Show changes between commits, commit and working tree, etc
+    merge      Join two or more development histories together
+    rebase     Reapply commits on top of another base tip
+    tag        Create, list, delete or verify a tag object signed with GPG
 
-collaborate (see also: git help workflows)
-   fetch      Download objects and refs from another repository
-   pull       Fetch from and integrate with another repository or a local branch
-   push       Update remote refs along with associated objects
+# collaborate
+    fetch      Download objects and refs from another repository
+    pull       Fetch from and integrate with another repository or a local branch
+    push       Update remote refs along with associated objects
 
-'git help -a' and 'git help -g' list available subcommands and some
-concept guides. See 'git help <command>' or 'git help <concept>'
-to read about a specific subcommand or concept.
+
+# list available subcommands and some
+    git help -a
+    git help -g
+
 
 /* trabalhando com branch */
 
@@ -110,14 +116,7 @@ git fetch
 git checkout <nome_branch>
 git pull origin <nome_branch>
 
-# create a new repository on the command line
-echo "# Updater" >> README.md
-git init
-git add README.md
-git commit -m "first commit"
-git remote add origin https://github.com/hercolysm/Updater.git
-git push -u origin master
-
-# push an existing repository from the command line
-git remote add origin https://github.com/hercolysm/Updater.git
-git push -u origin master
+# Limpar cache (remove alterações)
+git rm -r --cached .
+git add .
+git commit -m "fixed untracked files"
