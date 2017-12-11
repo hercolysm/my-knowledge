@@ -1,0 +1,6 @@
+/* Instalação FireBird no linux */
+
+yum install firebird
+
+yum install firebird-utils
+
