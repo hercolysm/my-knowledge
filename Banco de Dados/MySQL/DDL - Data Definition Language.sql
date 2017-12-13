@@ -26,7 +26,7 @@ CREATE TABLE nome_tabela (
 	opcoes ENUM('opcao1', 'opcao2', 'opcao3', 'opcao4'),
 	UNIQUE (col1),
 	CONSTRAINT UC_table UNIQUE (col1, col2)
-);
+) COMMENT 'Comentário da tabela';
 RENAME TABLE tabela TO novo_nome; /* renomeia tabela */
 ALTER TABLE nome_tabela ADD COLUMN nome_coluna tipo(t); /* cria coluna na tabela */
 ALTER TABLE nome_tabela CHANGE nome_coluna novo_nome tipo(t); /* renomeia coluna da tabela */
@@ -78,3 +78,4 @@ DROP VIEW [nome_view] /* apaga uma view */
 ## PROCESS ##
 
 SHOW FULL PROCESSLIST; /* mostra lista de processos */
+KILL 0000; /* exclui um processo */ 
