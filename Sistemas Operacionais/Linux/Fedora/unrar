@@ -18,3 +18,11 @@ grep unrar yum_list.txt
 // Instale:
 
 yum install unrar
+
+// Compactar
+
+rar a nome_do_arquivo.rar arquivo_a_ser_compactado
+
+// Descompactar
+
+unrar x nome_do_arquivo.rar
