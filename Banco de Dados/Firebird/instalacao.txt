@@ -4,3 +4,12 @@ yum install firebird
 
 yum install firebird-utils
 
+
+# Operar pela linha de comando
+
+isql
+ou
+isql-fb
+
+SQL> CONNECT "/local-arquivo.gdb"
+CON> user "SYSDBA" password "masterkey"
