@@ -1,0 +1,28 @@
+/* Instalação do unrar */
+
+// Adicionar os repositórios abaixo:
+
+rpm -ivh http://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-stable.noarch.rpm
+rpm -ivh http://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-stable.noarch.rpm
+
+ou de acordo com a versao do fedora
+
+rpm -ivh http://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-23.noarch.rpm (fedora 23)
+rpm -ivh http://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-23.noarch.rpm (fedora 23)
+
+// Execute:
+
+yum list all > yum_list.txt
+grep unrar yum_list.txt 
+
+// Instale:
+
+yum install unrar
+
+// Compactar
+
+rar a nome_do_arquivo.rar arquivo_a_ser_compactado
+
+// Descompactar
+
+unrar x nome_do_arquivo.rar
