@@ -1,0 +1,32 @@
+/* Configuração do modo SQL - em tempo de execução */
+
+
+# variável global - afeta todas as novas conexoes
+
+#mostrar
+SELECT @@GLOBAL.sql_mode
+#alterar
+SET SESSION sql_mode = 'modes';
+
+
+# variável session - efeta apenas cliente atual
+
+# mostrar
+SELECT @@SESSION.sql_mode
+#alterar
+SET GLOBAL sql_mode = 'modes';
+
+
+# exemplos:
+
+/*
+Server version: 5.7.20 MySQL Community Server (GPL)
+mysql>SELECT @@GLOBAL.sql_mode
+ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION
+*/
+
+# retirar 'ONLY_FULL_GROUP_BY' das configurações
+SET GLOBAL sql_mode = (SELECT REPLACE(@@sql_mode, 'ONLY_FULL_GROUP_BY', ''));
+
+# adicionar 'ONLY_FULL_GROUP_BY' das configurações
+SET GLOBAL sql_mode = (SELECT CONCAT(@@sql_mode, ',', 'ONLY_FULL_GROUP_BY'));
