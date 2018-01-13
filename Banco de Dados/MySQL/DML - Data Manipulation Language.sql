@@ -26,6 +26,10 @@ SELECT sec_to_time(segundos) FROM tabela; /* converte em segundos */
 SELECT coalesce(null,2,3) FROM tabela; /* retorna primeiro resultado não nulo */
 SELECT * FROM [nome_view] GROUP BY ORDER BY /* busca em uma view */
 
+/* query's incompatible with sql_mode=only_full_group_by */
+SELECT count(coluna), ANY_VALUE(coluna) FROM tabela; /* permite a consulta qualquer valor */
+SELECT ANY_VALUE(coluna), max(coluna) FROM tabela; /* permite a consulta qualquer valor */
+
 INSERT INTO tabela (col1, col2) VALUES (val1, val2); /* insere linha na tabela */
 
 UPDATE tabela SET col1 = val1, col2 = val2 WHERE id = @id; /* altera linha na tabela */
