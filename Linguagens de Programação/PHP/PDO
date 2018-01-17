@@ -1,0 +1,5 @@
+/**
+ * Executa instrução SQL 
+ * @return int $numero_linhas_afetadas
+ */
+$numero_linhas_afetadas = $PDO->exec("DELETE FROM tabela");
