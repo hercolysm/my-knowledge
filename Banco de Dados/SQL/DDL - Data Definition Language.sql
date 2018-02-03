@@ -20,3 +20,22 @@ USE banco;
 GO
 EXEC sp_rename 'tabela.coluna', 'novo_nome', 'COLUMN';
 GO
+
+/* adicionar coluna */
+#NULL
+ALTER TABLE tabela ADD coluna DATETIME NULL;
+GO
+#NOT NULL
+ALTER TABLE tabela ADD coluna DATETIME NOT NULL DEFAULT '2017-01-01 00:00:00';
+GO
+/* OBS: Para o atributo 'NOT NULL' é obrigatório uma definição DEFAULT especificada */
+/* OBS²: Para o tipo 'DATETIME' valor default deve ser uma data válida */
+
+/* alterar coluna */
+ALTER TABLE tabela ALTER COLUMN coluna DATETIME NOT NULL;
+GO
+/* OBS: Comando acima falha caso conter registros nulos */
+
+/* excluir coluna */
+ALTER TABLE tabela DROP COLUMN coluna;  
+GO
