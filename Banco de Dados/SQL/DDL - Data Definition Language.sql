@@ -14,3 +14,9 @@ CREATE TABLE [dbo].[produtos] (
     [valor]      MONEY          DEFAULT ((0)) NOT NULL,
     CONSTRAINT [PK_produtos] PRIMARY KEY CLUSTERED ([id] ASC)
 );
+
+/* renomear coluna */
+USE banco;
+GO
+EXEC sp_rename 'tabela.coluna', 'novo_nome', 'COLUMN';
+GO
