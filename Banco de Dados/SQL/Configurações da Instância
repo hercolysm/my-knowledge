@@ -1,9 +1,23 @@
 #windows
 
--alternar a senha de um usuário
-
--abra o 'prompt de comando' (como administrador)
-
+# Acessar instância SQL
 >sqlcmd -S NOMESERVIDOR\NOMEINSTANCIA
->sp_password @old = null, @newv = 'nova_senha', @loginame = 'sa'
->go
+
+# Alternar a senha de um usuário (abra o 'prompt de comando' como administrador)
+1>sp_password @old = null, @newv = 'nova_senha', @loginame = 'sa'
+2>go
+
+# Exibir nome do servidor
+1>SELECT @@ServerName
+2>go
+
+# Alterar nome de uma instância SQL
+1>sp_dropserver 'NOMESERVIDOR\NOMEINSTANCIA'
+2>go
+1>sp_addserver 'NOMESERVIDOR\NOMEINSTANCIA', LOCAL
+2>go
+(Reiniciar servidor)
+
+# Listar instâncias SQl de um servidor
+1>sp_helpserver
+2>go
