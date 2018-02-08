@@ -120,3 +120,6 @@ git pull origin <nome_branch>
 git rm -r --cached .
 git add .
 git commit -m "fixed untracked files"
+
+# Resetar commits
+git reset --hard HEAD~1
