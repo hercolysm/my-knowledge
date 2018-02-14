@@ -1,0 +1,22 @@
+# MySQL Dump
+
+# exportar todos os bancos de dados
+mysqldump -u user -p --all-databases > todos.sql
+
+# exportar um banco de dados
+mysqldump -u user -p banco_de_dados > arquivo.sql
+
+# exportar tabelas
+mysqldump -u user -p banco_de_dados tabela1 tabela2 > tabelas.sql
+
+# especificar servidor
+mysqldump -u user -p -h localhost --all-databases > todos.sql
+
+# exportar apenas estrutura
+mysqldump -u root -p banco_de_dados --no-data tabela1 > tabela.sql
+
+# importar todos os bancos de dados
+mysql -u user -p < script.sql
+
+# importar dados para um banco de dados
+mysql -u user -p banco_de_dados < script.sql
