@@ -20,6 +20,7 @@ SELECT * FROM tabela GROUP BY coluna; /* agrupa */
 SELECT * FROM tabela GROUP BY coluna HAVING coluna > 1999; /*  */
 SELECT * FROM tabela ORDER BY field (coluna,valor) desc; /* escolher qual valor vem primeiro */
 SELECT concat(coluna1,' - ',coluna2) FROM tabela; /* concatena */
+SELECT group_concat(id) FROM tabela GROUP BY tipo /* contatena os id's de cada tipo */
 SELECT * FROM tabela LIMIT posicao , qnt; /* limita */
 SELECT * FROM tabela WHERE coluna = substring('string',pos,tam); /* corta uma string */
 SELECT sec_to_time(segundos) FROM tabela; /* converte em segundos */
