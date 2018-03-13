@@ -1,5 +1,19 @@
-/* Configuração do modo SQL - em tempo de execução */
+(Windows)
+Local de instalação padrão: "C:\Program Files\MySQL\MySQL Server 5.7"
+Bases de dados ficam na pasta data\
+Executáveis ficam na pasta bin\
 
+# conectar ao servidor
+mysql.exe -u user -p
+
+# parar servidor
+mysqladmin.exe -u user -p shutdown
+
+# status do servidor
+mysqladmin.exe -u user -p status
+
+
+/* Configuração do modo SQL - em tempo de execução */
 
 # variável global - afeta todas as novas conexoes
 
@@ -8,14 +22,12 @@ SELECT @@GLOBAL.sql_mode
 #alterar
 SET SESSION sql_mode = 'modes';
 
-
 # variável session - efeta apenas cliente atual
 
 # mostrar
 SELECT @@SESSION.sql_mode
 #alterar
 SET GLOBAL sql_mode = 'modes';
-
 
 # exemplos:
 
