@@ -1,5 +1,14 @@
 diskpart
+
 rescan
+
+# formatar disco e converter para gpt
+list disk
+select disc 0
+clean
+convert gpt
+
+# deletar particao
 list disk
 select disk 0
 list partition
