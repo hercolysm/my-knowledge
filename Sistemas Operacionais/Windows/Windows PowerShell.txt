@@ -1,0 +1,5 @@
+# fazer 'tail' em arquivo de log
+Get-Content error_log -Wait
+
+# fazer 'tail' com filtro
+Get-Content error_log -Wait | where { $_ -match "error" }
