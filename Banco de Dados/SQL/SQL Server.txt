@@ -1,0 +1,17 @@
+Configuração SQL Server para Acesso Remoto
+
+# SQL Server Management Studio
+-> Conectar a instância
+-> Abrir propriedades da conexão (botão direito)
+-> Acessar Conexões -> Marcar 'Permitir conexões remotas com esta servidor'
+
+# SQL Server Configuration Manager
+-> Serviços do SQL Server -> Navegador do SQL Server -> Propriedades
+-> Aba Serviço -> Modo Inicial -> Automático
+-> Iniciar (botão direito)
+
+-> Configuração de Rede do SQL Server -> Protocolos para SQLEXPRESS
+-> TCP/IP -> Habilitar
+-> TCP/IP -> Propriedades -> Endereços IP -> Portas TCP Dinâmicas -> 1433
+
+-> Serviços do SQL Server -> SQL Server (SQLEXPRESS) -> Reiniciar
