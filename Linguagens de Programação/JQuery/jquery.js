@@ -86,7 +86,7 @@
 	.html("<h1>texto</h1>");// muda conteúdo html do elemento
 	.text("texto");			// muda texto do elemento
 	.val();					// retorna value
-	.raplaceWith("<p>txt</p>");// substitui elemento
+	.replaceWith("<p>txt</p>");// substitui elemento
 
 // MANIPULAÇÃO DOM
 	.append();			// add dentro, na ultima posição
