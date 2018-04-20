@@ -123,3 +123,12 @@ git commit -m "fixed untracked files"
 
 # Resetar commits
 git reset --hard HEAD~1
+
+# listar origin
+git remote -v
+
+# Adicionar origin
+git remote add origin http://192.168.1.1/user/projeto.git
+
+# Remover origin
+git remote rm origin
