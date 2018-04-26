@@ -20,10 +20,12 @@ cd nome_do_projeto/
 php artisan key:generate
 
 # Definir nome da aplicação
-php artisan app:name "Nome do app"
+php artisan app:name "Nome_do_app"
 
 # Liberar permissão de escrita para outros usuários (apache, httpd)
 chmod 646 storage/logs/laravel.log
+ou
+sudo chmod 777 -R storage/logs/laravel.log
 
 # Liberar permissão de escrita e execução para outros usuários (apache, httpd)
 chmod 647 -R storage/framework/sessions/
@@ -31,6 +33,16 @@ chmod 647 -R storage/framework/views/
 
 # Liberar permissão máxima
 chmod 777 /var/www/html/updater/bootstrap/cache/
+
+>> Authenticação Laravel <<
+# Gerar arquivos
+php artisan make:auth
+
+# Criar e Configurar BD
+.env ou config/database.php
+
+# Gerar tabelas
+php artisan migrate
 
 # Criar controller
 php artisan make:controller NomeController --resource
@@ -65,3 +77,23 @@ php artisan make:model NovaModel (--migration ou -m)
 (Updater)
 # Liberar permissão de escrita para outros usuários (apache, httpd)
 chmod 646 storage/app
+
+# criar semeador de dados
+php artisan make:seeder UsersTableSeeder
+
+# Semear banco de dados
+(as root) composer dump-autoload (evita erro de classe não encontrada)
+php artisan db:seed
+php artisan db:seed --class=UsersTableSeeder
+php artisan migrate:refresh --seed
+
+# limpar cache
+php artisan cache:clear
+
+# 
+composer dump-autoload -o
+
+# 
+composer update
+
+

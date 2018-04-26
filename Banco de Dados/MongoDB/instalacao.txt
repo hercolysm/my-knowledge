@@ -28,10 +28,21 @@ npm install -S mongodb
 // cria BD
 > use nome_banco_de_dados
 
+// lista tabelas
+> show collections
+
 // cria e insere na tabela
 > db.nome_tabela.insert({"col1" : "val1", "col2" : "val2"})
 
 // mostra conteudo da tabela
-> db.message.find().pretty()
+> db.nome_tabela.find().pretty()
 
+// busca na tabela
+> db.nome_tabela.find({col1: 'value'});
+> db.nome_tabela.find({col2: /value/i}); (Não case sensitive)
 
+// deletar registros
+db.nome_tabela.remove({col:"value"});
+
+// deletar tabela
+db.message.drop();
