@@ -1,0 +1,52 @@
+﻿MongoDB
+
+# instalar (fedora)
+dnf install mongodb mongodb-server
+
+# iniciar serviço
+service mongod start
+
+# iniciar servidor
+mongod --dbpath /var/www/html/app/data/
+
+# iniciar cliente
+mongo
+
+# criar usuário administrador
+use admin
+
+db.createUser(
+	{
+		user: "user_name",
+		pwd: "password",
+		roles: [{ role: "userAdminAnyDatabase", db: "admin" }]
+	}
+);
+
+# habilitar autenticação
+vim /etc/mongod.conf
+Turn on/off security. Off is currently the default
+auth = true
+
+# acesso autenticado
+mongo --port 20017 -u user_name -p password --autheticationDatabase admin
+
+# criar bando e usuário
+use teste
+db.createUser(
+	{
+		user: "user_name",
+		pwd: "password",
+		roles: [{ role: "readWrite", db: "teste" }]
+	}
+);
+
+
+# adicionar dependência a um projeto NodeJS
+npm install -S mongodb
+
+# url para conexão
+mongodb://user:password@host:port/db_name
+
+# importação
+mongoimport -d banco -c tabela --type csv --file file.csv --headerline

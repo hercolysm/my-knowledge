@@ -1,24 +1,4 @@
-MongoDB
-
-# instalar
-
-dnf install mongodb mongodb-server
-
-# iniciar serviço
-
-service mongod start
-
-# iniciar client
-
-mongod --dbpath /var/www/html/app/data/
-
-# iniciar servidor
-
-cd /
-mongo
-
-// adicionar dependência a um projeto NodeJS
-npm install -S mongodb
+﻿MongoDB
 
 # comando basicos
 
