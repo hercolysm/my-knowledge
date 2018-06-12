@@ -92,6 +92,9 @@ git branch <nome_branch>
 # Listar os branchs
 git branch --list
 
+# Forçar (fatal: refusing to merge unrelated histories)
+git pull origin branch --allow-unrelated-histories
+
 # Selecionar um branch
 git checkout <nome_branch>
 
