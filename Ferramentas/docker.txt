@@ -1,0 +1,39 @@
+# instalar docker linux (fedora)
+dnf install docker-ce
+ou
+baixar o rpm no site: https://www.docker.com/community-edition
+cd ~/Downloads/
+dnf -y install docker-ce-17.06.0.ce-1.fc24.x86_64.rpm
+
+# habilitar docker
+systemctl enable docker
+
+(aprender a gerar docker_system.tar)
+
+# carregar imagem
+docker load -i docker_system.tar
+
+# listar imagens
+docker images
+
+# configurar docker
+tar -xvf run-docker.tar
+vim config.php 
+vim make.php
+
+# executar make
+php make.php 
+
+# listar containers
+docker ps -a
+
+# iniciar/encerrar maquina
+docker start name_machine
+docker restart name_machine
+docker stop name_machine
+
+# acessar maquina
+docker exec -ti name_machine /bin/bash
+
+# ip máquina
+172.17.0.x
