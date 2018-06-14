@@ -64,3 +64,7 @@ Desativar SELINUX
 
 Instalar o terminator
 # yum install terminator
+
+Instalar area de trabalho do gnome
+# dnf install @mate-desktop
+(reiniciar e selecionar o desktop na hora do login)
