@@ -92,9 +92,6 @@ git branch <nome_branch>
 # Listar os branchs
 git branch --list
 
-# Forçar (fatal: refusing to merge unrelated histories)
-git pull origin branch --allow-unrelated-histories
-
 # Selecionar um branch
 git checkout <nome_branch>
 
@@ -135,3 +132,15 @@ git remote add origin http://192.168.1.1/user/projeto.git
 
 # Remover origin
 git remote rm origin
+
+# Forçar (fatal: refusing to merge unrelated histories)
+git pull origin branch --allow-unrelated-histories
+
+# resetar um 'add'
+git reset caminho_para_o_arquivo
+
+# reverter o commit anterior
+git revert HEAD
+
+# reverter commits
+git revert -m 1 dd8d6f587fa24327d5f5afd6fa8c3e604189c8d4> (não testado)
