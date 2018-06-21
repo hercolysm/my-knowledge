@@ -61,6 +61,8 @@
 	$(":disabled");		// seleciona inputs desabilitados
 	$(":checked");		// seleciona inputs checked
 	$(":selected");		// seleciona inputs selected
+	$(":active");		// seleciona inputs ativados (select)
+	$(":focus-within"); 	// seleciona inputs focados
 
 // SELETORES de BUSCA
 	.find();			// busca descendentes de um elemento
