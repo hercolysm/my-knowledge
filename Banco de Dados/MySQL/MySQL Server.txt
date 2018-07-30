@@ -42,3 +42,8 @@ SET GLOBAL sql_mode = (SELECT REPLACE(@@sql_mode, 'ONLY_FULL_GROUP_BY', ''));
 
 # adicionar 'ONLY_FULL_GROUP_BY' das configurações
 SET GLOBAL sql_mode = (SELECT CONCAT(@@sql_mode, ',', 'ONLY_FULL_GROUP_BY'));
+
+# habilitar/desabilitar log de query's do mysql
+SET global general_log_file='/var/log/mariadb/mariadb.log'; 
+SET global log_output = 'file';
+SET global general_log = on;
