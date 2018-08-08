@@ -38,7 +38,8 @@ ALTER TABLE nome_tabela DROP FOREIGN KEY (foreign_key_name); /* apaga uma chave 
 ALTER TABLE nome_tabela ENGINE=InnoDB; /* altera o motor de busca da tabela */
 ALTER TABLE nome_tabela ADD UNIQUE (col1); /* cria chave única simples */
 ALTER TABLE nome_tabela ADD CONSTRAINT nome_constraint UNIQUE (col1, col2); /* cria chave única composta */
-ALTER TABLE nome_tabela DROP INDEX nome_constraint; /* apaga uma chave única */
+ALTER TABLE nome_tabela ADD INDEX idx_nome_coluna (nome_coluna); /* cria chave de index */
+ALTER TABLE nome_tabela DROP INDEX nome_constraint; /* apaga uma chave */
 
 ## tipos de dados ##
 
