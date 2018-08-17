@@ -1,4 +1,4 @@
-
+<?php
     /**
      * Verifica se IP percente a rede
      * @param string $network - rede que será verificada ex: (10.0.0.1/16)

@@ -144,3 +144,6 @@ git revert HEAD
 
 # reverter commits
 git revert -m 1 dd8d6f587fa24327d5f5afd6fa8c3e604189c8d4> (não testado)
+
+# armazenar senha não criptografada no disco
+git config credential.helper store

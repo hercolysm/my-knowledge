@@ -67,6 +67,13 @@ iptables -P INPUT DROP
 iptables -P FORWARD DROP
 iptables -P OUTPUT DROP
 
+# permitir acesso ao servidor na maquina virtual
+sudo iptables -I INPUT -p tcp --dport 80 -j ACCEPT
+// insere regra para 
+// entrada (pacotes destinados a sockets locais, pacotes destinados a propria maquina)
+// define o protocolo tcp na port 80
+// define o alvo da regra, deixa o pacote passar
+
 # liberar tráfego de entrada de Interface de Lookback(lo)
 iptables -t filter -A INPUT -i lo -j ACCEPT
 
