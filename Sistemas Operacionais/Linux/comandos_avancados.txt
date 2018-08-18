@@ -87,3 +87,7 @@ systemctl stop httpd OU service httpd stop
 systemctl status httpd
 systemctl enable httpd
 systemctl disable httpd
+
+# listar todos os serviços
+systemctl list-unit-files
+
