@@ -1,4 +1,4 @@
-# instalar docker linux (fedora)
+﻿# instalar docker linux (fedora)
 dnf install docker-ce
 ou
 baixar o rpm no site: https://www.docker.com/community-edition
@@ -37,3 +37,24 @@ docker exec -ti name_machine /bin/bash
 
 # ip máquina
 172.17.0.x
+
+////////// make.php \\\\\\\\\\\
+<?php
+
+$configs = [
+	"/var/www/html/projeto/" => "/home/user/projeto/",
+];
+
+$str_mount = null;
+
+foreach ($configs as $target => $source) {
+	if (!empty($source)) {
+		$str_mount.= "--mount type=bind,source={$source},target={$target} ";
+	}
+}
+
+$str = 'docker run -d --name=container_name '.$str_mount.' image_name';
+print $str."\n";
+
+system($str);
+

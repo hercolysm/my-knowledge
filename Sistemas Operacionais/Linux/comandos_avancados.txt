@@ -1,4 +1,4 @@
-Principais Comandos no Linux
+﻿Principais Comandos no Linux
 
 cd => acessa: caminho/
 ls -alh => lista detalhadamente arquivos e diretorios
@@ -84,5 +84,6 @@ tail -f /var/log/httpd/access_log
 systemctl start httpd OU service httpd start
 systemctl restart httpd OU service httpd restart
 systemctl stop httpd OU service httpd stop
+systemctl status httpd
 systemctl enable httpd
 systemctl disable httpd

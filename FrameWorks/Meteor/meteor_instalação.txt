@@ -1,0 +1,185 @@
+* Install with PowerShell.exe
+Set-ExecutionPolicy Bypass -Scope Process -Force; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
+
+* Instalar meteor
+choco install meteor
+
+# comandos
+meteor create teste
+cd teste
+dir
+meteor
+
+# tirar blade e adicionar react
+meteor remove blaze-html-templates
+meteor add static-html react-meteor-data
+
+meteor npm install --save react react-dom semantic-ui-react
+
+# instalar nodejs e npm (não obrigatório)
+curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
+sudo apt-get install -y nodejs
+
+# instalar samba
+apt-get install samba
+vim /etc/samba/smb.conf
+
+# instalar gulp
+meteor npm install gulp-cli -g
+meteor npm install gulp -D
+
+# instalar pacote semactic iu
+meteor npm install --save-dev semantic-ui
+(escolher opção => express => yes)np
+(semantic/) imports/semantic
+(lista de itens)(enter)
+no
+no
+dist/
+
+editar semantic.json
+trocar \\ por /
+themes ../../public/themes/
+
+
+cd imports\semantic
+gulp build-css build-assets
+
+
+cd semantic/src/site/globais/site.variables
+adicionar
+@fontPath: "/themes/default/assets/fonts";
+gulp build-css build-assets
+
+cd client/
+vim main.js
+
+copiar
+import { Meteor } from 'meteor/meteor';
+import React from 'react';
+import { render } from 'react-dom';
+import App from './App.js';
+import "../imports/semantic/dist/semantic.min.css"
+
+Meteor.startup(() => {
+  render(<App />, document.getElementById('app'));
+});
+
+vim main.html
+
+copiar
+<head>
+  <title>todos</title>
+</head>
+<body>
+  <div id="app" />
+</body>
+
+
+cd client
+touch App.js
+>
+import React from 'react'
+
+const App = () => (
+	<div>
+	Ola
+	</div>
+)
+
+export default App
+
+
+cd teste
+meteor
+
+vim main.css
+.App {
+	margin-top: 40px;
+}
+
+vim App.js
+
+import React from 'react'
+import {Checkbox, Header, Segment, Button, Icon, Container} from 'semantic-ui-react'
+import {withTracker} from 'meteor/react-meteor-data'
+import { Mongo } from 'meteor/mongo';
+
+/*const Todos = new Mongo.Collection('todos');*/
+import { Todos } from '../imports/api/todos';
+
+const items = [
+	{_id: 1, done: false, title: 'One'},
+	{_id: 2, done: false, title: 'Two'},
+]
+
+const items2 = [
+	{_id: 1, done: false, title: 'One'},
+	{_id: 2, done: false, title: 'Two'},
+]
+
+const App = () => (
+	<Container className='App'>
+		<TodoItems titulo='Lista 1' items={items}/>
+		<TodoItems titulo='Lista 2' items={items2}/>
+		<TodoItemsDB titulo='Lista DB'/>
+	</Container>
+)
+
+const TodoItems = props => (
+	<React.Fragment>
+		<Header as='h2' attached='top'>
+			TODO List - {props.titulo}
+		</Header>
+		<Segment attached>
+		{
+			props.items.map((item, idx) => 
+				<div key={idx}>
+					<Checkbox checked={item.done} label={item.title} />
+				</div>
+			)
+		}
+		</Segment>
+	</React.Fragment>
+)
+
+const TodoItemsDB = withTracker( () => {
+  const todosHandle = Meteor.subscribe('todos');
+  const loading = !todosHandle.ready();
+  return {
+    loading,
+    items: Todos.find().fetch(),
+  };
+})(TodoItems);
+
+export default App
+
+
+
+
+cd server
+touch methods.js
+digitar>
+import { Meteor } from 'meteor/meteor';
+import { Todos } from '../imports/api/todos'
+
+Meteor.methods({
+  insertTodo(title) {
+    Todos.insert({
+      done: false,
+      title,
+    });
+  },
+})
+
+
+cd imports
+mkdir api
+touch todos.js
+digitar>
+import { Mongo } from 'meteor/mongo';
+export const Todos = new Mongo.Collection('todos');
+
+Meteor.Call('nomeFubction', 'value');
+
+meteor mongo5jja  M N 

@@ -1,0 +1,13 @@
+Press ⌘/Ctrl + ⇧ + P to open the command palette.
+Type Package Control: Install Package and press enter. Then search for Material Theme.
+
+Jade
+Stylus
+Sass
+Siteleaf Liquid Syntax
+GitGutter
+EditorConfig
+Emmet
+Stylus Snippets
+JavaScript & NodeJS Snippets
+DocBlockr
