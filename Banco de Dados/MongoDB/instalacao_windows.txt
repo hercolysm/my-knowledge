@@ -1,0 +1,51 @@
+﻿# Instalar e configurar MongoDB no windows
+
+Baixar:
+https://www.mongodb.org/downloads
+https://www.mongodb.com/download-center#compass
+
+Instalar executável
+
+Criar pastas para guardar os arquivos:
+ex: c:\data\bd
+
+Computador -> Propriedades -> Configurações avançadas do sistema -> Variáveis de ambiente
+Adicionar na variável PATH o caminho da pasta bin
+ex: c:\mongodb\bin
+
+# cria arquivo de configuracao
+c:\Program Files\MongoDB\Server\3.6>copy NUL mongod.cfg
+
+# editar arquivo e colar:
+systemLog:
+    destination: file
+    path: c:\data\log\mongod.log
+storage:
+    dbPath: c:\data\db
+net:
+    bindIp: 0.0.0.0
+    port: 27017
+
+# criar serviço mongodb
+Abrir o prompt como administrador
+c:\Programs Files\MongoDB\Server\3.6\bin\mongod.exe --config c:\Program Files\MongoDB\Server\3.6\mongod.cfg --install (-reinstall ou -Remove)
+
+# iniciar/parar serviço mongodb
+windows+r 
+digite: services.msc
+inicie o serviço MongoDB
+ou
+abrir terminal
+net start MongoDB
+
+# uso via terminal
+mongo
+use chat
+db.createUser({user:'chat',pwd:'chat123',roles:[{role:'readWrite',db:'chat'}]});
+db.updateUser('chat', {pwd:'chat123',customData: {title:'Usuário do sistema chat'}});
+
+# url para conexão
+mongodb://chat:chat123@192.168.1.11:27017/chat
+
+# importação
+mongoimport -d banco -c tabela --type csv --file file.csv --headerline

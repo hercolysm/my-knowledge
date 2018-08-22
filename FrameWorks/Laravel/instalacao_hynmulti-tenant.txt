@@ -1,0 +1,58 @@
+# configurar arquivo .env
+
+DB_CONNECTION=system
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=system_tenancy
+DB_USERNAME=root
+DB_PASSWORD=
+
+LIMIT_UUID_LENGTH_32=true
+TENANCY_DATABASE_AUTO_DELETE=true
+TENANCY_DATABASE_AUTO_DELETE_USER=true
+
+composer require hyn/multi-tenant
+
+php artisan vendor:publish --tag=tenancy
+
+php artisan tenancy:install
+
+
+# incluir pacote
+composer require hyn/multi-tenant:5.*
+
+# publicar os arquivos de configuração para locação. (permite que você configure o banco de dados do sistema antes de migrar as tabelas para o banco de dados do sistema de locação)
+php artisan vendor:publish --tag=tenancy
+
+config/tenancy.php
+config/webserver.php
+
+# configurar database.php
+'system' => [
+    'driver' => 'mysql',
+    'host' => env('TENANCY_HOST', '127.0.0.1'),
+    'port' => env('TENANCY_PORT', '3306'),
+    'database' => env('TENANCY_DATABASE', 'tenancy'),
+    'username' => env('TENANCY_USERNAME', 'tenancy'),
+    'password' => env('TENANCY_PASSWORD', ''),
+    'unix_socket' => env('DB_SOCKET', ''),
+    'charset' => 'utf8mb4',
+    'collation' => 'utf8mb4_unicode_ci',
+    'prefix' => '',
+    'strict' => true,
+    'engine' => null,
+]
+
+CREATE DATABASE IF NOT EXISTS tenancy;
+CREATE USER tenancy@192.168.1.103 IDENTIFIED BY 'tenancy123@';
+GRANT ALL PRIVILEGES ON *.* TO tenancy@192.168.1.103 WITH GRANT OPTION;
+
+php artisan tenancy:install
+
+
+
+
+
+
+
+

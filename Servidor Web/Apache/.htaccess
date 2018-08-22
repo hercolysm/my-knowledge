@@ -1,0 +1,35 @@
+# redirecionamento de url
+#RedirectMatch ^/$ http://globo.com
+
+# redirecionamento de 'sem www' para 'com www'
+#RewriteEngine on
+#RewriteCond %{HTTP_HOST} ^dominio.com.br [NC]
+#RewriteRule ^(.*)$ http://www.dominio.com.br/$1 [L,R=301]
+
+# redirecionamento de http para https 1 (ok)(nao libera acesso em caso de erro de certificado)(teste2: redirecionamento em excesso)
+#RewriteEngine on
+#RewriteCond %{HTTP:X-Forwarded-Proto} !https
+#RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
+
+# redirecionamento de http para https 2 (ok)(apenas mostra como nao seguro em caso de erro de certificado)
+#RewriteEngine On
+#RewriteCond %{SERVER_PORT} 80
+#RewriteRule ^(.*)$ https://seusitecomhttps.com.br/$1 [R,L]
+
+# redirecionamento 301 - site antigo para site novo
+#redirect 301 /antigo/ http://localhost/novo/
+
+# bloqueiar acesso para ip 127.1.1.1
+#order allow,deny
+#deny from 127.1.1.1
+#deny from 127.1.1.2
+#deny from 127.12.0.0 #lista de ips do tipo 127.12.x.x
+#allow from all
+
+# mensagens de erros personalizadas
+ErrorDocument 401 /erros/falhaautorizacao.html
+ErrorDocument 404 naoencontrado.html
+ErrorDocument 403 /erros/acessonegado.html
+ErrorDocument 500 errointerno.html
+
+#DirectoryIndex public/index.php
