@@ -1,22 +1,27 @@
-<?php 
-	define("HOST", "localhost");
-	define("USUARIO", "root");
-	define("SENHA", "");
-	define("BD", "jogo_na_praia");
+<?php
 
-	// PDO
-	try
-	{
-		$_pdo = new PDO("mysql:host=".HOST.";dbname=".BD."",USUARIO,SENHA);
-	}
-	catch (PDOException $e)
-	{
-		echo $e->getMessage();
-		echo $e->getCode();
-	}
+define("HOST", "localhost");
+define("USUARIO", "root");
+define("SENHA", "123456");
+define("BD", "jogo_na_praia");
 
-	// conecta ao bando de dados (descontunuada)
-	/*$conn = mysqli_connect(HOST, USUARIO, SENHA, BD);
-	if ($conn2->connect_error) {
-		die('Erro na conexão: ' . $conn->connect_error);
-	}*/
+// conexão PDO
+try
+{
+	$PDO = new PDO("mysql:host=".HOST.";dbname=".BD, USUARIO, SENHA);
+	echo "Conexao realizada com sucesso!";
+}
+catch (PDOException $e)
+{
+	echo $e->getMessage();
+	echo $e->getCode();
+}
+
+// conecta ao bando de dados (descontunuada)
+@$conn = mysqli_connect(HOST, USUARIO, SENHA, BD);
+
+if (!$conn) {
+	die("Falha na conexao: " . mysqli_connect_error());
+} else {
+	echo "Conexao realizada com sucesso!";
+}
