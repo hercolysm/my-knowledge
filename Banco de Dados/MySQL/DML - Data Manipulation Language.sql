@@ -1,3 +1,11 @@
+INSERT INTO tabela (col1, col2) VALUES (val1, val2); /* insere linha na tabela */
+
+UPDATE tabela SET col1 = val1, col2 = val2 WHERE id = @id; /* altera linha na tabela */
+
+DELETE FROM tabela WHERE id = @id; /* apaga linha da tabela */
+
+TRUNCATE tabela; /* apaga todos os registros da tabela (dará erro se a tabela possuir chave estrangeira) */
+
 SELECT * FROM tabela ORDER BY coluna asc (ou desc); /* ordena */
 SELECT * FROM tabela ORDER BY CAST(coluna as SIGNED); /* converte campo numero e ordena */
 SELECT * FROM tabela WHERE val <= 2016; /* maior ou igual */
@@ -32,10 +40,18 @@ SELECT * FROM [nome_view] GROUP BY ORDER BY /* busca em uma view */
 SELECT count(coluna), ANY_VALUE(coluna) FROM tabela; /* permite a consulta qualquer valor */
 SELECT ANY_VALUE(coluna), max(coluna) FROM tabela; /* permite a consulta qualquer valor */
 
-INSERT INTO tabela (col1, col2) VALUES (val1, val2); /* insere linha na tabela */
+SELECT data,
+CASE
+    WHEN data > '2018-08-29' THEN "FUTURAS"
+    WHEN data < '2018-08-29' THEN "EM ATRASO"
+    ELSE "HOJE"
+END as status
+FROM tabela;
 
-UPDATE tabela SET col1 = val1, col2 = val2 WHERE id = @id; /* altera linha na tabela */
-
-DELETE FROM tabela WHERE id = @id; /* apaga linha da tabela */
-
-TRUNCATE tabela; /* apaga todos os registros da tabela */
+SELECT opcao,
+CASE
+	WHEN opcao = '1' THEN 'Opção1'
+	WHEN opcao = '2' THEN 'Opção2'
+	ELSE 'Nenhuma das opções'
+END
+FROM tabela;
