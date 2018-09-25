@@ -91,3 +91,5 @@ systemctl disable httpd
 # listar todos os serviços
 systemctl list-unit-files
 
+# listar os limites de processos do usuário
+ulimit -a
