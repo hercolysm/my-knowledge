@@ -33,6 +33,9 @@ dnf list <nome_pacote>
 # listar todos os pacotes instalados
 rpm -qa 
 
+# instalar rpm que contêm dependências
+dnf install ./XMind-ZEN-for-Linux-64bit.rpm
+
 # Procedimento quando a chave da outra máquina foi alterada
 [desenv@localhost ~]$ ssh root@192.168.86.157
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
