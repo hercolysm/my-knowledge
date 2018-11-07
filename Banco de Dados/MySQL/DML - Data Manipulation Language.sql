@@ -30,6 +30,7 @@ SELECT * FROM tabela ORDER BY field (coluna,valor) desc; /* escolher qual valor 
 SELECT concat(coluna1,' - ',coluna2) FROM tabela; /* concatena */
 SELECT group_concat(id SEPARATOR ';') FROM tabela GROUP BY tipo /* contatena os id's de cada tipo (com o separador ';') */
 SELECT group_concat(distinct coluna) FROM tabela ORDER BY group_concat(distinct coluna) /* concatena os valores distinctos e ordena */
+SET SESSION group_concat_max_len = 6000; /* aumenta a quantidade de caracteres do retorno do GROUP_CONCAT() */
 SELECT * FROM tabela LIMIT posicao , qnt; /* limita */
 SELECT * FROM tabela WHERE coluna = substring('string',pos,tam); /* corta uma string */
 SELECT sec_to_time(segundos) FROM tabela; /* converte em segundos */
