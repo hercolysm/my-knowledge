@@ -83,6 +83,17 @@ git [--version] [--help] [-C <path>] [-c name=value]
     git help -a
     git help -g
 
+# adicionar uma modificação
+    git add caminho_para_o_arquivo
+    
+# fazer um commit simples
+    git commit -m "Descrição do commit"
+
+# subir o commit para o servidor
+    git push origin <nome_branch>
+    
+# listar commits ('-p' para ver as modificações)
+    git log -p
 
 /* trabalhando com branch */
 
