@@ -75,6 +75,7 @@ CREATE VIEW [nome_view] AS SELECT * FROM tabela WHERE .. /* cria uma view */
 CREATE OR REPLACE VIEW [nome_view] AS select * from nome_tabela where .. /* edita uma view */
 ALTER VIEW [nome_view] AS SELECT * FROM tabela WHERE .. /* edita uma view*/
 DROP VIEW [nome_view] /* apaga uma view */
+RENAME TABLE [nome_view] TO [novo_nome]; /* renomeia view */
 
 ## PROCESS ##
 
