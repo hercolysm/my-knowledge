@@ -36,6 +36,9 @@ rpm -qa
 # instalar rpm que contêm dependências
 dnf install ./XMind-ZEN-for-Linux-64bit.rpm
 
+# desintalar pacote rpm
+rpm -e xmind-vana-9.0.6-1.x86_64
+
 # Procedimento quando a chave da outra máquina foi alterada
 [desenv@localhost ~]$ ssh root@192.168.86.157
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
