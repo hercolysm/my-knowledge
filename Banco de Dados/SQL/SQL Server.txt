@@ -6,6 +6,7 @@ Configuração SQL Server para Acesso Remoto
 -> Acessar Conexões -> Marcar 'Permitir conexões remotas com esta servidor'
 
 # SQL Server Configuration Manager
+-> Localizar o executável em: C:\Windows\SysWOW64\SQLServerManager14.msc (o nome varia de acordo com a versão)
 -> Serviços do SQL Server -> Navegador do SQL Server -> Propriedades
 -> Aba Serviço -> Modo Inicial -> Automático
 -> Iniciar (botão direito)
@@ -15,3 +16,7 @@ Configuração SQL Server para Acesso Remoto
 -> TCP/IP -> Propriedades -> Endereços IP -> Portas TCP Dinâmicas -> 1433
 
 -> Serviços do SQL Server -> SQL Server (SQLEXPRESS) -> Reiniciar
+
+# Localização do banco de dados
+(O usuário que está executando o serviço necessita de permissão para a pasta 'DATA')
+Pasta de C:\Program Files\Microsoft SQL Server\MSSQL11.MSSQLSERVER\MSSQL\DATA

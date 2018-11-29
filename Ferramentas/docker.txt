@@ -5,6 +5,9 @@ baixar o rpm no site: https://www.docker.com/community-edition
 cd ~/Downloads/
 dnf -y install docker-ce-17.06.0.ce-1.fc24.x86_64.rpm
 
+# ver a versao do docker
+docker -v
+
 # habilitar docker
 systemctl enable docker
 
@@ -24,25 +27,71 @@ vim make.php
 # executar make
 php make.php 
 
+Trabalhando com containers
+
 # listar containers
-docker ps -a
+docker container ps -a
 
-# iniciar/encerrar maquina
-docker start name_machine
-docker restart name_machine
-docker stop name_machine
+# iniciar/restart/encerrar container
+docker container start <nome_container>
+docker container restart <nome_container>
+docker container stop <nome_container>
 
-# acessar maquina
-docker exec -ti name_machine /bin/bash
+# acessar container
+docker container exec -ti <nome_container> /bin/bash
 
-# ip máquina
+# ip padrão da máquina
 172.17.0.x
 
+# criar container
+docker container run -d (modo daemon) --name <nome_container> <nome_imagem> sleep 1000 
+
+# executar comandos no container
+docker container exec -ti <nome_container> <comando>
+exemplos: ifconfig, ping , bash e etc
+
+# remover container
+docker container rm -f <nome_container>
+
+Tipos de rede do docker
+
+- None Network (Sem acesso a rede, exemplo: para serviços interno)
+- Bridge Network (Padrão) (Máquinas com interface de redes que usam uma ponte para se conectar ao host da rede)
+- Host Network (Máquinas com interface de redes que conectando-se diretamente ao host da rede)
+- Overlay Network (Swarm) (Para containers clusterizados)
+
+# exibir redes disponiveis
+docker network ls
+
+# ver informações da rede
+docker network inspect <nome_da_rede>
+
+# criar uma rede
+docker network create --drive bridge <nome_nova_rede>
+
+# remover uma rede
+docker network rm <nome_rede>
+
+# criar containers selecionando a rede:
+docker container run -d --name <nome_container> --net <nome_rede> <nome_imagem> <comando>
+
+# adicionar rede a um container
+docker container connect <nome_rede> <nome_container>
+
+# remover rede de um container
+docker container disconnect <nome_rede> <nome_container>
+
+
+# script para auxiliar na criaçao de container com multiplos diretorios
 ////////// make.php \\\\\\\\\\\
 <?php
 
+$container_name = "projeto";
+$image_name = "projeto_imagem";
+
 $configs = [
 	"/var/www/html/projeto/" => "/home/user/projeto/",
+	"/opt/projeto/files/" => "/home/user/files/",
 ];
 
 $str_mount = null;
@@ -53,8 +102,10 @@ foreach ($configs as $target => $source) {
 	}
 }
 
-$str = 'docker run -d --name=container_name '.$str_mount.' image_name';
+$str = 'docker run -d --name='.$container_name.' '.$str_mount.' '.$image_name;
 print $str."\n";
 
 system($str);
 
+?>
+////////// fim do script \\\\\\\\\\\
