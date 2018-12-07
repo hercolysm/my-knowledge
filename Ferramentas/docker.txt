@@ -1,4 +1,4 @@
-﻿# instalar docker linux (fedora)
+# instalar docker linux (fedora)
 dnf install docker-ce
 ou
 baixar o rpm no site: https://www.docker.com/community-edition
@@ -13,11 +13,33 @@ systemctl enable docker
 
 (aprender a gerar docker_system.tar)
 
+# listar comandos
+docker image --help
+docker container --help
+docker volume --help
+
+# fazer login no docker
+docker login -u <nome_usuario>
+
+Trabalhando com imagens
+
+# baixar imagem do docker
+docker image pull <nome_imagem>:<versao>
+exemplo: nginx:1.13, mongo:3.2 , node:8.1
+
+# copiar imagem existente
+docker image tag <nome_imagem>:<versao> <nome_nova_imagem>
+
 # carregar imagem
 docker load -i docker_system.tar
 
 # listar imagens
 docker images
+docker images ls
+docker images list
+
+# inspecionar imagem
+docker image inspect <nome_imagem>
 
 # configurar docker
 tar -xvf run-docker.tar
@@ -27,9 +49,33 @@ vim make.php
 # executar make
 php make.php 
 
+# remover imagem
+docker rmi <imagem_nome> ou <imagem_id>
+docker image rm <imagem_nome> ou <imagem_id>
+
+# criar imagem
+mkdir teste
+cd teste
+touch Dockerfile
+////////////////
+FROM nginx:1.13
+RUN echo '<h1>Olá mundo!</h1>' > /usr/share/nginx/html/index.html
+////////////////
+docker image build -t <nome_imagem> </caminho_para_o_Dockerfile>
+
+# publicar imagem (docker hub ou local)
+docker image push
+
 Trabalhando com containers
 
-# listar containers
+# listar containers ativos
+docker container ls
+docker container list
+docker container ps
+
+# listar todos os containers
+docker container ls -a
+docker container list -a
 docker container ps -a
 
 # iniciar/restart/encerrar container
@@ -52,6 +98,16 @@ exemplos: ifconfig, ping , bash e etc
 
 # remover container
 docker container rm -f <nome_container>
+
+# mapear porta do container
+docker container run -p <porta_externa-8080>:<porta_interna-80> <nome_imagem> 
+(Container estará acessível pela porta 8080, ex: http://localhost:8080, mas internamente estará apontando para a porta 80)
+
+# mapear volumes no container
+docker container run -v </caminho_pasta>:</caminho_interno_container>
+
+# exibir logs do container
+docker container logs <nome_imagem>
 
 Tipos de rede do docker
 
@@ -84,28 +140,63 @@ docker container disconnect <nome_rede> <nome_container>
 
 # script para auxiliar na criaçao de container com multiplos diretorios
 ////////// make.php \\\\\\\\\\\
-<?php
+	<?php
 
-$container_name = "projeto";
-$image_name = "projeto_imagem";
+	$container_name = "projeto";
+	$image_name = "projeto_imagem";
 
-$configs = [
-	"/var/www/html/projeto/" => "/home/user/projeto/",
-	"/opt/projeto/files/" => "/home/user/files/",
-];
+	$configs = [
+		"/var/www/html/projeto/" => "/home/user/projeto/",
+		"/opt/projeto/files/" => "/home/user/files/",
+	];
 
-$str_mount = null;
+	$str_mount = null;
 
-foreach ($configs as $target => $source) {
-	if (!empty($source)) {
-		$str_mount.= "--mount type=bind,source={$source},target={$target} ";
+	foreach ($configs as $target => $source) {
+		if (!empty($source)) {
+			$str_mount.= "--mount type=bind,source={$source},target={$target} ";
+		}
 	}
-}
 
-$str = 'docker run -d --name='.$container_name.' '.$str_mount.' '.$image_name;
-print $str."\n";
+	$str = 'docker run -d --name='.$container_name.' '.$str_mount.' '.$image_name;
+	print $str."\n";
 
-system($str);
+	system($str);
 
-?>
+	?>
 ////////// fim do script \\\\\\\\\\\
+
+# Separar os serviços em containers 
+
+
+# Gerenciar esses containers com uso do docker composer
+docker container run -d --name nginx --mount type=bind,source=/home/hercolys/sources/node-mongo-composer/frontend/,target=/usr/share/nginx/html/ -p 80:80 nginx:1.13
+docker container run -d --name mongo mongo:3.4
+docker container run -d --name node --mount type=bind,source=/home/hercolys/sources/node-mongo-composer/backend/,target=/backend -p 3000:3000 node:8.1 sleep 1000
+docker container exec -ti node bash -c "cd /backend && npm i && node app"
+
+
+# correção de erro ao tentar acessar docker online
+vim /etc/resolv.conf
+servename 8.8.8.8
+servename 8.8.4.4
+
+systemctl daemon-reload
+systemctl restart docker
+
+vim Dockerfile
+FROM nginx:
+RUN echo '<h1>Olá mundo!</h1>' > /usr/share/nginx/html/index.html
+
+
+Criar Dockerfile
+touch Dockerfile
+////////////////
+FROM nginx:1.13
+LABEL maintainer 'Nome autor <autor@email.com.br>'
+
+ARG S3_BUCKET=files
+ENV S3_BUCKET=${S3_BUCKET}
+
+RUN echo '<h1>Olá mundo!</h1>' > /usr/share/nginx/html/index.html
+////////////////
