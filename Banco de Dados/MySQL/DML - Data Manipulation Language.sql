@@ -36,6 +36,7 @@ SELECT * FROM tabela WHERE coluna = substring('string',pos,tam); /* corta uma st
 SELECT sec_to_time(segundos) FROM tabela; /* converte em segundos */
 SELECT coalesce(null,2,3) FROM tabela; /* retorna primeiro resultado não nulo */
 SELECT * FROM [nome_view] GROUP BY ORDER BY /* busca em uma view */
+SELECT UPPER(coluna) FROM tabela; /* converte caracteres para caixa alta, exceto, caracteres especiais */
 
 /* query's incompatible with sql_mode=only_full_group_by */
 SELECT count(coluna), ANY_VALUE(coluna) FROM tabela; /* permite a consulta qualquer valor */
