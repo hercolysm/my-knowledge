@@ -39,3 +39,10 @@ GO
 /* excluir coluna */
 ALTER TABLE tabela DROP COLUMN coluna;  
 GO
+
+/* adicionar restrição exclusiva para uma tabela existente */
+ALTER TABLE tabela ADD CONSTRAINT UK__tabela__name UNIQUE (coluna1, ...);
+
+/* excluir uma constraint */
+ALTER TABLE produto DROP CONSTRAINT UQ__produto__B3FE2EFC9AA56808;
+GO

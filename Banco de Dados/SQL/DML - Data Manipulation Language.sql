@@ -11,3 +11,6 @@ SELECT table_name FROM information_schema.tables WHERE table_type = 'base table'
 
 /* mostrar a descrição de uma tabela */
 SELECT column_name as [nome], is_nullable as [null], data_type + COALESCE('('+ case when character_maximum_length = -1 then 'max' else cast(character_maximum_length as varchar(5)) end + ')', '') as type FROM information_schema.Columns WHERE table_name = 'nome_tabela';
+
+/* listar constraint's de uma tabela */
+SELECT OBJECT_NAME(parent_object_id) as tabela, name, type_desc FROM sys.objects WHERE type = 'UQ' AND OBJECT_NAME(parent_object_id) = 'nome_tabela';
