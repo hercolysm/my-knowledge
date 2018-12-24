@@ -59,3 +59,9 @@ CASE
 	ELSE 'Nenhuma das opções'
 END
 FROM tabela;
+
+# executar comando e capturar retorno
+mysql -u user -psenha banco_de_dados -e "select distinct coluna from tabela where coluna is null order by coluna" > /tmp/retorno_consulta.txt
+
+# criar arquivo csv
+SELECT coluna FROM tabela WHERE coluna = 'valor' INTO OUTFILE '/var/lib/mysql-files/nome_arquivo.csv' FIELDS TERMINATED BY ',' ENCLOSED BY '"' LINES TERMINATED BY '\n';

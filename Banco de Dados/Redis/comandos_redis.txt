@@ -1,0 +1,9 @@
+Comandos redis
+
+set key value [EX seconds] [PX milliseconds] [NX|XX]
+get key
+KEYS *
+KEYS pattern 
+TTL key (-1 chave não possui tempo de expiração / -2 chave não existe no Redis)
+EXPIRE key seconds (1 sucesso / 0 nao existir ou erro)
+PERSIST key (1 sucesso / 0 nao existir ou erro)
