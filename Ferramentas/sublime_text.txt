@@ -3,6 +3,7 @@ Type Package Control: Install Package and press enter. Then search for Material 
 
 GitGutter (Git)
 Emmet (Snippet web)
+Jquery (Snippet jquery)
 JavaScript & NodeJS Snippets (Snippet javascript)
 DocBlockr (Comentários)
 Material Theme (Tema)
