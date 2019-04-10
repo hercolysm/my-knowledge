@@ -1,0 +1,6 @@
+// Gerar chave pública para comunicação entre máquinas via SSH
+(abrir terminal do git bash e executar)
+ssh-keygen
+(Confirmar local do arquivo)
+(Confirmar senha, pode ser vazia)
+(Confirmar senha novamente)
