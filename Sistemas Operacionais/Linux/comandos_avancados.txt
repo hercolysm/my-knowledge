@@ -15,6 +15,12 @@ rm -r => exclui diretório vazio e recursivamente
 man => manual
 info => informações
 
+# listar links simbolicos
+ls -l /usr/bin/python
+
+# alterar links simbolicos
+ln -sf /usr/bin/python3.6 /usr/bin/python
+
 # listar e buscar processos
 ps aux | grep "busca"
 
