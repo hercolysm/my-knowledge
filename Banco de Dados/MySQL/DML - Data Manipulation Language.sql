@@ -3,6 +3,7 @@ INSERT INTO tabela (col1, col2) VALUES (val1, val2); /* insere linha na tabela *
 UPDATE tabela SET col1 = val1, col2 = val2 WHERE id = @id; /* altera linha na tabela */
 
 DELETE FROM tabela WHERE id = @id; /* apaga linha da tabela */
+DELETE FROM tabela WHERE id = @id ORDER BY coluna DESC limit 1 /* apaga linhas da tabela (ordenando e limitando) */
 
 TRUNCATE tabela; /* apaga todos os registros da tabela (dará erro se a tabela possuir chave estrangeira) */
 
