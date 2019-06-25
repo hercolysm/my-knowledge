@@ -68,3 +68,6 @@ mysql -u user -psenha banco_de_dados -e "select distinct coluna from tabela wher
 
 # criar arquivo csv
 SELECT coluna FROM tabela WHERE coluna = 'valor' INTO OUTFILE '/var/lib/mysql-files/nome_arquivo.csv' FIELDS TERMINATED BY ',' ENCLOSED BY '"' LINES TERMINATED BY '\n';
+
+# importar arquivo csv (É necessário que o arquivo esteja dentro no diretório do banco de dados)
+LOAD DATA INFILE 'nome_arquivo.csv' INTO TABLE tabela FIELDS TERMINATED BY ';' ENCLOSED BY '"' LINES TERMINATED BY '\n' (col1, col2, col3);
