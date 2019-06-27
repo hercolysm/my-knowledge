@@ -8,7 +8,8 @@ DELETE FROM tabela WHERE id = @id ORDER BY coluna DESC limit 1 /* apaga linhas d
 TRUNCATE tabela; /* apaga todos os registros da tabela (dará erro se a tabela possuir chave estrangeira) */
 
 SELECT * FROM tabela ORDER BY coluna asc (ou desc); /* ordena */
-SELECT * FROM tabela ORDER BY CAST(coluna as SIGNED); /* converte campo numero e ordena */
+SELECT * FROM tabela ORDER BY CAST(coluna as SIGNED); /* converte campo numero (int) e ordena */
+SELECT * FROM tabela ORDER BY CAST(coluna as DECIMAL(12,2)); /* converte campo numero (float) e ordena */
 SELECT * FROM tabela WHERE val <= 2016; /* maior ou igual */
 SELECT * FROM tabela WHERE val != (ou <>) 2016; /* diferente */
 SELECT * FROM tabela WHERE val BETWEEN 2014 and 2015; /* entre */
