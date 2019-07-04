@@ -43,6 +43,8 @@ SELECT UPPER(coluna) FROM tabela; /* converte caracteres para caixa alta, exceto
 SELECT LENGTH(coluna) FROM tabela; /* retorna a qnt de caracteres */
 SELECT CHAR_LENGTH(coluna) FROM tabela; /* retorna a qnt de bytes */
 SELECT CURDATE(), CURRENT_DATE(), CURDATE()+0; /* retorna a data atual, é possível fazer soma com o número retornado */
+SELECT TRIM(coluna) FROM tabela /* remove espaços antes e depois */
+SELECT TRIM(BOTH ',' FROM coluna) FROM tabela /* remove vírgulas antes e depois [BOTH, LEADING, TRAILING] */
 
 /* query's incompatible with sql_mode=only_full_group_by */
 SELECT count(coluna), ANY_VALUE(coluna) FROM tabela; /* permite a consulta qualquer valor */
