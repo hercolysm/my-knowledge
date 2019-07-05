@@ -122,3 +122,8 @@ $PDO->query("COMMIT");
 $end = time();
 $segundos = $end - $start;
 echo "Tempo decorrido: $segundos segundos<br><br>";
+
+/**
+ * Capturar o último ID inserido
+ */
+$PDO->lastInsertId();
