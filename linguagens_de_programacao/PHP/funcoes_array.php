@@ -15,3 +15,10 @@ usort($datas, function($a, $b){
 });
 
 print_r($datas);
+
+// array_search - retorno o índice de um determinado valor
+$arr = ['a','b','c'];
+array_search('a', $arr); // int(0)
+array_search('b', $arr); // int(1)
+array_search('c', $arr); // int(2)
+array_search('d', $arr); // bool(false)
