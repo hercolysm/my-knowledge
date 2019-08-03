@@ -4,7 +4,7 @@ apt install net-tools
 # instalar sudo
 apt install sudo
 
-# adicionar usuário na lista sudoers
+# adicionar usuÃ¡rio na lista sudoers
 visudo (ou vim /etc/sudoers)
 User privilege specification
 user ALL=(ALL) ALL
@@ -13,19 +13,6 @@ y
 
 # instalar editor de texto vim
 apt install vim
-
-# configurar ip-fixo
-vim /etc/network/interfaces
-
-# configurações para o dispositivo de rede 'enp0s3'
-auto enp0s3
-iface enp0s3 inet static
-address 192.168.1.104
-netmask 255.255.255.0
-gateway 192.168.1.1
-
-# reiniciar conexão de rede
-/etc/init.d/networking restart
 
 # instalar 
 apt install curl
