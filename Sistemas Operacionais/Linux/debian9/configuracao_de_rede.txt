@@ -1,0 +1,36 @@
+# Configuração de interfaces de rede no Debian
+
+# Abrir arquivo de configuração
+vim /etc/network/interfaces
+
+# Configurar o arquivo:
+
+/////////////////////////////////////////////////////////////////////////////
+# Esse arquivo descreve as interfaces de redes disponíveis para o seu sistema
+# E como ativa-las.
+
+source /etc/network/interfaces.d/*
+
+# Interface de loopback (127.0.0.0/8-localhost)
+auto lo
+iface lo inet loopback
+
+# Interface de rede primária
+# Configurações para o dispositivo de rede 'enp0s3' com IP estático
+auto enp0s3
+iface enp0s3 inet static
+address 192.168.1.104
+netmask 255.255.255.0
+gateway 192.168.1.1
+
+# Interface de rede secundária
+# Configurações para o dispositivo de rede 'enp0s8' com IP dinâmico
+allow-hotplug enp0s8
+iface enp0s8 inet dhcp
+/////////////////////////////////////////////////////////////////////////////
+
+# Listar todas as placas 'eth'
+dmesg | grep eth
+
+# reiniciar conexão de rede após as modificações
+/etc/init.d/networking restart
