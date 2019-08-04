@@ -105,3 +105,9 @@ systemctl list-unit-files
 
 # listar os limites de processos do usuário
 ulimit -a
+
+# Listar rotas
+route -n
+
+# Adicionar uma rota
+route add default gw 192.168.0.1
