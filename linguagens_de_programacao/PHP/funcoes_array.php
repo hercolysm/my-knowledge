@@ -22,3 +22,9 @@ array_search('a', $arr); // int(0)
 array_search('b', $arr); // int(1)
 array_search('c', $arr); // int(2)
 array_search('d', $arr); // bool(false)
+
+/**
+ * Valores distinctos de um array
+ */
+$arr = ['a', 'b', 'b', 'c'];
+$distint = array_unique($arr); // ['a', 'b', 'c']
