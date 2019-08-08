@@ -22,3 +22,14 @@ var reg = new RegExp("Texto procurado", "ig");
 if (reg.test("Texto completo")) {
   alert("Texto procurado foi encontrado");
 }
+
+// Ordenação de objetos
+var pessoas = [ 
+    { nome: 'Paulo', idade: 35},
+    { nome: 'Ana', idade: 34},
+    { nome: 'Leticia', idade: 15},
+];
+
+pessoas.sort(function(a,b) {
+    return a.nome < b.nome ? -1 : a.nome > b.nome ? 1 : 0;
+});
