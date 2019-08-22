@@ -4,3 +4,6 @@ cd
 dir
 dir /s /b *.txt (faz uma busca por arquivos txt na pasta e subpastas, e apresenta resultado simples)
 dir /s /b *.txt > c:\caminho\arquivo.txt (salva resultado em um arquivo)
+
+# Ver detalhes do pc
+net config workstation

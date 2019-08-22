@@ -13,7 +13,10 @@ mysqldump -u user -p banco_de_dados tabela1 tabela2 > tabelas.sql
 mysqldump -u user -p -h localhost --all-databases > todos.sql
 
 # exportar apenas estrutura
-mysqldump -u root -p banco_de_dados --no-data tabela1 > tabela.sql
+mysqldump -u user -p banco_de_dados --no-data tabela1 > tabela.sql
+
+# exportar apenas dados específicos de uma tabela
+mysqldump -u user -p banco_de_dados tabela1 --where="coluna like 'abc%'" > tabela_abc.sql
 
 # importar todos os bancos de dados
 mysql -u user -p < script.sql

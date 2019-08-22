@@ -1,0 +1,5 @@
+# entrar no telnet
+telnet ip porta
+
+# sair do telnet
+control + p + q

@@ -1,7 +1,7 @@
 ============================== Conectar uma tabela do MySQL a uma planilha do excel ==============================
 
 - Baixar o Connector/ODBC 5.3.4 (32 ou 64 bits -> verificar arquitetura do Microsoft Excel que será usado)
-link: https://cdn.mysql.com//Downloads/Connector-ODBC/5.3/mysql-connector-odbc-5.3.9-win32.msi
+link: https://dev.mysql.com/downloads/connector/odbc/
 
 - Instalar o driver baixado
 (instalação simples)

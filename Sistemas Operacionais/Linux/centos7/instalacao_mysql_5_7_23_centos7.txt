@@ -1,0 +1,41 @@
+Instalação MySQL 5.7.23 (CentOS 7)
+
+# baixar pacote
+wget http://dev.mysql.com/get/mysql57-community-release-el7-7.noarch.rpm
+
+# instalar repositorios
+yum install mysql57-community-release-el7-7.noarch.rpm
+
+# habilitar novos repositorios
+yum repolist enabled | grep "mysql.*-community.*"
+
+# instalar pacotes
+yum install mysql-community-server
+  
+# start serviço
+service mysqld start
+
+# verificar status do servico
+service mysqld status
+
+# versão do mysql
+mysql --version
+ 
+# remover arquivo baixado
+rm mysql57-community-release-el7-7.noarch.rpm
+
+# buscar senha temporaria
+cat /var/log/mysqld.log | grep 'temporary password'
+2018-08-11T23:09:14.575865Z 1 [Note] A temporary password is generated for root@localhost: KA:T)#p8i4MM
+
+# configurações de segurança
+mysql_secure_installation
+> digitar senha temporaria root
+> digitar nova senha
+> digitar novamente a nova senha
+> confirmar para remover usuários anonimos
+> confirmar para desativar login do root remotamente
+> confirmar para remover o banco 'teste'
+> confirmar para recarregar tabelas de privilegios
+
+referencias: https://www.tecmint.com/install-latest-mysql-on-rhel-centos-and-fedora/

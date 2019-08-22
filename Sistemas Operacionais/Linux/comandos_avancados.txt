@@ -15,6 +15,12 @@ rm -r => exclui diretório vazio e recursivamente
 man => manual
 info => informações
 
+# listar links simbolicos
+ls -l /usr/bin/python
+
+# alterar links simbolicos
+ln -sf /usr/bin/python3.6 /usr/bin/python
+
 # listar e buscar processos
 ps aux | grep "busca"
 
@@ -32,6 +38,12 @@ dnf list <nome_pacote>
 
 # listar todos os pacotes instalados
 rpm -qa 
+
+# instalar rpm que contêm dependências
+dnf install ./XMind-ZEN-for-Linux-64bit.rpm
+
+# desintalar pacote rpm
+rpm -e xmind-vana-9.0.6-1.x86_64
 
 # Procedimento quando a chave da outra máquina foi alterada
 [desenv@localhost ~]$ ssh root@192.168.86.157
@@ -91,3 +103,11 @@ systemctl disable httpd
 # listar todos os serviços
 systemctl list-unit-files
 
+# listar os limites de processos do usuário
+ulimit -a
+
+# Listar rotas
+route -n
+
+# Adicionar uma rota
+route add default gw 192.168.0.1

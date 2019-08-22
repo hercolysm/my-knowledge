@@ -47,3 +47,8 @@ Sintaxe:
 
 Comando passwd <nome-usuario> - alterar a senha de um usuário
 Comando passwd <nome-usuario> -d - remove a senha de um usuário
+
+# Adicionar usuário ao sudo
+visudo
+Adicionar linha:
+lis     ALL=(ALL)       NOPASSWD:       ALL

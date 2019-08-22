@@ -1,0 +1,21 @@
+// Conta o número de valores numéricos únicos nas células A2:A10, mas não conta células vazias ou valores de texto
+=SOMA( SE( FREQUÊNCIA( A2:A10 ; A2:10 ) > 0 ; 1) )
+
+// Retira acentos das palavras
+1- Aperte ALT + F11 para abrir o editor VBA
+2- No menu da esquerda clique com o botão direito do mouse crie um novo módulo
+3- Escreva o código a seguir no quadro que se abre a direita.
+
+Function Acento(Caract As String)
+ Dim A As String
+ Dim B As String
+ Dim i As Integer
+ Const AccChars = "ŠŽšžŸÀÁÂÃÄÅÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖÙÚÛÜÝàáâãäåçèéêëìíîïðñòóôõöùúûüýÿ"
+ Const RegChars = "SZszYAAAAAACEEEEIIIIDNOOOOOUUUUYaaaaaaceeeeiiiidnooooouuuuyy"
+ For i = 1 To Len(AccChars)
+ A = Mid(AccChars, i, 1)
+ B = Mid(RegChars, i, 1)
+ Caract = Replace(Caract, A, B)
+ Next
+ Acento = Caract
+End Function

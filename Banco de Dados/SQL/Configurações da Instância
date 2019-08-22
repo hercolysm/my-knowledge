@@ -21,3 +21,6 @@
 # Listar instâncias SQl de um servidor
 1>sp_helpserver
 2>go
+
+# Listar instâncias SQl de um servidor
+osql -L

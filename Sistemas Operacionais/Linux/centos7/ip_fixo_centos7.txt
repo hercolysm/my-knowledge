@@ -1,0 +1,39 @@
+CentOS 7 - Instalação
+
+# Configurar endereço de IP estático
+
+cd /etc/sysconfig/network-scripts/
+vi ifcfg-(... nome da rede)
+
+antes:
+TYPE=Ethernet
+BOOTPROTO=dhcp
+DEFROUTE=yes
+PEERDNS=yes
+PEERROUTES=yes
+IPV4_FAILURE_FATAL=no
+IPV6INIT=yes
+IPV6_AUTOCONF=yes
+IPV6_DEFROUTE=yes
+IPV6_PEERDNS=yes
+IPV6_PEERROUTES=yes
+IPV6_FAILURE_FATAL=no
+NAME=eno16777736
+UUID=4987f78e-9627-4bca-8a54-e0412ff7d3f6
+DEVICE=eno16777736
+ONBOOT=no
+
+modificar:
+BOOTPROTO=static # Configuracao de IP estatica
+ONBOOT=yes # Adaptador de rede deve ficar ativado
+
+adcionar:
+IPADDR=192.168.1.104 # Endereco de IP
+NETMASK=255.255.255.0 # Mascara de rede
+GATEWAY=192.168.1.1 # Gateway da Rede
+DNS1=192.168.1.1 # DNS Principal
+DNS2=192.168.1.11 # DNS Secundario
+
+# instalar servico NETSTAT
+yum install net-tools
+ifconfig

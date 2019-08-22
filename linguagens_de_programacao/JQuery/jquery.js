@@ -64,6 +64,10 @@
 	$(":active");		// seleciona inputs ativados (select)
 	$(":focus-within"); 	// seleciona inputs focados
 
+// SELETORES booleanos
+        .is(":visible");        // verifica se o elemento está visivel
+        .is(":hidden");         // verifica se o elemento está oculto
+
 // SELETORES de BUSCA
 	.find();			// busca descendentes de um elemento
 	.siblings();		// busca os irmãos de um elemento

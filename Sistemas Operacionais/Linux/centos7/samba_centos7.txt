@@ -1,19 +1,5 @@
 # instalar samba (centos 7)
-yum install samba
-
-# habilitar e reiniciar os servicos
-systemctl enable smb
-systemctl enable nmb
-systemctl restart smb
-systemctl restart nmb
-
-# permitir samba no firewall
-firewall-cmd --permanent --zone=public --add-service=samba 
-firewall-cmd --reload
-
-# adicionar permissão
-chmod -R 755 /projetos
-chown -R nobody:nobody /projetos
+yum install samba 
 
 # configurar samba
 vim /etc/samba/smb.conf
@@ -53,10 +39,31 @@ vim /etc/samba/smb.conf
         create mask = 0664
         directory mask = 0775
 
-[nome_da_pasta_compartilhada]
+[compartilhamento]
         comment = Compartilhamento de pasta de projetos
         path = /home/hercolys/projetos
         guest ok = yes
         browseable = yes
         read only = no
         writeable = yes
+
+
+# testar arquivo de configuração
+testparm
+
+# habilitar e reiniciar os servicos
+systemctl enable smb
+systemctl enable nmb
+systemctl restart smb
+systemctl restart nmb
+
+# permitir samba no firewall
+firewall-cmd --permanent --zone=public --add-service=samba 
+firewall-cmd --reload
+
+# adicionar permissão
+chmod -R 755 /projetos
+chown -R nobody:nobody /projetos
+
+# permitir SELinux no samba
+chcon -t samba_share_t /projetos
