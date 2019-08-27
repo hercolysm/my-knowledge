@@ -1,15 +1,17 @@
 Instalação Node.js
 
-- baixar arquivo zip no site nodejs.org
+Download:
 
-- cd Download/
+(baixar arquivo .zip no site nodejs.org)
+cd /home/name_user/Download/
+tar xvf node-v8.4.0-linux-x64.tar.xz
+cd node-v8.4.0-linux-x64
+cp -rfp bin/* /bin
+cp -rfp lib/* /lib
+node -v
 
-- tar xvf node-v8.4.0-linux-x64.tar.xz
+Gereciador de pacotes:
 
-- cd node-v8.4.0-linux-x64
-
-- cp -rfp bin/* /bin
-
-- cp -rfp lib/* /lib
-
-- node -v
+curl -sL https://deb.nodesource.com/setup_10.x | bash -
+apt-get install nodejs
+node -v

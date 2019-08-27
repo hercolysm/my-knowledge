@@ -35,8 +35,8 @@ arquivo.close()
 arquivo = open("nome_arquivo.txt", "r")
 texto = arquivo.readlines()
 for linha in texto:
-    print linha
-arquivo.close()
+    print linha.rstrip()
+#arquivo.close()
 
 # alterar a posicao do ponteiro (read/write) 
 arquivo.seek(0,2) 

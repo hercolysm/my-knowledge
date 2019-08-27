@@ -26,7 +26,8 @@ for ($i = 1; $i <= 15; $i++) {
 	while ($r = $c->fetch(PDO::FETCH_ASSOC)) {
 		$n = $r["p$i"];
 		$t = $r["total"];
-		print "  $n: $t\n";
+		$p = ($t * 100) / 10000;
+		print "  $n: $t $p%\n";
 	}
 }
 
@@ -81,6 +82,7 @@ print "\nANALISE IMPARES-PARES\n\n";
 
 foreach ($impares_pares as $impares => $arr) {
 	foreach ($arr as $pares => $total) {
-		print "impares: $impares pares: $pares total: $total\n";
+		$porcentagem = ($total * 100) / $consulta_sorteios->rowCount();
+		print "impares: $impares pares: $pares total: $total porcentagem: $porcentagem %\n";
 	}
 }

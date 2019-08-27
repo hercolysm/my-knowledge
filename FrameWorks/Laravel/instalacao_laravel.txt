@@ -23,9 +23,7 @@ php artisan key:generate
 php artisan app:name "Nome_do_app"
 
 # Liberar permissão de escrita para outros usuários (apache, httpd)
-chmod 646 storage/logs/laravel.log
-ou
-sudo chmod 777 -R storage/logs/laravel.log
+chmod 646 -R storage/logs/
 
 # Liberar permissão de escrita e execução para outros usuários (apache, httpd)
 chmod 647 -R storage/framework/sessions/

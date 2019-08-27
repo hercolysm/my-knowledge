@@ -73,6 +73,43 @@ function get_aposta_aleatoria($qtd_numeros) {
 	return $aposta_aleatoria;
 }
 
+$num_posicoes = [
+	1 => [1,1,1,1,1,1,2,2,3],
+	2 => [2,2,2,3,3,3,4,4,5],
+	3 => [3,3,4,4,5,5,5,6],
+	4 => [4,5,6,6,6,7,7,8,9],
+	5 => [6,7,7,7,8,8,9,9,10,11],
+	6 => [8,8,9,9,10,10,11,12,13],
+	7 => [9,10,11,11,12,13,13,14],
+	8 => [11,12,12,13,14,15],
+	9 => [12,13,15,15,16,16,17,18],
+	10 => [14,15,16,16,17,17,18,18,19],
+	11 => [16,17,17,18,18,19,19,20,20],
+	12 => [18,19,19,20,20,21,21,22],
+	13 => [20,20,21,21,22,22,22,23,23],
+	14 => [21,22,22,23,23,23,23,24,24,24],
+	15 => [23,24,24,24,25,25,25,25,25,25],
+];
+print_r(get_aposta_aleatoria2());exit();
+function get_aposta_aleatoria2() {
+	global $num_posicoes;
+	$numeros = $num_posicoes;
+	$aposta_aleatoria = [];
+	for ($i=1; $i <= 15; $i++) {
+		print_r($numeros[$i]);
+		$escolhido = array_rand($numeros[$i], 1);print $escolhido;
+	    $aposta_aleatoria[] = $escolhido;
+	    for ($x=1; $x <= 15; $x++) { 
+	    	foreach ($numeros[$i] as $key => $numero) {
+	    		if ($numero == $escolhido) {
+	    			unset($numeros[$i][$key]);
+	    		}
+	    	}
+	    }
+	}
+	return $aposta_aleatoria;
+}
+
 // jogos prontos
 $jogo_hamenon =  [1,2,3,4,5,8,9,11,12,14,16,18,19,23,24];
 $jogo_ruim1 = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15];
@@ -95,8 +132,8 @@ $cont = 0;
 // $consulta_sorteios = $PDO->query("SELECT id_sorteio, p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13, p14, p15 FROM sorteios");
 
 // while ($row = $consulta_sorteios->fetch(PDO::FETCH_ASSOC)) {
-while (!$resultados[15]) {
-// while ($cont != 1000) {
+// while (!$resultados[15]) {
+while ($cont != 10000) {
 
 	$cont++;
 	// $cont = $row['id_sorteio'];
