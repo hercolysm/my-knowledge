@@ -46,6 +46,7 @@ SELECT CURDATE(), CURRENT_DATE(), CURDATE()+0; /* retorna a data atual, é poss�
 SELECT TRIM(coluna) FROM tabela /* remove espaços antes e depois */
 SELECT TRIM(BOTH ',' FROM coluna) FROM tabela /* remove vírgulas antes e depois [BOTH, LEADING, TRAILING] */
 SELECT REPLACE(coluna, 'palavra_procurada', 'palavra_substituta') FROM tabela /* substitui uma string por outra */
+SELECT LOCATE('texto_procurado', coluna) FROM tabela; /* retorna a posição da primeira ocorrência de uma string */
 
 /* query's incompatible with sql_mode=only_full_group_by */
 SELECT count(coluna), ANY_VALUE(coluna) FROM tabela; /* permite a consulta qualquer valor */
