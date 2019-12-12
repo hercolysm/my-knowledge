@@ -37,3 +37,5 @@ Comandos no vi
  :set list => caracteres ocultos
  :set nolist => oculta
  :set all => mostra todas as configuracoes
+ 
+ :%s/antes/depois/g // substitui todas as ocorrências de uma string pela outra
