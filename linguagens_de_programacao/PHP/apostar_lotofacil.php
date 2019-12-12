@@ -23,41 +23,41 @@ catch (PDOException $e)
 }
 
 /*
-$PDO->query("DELETE FROM `lotofacil`.`sorteios`");
+	$PDO->query("DELETE FROM `lotofacil`.`sorteios`");
 
-$cont = 0;
-while ($cont<1000000) {
-	$cont ++;
-	echo "$cont\n";
-	$numeros = range(1, 25);
-	$sorteados = [];
+	$cont = 0;
+	while ($cont<1000000) {
+		$cont ++;
+		echo "$cont\n";
+		$numeros = range(1, 25);
+		$sorteados = [];
 
-	while (count($sorteados) < 15) {
-		$escolhido = array_rand($numeros, 1);
-	    $sorteados[] = $numeros[$escolhido];
-	    unset($numeros[$escolhido]);
+		while (count($sorteados) < 15) {
+			$escolhido = array_rand($numeros, 1);
+			$sorteados[] = $numeros[$escolhido];
+			unset($numeros[$escolhido]);
+		}
+		sort($sorteados);
+
+		$PDO->query("INSERT INTO `lotofacil`.`sorteios` (`id_sorteio`, `p1`, `p2`, `p3`, `p4`, `p5`, `p6`, `p7`, `p8`, `p9`, `p10`, `p11`, `p12`, `p13`, `p14`, `p15`) VALUES ('$cont', '$sorteados[0]', '$sorteados[1]', '$sorteados[2]', '$sorteados[3]', '$sorteados[4]', '$sorteados[5]', '$sorteados[6]', '$sorteados[7]', '$sorteados[8]', '$sorteados[9]', '$sorteados[10]', '$sorteados[11]', '$sorteados[12]', '$sorteados[13]', '$sorteados[14]');");
 	}
-	sort($sorteados);
+	exit();
 
-	$PDO->query("INSERT INTO `lotofacil`.`sorteios` (`id_sorteio`, `p1`, `p2`, `p3`, `p4`, `p5`, `p6`, `p7`, `p8`, `p9`, `p10`, `p11`, `p12`, `p13`, `p14`, `p15`) VALUES ('$cont', '$sorteados[0]', '$sorteados[1]', '$sorteados[2]', '$sorteados[3]', '$sorteados[4]', '$sorteados[5]', '$sorteados[6]', '$sorteados[7]', '$sorteados[8]', '$sorteados[9]', '$sorteados[10]', '$sorteados[11]', '$sorteados[12]', '$sorteados[13]', '$sorteados[14]');");
-}
-exit();
-
-select p1, count(id_sorteio) as total from sorteios group by p1 order by p1;
-select p2, count(id_sorteio) as total from sorteios group by p2 order by p2;
-select p3, count(id_sorteio) as total from sorteios group by p3 order by p3;
-select p4, count(id_sorteio) as total from sorteios group by p4 order by p4;
-select p5, count(id_sorteio) as total from sorteios group by p5 order by p5;
-select p6, count(id_sorteio) as total from sorteios group by p6 order by p6;
-select p7, count(id_sorteio) as total from sorteios group by p7 order by p7;
-select p8, count(id_sorteio) as total from sorteios group by p8 order by p8;
-select p9, count(id_sorteio) as total from sorteios group by p9 order by p9;
-select p10, count(id_sorteio) as total from sorteios group by p10 order by p10;
-select p11, count(id_sorteio) as total from sorteios group by p11 order by p11;
-select p12, count(id_sorteio) as total from sorteios group by p12 order by p12;
-select p13, count(id_sorteio) as total from sorteios group by p13 order by p13;
-select p14, count(id_sorteio) as total from sorteios group by p14 order by p14;
-select p15, count(id_sorteio) as total from sorteios group by p15 order by p15;
+	select p1, count(id_sorteio) as total from sorteios group by p1 order by p1;
+	select p2, count(id_sorteio) as total from sorteios group by p2 order by p2;
+	select p3, count(id_sorteio) as total from sorteios group by p3 order by p3;
+	select p4, count(id_sorteio) as total from sorteios group by p4 order by p4;
+	select p5, count(id_sorteio) as total from sorteios group by p5 order by p5;
+	select p6, count(id_sorteio) as total from sorteios group by p6 order by p6;
+	select p7, count(id_sorteio) as total from sorteios group by p7 order by p7;
+	select p8, count(id_sorteio) as total from sorteios group by p8 order by p8;
+	select p9, count(id_sorteio) as total from sorteios group by p9 order by p9;
+	select p10, count(id_sorteio) as total from sorteios group by p10 order by p10;
+	select p11, count(id_sorteio) as total from sorteios group by p11 order by p11;
+	select p12, count(id_sorteio) as total from sorteios group by p12 order by p12;
+	select p13, count(id_sorteio) as total from sorteios group by p13 order by p13;
+	select p14, count(id_sorteio) as total from sorteios group by p14 order by p14;
+	select p15, count(id_sorteio) as total from sorteios group by p15 order by p15;
 */
 
 // funções
@@ -90,19 +90,19 @@ $num_posicoes = [
 	14 => [21,22,22,23,23,23,23,24,24,24],
 	15 => [23,24,24,24,25,25,25,25,25,25],
 ];
-print_r(get_aposta_aleatoria2());exit();
-function get_aposta_aleatoria2() {
+
+function get_aposta_posicao() {
 	global $num_posicoes;
 	$numeros = $num_posicoes;
 	$aposta_aleatoria = [];
 	for ($i=1; $i <= 15; $i++) {
-		print_r($numeros[$i]);
-		$escolhido = array_rand($numeros[$i], 1);print $escolhido;
-	    $aposta_aleatoria[] = $escolhido;
+		$key_escolhido = array_rand($numeros[$i], 1);
+		$escolhido = $numeros[$i][$key_escolhido];
+		$aposta_aleatoria[] = $escolhido;
 	    for ($x=1; $x <= 15; $x++) { 
-	    	foreach ($numeros[$i] as $key => $numero) {
+	    	foreach ($numeros[$x] as $key => $numero) {
 	    		if ($numero == $escolhido) {
-	    			unset($numeros[$i][$key]);
+	    			unset($numeros[$x][$key]);
 	    		}
 	    	}
 	    }
@@ -132,32 +132,35 @@ $cont = 0;
 // $consulta_sorteios = $PDO->query("SELECT id_sorteio, p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13, p14, p15 FROM sorteios");
 
 // while ($row = $consulta_sorteios->fetch(PDO::FETCH_ASSOC)) {
-// while (!$resultados[15]) {
-while ($cont != 10000) {
+// while ($resultados[15] != 10) {
+while ($cont != 1000000) {
 
 	$cont++;
 	// $cont = $row['id_sorteio'];
 
 	// prepara jogos
 	$jogos = [];
-	// $jogos['jogo_hame'] = $jogo_hamenon;
-	// $jogos['jogo_mau1'] = $jogo_ruim1;
-	// $jogos['jogo_mau2'] = $jogo_ruim2;
-	// $jogos['jogo_mau3'] = $jogo_ruim3;
+	$jogos['jogo_hame'] = $jogo_hamenon;
+	$jogos['jogo_mau1'] = $jogo_ruim1;
+	$jogos['jogo_mau2'] = $jogo_ruim2;
+	$jogos['jogo_mau3'] = $jogo_ruim3;
 	$jogos['jogo_mau4'] = $jogo_ruim4;
 	$jogos['jogo_bom1'] = $jogo_bom1;
-	// $jogos['jogo_bom2'] = $jogo_bom2;
-	// $jogos['jogo_bom3'] = $jogo_bom3;
-
-	// $jogo_aleatorio1 = get_aposta_aleatoria(15);
-	// $jogos['jogo_alea'] = $jogo_aleatorio1;
+	$jogos['jogo_bom2'] = $jogo_bom2;
+	$jogos['jogo_bom3'] = $jogo_bom3;
+	$jogos['jogo_aleatorio1'] = get_aposta_aleatoria(15);
+	$jogos['jogo_aleatorio2'] = get_aposta_aleatoria(15);
+	$jogos['jogo_aleatorio3'] = get_aposta_aleatoria(15);
+	$jogos['jogo_posicoes1'] = get_aposta_posicao();
+	$jogos['jogo_posicoes2'] = get_aposta_posicao();
+	$jogos['jogo_posicoes3'] = get_aposta_posicao();
 
 	// prepara sorteio
 	$numeros = range(1, 25);
 
 	shuffle($numeros);
-	shuffle($numeros);
-	shuffle($numeros);
+	// shuffle($numeros);
+	// shuffle($numeros);
 
 	// $rand = rand(10,99);
 	// while (rand(0,$rand)!=rand(0,$rand)) {
@@ -176,10 +179,10 @@ while ($cont != 10000) {
 
 	sort($sorteados);
 
-	$PDO->query("INSERT INTO `lotofacil`.`sorteios` (`id_sorteio`, `p1`, `p2`, `p3`, `p4`, `p5`, `p6`, `p7`, `p8`, `p9`, `p10`, `p11`, `p12`, `p13`, `p14`, `p15`) VALUES ('$cont', '$sorteados[0]', '$sorteados[1]', '$sorteados[2]', '$sorteados[3]', '$sorteados[4]', '$sorteados[5]', '$sorteados[6]', '$sorteados[7]', '$sorteados[8]', '$sorteados[9]', '$sorteados[10]', '$sorteados[11]', '$sorteados[12]', '$sorteados[13]', '$sorteados[14]');");
+	// $PDO->query("INSERT INTO `lotofacil`.`sorteios` (`id_sorteio`, `p1`, `p2`, `p3`, `p4`, `p5`, `p6`, `p7`, `p8`, `p9`, `p10`, `p11`, `p12`, `p13`, `p14`, `p15`) VALUES ('$cont', '$sorteados[0]', '$sorteados[1]', '$sorteados[2]', '$sorteados[3]', '$sorteados[4]', '$sorteados[5]', '$sorteados[6]', '$sorteados[7]', '$sorteados[8]', '$sorteados[9]', '$sorteados[10]', '$sorteados[11]', '$sorteados[12]', '$sorteados[13]', '$sorteados[14]');");
 
 	foreach ($jogos as $key => $apostados) {
-	
+
 		print "sorteio $cont -> jogo $key -> ";
 		
 		$x = array_diff($apostados, $sorteados);

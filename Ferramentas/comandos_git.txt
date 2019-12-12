@@ -158,3 +158,22 @@ git revert -m 1 dd8d6f587fa24327d5f5afd6fa8c3e604189c8d4> (não testado)
 
 # armazenar senha não criptografada no disco
 git config credential.helper store
+
+# esconder as alterações
+git stash
+
+# listar as alterações armazenadas
+git stash list
+
+# inspecionas as alterações armazenadas
+git stash show
+
+# restaurar as modificações
+git stash pop 0
+git stash apply
+
+# exemplos de nomes de branchs
+change/ajuste-tela-inicial
+feature/add-novo-campo
+test/geracao-relatorios
+bugfix/correcao-login

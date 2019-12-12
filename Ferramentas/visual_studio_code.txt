@@ -1,0 +1,5 @@
+# ocultar todos os blocos de código
+ctrl + k + 0
+
+# exibir todos os blocos de cógido
+ctrl + k + j
