@@ -1,0 +1,11 @@
+// Baixar o pacote no site:
+https://anydesk.com/pt/downloads/linux
+
+// cd Downloads 
+ls anydesk_5.5.1-1_amd64.deb
+
+// instalar dependência
+sudo apt install libgtkglext1
+
+// instalar pacote .deb
+sudo dpkg -i anydesk_5.5.1-1_amd64.deb

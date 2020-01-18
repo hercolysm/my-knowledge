@@ -1,0 +1,29 @@
+Instalação docker
+
+# instalar pacotes
+sudo apt-get install \
+    apt-transport-https \
+    ca-certificates \
+    curl \
+    gnupg-agent \
+    software-properties-common
+
+# adicionar Docker's official GPG key
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+
+# verificar chave adicionada
+sudo apt-key fingerprint 0EBFCD88
+
+# adicionar repositório
+sudo add-apt-repository \
+   "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
+   $(lsb_release -cs) \
+   stable"
+
+# atualizar o gerenciador de pacotes
+sudo apt-get update
+
+# instalar o programa
+sudo apt-get install docker-ce docker-ce-cli containerd.io
+
+Ref: https://docs.docker.com/install/linux/docker-ce/ubuntu/

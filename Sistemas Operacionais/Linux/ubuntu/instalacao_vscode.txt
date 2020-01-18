@@ -1,0 +1,35 @@
+Instalação VS Code (usando repositório)
+
+# verificar o tipo do sistema
+uname -m
+
+# adicionar repositório do programa
+sudo sh -c 'echo "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main" > /etc/apt/sources.list.d/vscode.list'
+
+# instalar curl
+sudo apt install curl
+
+# baixar a chave do repositório do programa
+curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg
+
+# instalar a chave do repositório do programa
+sudo mv microsoft.gpg /etc/apt/trusted.gpg.d/microsoft.gpg
+
+# atualizar o gerenciador de pacotes
+sudo apt-get update
+
+# instalar o programa
+sudo apt-get install code
+
+Ref: https://www.edivaldobrito.com.br/visual-studio-code-no-ubuntu/
+
+
+Atualizar VS Code
+
+# baixar o pacote .deb
+https://code.visualstudio.com/Download
+
+# entrar na pasta do arquivo e rodar o comando
+sudo apt install ./code_1.41.1-1576681836_amd64.deb
+
+Ref: https://code.visualstudio.com/docs/setup/linux
