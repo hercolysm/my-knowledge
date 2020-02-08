@@ -119,6 +119,9 @@ git branch -d <nome_branch>
 # Listar os branchs remotos
 git branch -r
 
+# Listar os branchs local e remotos
+git branch -a
+
 # Deletar um branch remoto
 git branch <nome_origin> <nome_branch> --delete
 
@@ -177,3 +180,22 @@ change/ajuste-tela-inicial
 feature/add-novo-campo
 test/geracao-relatorios
 bugfix/correcao-login
+
+Resolver conflito localmente:
+
+Step 1. Fetch and check out the branch for this merge request
+
+git fetch origin
+git checkout -b release origin/release
+
+Step 2. Review the changes locally
+
+Step 3. Merge the branch and fix any conflicts that come up
+
+git fetch origin
+git checkout origin/master
+git merge --no-ff release
+
+Step 4. Push the result of the merge to GitLab
+
+git push origin HEAD:master

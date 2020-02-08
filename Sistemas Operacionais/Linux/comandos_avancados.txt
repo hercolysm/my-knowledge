@@ -111,3 +111,39 @@ route -n
 
 # Adicionar uma rota
 route add default gw 192.168.0.1
+
+# Compactar/Desconpactar arquivos 
+
+# zip/unzip
+
+    compactar:
+    zip nome_arquivo.zip arquivo_01.txt arquivo_02.txt arquivo_03.txt
+
+    descompactar:
+    unzip nome_arquivo.zip
+
+# tar
+
+    compactar:
+    tar -cf nome_arquivo.tar arquivo_a_ser_compactado
+
+    descompactar:
+    tar -xvf nome_arquivo.tar
+
+# tar.gz
+
+    compactar:
+    tar -cf nome_arquivo.tar arquivo_a_ser_compactado
+    gzip -9 nome_arquivo.tar
+
+    descompactar:
+    tar -vzxf nome_arquivo.tar.gz
+
+# rar/unrar
+
+    compactar:
+    rar a nome_do_arquivo.rar arquivo_a_ser_compactado
+
+    descompactar:
+    unrar x nome_do_arquivo.rar
+    
