@@ -33,3 +33,9 @@ var pessoas = [
 pessoas.sort(function(a,b) {
     return a.nome < b.nome ? -1 : a.nome > b.nome ? 1 : 0;
 });
+
+
+let texto = "ABC abc 123";
+
+texto.toLowerCase(); // abc abc 123
+texto.toUpperCase(); // ABC ABC 123

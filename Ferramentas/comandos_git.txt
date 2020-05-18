@@ -111,7 +111,7 @@ git checkout -b <nome_branch>
 
 # Fazer merge
 git checkout master
-git merger <nome_branch>
+git merge <nome_branch>
 
 # Deletar um branch
 git branch -d <nome_branch>

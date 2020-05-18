@@ -43,6 +43,7 @@ SELECT UPPER(coluna) FROM tabela; /* converte caracteres para caixa alta, exceto
 SELECT LENGTH(coluna) FROM tabela; /* retorna a qnt de caracteres */
 SELECT CHAR_LENGTH(coluna) FROM tabela; /* retorna a qnt de bytes */
 SELECT CURDATE(), CURRENT_DATE(), CURDATE()+0; /* retorna a data atual, é possível fazer soma com o número retornado */
+SELECT DATE_ADD(coluna, INTERVAL 31 DAY) as 31_dias_a_mais; /* retorna a data acrescida de x dias */
 SELECT TRIM(coluna) FROM tabela /* remove espaços antes e depois */
 SELECT TRIM(BOTH ',' FROM coluna) FROM tabela /* remove vírgulas antes e depois [BOTH, LEADING, TRAILING] */
 SELECT REPLACE(coluna, 'palavra_procurada', 'palavra_substituta') FROM tabela /* substitui uma string por outra */

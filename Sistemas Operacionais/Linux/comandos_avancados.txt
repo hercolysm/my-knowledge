@@ -103,6 +103,9 @@ systemctl disable httpd
 # listar todos os serviços
 systemctl list-unit-files
 
+# exibir detalhes dos deamons
+journalctl -xe 
+
 # listar os limites de processos do usuário
 ulimit -a
 

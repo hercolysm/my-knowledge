@@ -41,6 +41,7 @@ ALTER TABLE nome_tabela ADD UNIQUE (col1); /* cria chave única simples */
 ALTER TABLE nome_tabela ADD CONSTRAINT nome_constraint UNIQUE (col1, col2); /* cria chave única composta */
 ALTER TABLE nome_tabela ADD INDEX idx_nome_coluna (nome_coluna); /* cria chave de index */
 ALTER TABLE nome_tabela DROP INDEX nome_constraint; /* apaga uma chave */
+ALTER TABLE nome_tabela CHANGE nome_coluna nome_coluna tipo(t) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL;
 
 ## tipos de dados ##
 
