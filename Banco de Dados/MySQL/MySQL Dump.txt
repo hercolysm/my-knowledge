@@ -23,3 +23,6 @@ mysql -u user -p < script.sql
 
 # importar dados para um banco de dados
 mysql -u user -p banco_de_dados < script.sql
+
+# importar dados para um banco de dados (Windows PowerShell)
+Get-Content C:\Users\Hercolys\Documents\transf\script.sql | mysql -u root -p banco_de_dados

@@ -14,6 +14,11 @@ usort($datas, function($a, $b){
     return (strtotime($a['data']) - strtotime($b['data'])) * -1; // '-1' define a ordem crescente/decrecente
 });
 
+// ordena lista por nome
+usort($nomes, function($a, $b) {
+    return strcmp($a["nome"], $b["nome"]); // crescente
+});
+
 print_r($datas);
 
 // array_search - retorno o índice de um determinado valor

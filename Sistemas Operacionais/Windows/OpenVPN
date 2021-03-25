@@ -1,0 +1,23 @@
+OpenVPN
+
+# baixar e instalar o executável
+https://openvpn.net/community-downloads/
+
+# importar arquivos de configurações da VPN para a pasta de configurações do OpenVPN
+C:\Users\Hercolys\OpenVPN\config\hercolys.ovpn 
+C:\Users\Hercolys\OpenVPN\config\hercolys.key
+
+# resoluções de erros
+
+- Verificar se o adaptador TAP-Windows está ativo
+    - Abra Painel de controle > Rede e Internet > Central de rede e compartilhamento > Alterar configurações do adaptador 
+    - Verifique a descrição dos adaptadores de rede para encontrar o adaptador Tap-Windows  
+    - Clique com o botão direito do mouse > Desativar 
+    - Clique com o botão direito do mouse novamente > Ativar 
+
+- Reinstalar o drive TAP
+    - Verifique se ele já está instalado, abrindo  C: \ Arquivos de Programas \ TAP-Windows 
+    - Clique com o botão direito do mouse em Desinstalar e selecione Executar como administrador
+    - Faça o download do driver Tap no repositório OpenVPN e instale-o. link: https://swupdate.openvpn.org/community/releases/tap-windows-9.21.2.exe
+
+link: https://vpn.ac/knowledgebase/64/OpenVPN-Error-All-TAP-Windows-adapters-on-this-system-are-currently-in-use.html

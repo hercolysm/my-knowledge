@@ -36,3 +36,8 @@ pessoas.sort(function(a,b) {
 
 // Adicionar valor no array
 array.push(new_value);
+
+let texto = "ABC abc 123";
+
+texto.toLowerCase(); // abc abc 123
+texto.toUpperCase(); // ABC ABC 123

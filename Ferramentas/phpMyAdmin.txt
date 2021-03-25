@@ -1,0 +1,12 @@
+Authentication type
+
+// usuário e senha no arquivo 'config.inc.php' 
+auth_type = config 
+
+// permite logar como qualquer usuário válido do MySQL (Usuário e Senha)
+cookie
+
+// permite logar através de dados de sessão PHP preparados
+signon
+
+link: https://docs.phpmyadmin.net/pt_BR/latest/config.html

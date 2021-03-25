@@ -1,0 +1,13 @@
+Quando você acessa um site na web — por exemplo, tecnoblog.net —, o navegador precisa consultar servidores de DNS para descobrir qual o endereço IP associado àquela URL. Pode-se dizer que o arquivo hosts é a primeira etapa desse processo: normalmente, o sistema consulta esse arquivo antes. Se a informação procurada estiver lá (o endereço de um site), ótimo, é só usá-la. Se não, o próximo passo é consultar servidores de DNS externos.
+
+Configurar host:
+
+Link: https://tecnoblog.net/199539/editar-arquivo-hosts-windows/
+
+- Abrir bloco de notas (como administrador)
+
+- Abrir o arquivo: C:/Windows/System32/Drivers/etc/hosts
+
+- Dar um tab adicionar o IP detisno, dar outro tab e adicionar o IP que será redirecionado
+
+- Salvar arquivo e reiniciar o pc

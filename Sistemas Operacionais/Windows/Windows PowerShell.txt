@@ -3,3 +3,6 @@ Get-Content error_log -Wait
 
 # fazer 'tail' com filtro
 Get-Content error_log -Wait | where { $_ -match "error" }
+
+# importar conteudo para um comando
+Get-Content C:\Users\Hercolys\Documents\transf\script.sql | mysql -u root -p banco_de_dados
