@@ -1,0 +1,8 @@
+# exibir a date e hora atual
+date
+
+# listar fuso-horarios
+timedatectl list-timezones | grep ortaleza
+
+# alterar fuso horario 
+timedatectl set-timezone America/Fortaleza

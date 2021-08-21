@@ -1,0 +1,22 @@
+ Funções Power Automate usadas
+
+ 
+@{outputs('Listar_Origens')?['body/value']}
+@{first(outputs('Listar_Configurações')?['body/value'])?['frt_freshdeskservidor']}
+
+@{first(outputs('Listar_Origens')?['body/@odata'])?['id']}
+@{first(outputs('Listar_SubOrigens')?['body/@odata'])?['id']}
+
+
+first(outputs('Listar_Origens')?['body/value'])?['@odata.id']
+first(outputs('Listar_SubOrigens')?['body/value'])?['@odata.id']
+
+
+replace(items('Aplicar_a_cada')?['last_conversion']?['content']?['Número Whatsapp'],'+55 ','')
+
+string(items('Aplicar_a_cada')?['last_conversion']?['content']?['Setor - Funis de Conteúdo'])
+
+first(outputs('Buscar_informações_da_Proposta_Principal')?['body/value'])?['frt_valor_total_assinaturas']
+
+@{outputs('Buscar_o_Status_de_Fechamento_da_Oportunidade')?['body/@odata.id']}
+@{triggerOutputs()?['body/@odata.id']}

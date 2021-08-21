@@ -3,3 +3,8 @@ ctrl + k + 0
 
 # exibir todos os blocos de cógido
 ctrl + k + j
+
+# pacotes
+
+PHP Intelephense
+GitLens - Git sperchanged

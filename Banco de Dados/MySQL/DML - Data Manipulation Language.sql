@@ -34,7 +34,8 @@ SELECT group_concat(id SEPARATOR ';') FROM tabela GROUP BY tipo /* contatena os 
 SELECT group_concat(distinct coluna) FROM tabela ORDER BY group_concat(distinct coluna) /* concatena os valores distinctos e ordena */
 SELECT group_concat(distinct coluna order by coluna) FROM tabela /* concatena os valores distinctos de forma ordenada */
 SET SESSION group_concat_max_len = 6000; /* aumenta a quantidade de caracteres do retorno do GROUP_CONCAT() */
-SELECT * FROM tabela LIMIT posicao , qnt; /* limita */
+SELECT * FROM tabela LIMIT posicao , qnt; /* consulta paginada */
+SELECT * FROM tabela LIMIT qnt OFFSET posicao; /* consulta paginada */
 SELECT * FROM tabela WHERE coluna = substring('string',pos,tam); /* corta uma string */
 SELECT sec_to_time(segundos) FROM tabela; /* converte em segundos */
 SELECT coalesce(null,2,3) FROM tabela; /* retorna primeiro resultado não nulo */
@@ -48,6 +49,8 @@ SELECT TRIM(coluna) FROM tabela /* remove espaços antes e depois */
 SELECT TRIM(BOTH ',' FROM coluna) FROM tabela /* remove vírgulas antes e depois [BOTH, LEADING, TRAILING] */
 SELECT REPLACE(coluna, 'palavra_procurada', 'palavra_substituta') FROM tabela /* substitui uma string por outra */
 SELECT LOCATE('texto_procurado', coluna) FROM tabela; /* retorna a posição da primeira ocorrência de uma string */
+SELECT CONVERT(CAST(CONVERT(coluna USING latin1) AS BINARY) USING utf8) AS coluna_acentuada; /* converte texto UTF-8 e exibir os acentos no resultado */
+SELECT DATEDIFF(data_base, data_a_substrair) /* retorna a diferença de dias entre as datas */
 
 /* query's incompatible with sql_mode=only_full_group_by */
 SELECT count(coluna), ANY_VALUE(coluna) FROM tabela; /* permite a consulta qualquer valor */
