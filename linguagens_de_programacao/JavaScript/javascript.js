@@ -34,6 +34,8 @@ pessoas.sort(function(a,b) {
     return a.nome < b.nome ? -1 : a.nome > b.nome ? 1 : 0;
 });
 
+// Adicionar valor no array
+array.push(new_value);
 
 let texto = "ABC abc 123";
 
