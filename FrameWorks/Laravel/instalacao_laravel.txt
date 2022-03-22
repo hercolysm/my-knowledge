@@ -31,6 +31,7 @@ chmod 647 -R storage/framework/views/
 
 # Liberar permissão máxima
 chmod 777 /var/www/html/updater/bootstrap/cache/
+chmod -R 757 storage/framework/cache
 
 >> Authenticação Laravel <<
 # Gerar arquivos

@@ -39,3 +39,7 @@ let texto = "ABC abc 123";
 
 texto.toLowerCase(); // abc abc 123
 texto.toUpperCase(); // ABC ABC 123
+
+var str = "Hello World!";
+var enc = btoa(str); // Encoded String: SGVsbG8gV29ybGQh
+var dec = atob(enc); // Decoded String: Hello World!

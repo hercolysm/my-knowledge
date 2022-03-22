@@ -20,3 +20,7 @@ first(outputs('Buscar_informações_da_Proposta_Principal')?['body/value'])?['fr
 
 @{outputs('Buscar_o_Status_de_Fechamento_da_Oportunidade')?['body/@odata.id']}
 @{triggerOutputs()?['body/@odata.id']}
+
+
+Diferença entre datas:
+@{div(div(mul(sub(ticks(variables('data_primeira_resposta')),ticks(first(outputs('Busca_ticket')?['body/value'])?['frt_data_abertura'])),100),1000000000),60)}

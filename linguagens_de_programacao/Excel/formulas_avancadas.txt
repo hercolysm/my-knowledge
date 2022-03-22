@@ -3,6 +3,7 @@
 
 // Tratamento para números de telefones
 =SUBSTITUIR(SUBSTITUIR(SUBSTITUIR(SUBSTITUIR(SUBSTITUIR(E8;"+55";"");"(";"");")";"");"-";"");" ";"")
+=SE(NÚM.CARACT(F2)=13;EXT.TEXTO(SUBSTITUIR(SUBSTITUIR(SUBSTITUIR(SUBSTITUIR(SUBSTITUIR(SUBSTITUIR(F2;"+55";"");"(";"");")";"");"-";"");" ";"");"+";"");3;99);SUBSTITUIR(SUBSTITUIR(SUBSTITUIR(SUBSTITUIR(SUBSTITUIR(SUBSTITUIR(F2;"+55";"");"(";"");")";"");"-";"");" ";"");"+";""))
 
 // verifica se telefones é movel fixo ou invalido
 =SE(NÚM.CARACT([@TELEFONE])=10;"FIXO";SE(NÚM.CARACT([@TELEFONE])=11;"MOVEL";"INVALIDO"))
@@ -49,3 +50,16 @@ End Function
 
 // Retirar mascara de CNPJ/CPF 
 =SUBSTITUIR(SUBSTITUIR(SUBSTITUIR(SUBSTITUIR(E8;".";"");"/";"");"-";"");" ";"")
+
+// Retirar mascara de Telefone
+=SUBSTITUIR(SUBSTITUIR(SUBSTITUIR(SUBSTITUIR([@[Telefone Comercial]];"(";"");")";"");"-";"");" ";"")
+
+// Caractere oculto
+&#8203;
+
+// Gerar dominio do email 
+=EXT.TEXTO(B2;PROCURAR("@";B2)+1;99)
+
+// Diferença entre Data 
+= DATADIF(data_inicio; data_fim; "D")
+Link: https://www.iqaccountingsolutions.com/blog/calculating-difference-two-dates-excel/
