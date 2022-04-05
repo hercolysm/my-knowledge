@@ -1,0 +1,50 @@
+
+Anthos
+Kubernetes
+CI/CD 
+Micro serviços 
+    Link: https://aws.amazon.com/pt/microservices/#:~:text=Microsservi%C3%A7os%20s%C3%A3o%20uma%20abordagem%20arquitet%C3%B4nica,pertencem%20a%20pequenas%20equipes%20autossuficientes.
+Live Wire 
+    Link: https://laravel-livewire.com/
+Job (Laravel)
+    Link: https://laravel.com/docs/9.x/queues
+Comandos laravel 
+Mongo DB (Percona?)
+Hashicorp - Vault
+Terraform 
+Ansible
+Componentes 
+Gralk well 
+Fluter 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
