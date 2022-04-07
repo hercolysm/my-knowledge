@@ -1,27 +1,186 @@
 
-Anthos
-Kubernetes
-CI/CD 
-Micro serviços 
-    Link: https://aws.amazon.com/pt/microservices/#:~:text=Microsservi%C3%A7os%20s%C3%A3o%20uma%20abordagem%20arquitet%C3%B4nica,pertencem%20a%20pequenas%20equipes%20autossuficientes.
-Live Wire 
-    Link: https://laravel-livewire.com/
-Job (Laravel)
-    Link: https://laravel.com/docs/9.x/queues
-Comandos laravel 
-Mongo DB (Percona?)
-Hashicorp - Vault
-Terraform 
-Ansible
-Componentes 
-Gralk well 
-Fluter 
+Conhecer:
+    Anthos
+    Kubernetes
+    CI/CD 
+        Link: https://www.redhat.com/pt-br/topics/devops/what-is-ci-cd
+    Ansible
+        Link: https://www.redhat.com/pt-br/topics/automation/learning-ansible-tutorial
+    Mongo DB Percona
+        Link: https://www.percona.com/software/mongodb/percona-server-for-mongodb
+    Hashicorp - Vault
+        Link: https://www.hashicorp.com/
+    Terraform 
+        Link: https://www.terraform.io/, https://www.zup.com.br/blog/terraform-o-que-e
+    API 
+        Link: https://www.redhat.com/pt-br/topics/api/what-are-application-programming-interfaces
+    API GraphQL
+        Link: https://www.redhat.com/pt-br/topics/api/what-is-graphql
+    API REST 
+        Link: https://www.redhat.com/pt-br/topics/api/what-is-a-rest-api
+    Fluter 
+        Link: https://flutter.dev/
+    Ionic 
+    React Native 
+    Semantic UI
+    Prometheus
+    Grafana
+    AlertManager
+    Google cloud
+    Consul
+    Golang
+    Bash Script
+    Helm
+    NestJs/Adonisjs/Express.js
+    Kafka/RabbitMQ/Google PubSub
+    Typescript
+    Vue, Vuex 
+    Sass
+    Testes (Cypress/Jest)
+    Quasar Framework 
+    Figma 
+    Tailwind CSS 
+    Liquid 
+
+Conhecimentos básicos:
+    Logica de programação 
+    Git
+    HTML
+    JQuery
+    PHP 
+    C# 
+    MySQL
+    SQL Server 
+    Customização Dynamics CRM 
+    Power Automate 
+
+Revisar:
+    CSS 
+    Javascript
+    Redis 
+    Socket.io 
+    Websocket
+
+Aprofundar:
+    Laravel (Services/Repositories; Jobs/Queues; Listeners/Observers; API c/ JWT)
+    Python 
+    Docker
+    MongoDb
+
+Estudar:
+    Micro serviços 
+        Link: https://aws.amazon.com/pt/microservices/#:~:text=Microsservi%C3%A7os%20s%C3%A3o%20uma%20abordagem%20arquitet%C3%B4nica,pertencem%20a%20pequenas%20equipes%20autossuficientes.
+    Live Wire 
+        Link: https://laravel-livewire.com/
+    Job (Laravel)
+        Link: https://laravel.com/docs/9.x/queues
+    Comandos laravel
+        Link: https://laravel-docs-pt-br.readthedocs.io/en/5.0/commands/
+    Web Components 
+        https://developer.mozilla.org/pt-BR/docs/Web/Web_Components
+    Método Ágil (scrum)
+    GitLab / Git Flow
+    Node 
+    Testes unitários
+
+Documentar projetos e funções 
+
+Ações: 
+    ok Organizar favoritos 
+    Organizar projeto github hercolys 
+    Criar lista de estudos 
+        Pros-graduação 
+            - Estácio - Big Data: Terminar último semestre
+        Cursos 
+            - Power BI 
+                Udemy: finalizar curso 
+                Governo: Receber o certificado 
+            - Excel 
+                Udemy: finalizar curso 
+    Planejar projetos 
+        Goodluck 
+        CRM 
+        Controle de Estoque 
+        Power BI
+            Criação de paineis para Fortics 
+    Atualizar perfil linkedin 
+    Atualizar curriculum 
 
 
 
 
+Vagas 
 
+Analista de desenvolvimento Junior 
 
+    - Solidos Conheciomento em lógica de programação
+    - Noção de engenharia de software
+    - Método Ágil (Scrum) 
+    - Sólidos conhecimentos em protocolo HTTP (Métodos, Request e Response).
+    - Experiência com API REST;
+    - Experiência em desenvolvimento de scripts em Javascript
+
+Analista Devops 
+
+    Requisitos desejados:
+    - Docker
+    - Kubernetes
+    - Terraform
+    - Ansible
+    - Prometheus
+    - Grafana
+    - AlertManager
+    - Git
+    - Google cloud
+
+    Diferencial:
+    - GitLab
+    - Vault
+    - Consul
+    - MongoDb
+    - Redis 
+    - Python
+    - Golang
+    - Bash Script
+    - Helm
+
+Desenvolvedor Backend
+
+    Requisitos minimos:
+    - Laravel (Services/Repositories; Jobs/Queues; Listeners/Observers; API c/ JWT)
+    - Node
+    - Docker
+    - Experiência com Realtime (Websocket)
+    - Experiência com Banco não-relacional (Mongo)
+    - Git Flow
+
+    Requisitos desejados:
+    - NestJs/Adonisjs/Express.js
+    - Redis/Kafka/RabbitMQ/Google PubSub
+    - GraphQL
+    - Typescript
+    - Testes unitários
+
+    Diferencial:
+    - GoLang
+    - Python
+
+Desenvolvedor Frontend
+
+    Requisitos minimos:
+    - Vue, Vuex 
+    - Sass 
+    - Typescript 
+    - Git Flow
+
+    Requisitos desejados:
+    - Semantic ui 
+    - GraphQl 
+    - Testes (Cypress/Jest)
+
+    Diferencial:
+    - Quasar Framework 
+    - Figma 
 
 
 
