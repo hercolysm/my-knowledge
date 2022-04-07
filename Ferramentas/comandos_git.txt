@@ -162,6 +162,9 @@ git revert -m 1 dd8d6f587fa24327d5f5afd6fa8c3e604189c8d4> (não testado)
 # armazenar senha não criptografada no disco
 git config credential.helper store
 
+# remover as credencias salvas
+git config --local --unset credential.helper
+
 # esconder as alterações
 git stash
 
@@ -202,3 +205,8 @@ git push origin HEAD:master
 
 A partir de 13 de agosto de 2021, o GitHub não está mais aceitando senhas de contas ao autenticar operações do Git. Você precisa adicionar um PAT (Token de Acesso Pessoal)
 https://stackoverflow.com/questions/68775869/support-for-password-authentication-was-removed-please-use-a-personal-access-to
+
+Nova autenticação no linux
+- Configurar nome e e-mail 
+- Digitar o login 
+- Digitar na senha o token gerado nas configurações de desenvolvedor 
