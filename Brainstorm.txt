@@ -103,8 +103,12 @@ Ações:
         Controle de Estoque 
         Power BI
             Criação de paineis para Fortics 
+                Produtividade 
+                Ciclo de venda 
     Atualizar perfil linkedin 
     Atualizar curriculum 
+    Criar cartilha do desenvoldedor 
+
 
 
 
@@ -185,15 +189,27 @@ Desenvolvedor Frontend
 
 
 
+CRM 
+ -> Link get para facilitar abertura do registro no sistema 
+ 
 
 
 
 
 
+Lista de compras: 
+    - ok Repelente 
+    - ok Oculos de proteção
+    - Mouse pad
+    - Comprar lichar 3000 e 5000 
+    - Comprar siscador
+    - Cotar metal nas telas 
+    - Colocar tapetes nas portas dos quartos 
 
 
 
 
+comprar pindurar do fone de ouvido 
 
 
 
