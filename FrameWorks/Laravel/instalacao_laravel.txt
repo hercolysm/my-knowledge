@@ -40,9 +40,6 @@ php artisan make:auth
 # Criar e Configurar BD
 .env ou config/database.php
 
-# Gerar tabelas
-php artisan migrate
-
 # Criar controller
 php artisan make:controller NomeController --resource
 

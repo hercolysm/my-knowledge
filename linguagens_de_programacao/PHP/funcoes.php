@@ -1,3 +1,5 @@
+<?php
+
 /**
  * Recebe uma entrada do teclado
  */

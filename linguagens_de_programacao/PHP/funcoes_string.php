@@ -1,3 +1,5 @@
+<?php
+
 /* Funções de manipulação de string */
 
 // escapa caracteres especiais

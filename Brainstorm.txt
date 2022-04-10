@@ -83,11 +83,10 @@ Estudar:
     Node 
     Testes unitários
 
-Documentar projetos e funções 
-
 Ações: 
     ok Organizar favoritos 
-    Organizar projeto github hercolys 
+    ok Organizar projeto github hercolys 
+    Documentar projetos e funções 
     Criar lista de estudos 
         Pros-graduação 
             - Estácio - Big Data: Terminar último semestre
@@ -100,118 +99,89 @@ Ações:
     Planejar projetos 
         Goodluck 
         CRM 
+            Link get para facilitar abertura do registro no sistema 
         Controle de Estoque 
         Power BI
             Criação de paineis para Fortics 
                 Produtividade 
                 Ciclo de venda 
-    Atualizar perfil linkedin 
     Atualizar curriculum 
+    Atualizar perfil linkedin 
     Criar cartilha do desenvoldedor 
 
 
-
-
-
 Vagas 
+    Analista de desenvolvimento Junior 
 
-Analista de desenvolvimento Junior 
+        - Solidos Conheciomento em lógica de programação
+        - Noção de engenharia de software
+        - Método Ágil (Scrum) 
+        - Sólidos conhecimentos em protocolo HTTP (Métodos, Request e Response).
+        - Experiência com API REST;
+        - Experiência em desenvolvimento de scripts em Javascript
 
-    - Solidos Conheciomento em lógica de programação
-    - Noção de engenharia de software
-    - Método Ágil (Scrum) 
-    - Sólidos conhecimentos em protocolo HTTP (Métodos, Request e Response).
-    - Experiência com API REST;
-    - Experiência em desenvolvimento de scripts em Javascript
+    Analista Devops 
 
-Analista Devops 
+        Requisitos desejados:
+        - Docker
+        - Kubernetes
+        - Terraform
+        - Ansible
+        - Prometheus
+        - Grafana
+        - AlertManager
+        - Git
+        - Google cloud
 
-    Requisitos desejados:
-    - Docker
-    - Kubernetes
-    - Terraform
-    - Ansible
-    - Prometheus
-    - Grafana
-    - AlertManager
-    - Git
-    - Google cloud
+        Diferencial:
+        - GitLab
+        - Vault
+        - Consul
+        - MongoDb
+        - Redis 
+        - Python
+        - Golang
+        - Bash Script
+        - Helm
 
-    Diferencial:
-    - GitLab
-    - Vault
-    - Consul
-    - MongoDb
-    - Redis 
-    - Python
-    - Golang
-    - Bash Script
-    - Helm
+    Desenvolvedor Backend
 
-Desenvolvedor Backend
+        Requisitos minimos:
+        - Laravel (Services/Repositories; Jobs/Queues; Listeners/Observers; API c/ JWT)
+        - Node
+        - Docker
+        - Experiência com Realtime (Websocket)
+        - Experiência com Banco não-relacional (Mongo)
+        - Git Flow
 
-    Requisitos minimos:
-    - Laravel (Services/Repositories; Jobs/Queues; Listeners/Observers; API c/ JWT)
-    - Node
-    - Docker
-    - Experiência com Realtime (Websocket)
-    - Experiência com Banco não-relacional (Mongo)
-    - Git Flow
+        Requisitos desejados:
+        - NestJs/Adonisjs/Express.js
+        - Redis/Kafka/RabbitMQ/Google PubSub
+        - GraphQL
+        - Typescript
+        - Testes unitários
 
-    Requisitos desejados:
-    - NestJs/Adonisjs/Express.js
-    - Redis/Kafka/RabbitMQ/Google PubSub
-    - GraphQL
-    - Typescript
-    - Testes unitários
+        Diferencial:
+        - GoLang
+        - Python
 
-    Diferencial:
-    - GoLang
-    - Python
+    Desenvolvedor Frontend
 
-Desenvolvedor Frontend
+        Requisitos minimos:
+        - Vue, Vuex 
+        - Sass 
+        - Typescript 
+        - Git Flow
 
-    Requisitos minimos:
-    - Vue, Vuex 
-    - Sass 
-    - Typescript 
-    - Git Flow
+        Requisitos desejados:
+        - Semantic ui 
+        - GraphQl 
+        - Testes (Cypress/Jest)
 
-    Requisitos desejados:
-    - Semantic ui 
-    - GraphQl 
-    - Testes (Cypress/Jest)
-
-    Diferencial:
-    - Quasar Framework 
-    - Figma 
-
-
-
-
-CRM 
- -> Link get para facilitar abertura do registro no sistema 
+        Diferencial:
+        - Quasar Framework 
+        - Figma 
  
-
-
-
-
-
-Lista de compras: 
-    - ok Repelente 
-    - ok Oculos de proteção
-    - Mouse pad
-    - Comprar lichar 3000 e 5000 
-    - Comprar siscador
-    - Cotar metal nas telas 
-    - Colocar tapetes nas portas dos quartos 
-
-
-
-
-comprar pindurar do fone de ouvido 
-
-
 
 
 

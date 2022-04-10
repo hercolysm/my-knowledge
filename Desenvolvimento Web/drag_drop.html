@@ -31,7 +31,7 @@
 
 		//
 		$("#drop").droppable({
-			drop: function(event, ui){
+			drop: function(event, ui){alert('teste');
 				var text = $("</p>").text(ui.draggable.text());
 				$(this).append(text);
 				$(this).find("#msg").text("Muito bom! Continue arrastando");

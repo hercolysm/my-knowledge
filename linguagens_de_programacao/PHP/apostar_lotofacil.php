@@ -5,22 +5,23 @@ USE lotofacil;
 CREATE TABLE `lotofacil`.`sorteios` ( `id_sorteio` INT NOT NULL AUTO_INCREMENT , `p1` INT NOT NULL , `p2` INT NOT NULL , `p3` INT NOT NULL , `p4` INT NOT NULL , `p5` INT NOT NULL , `p6` INT NOT NULL , `p7` INT NOT NULL , `p8` INT NOT NULL , `p9` INT NOT NULL , `p10` INT NOT NULL , `p11` INT NOT NULL , `p12` INT NOT NULL , `p13` INT NOT NULL , `p14` INT NOT NULL , `p15` INT NOT NULL , PRIMARY KEY (`id_sorteio`)) ENGINE = InnoDB;
  */
 
-define("HOST", "localhost");
-define("USUARIO", "root");
-define("SENHA", "s0m0sCrm928");
-define("BD", "lotofacil");
+// define("HOST", "172.21.0.2");
+// define("USUARIO", "root");
+// define("SENHA", "1q2w3e4r");
+// define("BD", "lotofacil");
 
 // conexão PDO
-try
-{
-	$PDO = new PDO("mysql:host=".HOST.";dbname=".BD, USUARIO, SENHA);
-	print "Conexao realizada com sucesso!";
-}
-catch (PDOException $e)
-{
-	print $e->getMessage();
-	print $e->getCode();
-}
+// try
+// {
+// 	$PDO = new PDO("mysql:host=".HOST.";dbname=".BD, USUARIO, SENHA);
+// 	print "Conexao realizada com sucesso!";
+// }
+// catch (PDOException $e)
+// {
+// 	print $e->getMessage();
+// 	print $e->getCode();
+// 	die();
+// }
 
 /*
 	$PDO->query("DELETE FROM `lotofacil`.`sorteios`");
@@ -126,21 +127,24 @@ for ($i = 1; $i <= 15; $i++) {
 	$resultados[$i] = 0;
 }
 
+$total_gasto = 0;
+$total_premiado = 0;
+
 $resultado_jogos = [];
 $cont = 0;
 
 // $consulta_sorteios = $PDO->query("SELECT id_sorteio, p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13, p14, p15 FROM sorteios");
 
 // while ($row = $consulta_sorteios->fetch(PDO::FETCH_ASSOC)) {
-// while ($resultados[15] != 10) {
-while ($cont != 1000000) {
+// while ($resultados[15] == 0) {
+while ($cont != 100) {
 
 	$cont++;
 	// $cont = $row['id_sorteio'];
 
 	// prepara jogos
 	$jogos = [];
-	$jogos['jogo_hame'] = $jogo_hamenon;
+	/*$jogos['jogo_hame'] = $jogo_hamenon;
 	$jogos['jogo_mau1'] = $jogo_ruim1;
 	$jogos['jogo_mau2'] = $jogo_ruim2;
 	$jogos['jogo_mau3'] = $jogo_ruim3;
@@ -151,9 +155,22 @@ while ($cont != 1000000) {
 	$jogos['jogo_aleatorio1'] = get_aposta_aleatoria(15);
 	$jogos['jogo_aleatorio2'] = get_aposta_aleatoria(15);
 	$jogos['jogo_aleatorio3'] = get_aposta_aleatoria(15);
+	$jogos['jogo_aleatorio4'] = get_aposta_aleatoria(15);
+	$jogos['jogo_aleatorio5'] = get_aposta_aleatoria(15);
+	$jogos['jogo_aleatorio6'] = get_aposta_aleatoria(15);
+	$jogos['jogo_aleatorio7'] = get_aposta_aleatoria(15);
+	$jogos['jogo_aleatorio8'] = get_aposta_aleatoria(15);
+	$jogos['jogo_aleatorio9'] = get_aposta_aleatoria(15);
+	$jogos['jogo_aleatorio10'] = get_aposta_aleatoria(15);
+	$jogos['jogo_aleatorio11'] = get_aposta_aleatoria(15);
+	$jogos['jogo_aleatorio12'] = get_aposta_aleatoria(15);
+	$jogos['jogo_aleatorio13'] = get_aposta_aleatoria(15);
 	$jogos['jogo_posicoes1'] = get_aposta_posicao();
 	$jogos['jogo_posicoes2'] = get_aposta_posicao();
-	$jogos['jogo_posicoes3'] = get_aposta_posicao();
+	$jogos['jogo_posicoes3'] = get_aposta_posicao();*/
+	for($i=1; $i<=12; $i++) {
+		$jogos['jogo_aleatorio'.$i] = get_aposta_aleatoria(20);
+	}
 
 	// prepara sorteio
 	$numeros = range(1, 25);
@@ -185,13 +202,33 @@ while ($cont != 1000000) {
 
 		print "sorteio $cont -> jogo $key -> ";
 		
+		$total_gasto += 2.5;
+
 		$x = array_diff($apostados, $sorteados);
 
 		$acertos = count($apostados) - count($x);
 
-		// $resultados[$acertos]++;
+		$resultados[$acertos]++;
 		$resultado_jogos[$key][$acertos]++;
 		
+		switch ($acertos) {
+			case 11:
+				$total_premiado += 5;
+				break;
+
+			case 12:
+				$total_premiado += 10;
+				break;
+
+			case 13:
+				$total_premiado += 25;
+				break;
+
+			case 14:
+				$total_premiado += 1200;
+				break;
+		}
+
 		for ($i = 5; $i <= 15; $i++) {
 			// echo "[" . $i . "] " . $resultados[$i] . "  ";
 			if (!isset($resultado_jogos[$key][$i])) {
@@ -200,6 +237,12 @@ while ($cont != 1000000) {
 			print "[" . $i . "] " . $resultado_jogos[$key][$i] . "  ";
 		}
 		print "\n";
+
+		 
 	}
 	print "\n";
 }
+
+print "Total gasto: $total_gasto\n";
+print "Total premiado: $total_premiado\n";
+print "Total do prejuizo: R$ ".($total_gasto - $total_premiado)."\n";
