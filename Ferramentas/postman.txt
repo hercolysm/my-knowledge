@@ -1,0 +1,2 @@
+# Instalação no ubuntu 
+sudo snap install postman

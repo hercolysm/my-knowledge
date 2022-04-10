@@ -1,0 +1,15 @@
+# Instalação de programas .deb (Debian, Ubuntu e derivados)
+
+Baixar o arquivo.deb 
+
+Instalar
+-> dpkg -i arquivo.deb 
+
+Listar 
+-> dpkg -l 
+
+Remover 
+-> dpkg -r nome_do_pacote
+
+Ajuda 
+-> dpkg --help 

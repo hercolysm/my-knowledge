@@ -1,0 +1,5 @@
+# lista fusos horários
+timedatectl list-timezones
+
+# alterar fuso horário
+timedatectl set-timezone America/Fortaleza

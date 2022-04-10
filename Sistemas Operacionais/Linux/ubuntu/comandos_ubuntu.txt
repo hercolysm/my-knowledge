@@ -1,0 +1,4 @@
+# Desabilitar as notificações de erro do Apport
+gedit /etc/default/apport
+
+Link: https://sempreupdate.com.br/como-corrigir-erro-ubuntu-system-program-problem-detected/

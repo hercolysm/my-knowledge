@@ -1,0 +1,10 @@
+# Exibir fuso horário atual
+cat /etc/timezone
+
+# Copiar o novo fuso horário
+cp /usr/share/zoneinfo/America/Fortaleza /etc/localtime
+
+# Configurar o novo fuso horário
+echo "America/Fortaleza" > /etc/timezone
+
+Ref: https://wiki.alpinelinux.org/wiki/Setting_the_timezone

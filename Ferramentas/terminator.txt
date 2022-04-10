@@ -1,0 +1,10 @@
+# Instalação no Ubuntu
+
+sudo add-apt-repository ppa:gnome-terminator
+sudo apt-get update 
+sudo apt-get install terminator
+
+# Desinstalar
+sudo apt remove terminator
+ou
+sudo apt remove --auto-remove terminator
