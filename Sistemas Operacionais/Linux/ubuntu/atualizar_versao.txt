@@ -1,0 +1,26 @@
+Atualizar versão do Ubuntu
+
+Link: https://www.digitalocean.com/community/tutorials/como-atualizar-para-o-ubuntu-16-04-lts-pt
+
+# atualizar lista de pacotes 
+sudo apt-get update
+
+# atualizar pacotes instalados para a versão mais recente
+sudo apt-get upgrade
+
+# atualizar as dependencias 
+sudo apt-get dist-upgrade
+
+# remover pacotes não necessários
+sudo apt autoremove
+
+# instalar a ferramenta de atualização
+sudo apt-get install update-manager-core
+
+# executar
+sudo do-release-upgrade
+
+OBS: NÃO FUNCIONOU
+
+
+
