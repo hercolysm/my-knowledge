@@ -100,11 +100,15 @@ Ações:
         Goodluck 
         CRM 
             Link get para facilitar abertura do registro no sistema 
+            Emissão de documentos (PDF)
         Controle de Estoque 
         Power BI
             Criação de paineis para Fortics 
                 Produtividade 
                 Ciclo de venda 
+        App de produtividade
+            Linguaguem google, flutter, mobile, web 
+            Integracao com whatsapp
     Atualizar curriculum 
     Atualizar perfil linkedin 
     Criar cartilha do desenvoldedor 

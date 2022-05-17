@@ -9,14 +9,13 @@ function callback() {
     };
     setInterval(
         function () {
-            $(".fl-StatusInCell:contains('Em Execução')").parent().parent().find('.ms-DetailsRow-cell').first().click();
-            $(".fl-StatusInCell:contains('Em Execução')").parent().parent().find('.ms-DetailsRow-cell').last().click();
-            $(".fl-StatusInCell:contains('Em Execução')").parent().parent().find('.ms-DetailsRow-cell').first().click();
-            $('button[name="Cancelar"]').click();
+            $('button[name="10 selecionado(s)"]').click();
+            $('.ms-DetailsRow-cellCheck:lt(5)').click();
+            $('button[name="Cancelar execução(ões) de fluxo"]').click();
         }, 5000
     );
 }
-    
+
 var s = document.createElement("script");
 s.src = "https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js";
 

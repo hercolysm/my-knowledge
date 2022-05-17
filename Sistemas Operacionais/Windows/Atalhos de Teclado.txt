@@ -1,0 +1,2 @@
+# Gravar a tela do POC
+Windows + g 
