@@ -1,3 +1,6 @@
+# update list of available packages
+sudo apt update
+
 # instalar ferramentas basicas
 apt install net-tools
 

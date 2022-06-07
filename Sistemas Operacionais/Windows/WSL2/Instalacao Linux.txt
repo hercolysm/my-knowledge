@@ -20,3 +20,24 @@ wsl --set-default-version 2
     // Precisar na loja por WSL for Windows
     // Instalar LTS Windows (Ubuntu 20.04 LTS)
 
+Guia de instalação do Subsistema Windows para Linux para Windows 11
+
+Link: https://diolinux.com.br/sistemas-operacionais/windows/wsl-windows-11.html
+
+// Listar distribuições
+wsl --list --online
+
+// Instalar distribuição escolhida
+wsl --install -d Debian
+
+// Verificar o status do Subsistema do Windows para Linux
+wsl --status
+
+// Instalar distribuição pela loja
+https://aka.ms/wslstore
+
+// Testar instalação 
+bash.exe
+
+// Acessar via explorador de arquivos (Link: https://www.howtogeek.com/426749/how-to-access-your-linux-wsl-files-in-windows-10/#:~:text=You%20can%20also%20access%20them%20directly%20at%20a,Ubuntu%2018.04%20usually%20is%20available%20at%20%5Cwsl%24Ubuntu-18.04%20.)
+\\wsl$

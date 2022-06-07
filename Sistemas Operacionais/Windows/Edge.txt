@@ -1,0 +1,10 @@
+Link: https://microsoftedgetips.microsoft.com/pt-br/collections/editor-picks/i430?form=MT009C
+
+// Ativar/Desativar guias laterais
+Ctrl + Shift + ,
+
+// Capturar tela 
+Ctrl + Shift + S
+
+// Copiar conteudo com seleção da web
+Ctrl + Shift + X
