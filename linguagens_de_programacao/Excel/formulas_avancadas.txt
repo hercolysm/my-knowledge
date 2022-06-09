@@ -61,5 +61,5 @@ End Function
 =EXT.TEXTO(B2;PROCURAR("@";B2)+1;99)
 
 // Diferença entre Data 
-= DATADIF(data_inicio; data_fim; "D")
+=DATADIF(data_inicio; data_fim; "D")
 Link: https://www.iqaccountingsolutions.com/blog/calculating-difference-two-dates-excel/

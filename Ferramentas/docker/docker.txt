@@ -107,7 +107,7 @@ docker container run -p <porta_externa-8080>:<porta_interna-80> <nome_imagem>
 docker container run -v </caminho_pasta>:</caminho_interno_container>
 
 # exibir logs do container
-docker container logs <nome_imagem>
+docker container logs <nome_container>
 
 Tipos de rede do docker
 
