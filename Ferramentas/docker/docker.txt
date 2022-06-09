@@ -5,13 +5,20 @@ baixar o rpm no site: https://www.docker.com/community-edition
 cd ~/Downloads/
 dnf -y install docker-ce-17.06.0.ce-1.fc24.x86_64.rpm
 
+# instalar docker linux (ubuntu)
+Link: https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-20-04-pt
+
 # ver a versao do docker
 docker -v
 
-# habilitar docker
+# habilitar docker (fedora)
 systemctl enable docker
 
-(aprender a gerar docker_system.tar)
+# Gerenciar Docker no Debian do WSL do Windows
+sudo service docker status 
+sudo service docker start 
+sudo service docker stop 
+sudo service docker restart 
 
 # listar comandos
 docker image --help
@@ -30,7 +37,7 @@ exemplo: nginx:1.13, mongo:3.2 , node:8.1
 # copiar imagem existente
 docker image tag <nome_imagem>:<versao> <nome_nova_imagem>
 
-# carregar imagem
+# carregar imagem (aprender a gerar docker_system.tar)
 docker load -i docker_system.tar
 
 # listar imagens
@@ -41,19 +48,11 @@ docker images list
 # inspecionar imagem
 docker image inspect <nome_imagem>
 
-# configurar docker
-tar -xvf run-docker.tar
-vim config.php 
-vim make.php
-
-# executar make
-php make.php 
-
 # remover imagem
 docker rmi <imagem_nome> ou <imagem_id>
 docker image rm <imagem_nome> ou <imagem_id>
 
-# criar imagem
+# criar imagem com Dockerfile
 mkdir teste
 cd teste
 touch Dockerfile
@@ -67,6 +66,9 @@ docker image build -t <nome_imagem> </caminho_para_o_Dockerfile>
 docker image push
 
 Trabalhando com containers
+
+# criar container
+docker container run -d (modo daemon) --name <nome_container> <nome_imagem> sleep 1000 
 
 # listar containers ativos
 docker container ls
@@ -86,12 +88,6 @@ docker container stop <nome_container>
 # acessar container
 docker container exec -ti <nome_container> /bin/bash
 
-# ip padrão da máquina
-172.17.0.x
-
-# criar container
-docker container run -d (modo daemon) --name <nome_container> <nome_imagem> sleep 1000 
-
 # executar comandos no container
 docker container exec -ti <nome_container> <comando>
 exemplos: ifconfig, ping , bash e etc
@@ -107,7 +103,10 @@ docker container run -p <porta_externa-8080>:<porta_interna-80> <nome_imagem>
 docker container run -v </caminho_pasta>:</caminho_interno_container>
 
 # exibir logs do container
-docker container logs <nome_container>
+docker container logs -f <nome_container>
+
+# ip padrão da máquina
+172.17.0.x
 
 Tipos de rede do docker
 
@@ -138,34 +137,6 @@ docker container connect <nome_rede> <nome_container>
 docker container disconnect <nome_rede> <nome_container>
 
 
-# script para auxiliar na criaçao de container com multiplos diretorios
-////////// make.php \\\\\\\\\\\
-	<?php
-
-	$container_name = "projeto";
-	$image_name = "projeto_imagem";
-
-	$configs = [
-		"/var/www/html/projeto/" => "/home/user/projeto/",
-		"/opt/projeto/files/" => "/home/user/files/",
-	];
-
-	$str_mount = null;
-
-	foreach ($configs as $target => $source) {
-		if (!empty($source)) {
-			$str_mount.= "--mount type=bind,source={$source},target={$target} ";
-		}
-	}
-
-	$str = 'docker run -d --name='.$container_name.' '.$str_mount.' '.$image_name;
-	print $str."\n";
-
-	system($str);
-
-	?>
-////////// fim do script \\\\\\\\\\\
-
 # Separar os serviços em containers 
 
 
@@ -176,27 +147,10 @@ docker container run -d --name node --mount type=bind,source=/home/hercolys/sour
 docker container exec -ti node bash -c "cd /backend && npm i && node app"
 
 
-# correção de erro ao tentar acessar docker online
+# correção de erro ao tentar acessar docker (fedora)
 vim /etc/resolv.conf
 servename 8.8.8.8
 servename 8.8.4.4
 
 systemctl daemon-reload
 systemctl restart docker
-
-vim Dockerfile
-FROM nginx:
-RUN echo '<h1>Olá mundo!</h1>' > /usr/share/nginx/html/index.html
-
-
-Criar Dockerfile
-touch Dockerfile
-////////////////
-FROM nginx:1.13
-LABEL maintainer 'Nome autor <autor@email.com.br>'
-
-ARG S3_BUCKET=files
-ENV S3_BUCKET=${S3_BUCKET}
-
-RUN echo '<h1>Olá mundo!</h1>' > /usr/share/nginx/html/index.html
-////////////////

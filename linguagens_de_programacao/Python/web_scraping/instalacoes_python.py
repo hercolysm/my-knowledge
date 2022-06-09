@@ -3,6 +3,7 @@ python --version
 python3 --version
 
 # instalador de pacotes do python
+apt-get update
 apt-get install python-pip # python 2
 apt-get install python3-pip # python 3
 
@@ -16,14 +17,14 @@ pip3 install requests # python 3
 pip install beautifulsoup4 # python 2
 pip3 install beautifulsoup4 # python 3
 
-pip install html5lib # python 2
-pip3 install html5lib # python 3
-
 pip install selenium # python 2
 pip3 install selenium # python 3
 
 pip install webdriver-manager # python 2
 pip3 install webdriver-manager # python 3
+
+pip install html5lib # python 2
+pip3 install html5lib # python 3
 
 # instalar chrome
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
@@ -34,16 +35,11 @@ apt-get -f install
 dpkg -r google-chrome-stable
 dpkg -p google-chrome-stable
 
-# baixar chromedriver
-wget https://chromedriver.storage.googleapis.com/95.0.4638.54/chromedriver_linux64.zip
-unzip chromedriver_linux64.zip
-
 # listar pacotes instalados
 dpkg -l
 
+# procurar pacotes pelo nome
+dpkg -s chrom
+
 # procurar por nome
 find / -name *chrom*
-
-apt-get update
-apt-get install python3-pip
-
