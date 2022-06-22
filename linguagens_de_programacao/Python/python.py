@@ -1,3 +1,6 @@
+# Python 2.7.16
+# 
+# Recursos básicos da linguagem Python
 
 # identificar o tipo de um valor
 print type(1)     # int
