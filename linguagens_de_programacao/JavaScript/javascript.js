@@ -45,3 +45,33 @@ texto.toUpperCase(); // ABC ABC 123
 var str = "Hello World!";
 var enc = btoa(str); // Encoded String: SGVsbG8gV29ybGQh
 var dec = atob(enc); // Decoded String: Hello World!
+
+// Selecionar elememento
+var element = document.getElementById("myDIV");
+
+// Adicionar classe 
+element.classList.add("mystyle");
+
+// Remover classe 
+element.classList.remove('hide');
+
+// Capturar parametros da URL 
+var query = location.search.slice(1);
+var partes = query.split('&');
+var data = {};
+partes.forEach(function (parte) {
+    var chaveValor = parte.split('=');
+    var chave = chaveValor[0];
+    var valor = chaveValor[1];
+    data[chave] = decodeURIComponent(valor);
+});
+
+// Alterar o valor do input
+document.getElementById("myDIV").value = "novo valor";
+
+// converter para URL
+// decodeURI
+// decodeURIComponent
+// encodeURI
+// encodeURIComponent
+
