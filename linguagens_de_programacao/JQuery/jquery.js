@@ -1,4 +1,4 @@
-<script type="text/javascript">
+//<script type="text/javascript">
 
 //	#JQUERY
 
@@ -65,8 +65,8 @@
 	$(":focus-within"); 	// seleciona inputs focados
 
 // SELETORES booleanos
-        .is(":visible");        // verifica se o elemento está visivel
-        .is(":hidden");         // verifica se o elemento está oculto
+	.is(":visible");        // verifica se o elemento está visivel
+	.is(":hidden");         // verifica se o elemento está oculto
 
 // SELETORES de BUSCA
 	.find();			// busca descendentes de um elemento
@@ -127,7 +127,7 @@
 	.dblclick();		// qnd duplo click
 	.mouseover();		// qnd passar mouse por cima
 	.mouseout();		// qnd tirar mouse de cima
-	.mousedown();		// qnd mouse esta sendo precionado
+	.mousedown();		// qnd mouse esta sendo pressionado
 	.mouseup();			// qnd mouse for solto
 	.mousemove();		// qnd mouse esta movimentando
 
@@ -169,6 +169,28 @@
 	.substr(inicio,fim);// corta uma string
 	.load();			// carrega url dentro de um elemento
 
+// REQUISIÇÃO AJAX
+	$.ajax({
+		url: '/Controller/Action/',
+		type: 'GET',
+		dataType: 'json',
+		data: {
+			param: value
+		},
+		beforeSend: function() {
+			
+		},
+		success: function(retorno){
+			
+		},
+		error: function(){
+			
+		},
+		complete: function() {
+
+		}
+	});
+
 // EXEMPLOS
 	$(document).ready(function(){
 		$(":button").click(function(){
@@ -188,8 +210,4 @@
 		var tr = $("<ul/>").append($(<"li/">).append("txt"));
 	});
 
-</script>
-
-// FUNÇÕES DE ARRAY
-var data_mysql = "2017-10-02";
-var data = data_mysql.split('-').reverse().join('/');
+//</script>

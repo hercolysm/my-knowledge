@@ -45,3 +45,7 @@ texto.toUpperCase(); // ABC ABC 123
 var str = "Hello World!";
 var enc = btoa(str); // Encoded String: SGVsbG8gV29ybGQh
 var dec = atob(enc); // Decoded String: Hello World!
+
+// FUNÇÕES DE ARRAY
+var data_mysql = "2017-10-02";
+var data = data_mysql.split('-').reverse().join('/');
