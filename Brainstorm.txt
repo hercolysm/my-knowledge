@@ -46,14 +46,41 @@ Conhecer:
 Conhecimentos básicos:
     Logica de programação 
     Git
-    HTML
-    JQuery
+    HTML5
+    JQuery/JQuery UI
     PHP 
     C# 
     MySQL
-    SQL Server 
-    Customização Dynamics CRM 
-    Power Automate 
+    Microsoft SQL Server 
+    Customização Microsoft Dynamics CRM 365 
+    Microsoft Power Automate 
+    Desenvolvimento de programas
+    OOP (Conceitos de orientação a objetos)
+    CSS
+    Javascript
+    Bootstrap
+    Laravel 
+    Java 
+    Linux 
+    Adobe Photoshop
+    Corel Draw
+    Python 
+    Redis 
+    Docker 
+    Postman API 
+    Microsoft Excel
+    Microsoft Word  
+    Trabalho em equipe
+    Ética
+    Microsoft Windows
+    Microsoft Power BI 
+    Microsoft Power Query 
+    Microsoft Power Apps 
+    Socket.io/Websocket 
+    CRM 
+    Integraão com CRM 
+    API REST 
+    .NET Framework
 
 Revisar:
     CSS 
@@ -86,8 +113,8 @@ Estudar:
     MySQL: Query recursiva
 
 Ações: 
-    ok Organizar favoritos 
-    ok Organizar projeto github hercolys 
+    Organizar favoritos 
+    Organizar projeto github hercolys 
     Documentar projetos e funções 
     Criar lista de estudos 
         Pros-graduação 

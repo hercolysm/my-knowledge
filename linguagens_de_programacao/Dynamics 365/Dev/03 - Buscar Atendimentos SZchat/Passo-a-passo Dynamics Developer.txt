@@ -1,0 +1,111 @@
+Dynamics Developer 
+
+- Criar nova ação do botão 
+    - Solução -> Processos -> Criar 
+        Categoria: Ação 
+        Entidade: Conta 
+        Nome: SearchAttendancesSZchat 
+        Paramento 1:
+            Nome: intervalo_consulta
+            Tipo: Cadeia de caracteres
+            Direção: Entrada 
+            Obrigatório: Sim
+            Opções aceitas: 
+                30_dias_atras
+                60_dias_atras
+                90_dias_atras
+                personalizado
+        Paramento 2: 
+            Nome: data_inicio 
+            Tipo: DateTime
+            Direção: Entrada 
+            Obrigatório: Não 
+        Paramento 3: 
+            Nome: data_fim  
+            Tipo: DateTime
+            Direção: Entrada 
+            Obrigatório: Não 
+- Listar ações do ambiente: https://hmadev.crm2.dynamics.com/api/data/v9.1/$metadata 
+- Adicionar botão no formulário 
+    - Acessar o powerapps: https://make.powerapps.com/
+    - Selecionar ambiente 
+    - Aplicativos -> Localizar aplicativo 
+    - Localizar tabela e clicar no 3 pontinhos -> Editar barra de comando 
+    - Fazer o btn chamar uma função javascript que chame uma ação customizada 
+        Link 1: https://blog.magnetismsolutions.com/blog/dominicjarvis/2017/09/18/how-to-trigger-plugins-on-custom-messages-using-actions-in-dynamics-365 
+        Link 2: https://carldesouza.com/calling-a-dynamics-365-action-from-javascript-using-xrm-webapi-online-execute/
+        Link 3: https://docs.microsoft.com/en-us/power-apps/developer/model-driven-apps/clientapi/reference/xrm-webapi/online/execute
+    - Testar requisição a action via URL
+        https://hmadev.crm2.dynamics.com/api/data/v9.0/accounts(3a93620e-4e1b-ed11-b83e-00224836d774)/Microsoft.Dynamics.CRM.new_PrimeiraAcao
+
+- Abrir Microsoft Visual Studio
+- Criar solução 'HMA'
+    - Criar projeto 'Biblioteca de Classes (.NET Framework)' 
+        Versão .NET Framework 4.7.1
+        Nome do projeto 'D365Extensions'
+    - Clicar com btn direito no projeto -> Gerenciar Pacotes do NuGet
+        - Procurar e instalar pacote 'Microsoft.CrmSdk.CoreAssemblies'
+    - Desenvolver o código em C# 
+    - Assinar Assembly 
+        -> Clicar com btn direito no projeto
+        -> Propriedades -> Assinatura 
+        -> Marcar 'Assinar o assembly'
+            -> Criar Chave de Nome Forte 
+                - Nome (ChaveAssinaturaAssembly)
+                - Senha 
+    - Compilar o projeto 
+
+- Abrir Plugin Registration Tool 
+    - Clicar em 'Create New Connection'
+        - Logar usando acesso 'Office 365'
+    - Register -> Register New Assembly 
+        - Localizar o Assembly 
+    - Clicar com btn direito no Plugin -> Register New Step 
+- Ir no Dynamics e realizar o teste
+    - Criar uma nova conta (deverá ser criado uma nova task) 
+
+
+
+- Habilitar Debug 
+    Link: https://docs.microsoft.com/en-us/power-apps/developer/data-platform/tutorial-debug-plug-in?tabs=prt
+    - Abrir Plugin Registration Tool 
+        - Selecionar step e clicar em 'Install Profiler' 
+        - Depois da instalação clicar em 'Start Profiling' 
+        (Realizar execução do plugin) 
+        - Clicar em 'Debug' 
+            - Selecionar no Profile a execução realizada 
+            - Selecionar o local do Assembly e o plugin 
+    - No visual studio 
+        - Adicionar um break point no código 
+        - Ir em Debug -> Anexar ao Processo (ctrl + alt + p) 
+        - Selecionar o executável do Plugin Registration Tool 
+        - Clicar em 'Attach'
+    - Ir em Replay Plug-in Execution 
+        - Clicar em 'Start Execution' 
+
+
+- Criar nova ação do botão 
+    - Solução -> Processos -> Criar 
+        Categoria: Ação 
+        Entidade: Atendimento SZ.chat 
+        Nome: SearchMessagesAttendanceSZchat 
+- Listar ações do ambiente: https://hmadev.crm2.dynamics.com/api/data/v9.1/$metadata 
+
+- Criar nova ação para consultar midia ao carregar o formulario  
+    - Solução -> Processos -> Criar 
+        Categoria: Ação 
+        Entidade: Mensagem SZ.chat 
+        Nome: GetStorageSZchat 
+        Paramento 1: 
+            Nome: systemuser
+            Tipo: EntityReference 
+            Entidade: Usuário 
+            Direção: Entrada 
+            Obrigatório: Sim
+        Paramento 2: 
+            Nome: storageid 
+            Tipo: Cadeia de caracteres
+            Direção: Entrada 
+            Obrigatório: Sim  
+- Listar ações do ambiente: https://hmadev.crm2.dynamics.com/api/data/v9.1/$metadata 
+

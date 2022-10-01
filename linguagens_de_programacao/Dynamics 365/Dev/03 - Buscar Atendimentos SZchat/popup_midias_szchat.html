@@ -1,0 +1,140 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+    <title></title>
+</head>
+<body onload="OnLoad()">
+    <div id="results"></div>
+    <script type="text/javascript">
+        function OnLoad() {
+            let parameters = [];
+
+            let query_parameters = location.search.substring(1).split("&");
+            query_parameters.forEach(function(value, index) {
+                let arr = value.split("=");
+                let param_key = arr[0];
+                let para_value = arr[1];
+                parameters[ param_key ] = para_value;
+            });
+
+            let data = parameters["data"]; 
+            let id = parameters["id"];
+            let typename = parameters["typename"]; 
+            
+            if (typename != "frt_mensagem_szchat") {
+                return;
+            }
+
+            parent.Xrm.WebApi.online.retrieveRecord("frt_mensagem_szchat", id, "?$select=frt_tipo").then(
+                function success(result) {
+                    
+                    let frt_tipo = result.frt_tipo;
+                    
+                    switch(frt_tipo) {
+                        case 'files':
+                        case 'images':
+                        case 'sounds':
+                        case 'videos':
+                            GetStorageSZchat(id);
+                    }
+                },
+                function (error) {
+                    parent.Xrm.Utility.alertDialog("Ocorreu um erro | " + error.message);
+                }
+            );
+        }
+
+        function GetStorageSZchat(id) {
+
+            parent.Xrm.Utility.showProgressIndicator("Consultando a mídia...");
+
+            var target = {};
+            target.entityType = "frt_mensagem_szchat";
+            target.id = id;
+
+            var req = {};
+            req.entity = target; 
+
+            req.getMetadata = function () {
+                return {
+                    boundParameter: "entity",
+                    parameterTypes: {
+                        "entity": { 
+                            typeName: "mscrm.frt_mensagem_szchat", 
+                            structuralProperty: 5 
+                        }
+                    },
+                    operationType: 0,
+                    operationName: "frt_GetStorageSZchat"
+                };
+            };
+
+            parent.Xrm.WebApi.online.execute(req).then( 
+                function (data) { 
+                    var e = data; 
+
+                    data.json().then(function(Response){
+
+                        let file_base64 = Response.file_base64; 
+                        let filename = Response.filename; 
+                        let mime_type = Response.mime_type; 
+
+                        let media_type = mime_type.split('/')[0];
+
+                        var res = "data:"+mime_type+";base64,"+file_base64;
+                        let html_element = '';
+
+                        switch(media_type) {
+                            case 'image': 
+                                html_element = `
+                                    <img src="${res}">
+                                `;
+                                break;
+
+                            case 'audio':
+                                html_element = `
+                                    <audio controls>
+                                        <source type="audio/mpeg" src="${res}"
+                                    </audio>
+                                `;
+                                break;
+
+                            case 'video': 
+                                html_element = `
+                                    <video controls>
+                                        <source type="video/mp4" src="${res}"
+                                    </video>
+                                `;
+                                break;
+                        }
+
+                        if (html_element) {
+                            document.getElementById("results").innerHTML = html_element;
+                        }
+                        else {
+                            var a = document.createElement("a");
+                            a.href = res; 
+                            a.download = filename;
+                            a.innerText = 'Baixar: ' + filename;
+    
+                            var br = document.createElement("br");
+    
+                            document.getElementById("results").appendChild(br);
+                            document.getElementById("results").appendChild(a);
+                        }
+                    });
+
+                    debugger; 
+                    parent.Xrm.Utility.closeProgressIndicator();
+                }, 
+                function (error) { 
+                    debugger; 
+                    var errMsg = error.message; 
+                    parent.Xrm.Navigation.openErrorDialog({ message: errMsg });
+                    parent.Xrm.Utility.closeProgressIndicator();
+                }
+            );
+            }
+    </script>
+</body>
+</html>

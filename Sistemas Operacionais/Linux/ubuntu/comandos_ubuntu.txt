@@ -2,3 +2,6 @@
 gedit /etc/default/apport
 
 Link: https://sempreupdate.com.br/como-corrigir-erro-ubuntu-system-program-problem-detected/
+
+# Checar versão do Ubuntu
+lsb_release -a
