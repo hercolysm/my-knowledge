@@ -82,6 +82,14 @@ Conhecimentos básicos:
     API REST 
     .NET Framework
 
+Soft Skills:
+    Foco no cliente 
+    Raciocínicio Lógico 
+    Senso crítico 
+    Senso de urgência 
+    Comprometimento 
+    Comunicação 
+
 Revisar:
     CSS 
     Javascript
@@ -111,6 +119,7 @@ Estudar:
     Node 
     Testes unitários
     MySQL: Query recursiva
+    Jupyter (python) 
 
 Ações: 
     Organizar favoritos 
@@ -229,7 +238,81 @@ https://www.juscibernetica.com.br/post/os-20-melhores-filmes-e-s%C3%A9ries-para-
 
 
 
+Pessoa Desenvolvedora .Net - Pleno/Sênior (Remoto)
 
+Experiência:
+
+Desenvolvimento .Net;
+NET Core;
+Angular 7+;
+Gitlab para Integração Contínua e Entrega Contínua;
+Git para repositório.
+
+Desejável:
+
+Boas práticas de desenvolvimento e padrões de projetos;
+Metodologias Ágeis;
+Inglês intermediário/avançado (participação em reuniões).
+
+O que você vai encontrar aqui:
+
+Um ambiente que valoriza feedbacks, temos a prática de 1:1;
+Somos GPTW Ceará;
+Projetos internacionais e tecnologias inovadoras;
+Ambiente de aprendizado contínuo;
+Cultura de colaboração entre os times;
+Escolha se deseja trabalhar de casa ou em nosso escritório;
+Auxílio Home office;
+No dress-code;
+Plano de saúde e odontológico;
+Vale refeição/alimentação diferenciado;
+Plano de previdência privada;
+Day off;
+Horários flexíveis de trabalho e feriados ponte;
+Apoio à formação acadêmica, certificações e curso de inglês;
+Auxílio creche;
+Contratação em regime CLT, e muito mais.
+
+
+Pessoa Desenvolvedora Backend - Sênior (Remoto)
+
+Experiência:
+
+C++;
+Go;
+Git;
+Docker;
+REST API;
+Criptografia.
+
+Conhecimento:
+
+Shell script;
+Python;
+Metodologias ágeis (Scrum/Kanban);
+Infraestrutura de Chaves Públicas;
+IoT (MQTT, etc);
+Infraestrutura de Computação em Nuvem.
+
+Desejável:
+
+SSL e aplicativos distribuídos e redes;
+Sistemas operacionais Unix/Linux;
+Inglês;
+Uma ou mais das tecnologias - HyperLedger, Corda, Ethereum, Quorum;
+Arquitetura de sistemas, DLT (distributed ledger technology), Criptoativos ou Tokenização;
+Experiência em Cloud.
+
+
+Pessoa Desenvolvedora Java - Pleno
+
+Experiência:
+
+Desenvolvimento Java 8/11;
+Microsserviços;
+Docker;
+AWS;
+APIs Rest;
 
 
 
