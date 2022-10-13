@@ -50,8 +50,12 @@ var dec = atob(enc); // Decoded String: Hello World!
 var data_mysql = "2017-10-02";
 var data = data_mysql.split('-').reverse().join('/');
 
-// Selecionar elememento
+// Selecionar elememento pelo id
 var element = document.getElementById("myDIV");
+
+// Selecionar elementos
+var input = document.querySelectorAll('[data-id="frt_st_senha_agente_szchat"]');
+input[0].setAttribute("type", "password");
 
 // Adicionar classe 
 element.classList.add("mystyle");
