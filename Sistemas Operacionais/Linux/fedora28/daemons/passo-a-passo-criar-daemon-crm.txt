@@ -1,0 +1,54 @@
+
+// criar daemon
+
+script:
+daemon_importar
+
+#!/bin/bash
+run_importar(){
+typeset -x PID=$(pgrep daemon_importar)
+echo "$PID" > /var/run/daemon_importar.pid
+
+while :; do
+        /usr/bin/php /var/www/lisnet/script/importar_mailing.php
+        sleep 1
+done
+}
+
+ACAO=$1
+
+case $ACAO in
+        start)
+                run_importar &
+                ;;
+esac
+
+
+daemon:
+daemon_importar.service
+
+[Unit]
+After=asterisk.service
+After=httpd.service
+After=mariadb.service
+After=redis.service
+
+[Service]
+
+Type=forking
+
+ExecStart=/opt/fortics/crm/scripts/daemon_importar start
+Restart=on-failure
+RestartSec=5s
+
+[Install]
+WantedBy=multi-user.target
+
+
+cp daemon_importar.service /etc/systemd/system/
+
+systemctl daemon-reload
+systemctl restart daemon_importar
+systemctl status daemon_importar
+systemctl enable daemon_importar
+journalctl -xe
