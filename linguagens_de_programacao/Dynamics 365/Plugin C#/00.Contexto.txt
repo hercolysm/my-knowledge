@@ -1,0 +1,13 @@
+context = {PluginProfiler.Plugins.ServiceWrappers.PluginExecutionContextWrapper}
+    PrimaryEntityId = {4d6a03a5-e93a-ed11-9db0-000d3a888c5b}
+    PrimaryEntityName = "frt_mensagem_szchat"
+    UserId = {85e0b88f-7e15-ed11-b83c-002248361003}
+    InputParameters = {Microsoft.Xrm.Sdk.ParameterCollection}
+        "systemuser"
+            LogicalName "systemuser"
+            Id 
+        "storageid"
+        "Target"
+            LogicalName "frt_mensagem_szchat"
+            Id 
+    OutputParameters = {Microsoft.Xrm.Sdk.ParameterCollection}
