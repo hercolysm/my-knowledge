@@ -7,19 +7,8 @@
     <div id="results"></div>
     <script type="text/javascript">
         function OnLoad() {
-            let parameters = [];
-
-            let query_parameters = location.search.substring(1).split("&");
-            query_parameters.forEach(function(value, index) {
-                let arr = value.split("=");
-                let param_key = arr[0];
-                let para_value = arr[1];
-                parameters[ param_key ] = para_value;
-            });
-
-            let data = parameters["data"]; 
-            let id = parameters["id"];
-            let typename = parameters["typename"]; 
+            var id = parent.Xrm.Page.data.entity.getId().replace('{', '').replace('}', '');
+            var typename = parent.Xrm.Page.data.entity.getEntityName();
             
             if (typename != "frt_mensagem_szchat") {
                 return;
@@ -134,7 +123,7 @@
                     parent.Xrm.Utility.closeProgressIndicator();
                 }
             );
-            }
+        }
     </script>
 </body>
 </html>

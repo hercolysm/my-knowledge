@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relatório de Chamadas</title>
+    <style type="text/css">
+        body {
+            margin: 0;
+            padding: 0;
+        }
+        .row {
+            width: 100%;
+        }
+        .row::after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+        .block-left {
+            float: left;
+        }
+        .block-right {
+            float: right;
+        }
+        .col1 {
+            width: 50px;
+            margin: 15px 5px 5px 5px;
+        }
+        .col2 {
+            width: calc(100% - 67px);
+            margin: 15px 5px 5px 0;
+            border: 1px solid #dcdcdc;
+            border-radius: 5px;
+        }
+        .col2:hover {
+            background-color: #edebe9;
+            cursor: pointer;
+        }
+        .col2 h1 {
+            margin: 0;
+            color: #646464;
+            font-size: 16px;
+            font-family: SegoeUI-Semibold, "Segoe UI Semibold", "Segoe UI Regular", "Segoe UI";
+        }
+        .col2 ul {
+            margin: 7px 0 0 0;
+            padding: 0;
+        }
+        .col2 ul > li {
+            display: inline;
+            margin-right: 5px;
+            color: #333/*#b0b0b0*/;
+            font-size: 14px;
+            font-family: SegoeUI, "Segoe UI", "Helvetica Neue", sans-serif;
+            font-style: normal;
+            font-weight: normal;
+        }
+        .hide {
+            display: none;
+        }
+        .block-filter {
+            padding: 10px 15px 20px 10px;
+        }
+        .block-filter label {
+            color: #444;
+            font-family: SegoeUI, "Segoe UI";
+            font-size: 1rem;
+        }
+        .block-filter input {
+            padding-top: 5px;
+            padding-bottom: 5px;
+            padding-right: 10px;
+            padding-left: 10px;
+            margin-left: 5px;
+        }
+        .block-filter button {
+            padding-top: 7px;
+            padding-bottom: 7px;
+            padding-right: 10px;
+            padding-left: 10px;
+            margin-left: 5px;
+            background-color: white;
+            border-width: 1px;
+            border-color: #767676;
+            border-radius: 2px;
+            cursor: pointer;
+        }
+        .block-filter button:hover {
+            background-color: #e2e2e2;
+        }
+        .div_alerta p {
+            margin: 50px 0;
+            text-align: center;
+            color: #666;
+            font-size: 14px;
+            font-family: SegoeUI, "Segoe UI", "Helvetica Neue", sans-serif;
+        }
+        .table {
+            width: 100%;
+            border-bottom: 1px solid #ddd;
+        }
+        .table th:first-child {
+            text-align: left;
+        }
+        .table td:not(:first-child) {
+            text-align: center;
+        }
+        .table th, .table td {
+            padding:  8px;
+            border-top: 1px solid #ddd;
+            border-left: 0;
+            border-right: 0;
+            border-bottom: 0;
+        }
+        .table td:last-child {
+            padding: 0px;
+            width: 300px;
+        }
+        .table th {
+            font-size: 12px;
+            font-family: SegoeUI, "Segoe UI", "Helvetica Neue", sans-serif;
+            color: #323130;
+        }
+        .table td {
+            font-size: 14px;
+            font-family: SegoeUI, "Segoe UI", "Helvetica Neue", sans-serif;
+        }
+        .table > tbody > tr:hover {
+            background-color: #f5f5f5;
+        }
+        .btn-play {
+            background: #1171a3;
+            padding: 1px 5px;
+            color: #fff;
+            border-color: #357ebd;
+        }
+        .audio {
+            height: 20px;
+            margin-top: 7px;
+        }
+    </style>
+</head>
+<body onload="OnLoad()">
+    <div class="row">
+        <div class="block-left block-filter">
+            <label for="data_inicio">Data Início</label>
+            <input type="date" name="data_inicio" id="data_inicio">
+        </div>
+        <div class="block-left block-filter">
+            <label for="data_fim">Data Fim</label>
+            <input type="date" name="data_fim" id="data_fim">
+        </div>
+        <div class="block-left block-filter">
+            <button type="button" id="btn-consultar-chamadas">Buscar Chamadas</button>
+        </div>
+    </div>
+    <div id="lista-chamadas" class="hide.">
+        <div class="row">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Data</th>
+                        <th>Protocolo</th>
+                        <th>Origem</th>
+                        <th>Destino</th>
+                        <th>Duração</th>
+                        <th>Bilhetado</th>
+                        <th>Disposição</th>
+                        <th>Gravação</th>
+                    </tr>
+                </thead>
+                <tbody id="lista-chamadas-tr">
+                    <tr id="row-clone" class="hide">
+                        <td class="value_date">frt_date</td>
+                        <td class="value_protocol">frt_protocol</td>
+                        <td class="value_src">frt_src</td>
+                        <td class="value_dst">frt_dst</td>
+                        <td class="value_duration">frt_duration</td>
+                        <td class="value_billing">frt_billing</td>
+                        <td class="value_disposition">frt_disposition</td>
+                        <td class="value_record">
+                            <a href="javascript:void(0)" class="btn_ouvir_gravacao">Clique para Ouvir</a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div id="lista-vazia" class="div_alerta hide">
+        <p>Nenhum dado disponível</p>
+    </div>
+    <div id="alerta-erro" class="div_alerta hide">
+        <p>Ocorreu um erro ao buscar os dados</p>
+    </div>
+    <script type="text/javascript">
+
+        function formatDate(date) {
+            return (
+                date.getDate().toString().padStart(2, '0') +
+                '/' +
+                (date.getMonth()+1).toString().padStart(2, '0') +
+                '/' +
+                date.getFullYear() +
+                ' ' +
+                date.getHours().toString().padStart(2, '0') +
+                ':' +
+                date.getMinutes().toString().padStart(2, '0') +
+                ':' +
+                date.getSeconds().toString().padStart(2, '0')
+            )
+        }
+
+        function formatTime(time) {
+            let hh = Math.floor(time / 3600);
+            let mm = Math.floor((time % 3600) / 60);
+            let ss = Math.floor((time % 3600) % 60);
+            hh = hh.toString().padStart(2, '0');
+            mm = mm.toString().padStart(2, '0');
+            ss = ss.toString().padStart(2, '0');
+            return hh+':'+mm+':'+ss;
+        }
+
+        function OnLoad() {
+     
+            /* // bloco de código para testes
+            let value_date = "value_date";
+            let value_protocol = "value_protocol";
+            let value_src = "value_src";
+            let value_dst = "value_dst";
+            let value_duration = "value_duration";
+            let value_billing = "value_billing";
+            let value_disposition = "value_disposition";
+            let value_record = "value_record";
+            
+            for (let index = 0; index < 5; index++) {
+                newRow(value_date, value_protocol, value_src, value_dst, value_duration, value_billing, value_disposition, value_record);
+            }
+            */
+            //clearRows();
+
+            function newRow(value_date, value_protocol, value_src, value_dst, value_duration, value_billing, value_disposition, value_record) {
+
+                switch (value_disposition) {
+                    case 'ANSWERED': 
+                        value_disposition = 'Atendida';
+                        break;
+                    case 'NO ANSWER': 
+                        value_disposition = 'Não Atendida';
+                        break;
+                    case 'BUSY': 
+                        value_disposition = 'Ocupado';
+                        break;
+                    case 'FAILED': 
+                        value_disposition = 'Falha';
+                        break;
+                    case 'CONGESTION': 
+                        value_disposition = 'Congestionado';
+                        break;
+                    case 'CHANUNAVAIL': 
+                        value_disposition = 'Canal indisponível';
+                        break;
+                    case 'CANCEL': 
+                        value_disposition = 'Cancelada';
+                        break;
+                    case 'NOROUTE': 
+                        value_disposition = 'Sem rota';
+                        break;
+                }
+
+                var row_clone  = document.getElementById("row-clone").cloneNode(true);
+                row_clone.removeAttribute("id");
+                row_clone.classList.remove("hide");
+                row_clone.classList.add("row-cloned");
+
+                row_clone.querySelector(".value_date").innerText = value_date;
+                row_clone.querySelector(".value_protocol").innerText = value_protocol;
+                row_clone.querySelector(".value_src").innerText = value_src;
+                row_clone.querySelector(".value_dst").innerText = value_dst;
+                row_clone.querySelector(".value_duration").innerText = formatTime(value_duration);
+                row_clone.querySelector(".value_billing").innerText = formatTime(value_billing);
+                row_clone.querySelector(".value_disposition").innerText = value_disposition;
+
+                let btn_ouvir_gravacao = row_clone.querySelector(".btn_ouvir_gravacao");
+                
+                btn_ouvir_gravacao.addEventListener("click", function() {
+
+                    parent.Xrm.Utility.showProgressIndicator("Carregando a gravação...");
+
+                    let id = parent.Xrm.Page.data.entity.getId().replace('{', '').replace('}', '');
+
+                    var target = {};
+                    target.entityType = "account";
+                    target.id = id;
+
+                    var req = {};
+                    req.entity = target; 
+                    req.filename = value_record;
+
+                    req.getMetadata = function () {
+                        return {
+                            boundParameter: "entity",
+                            parameterTypes: {
+                                "entity": { 
+                                    typeName: "mscrm.account", 
+                                    structuralProperty: 5 
+                                },
+                                "filename": {
+                                    typeName: "Edm.String",
+                                    structuralProperty: 1
+                                },
+                            },
+                            operationType: 0,
+                            operationName: "frt_GetGravacaoPBX"
+                        };
+                    };
+
+                    parent.Xrm.WebApi.online.execute(req).then( 
+                        function (data) { 
+                            var e = data; 
+
+                            data.json().then(function(Response){
+
+                                let file_base64 = Response.file_base64; 
+
+                                var src = "data:audio/mp3;base64,"+file_base64;
+
+                                let html_element = `
+                                    <audio controls autoplay class="audio">
+                                        <source type="audio/mp3" src="${src}">
+                                    </audio>
+                                `;
+                                
+                                row_clone.querySelector(".value_record").innerHTML = html_element;
+                            });
+
+                            debugger; 
+                            parent.Xrm.Utility.closeProgressIndicator();
+                        }, 
+                        function (error) { 
+                            debugger; 
+                            var errMsg = error.message; 
+                            parent.Xrm.Navigation.openErrorDialog({ message: errMsg });
+                            parent.Xrm.Utility.closeProgressIndicator();
+                        }
+                    );
+                });
+
+                document.getElementById("lista-chamadas-tr").appendChild(row_clone);
+            }
+        
+            function clearRows() {
+                let rows = document.getElementById("lista-chamadas-tr").querySelectorAll(".row-cloned");
+
+                rows.forEach(function(value, key) {
+                    value.remove();
+                });
+            }
+        
+            let btn_consultar_chamadas = document.getElementById("btn-consultar-chamadas");
+
+            btn_consultar_chamadas.addEventListener("click", function() {
+                
+                let Id = parent.Xrm.Page.data.entity.getId().replace('{', '').replace('}', '');
+                var data_inicio = null;
+                var data_fim = null;
+
+                data_inicio = document.getElementById("data_inicio").value;
+                data_fim = document.getElementById("data_fim").value;
+                data_inicio = new Date(data_inicio);
+                data_fim = new Date(data_fim);
+
+                if (!data_inicio || !data_fim) {
+                    parent.Xrm.Navigation.openErrorDialog({ message: "Selecione o período da consulta" });
+                    return;
+                }
+                
+                // To calculate the time difference of two dates
+                var Difference_In_Time = data_fim.getTime() - data_inicio.getTime();
+                
+                // To calculate the no. of days between two dates
+                var Difference_In_Days = Difference_In_Time / (1000 * 3600 * 24);
+                
+                if (Difference_In_Days < 0) {
+                    parent.Xrm.Navigation.openErrorDialog({ message: "A 'Data Inicio' não pode ser maior que a 'Data Fim'" });
+                    return;
+                }
+
+                if (Difference_In_Days > 31) {
+                    parent.Xrm.Navigation.openErrorDialog({ message: "O intervalo máximo da busca é de 31 dias" });
+                    return;
+                }
+
+                parent.Xrm.Utility.showProgressIndicator("Consultando chamadas...");
+                
+                var target = {};
+                target.entityType = "account";
+                target.id = Id;
+
+                var req = {};
+                req.entity = target; 
+                req.data_inicio = data_inicio;
+                req.data_fim = data_fim;
+
+                req.getMetadata = function () {
+                    return {
+                        boundParameter: "entity",
+                        parameterTypes: {
+                            "entity": { 
+                                typeName: "mscrm.account", 
+                                structuralProperty: 5 
+                            },
+                            "data_inicio": {
+                                typeName: "Edm.DateTimeOffset",
+                                structuralProperty: 1
+                            },
+                            "data_fim": {
+                                typeName: "Edm.DateTimeOffset",
+                                structuralProperty: 1
+                            }
+                        },
+                        operationType: 0,
+                        operationName: "frt_BuscarChamadasPBX"
+                    };
+                };
+            
+                parent.Xrm.WebApi.online.execute(req).then( 
+                    function (data) { 
+                        var e = data; 
+                        debugger; 
+                        
+                        data.json().then(function(Response){
+
+                            document.getElementById("alerta-erro").classList.add("hide");
+                            document.getElementById("lista-vazia").classList.add("hide");
+                            document.getElementById("lista-chamadas").classList.add("hide");
+
+                            if (!Response) {
+                                // ERRO
+                                document.getElementById("alerta-erro").classList.remove("hide");
+                                return;
+                            }
+
+                            let json = Response.lista_chamadas;
+                            
+                            if (!json) {
+                                // ERRO
+                                document.getElementById("alerta-erro").classList.remove("hide");
+                                return;
+                            }
+
+                            if (json == '[]') {
+                                document.getElementById("lista-vazia").classList.remove("hide");
+                                return;
+                            }
+
+                            clearRows();
+                            document.getElementById("lista-chamadas").classList.remove("hide");
+
+                            let object = JSON.parse(json);
+
+                            object.forEach(function(attendance, key) {   
+                                newRow(
+                                    formatDate(new Date(attendance.date)),
+                                    attendance.protocol,
+                                    attendance.src,
+                                    attendance.dst,
+                                    attendance.duration,
+                                    attendance.duration_billing,
+                                    attendance.disposition_name,
+                                    attendance.record
+                                );
+                            }); 
+                        });
+
+                        parent.Xrm.Utility.closeProgressIndicator();
+                    }, 
+                    function (error) { 
+                        debugger; 
+                        var errMsg = error.message; 
+                        parent.Xrm.Navigation.openErrorDialog({ message: errMsg });
+                        parent.Xrm.Utility.closeProgressIndicator();
+                    }
+                );
+            });
+
+            let date = new Date();
+            let today = date.toISOString().split('T')[0];
+            document.getElementById("data_inicio").value = today;
+            document.getElementById("data_fim").value = today;
+        }
+    </script>
+</body>
+</html>

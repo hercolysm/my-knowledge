@@ -1,0 +1,9 @@
+// Instalar PHP 
+
+# Baixar arquivo .zip no link de download do PHP_ROUND_HALF_DOWN
+Link: https://windows.php.net/download/
+
+# Descompactar o arquivo 
+# Colar a pasta dentro de 'Arquivos de Programas'
+# Adicionar o caminho da pasta nas variaveis de ambiente do sistema 
+

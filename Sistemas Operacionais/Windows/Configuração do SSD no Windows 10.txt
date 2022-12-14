@@ -1,0 +1,24 @@
+Painel de Controle -> Hardware e Sons -> Opções de Energia -> Editar Configurações do Plano
+- Disco Rígido -> Nunca
+
+Configurações Avançadas do Sistema -> Opções de Desempenho -> Avançado -> Memória virtual
+- Desmarcar -> Gerenciar automaticamente o tamanho do arquivo de paginação de todas as unidades
+- Selecionar o ssd
+- Selecionar -> Sem arquivo de paginação
+- Clicar em -> Definir
+
+Desativar indexação de arquivos do windows search
+- Windows+R -> services.msc
+- Windows Search -> Propriedades -> Parar -> Tipo de inicialização -> Desativado
+
+Desativar indexação de arquivos do ssd
+- Computador -> ssd -> Propriedades
+- Desmarcar -> Permitir que os arquivos desta unidade tenham o conteúdo indexado... -> Aplicar
+- Selecionar -> Aplicar as alterações á unidade C:\, subpastas e arquivos
+
+Desabilitar superfetch
+- Windows+R -> services.msc
+- Superfetch-> Propriedades -> Parar -> Tipo de inicialização -> Desativado
+
+Desabilitar o hibernar
+- Prompt de comando como administrador -> powercfg -h off

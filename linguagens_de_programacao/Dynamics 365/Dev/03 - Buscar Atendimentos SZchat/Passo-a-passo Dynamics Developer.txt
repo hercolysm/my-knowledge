@@ -25,6 +25,11 @@ Dynamics Developer
             Tipo: DateTime
             Direção: Entrada 
             Obrigatório: Não 
+        Paramento 4:
+            Nome: lista_atendimentos
+            Tipo: Cadeia de caracteres 
+            Direção: Saida 
+            Obrigatório: Sim 
 - Listar ações do ambiente: https://hmadev.crm2.dynamics.com/api/data/v9.1/$metadata 
 - Adicionar botão no formulário 
     - Acessar o powerapps: https://make.powerapps.com/
@@ -97,15 +102,19 @@ Dynamics Developer
         Entidade: Mensagem SZ.chat 
         Nome: GetStorageSZchat 
         Paramento 1: 
-            Nome: systemuser
-            Tipo: EntityReference 
-            Entidade: Usuário 
-            Direção: Entrada 
+            Nome: mime_type
+            Tipo: Cadeia de caracteres
+            Direção: Saída 
             Obrigatório: Sim
         Paramento 2: 
-            Nome: storageid 
+            Nome: filename 
             Tipo: Cadeia de caracteres
-            Direção: Entrada 
+            Direção: Saída 
+            Obrigatório: Sim  
+        Paramento 3: 
+            Nome: file_base64 
+            Tipo: Cadeia de caracteres
+            Direção: Saída 
             Obrigatório: Sim  
 - Listar ações do ambiente: https://hmadev.crm2.dynamics.com/api/data/v9.1/$metadata 
 

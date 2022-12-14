@@ -36,6 +36,7 @@ Fortics.Dyn365.Whatsapp = {
         FormContext.getAttribute("frt_lk_lead").addOnChange(this.OnChangeLead);
         FormContext.getAttribute("frt_contato").addOnChange(this.OnChangeContato);
         FormContext.getAttribute("frt_tipo_envio").addOnChange(this.OnChangeTipoEnvio);
+        FormContext.getAttribute("statecode").addOnChange(this.OnChangeStatecode);
 
         Fortics.Dyn365.Whatsapp.VisibilidadesPorTipoEnvio(executionContext);
         Fortics.Dyn365.Whatsapp.VisibilidadeContatoLead();
@@ -64,10 +65,56 @@ Fortics.Dyn365.Whatsapp = {
     OnChangeLead: function () {
         Fortics.Dyn365.Whatsapp.VisibilidadeContatoLead();
         Fortics.Dyn365.Whatsapp.PreencherTelefoneWhatsApp();
+        FormContext.getAttribute("statecode").setValue(0);
     },
     OnChangeContato: function () {
         Fortics.Dyn365.Whatsapp.VisibilidadeContatoLead();
         Fortics.Dyn365.Whatsapp.PreencherTelefoneWhatsApp();
+        FormContext.getAttribute("statecode").setValue(0);
+    },
+    OnChangeStatecode: function () {
+        var statecode = FormContext.getAttribute("statecode").getValue();
+
+        if (statecode == StateCode.Concluida) {
+
+            var lead = FormContext.getAttribute("frt_lk_lead").getValue();
+            var contato = FormContext.getAttribute("frt_contato").getValue();
+            
+            if (lead != null) {
+                let lead_obj = lead[0];
+                let lead_id = lead_obj['id'];
+                Xrm.WebApi.online.retrieveRecord("lead", lead_id, "?$select=frt_aceita_conteudos").then(
+                    function success(result) {
+                        var frt_aceita_conteudos = result["frt_aceita_conteudos"];
+                        if (frt_aceita_conteudos === false) {
+                            Xrm.Utility.alertDialog("Atenção! Esse lead NÃO aceita receber conteúdos.");
+                            FormContext.getAttribute("statecode").setValue(2);
+                        }
+                    },
+                    function (error) {
+                        Xrm.Utility.alertDialog("Ocorreu um erro ao verificar as permissões do lead.");
+                        FormContext.getAttribute("statecode").setValue(2);
+                    }
+                );
+            }
+            else if (contato != null) {
+                let contact_obj = contato[0];
+                let contact_id = contact_obj['id'];
+                Xrm.WebApi.online.retrieveRecord("contact", contact_id, "?$select=frt_aceita_conteudos").then(
+                    function success(result) {
+                        var frt_aceita_conteudos = result["frt_aceita_conteudos"];
+                        if (frt_aceita_conteudos === false) {
+                            Xrm.Utility.alertDialog("Atenção! Esse contato NÃO aceita receber conteúdos.");
+                            FormContext.getAttribute("statecode").setValue(2);
+                        }
+                    },
+                    function (error) {
+                        Xrm.Utility.alertDialog("Ocorreu um erro ao verificar as permissões do contato.");
+                        FormContext.getAttribute("statecode").setValue(2);
+                    }
+                );
+            }
+        }
     },
     PreencherTelefoneWhatsApp: function () {
         var telefoneWhatsApp = FormContext.getAttribute("frt_telefone_whatsapp").getValue();

@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Linha do tempo</title>
+    <style type="text/css">
+        body {
+            margin: 0;
+            padding: 0;
+        }
+        .row {
+            width: 100%;
+        }
+        .row::after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+        .block-left {
+            float: left;
+        }
+        .block-right {
+            float: right;
+        }
+        .col1 {
+            width: 50px;
+            margin: 15px 5px 5px 5px;
+        }
+        .col2 {
+            width: calc(100% - 67px);
+            margin: 15px 5px 5px 0;
+            border: 1px solid #dcdcdc;
+            border-radius: 5px;
+        }
+        .col2:hover {
+            background-color: #edebe9;
+            cursor: pointer;
+        }
+        .col2 h1 {
+            margin: 0;
+            color: #646464;
+            font-size: 16px;
+            font-family: SegoeUI-Semibold, "Segoe UI Semibold", "Segoe UI Regular", "Segoe UI";
+        }
+        .col2 ul {
+            margin: 7px 0 0 0;
+            padding: 0;
+        }
+        .col2 ul > li {
+            display: inline;
+            margin-right: 5px;
+            color: #333/*#b0b0b0*/;
+            font-size: 14px;
+            font-family: SegoeUI, "Segoe UI", "Helvetica Neue", sans-serif;
+            font-style: normal;
+            font-weight: normal;
+        }
+        .elements-left {
+            width: calc(75% - 10px);
+            margin: 8px 0 10px 10px;
+        }
+        .elements-rigth {
+            width: calc(25% - 10px);
+            margin: 8px 10px 10px 0;
+        }
+        .elements-rigth .label_date {
+            margin: 0;
+            color: #646464;
+            font-size: 16px;
+            font-family: SegoeUI-Semibold, "Segoe UI Semibold", "Segoe UI Regular", "Segoe UI";
+            font-weight: bold;
+        }
+        .elements-rigth .full_date {
+            margin-top: 7px;
+            color: #666/*#b0b0b0*/;
+            font-size: 14px;
+            font-family: SegoeUI, "Segoe UI", "Helvetica Neue", sans-serif;
+        }
+        .border-logo-szchat {
+            width: 40px;
+            height: 40px;
+            margin: 4px 0 0 5px;
+            border: 1px solid #e5e3e3;
+            border-radius: 50px;
+        }
+        .logo-szchat {
+            background-image: url('data:image/png;base64,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');
+            background-size: contain;
+            width: 30px;
+            height: 30px;
+            margin: 5px 0 0 5px;
+        }
+        .hide {
+            display: none;
+        }
+        .block-filter {
+            padding: 10px 15px 20px 10px;
+        }
+        .block-filter label {
+            color: #444;
+            font-family: SegoeUI, "Segoe UI";
+            font-size: 1rem;
+        }
+        .block-filter input {
+            padding-top: 5px;
+            padding-bottom: 5px;
+            padding-right: 10px;
+            padding-left: 10px;
+            margin-left: 5px;
+        }
+        .block-filter button {
+            padding-top: 7px;
+            padding-bottom: 7px;
+            padding-right: 10px;
+            padding-left: 10px;
+            margin-left: 5px;
+            background-color: white;
+            border-width: 1px;
+            border-color: #767676;
+            border-radius: 2px;
+            cursor: pointer;
+        }
+        .block-filter button:hover {
+            background-color: #e2e2e2;
+        }
+        .div_alerta p {
+            margin: 50px 0;
+            text-align: center;
+            color: #666;
+            font-size: 14px;
+            font-family: SegoeUI, "Segoe UI", "Helvetica Neue", sans-serif;
+        }
+    </style>
+</head>
+<body onload="OnLoad()">
+    <div class="row">
+        <div class="block-left block-filter">
+            <label for="data_inicio">Data Início</label>
+            <input type="date" name="data_inicio" id="data_inicio">
+        </div>
+        <div class="block-left block-filter">
+            <label for="data_fim">Data Fim</label>
+            <input type="date" name="data_fim" id="data_fim">
+        </div>
+        <div class="block-left block-filter">
+            <button type="button" id="btn-consultar-atendimentos">Buscar Atendimentos</button>
+        </div>
+    </div>
+    <div id="lista-atendimentos" class="hide">
+        <div class="row hide" id="row-clone">
+            <div class="block-left col1">
+                <div class="border-logo-szchat">
+                    <div class="logo-szchat"></div>
+                </div>
+            </div>
+            <div class="block-right col2">
+                <div class="row">
+                    <div class="block-left elements-left">
+                        <h1 class="value_titulo"></h1>
+                        <ul>
+                            <li>
+                                Protocolo: <span class="value_protocolo"></span>
+                            </li>
+                        </ul>
+                        <ul>
+                            <li>
+                                Contato: <span class="value_contato"></span>
+                            </li>
+                            <li>
+                                Identificador: <span class="value_plataform_id"></span>
+                            </li>
+                            <!--<li>Equipe: <span class="value_equipe"></span></li>-->
+                        </ul>
+                    </div>
+                    <div class="block-right elements-rigth">
+                        <div class="row">
+                            <p class="block-right label_date"></p>
+                        </div>
+                        <div class="row">
+                            <p class="block-right full_date"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="lista-vazia" class="div_alerta hide">
+        <p>Nenhum dado disponível</p>
+    </div>
+    <div id="alerta-erro" class="div_alerta hide">
+        <p>Ocorreu um erro ao buscar os dados</p>
+    </div>
+    <script type="text/javascript">
+        function formatDate(date) {
+            return (
+                date.getDate().toString().padStart(2, '0') +
+                '/' +
+                (date.getMonth()+1).toString().padStart(2, '0') +
+                '/' +
+                date.getFullYear() +
+                ' ' +
+                date.getHours().toString().padStart(2, '0') +
+                ':' +
+                date.getMinutes().toString().padStart(2, '0') +
+                ':' +
+                date.getSeconds().toString().padStart(2, '0')
+            )
+        }
+        function OnLoad() {
+            
+            let value_id = "3353948f-513f-eb11-a813-0022483616ec";
+            let value_titulo = "Chat - WhatsApp Business - em X horas de duração";
+            let value_protocolo = "2022041900121"; 
+            let value_contato = "Danielle Pacheco"; 
+            let value_plataform_id = "Encerrado";
+            let value_equipe = "Pré Vendas Locação";
+            let label_date = "há 12 dias";
+            let full_date = "22/10/22 17:57:00";
+            /*newRow(value_id, value_titulo, value_protocolo, value_contato, value_plataform_id, value_equipe, label_date, full_date);
+            newRow(value_id, value_titulo, value_protocolo, value_contato, value_plataform_id, value_equipe, label_date, full_date);
+            newRow(value_id, value_titulo, value_protocolo, value_contato, value_plataform_id, value_equipe, label_date, full_date);
+            newRow(value_id, value_titulo, value_protocolo, value_contato, value_plataform_id, value_equipe, label_date, full_date);
+            */
+            //clearRows();
+
+            function newRow(value_id, value_titulo, value_protocolo, value_contato, value_plataform_id, value_equipe, label_date, full_date) {
+
+                var row_clone  = document.getElementById("row-clone").cloneNode(true);
+                row_clone.removeAttribute("id");
+                row_clone.classList.remove("hide");
+                row_clone.classList.add("row-cloned");
+                
+                row_clone.querySelector(".value_titulo").innerText = value_titulo;
+                row_clone.querySelector(".value_protocolo").innerText = value_protocolo;
+                row_clone.querySelector(".value_contato").innerText = value_contato;
+                row_clone.querySelector(".value_plataform_id").innerText = value_plataform_id;
+                //row_clone.querySelector(".value_equipe").innerText = value_equipe;
+                row_clone.querySelector(".label_date").innerText = label_date;
+                row_clone.querySelector(".full_date").innerText = full_date;
+
+                document.getElementById("lista-atendimentos").appendChild(row_clone);
+
+                row_clone.addEventListener("click", function() {                    
+                    // Open Form 
+                    let entityFormOptions = {
+                        entityName: "frt_atendimento_szchat",
+                        entityId: value_id
+                    };
+                    parent.Xrm.Navigation.openForm(entityFormOptions);
+                });
+            }
+        
+            function clearRows() {
+                let rows = document.getElementById("lista-atendimentos").querySelectorAll(".row-cloned");
+
+                rows.forEach(function(value, key) {
+                    value.remove();
+                });
+            }
+        
+            let btn_consultar_atendimentos = document.getElementById("btn-consultar-atendimentos");
+
+            btn_consultar_atendimentos.addEventListener("click", function() {
+                
+                var Id = parent.Xrm.Page.data.entity.getId().replace('{', '').replace('}', '');
+                var intervalo_consulta = "personalizado";
+                var data_inicio = null;
+                var data_fim = null;
+
+                data_inicio = document.getElementById("data_inicio").value;
+                data_fim = document.getElementById("data_fim").value;
+                data_inicio = new Date(data_inicio);
+                data_fim = new Date(data_fim);
+
+                if (!data_inicio || !data_fim) {
+                    parent.Xrm.Navigation.openErrorDialog({ message: "Selecione o período da consulta" });
+                    return;
+                }
+                    
+                // To calculate the time difference of two dates
+                var Difference_In_Time = data_fim.getTime() - data_inicio.getTime();
+                
+                // To calculate the no. of days between two dates
+                var Difference_In_Days = Difference_In_Time / (1000 * 3600 * 24);
+                
+                if (Difference_In_Days < 0) {
+                    parent.Xrm.Navigation.openErrorDialog({ message: "A 'Data Inicio' não pode ser maior que a 'Data Fim'" });
+                    return;
+                }
+
+                if (Difference_In_Days > 31) {
+                    parent.Xrm.Navigation.openErrorDialog({ message: "O intervalo máximo da busca é de 31 dias" });
+                    return;
+                }
+
+                parent.Xrm.Utility.showProgressIndicator("Consultando atendimentos...");
+                
+                var target = {};
+                target.entityType = "account";
+                target.id = Id;
+
+                var req = {};
+                req.entity = target; 
+                req.intervalo_consulta = intervalo_consulta;
+                req.data_inicio = data_inicio;
+                req.data_fim = data_fim;
+
+                req.getMetadata = function () {
+                    return {
+                        boundParameter: "entity",
+                        parameterTypes: {
+                            "entity": { 
+                                typeName: "mscrm.account", 
+                                structuralProperty: 5 
+                            },
+                            "intervalo_consulta": {
+                                typeName: "Edm.String",
+                                structuralProperty: 1
+                            },
+                            "data_inicio": {
+                                typeName: "Edm.DateTimeOffset",
+                                structuralProperty: 1
+                            },
+                            "data_fim": {
+                                typeName: "Edm.DateTimeOffset",
+                                structuralProperty: 1
+                            }
+                        },
+                        operationType: 0,
+                        operationName: "frt_SearchAttendancesSZchat"
+                    };
+                };
+            
+                parent.Xrm.WebApi.online.execute(req).then( 
+                    function (data) { 
+                        var e = data; 
+                        debugger; 
+                        
+                        data.json().then(function(Response){
+                            console.log(Response);
+
+                            document.getElementById("alerta-erro").classList.add("hide");
+                            document.getElementById("lista-vazia").classList.add("hide");
+                            document.getElementById("lista-atendimentos").classList.add("hide");
+
+                            if (!Response) {
+                                // ERRO
+                                document.getElementById("alerta-erro").classList.remove("hide");
+                                return;
+                            }
+
+                            let json = Response.lista_atendimentos;
+                            // let json = null;
+                            // let json = "[]";
+                            // let json = "[{\"_id\":\"635611b9cfdd273bab642131\",\"createdAt\":\"2022-10-24 04:14:21.662\",\"createdAtElapsedTime\":null,\"email\":null,\"finishedAt\":\"2022-10-24 01:16:57.244\",\"finishedAtElapsedTime\":null,\"platform_id\":\"5585988696392\",\"protocol\":\"2022102400001\"}]";
+
+                            if (!json) {
+                                // ERRO
+                                document.getElementById("alerta-erro").classList.remove("hide");
+                                return;
+                            }
+
+                            if (json == '[]') {
+                                document.getElementById("lista-vazia").classList.remove("hide");
+                                return;
+                            }
+
+                            clearRows();
+                            document.getElementById("lista-atendimentos").classList.remove("hide");
+
+                            let object = JSON.parse(json);
+                            console.log(object);
+                            object.forEach(function(attendance, key) {   
+                                //attendance._id                     
+                                //attendance.email
+                                //attendance.finishedAt
+                                //attendance.finishedAtElapsedTime
+                                newRow(
+                                    attendance.id_atendimento, 
+                                    'Chat', 
+                                    attendance.protocol, 
+                                    attendance.contato, 
+                                    attendance.platform_id, 
+                                    'value_equipe', 
+                                    attendance.createdAtElapsedTime, 
+                                    formatDate(new Date(attendance.createdAt)), 
+                                );
+                            });
+
+                        });
+
+                        parent.Xrm.Utility.closeProgressIndicator();
+                    }, 
+                    function (error) { 
+                        debugger; 
+                        var errMsg = error.message; 
+                        parent.Xrm.Navigation.openErrorDialog({ message: errMsg });
+                        parent.Xrm.Utility.closeProgressIndicator();
+                    }
+                );
+            });
+        
+            let date = new Date();
+            let today = date.toISOString().split('T')[0];
+            document.getElementById("data_inicio").value = today;
+            document.getElementById("data_fim").value = today;
+        }
+    </script>
+</body>
+</html>
