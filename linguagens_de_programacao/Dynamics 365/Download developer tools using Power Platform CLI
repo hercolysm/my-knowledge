@@ -1,0 +1,44 @@
+Download developer tools using Power Platform CLI for Windows
+
+Documentação oficial
+Link: https://learn.microsoft.com/en-us/power-platform/developer/cli/introduction#install-power-platform-cli-for-windows
+
+Passo-a-passo
+
+# Faça o Download do Power Platform CLI for Windows
+Link: https://aka.ms/PowerAppsCLI
+
+# Instale o Power Platform CLI for Windows
+Execute o arquivo .msi baixado
+
+(Será instalado o programa Microsoft PowerApps CLI no seu Windows)
+Após a instalação estará disponível no prompt de comando os comandos do PAC CLI 
+
+# Verificar se o programa está instalado, consultar versão e comandos disponíveis
+Abre o prompt de comando de digite:
+> pac
+
+# Verificar os comandos disponíveis para o gerenciamento das ferramentas
+> pac tool help
+
+# Listar as ferramentas disponíveis para instalação
+> pac tool list
+(Aparecerá a lista de aplicativos e o status de instalação de cada um)
+
+# Instalar o Plugin Registration Tool
+> pac tool prt 
+
+# Instalar o Configuration Migration Tool
+> pac tool cmt 
+
+# Instalar o Package Deployer 
+> pac tool pd 
+
+# Listar comandos do Solution Package Tool
+> pac solution pack help 
+> pac solution unpack help
+
+# Listar comandos do Code Generation Tool 
+> pac modelbuilder build help
+(Link: https://learn.microsoft.com/en-us/power-platform/developer/cli/reference/modelbuilder)
+
