@@ -7,6 +7,7 @@
 //	-filosofia: "não misturar 'html' com 'script', pois ele deve ficar no head"
 
 //	SELETORES SIMPLES
+	$(document);        // seleciona toda a página
 	$("*"); 			// seleciona todos os elementos
 	$("#id");			// seleciona por id
 	$(".classe");		// seleciona pela classe
@@ -121,6 +122,9 @@
 	.offset().left();	// retorna posição do elemento
 
 // EVENTOS
+
+// EVENTOS da PÁGINA  
+	$(document).on('nome_do_evento', 'seletor', function() { return; });
 
 // EVENTOS de MOUSE
 	.click();			// qnd click

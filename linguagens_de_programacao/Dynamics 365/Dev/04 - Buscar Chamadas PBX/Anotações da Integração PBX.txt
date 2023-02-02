@@ -1,0 +1,89 @@
+Integração PBX 
+
+29/11/2022 22:59 a 29/11/2022 23:59
+30/11/2022 00:00 a 30/11/2022 01:00
+30/11/2022 22:15 a 30/11/2022 23:15
+01/12/2022 22:59 a 01/12/2022 00:00
+02/12/2022 00:00 a 02/12/2022 01:00
+02/12/2022 22:00 a 02/12/2022 00:00
+03/12/2022 17:00 a 03/12/2022 18:15 
+05/12/2022 22:44 a 05/12/2022 23:59 
+06/12/2022 22:00 a 06/12/2022 23:59 *tentando resolver a reprodução do audio 
+07/12/2022 19:45 a 07/12/2022 22:00 *tentando resolver a reprodução do audio 
+08/12/2022 18:15 a 08/12/2022 18:45 
+08/12/2022 21:45 a 08/12/2022 23:59
+
+- (Cancelado) Criar nova tabela: Chamadas PBX 
+    Exibição: Chamada PBX 
+    Plural: Chamadas PBX 
+    Nome: frt_chamada_pbx 
+    - Criar campos:
+        frt_chamada_pbxid 
+        frt_empresa 
+        frt_contato 
+        frt_name 
+        frt_date  // 2022-10-21 08:06:12
+        frt_protocol  // 20221021085809
+        frt_src  // 8272
+        frt_dst  // 31971956466
+        frt_agent_src  // 047448
+        frt_agent_dst  // 
+        frt_duration  // 17
+        frt_duration_billing  // 17
+        frt_disposition  // N&atilde;o Atendida
+        frt_disposition_name  // NO ANSWER
+        frt_accountcode  // 166635037064046
+        frt_userfield  // 113
+        frt_record  // 20221021-080612-OUT-8272-31971956466-1666350370.138566.WAV
+- ok Nova Tabela Configurações do PBX (frt_configuracoes_pbx):
+    - ok Criar campos 
+        - frt_pbxservidor Servidor da API PBX (Texto 200) 
+        - frt_pbx_api_key Chave da API PBX (Texto 50)
+    - ok Incluir novos campos no formulário 
+- ok Criar HTML 
+- ok Criar Action do javaScript
+    - Solução -> Processos -> Criar 
+        Categoria: Ação 
+        Entidade: Conta 
+        Nome: BuscarChamadasPBX 
+        Paramento 1: 
+            Nome: data_inicio 
+            Tipo: DateTime
+            Direção: Entrada 
+            Obrigatório: Não 
+        Paramento 2: 
+            Nome: data_fim  
+            Tipo: DateTime
+            Direção: Entrada 
+            Obrigatório: Não 
+        Paramento 3:
+            Nome: lista_chamadas
+            Tipo: Cadeia de caracteres 
+            Direção: Saida 
+            Obrigatório: Sim 
+    - Listar ações do ambiente: /api/data/v9.1/$metadata 
+- ok Criar Javascript 
+- ok Criar Plugin C#
+- Criar botão 
+- Criar Action do javascript
+    - Solução -> Processos -> Criar 
+        Categoria: Ação 
+        Entidade: Conta 
+        Nome: GetGravacaoPBX 
+        Paramento 1:
+            Nome: filename 
+            Tipo: Cadeia de caracteres
+            Direção: Entrada  
+            Obrigatório: Sim  
+        Paramento 2: 
+            Nome: file_base64 
+            Tipo: Cadeia de caracteres 
+            Direção: Saída 
+            Obrigatório: Sim 
+    - Listar ações do ambiente: /api/data/v9.1/$metadata 
+- Reproduzir a gravação 
+
+API PBX
+curl --request GET   --url 'http://voip.fortics.com.br/lisintegra.php?gacao=consultaRelChamadas&gkey=KV@ll)dp@l928&gdata_inicio=21/10/2022&gdata_fim=21/10/2022&gdst=31971956466' 
+
+

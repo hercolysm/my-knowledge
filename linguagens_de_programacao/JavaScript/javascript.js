@@ -86,17 +86,28 @@ partes.forEach(function (parte) {
     data[chave] = decodeURIComponent(valor);
 });
 
+// converter para URL
+let uri = "https://test.asp?name=ståle&car=saab";
+let encoded = encodeURI(uri); // https://test.asp?name=st%C3%A5le&car=saab
+let decoded = decodeURI(encoded); // https://test.asp?name=ståle&car=saab
+
+let encoded = encodeURIComponent(uri); // https%3A%2F%2Ftest.asp%3Fname%3Dst%C3%A5le%26car%3Dsaab
+let decoded = decodeURIComponent(encoded); // https://test.asp?name=ståle&car=saab
+
 // Alterar o valor do input
 document.getElementById("myInput").value = "novo valor";
 
 // Alterar o texto de um elemento
 document.getElementById("myElement").innerText = "novo texto";
 
-// converter para URL
-// decodeURI
-// decodeURIComponent
-// encodeURI
-// encodeURIComponent
+// Substituir o elemento por um texto
+document.getElementById("myElement").outerText = "novo texto";
+
+// Alterar o HTML de um elemento
+document.getElementById("myElement").innerHTML = "novo texto";
+
+// Substituir o elemento por um HTML
+document.getElementById("myElement").outerHTML = "novo texto";
 
 // Clonar elemento de uma lista 
 var row_clone  = document.getElementById("row-clone").cloneNode(true);
@@ -104,6 +115,13 @@ row_clone.removeAttribute("id");
 row_clone.classList.remove("hide");
 row_clone.querySelector(".class_name").innerText = "novo texto";
 document.getElementById("div-list").appendChild(row_clone);
+
+// Cria um link e insere em um elemento 
+var a = document.createElement("a");
+a.href = "https://www.google.com/"; 
+a.innerText = 'Link do google';
+a.target = "_blank";
+document.getElementById("element").appendChild(a);
 
 // Remover elemento 
 document.getElementById("id-name").remove();
@@ -120,34 +138,6 @@ let object = JSON.parse(json);
 const note = document.querySelector('.note');
 note.style.backgroundColor = 'yellow';
 note.style.color = 'red';
-
-// Função para converter datas
-function formatDate(date) {
-    return (
-        date.getDate().toString().padStart(2, '0') +
-        '/' +
-        (date.getMonth()+1).toString().padStart(2, '0') +
-        '/' +
-        date.getFullYear() +
-        ' ' +
-        date.getHours().toString().padStart(2, '0') +
-        ':' +
-        date.getMinutes().toString().padStart(2, '0') +
-        ':' +
-        date.getSeconds().toString().padStart(2, '0')
-    )
-}
-
-// Função para converter segundos em tempo hh:mm:ss
-function formatTime(time) {
-    let hh = Math.floor(time / 3600);
-    let mm = Math.floor((time % 3600) / 60);
-    let ss = Math.floor((time % 3600) % 60);
-    hh = hh.toString().padStart(2, '0');
-    mm = mm.toString().padStart(2, '0');
-    ss = ss.toString().padStart(2, '0');
-    return hh+':'+mm+':'+ss;
-}
 
 // Resto da divisão
 11 % 2 // 1
