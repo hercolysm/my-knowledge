@@ -1,0 +1,34 @@
+Comandos do Docker Compose 
+
+Documentação 
+Link: docs.docker.com/compose/
+
+# instalar docker-compose (linux - debian)
+sudo apt install docker-compose 
+
+(Obs: Para usar o docker-compose o docker precisa está instalado e rodando no mesmo servidor)
+
+# Comandos Docker 
+sudo service docker status 
+sudo service docker start 
+
+# Criar e iniciar os containers docker
+docker-compose up -d --build 
+
+-d (Executa os contêineres em segundo plano)
+--build (Crie imagens antes de iniciar os contêineres)
+
+# Visualizar o log da criação dos containeres
+docker-compose logs --follow
+
+# Parar e remover os containers, networks, images, e volumes
+docker-compose down 
+
+# Iniciar serviços
+docker-compose start 
+
+# Reiniciar serviços
+docker-compose restart 
+
+# Parar serviços
+docker-compose stop 

@@ -1,0 +1,10 @@
+/* Selecionar o elemento pelo ID */
+#id-name {}
+
+/* Selecionar o elemento pela Classe */
+.class-name {}
+
+/* Selecionar o primeiro elemento */
+.block-filter:first-child {
+    background-color: red;
+}

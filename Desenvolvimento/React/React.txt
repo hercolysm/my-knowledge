@@ -1,0 +1,32 @@
+# Requisitos de sistema 
+node e npm 
+
+# Instalando node.js
+curl -sL https://deb.nodesource.com/setup_18.x | bash - 
+apt-get install nodejs
+
+# Verificar a versão 
+node -v
+npm -v
+
+# Criar novo aplicativo react (link: https://pt-br.reactjs.org/docs/create-a-new-react-app.html)
+npx create-react-app my-app
+
+cd my-app
+
+npm start
+
+- ok criar primeiro componente (H1)
+- ok criar componente a partir de outros componentes (ul + li)
+- ok usar props 
+    ok modo 1 
+    ok modo 2 
+- ok usar validação e valor padrão 
+- ok usar .module.css 
+- ok usar fragment 
+- ok usar eventos (click, change, submit)
+- ok injetar evento de um componente pai em um componente filho 
+- usar state 
+- usar condicional 
+- usar stateless 
+

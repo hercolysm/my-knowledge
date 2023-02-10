@@ -1,2 +1,2 @@
-# Gravar a tela do POC
+# Gravar a tela do PC
 Windows + g 
