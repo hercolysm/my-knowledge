@@ -1,0 +1,9 @@
+XrmToolBox
+
+Ferramenta de customização, desenvolvimento e administração para o Microsoft Dynamics 365 e Microsoft Dataverse
+
+# Customização dos botões das barras de comandos 
+Ribbon Workbench
+
+# Visualizador de logs dos plugins 
+Plugin Trace Viewer
