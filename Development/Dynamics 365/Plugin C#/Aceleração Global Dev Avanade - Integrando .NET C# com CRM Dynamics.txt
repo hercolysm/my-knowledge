@@ -1,0 +1,59 @@
+Dynamics 365 Extensions: Plug-Ins
+
+Integrando .NET C# com o Dynamics 365
+
+GitHub
+https://github.com/antoniod365/d365extensions
+
+Requisitos:
+    Conhecimento básico de C# 
+    Conhecimento básico de .NET Framework (Versão recomendada para o Dynamics - v4.7.1)
+        Outros tipos:
+            .NET Core 
+            .NET Standart 
+    Instância Dynamics 365
+    Visual Studio
+    CRM SDK Tools (Plugin Registration Tool)
+
+Passo 01: Criar instância 
+Passo 02: Criar ambiente 
+
+Usar app: Sales Hub 
+Criar projeto git: d365extensions
+
+PowerApps (Eventos, atualização BD)
+Plugins (Assemblies C# - Backend Dynamics 365)
+    - Registro Criado, atualizado, lido, atribuição etc
+
+Criar solução 
+Criar projeto no Visual Studio 
+Criar classe 
+
+Instalar pacote no projeto:
+
+Clique com btn direito no nome do projeto 
+Gerenciar Pacotes no NuGet 
+    Procurar e instalar:
+        Microsoft.CrmSdk.CoreAssemblies
+
+Implementar código 
+Compilar em .dll
+Assinar o assemblie 
+
+Baixar Ferramentas: 
+    ConfigurationMigration -> Manipulação de dados, clonagem dos dados de produção para dev 
+    CoreTools -> CrmSvcUtil -> Criar classe e tabela baseadas no ambiente do Dynamics
+    PluginRegistration -> Ferramenta que registra o plugin e os steps no Dynamics 
+    PackageDeployment
+
+Download tools from NuGet (instação via powershell)
+    https://docs.microsoft.com/en-us/power-apps/developer/data-platform/download-tools-nuget
+
+Seguindo adiante:
+
+Estilos de Programação (i.e Early Bound vs. Late Bound [https://docs.microsoft.com/en-us/powerapps/developer/data-platform/org-service/early-bound-programming])
+Melhores Práticas de Design (https://docs.microsoft.com/en-us/powerapps/developer/data-platform/best-practices/business-logic/)
+Testes de Unidade (cf. Microsoft.Xrm.Sdk.Fakes)
+XRMToolBox (o canivete suíço do desenvolvedor Dynamics 365)
+Integrando D365 com Azure (e.g Function Apps)
+Gerenciomento de versão e ciclo de vida da aplicação (c.f ALM e DevOps)
