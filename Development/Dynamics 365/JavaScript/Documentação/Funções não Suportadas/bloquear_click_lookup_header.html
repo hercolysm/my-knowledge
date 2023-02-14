@@ -1,0 +1,17 @@
+<html>
+ <head>
+  <script src="../WebResources/webresource_name" type="text/javascript"></script>
+  <script>
+    
+    var typename = parent.Xrm.Page.data.entity.getEntityName();
+
+    switch (typename) {
+        case 'account': 
+            Fleury.CRM.Util.bloquearClickLookupHeader(window.parent.document, "systemuser");
+            break;
+    }
+  </script>
+ </head>
+ <body>
+ </body>
+</html>

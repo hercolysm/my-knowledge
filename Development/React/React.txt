@@ -26,7 +26,10 @@ npm start
 - ok usar fragment 
 - ok usar eventos (click, change, submit)
 - ok injetar evento de um componente pai em um componente filho 
-- usar state 
-- usar condicional 
-- usar stateless 
+- ok usar useState 
+- passar eventos por props 
+- usar renderização condicional 
+- renderizar listas 
+- usar state lift
+- usar react router
 
