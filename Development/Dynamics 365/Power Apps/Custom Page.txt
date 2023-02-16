@@ -1,0 +1,10 @@
+// Definir o valor de uma variável
+Set(VarName, "Hello World");
+
+// Condicional
+App.OnStart = Set(RecordItem, 
+    If (IsBlank(Param("recordId")),
+        First(<entity>),
+        LookUp(<entity>, <entityIdField> = GUID(Param("recordId")))
+    )
+)
