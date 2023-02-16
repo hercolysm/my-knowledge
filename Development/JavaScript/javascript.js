@@ -56,6 +56,9 @@ var element = document.getElementById("myDIV");
 
 // Selecionar elementos pela tag
 var elements = document.getElementsByTagName("a"); 
+for (let i = 0; i < elements.length; i++) {
+  elements[i].style.backgroundColor = "red";
+}
 
 // Selecionar elemento pela classe 
 var elements = document.querySelector(".value_titulo");
