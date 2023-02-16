@@ -14,6 +14,7 @@ txt += "<p>Browser Language: " + navigator.language + "</p>";
 txt += "<p>Browser Online: " + navigator.onLine + "</p>";
 txt += "<p>Platform: " + navigator.platform + "</p>";
 txt += "<p>User-agent header: " + navigator.userAgent + "</p>";
+txt += "<p>User-agent Client Hints: " + navigator.userAgentData + "</p>";
 alert(txt);
 
 // Verificação se contem
