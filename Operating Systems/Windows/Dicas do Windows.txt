@@ -1,0 +1,3 @@
+// Abrir a pasta AppData 
+Caminho da pasta: C:\Users\{user.name}\AppData\Roaming
+Abrir a pesquisa do Windows e pesquisar por: %AppData%
