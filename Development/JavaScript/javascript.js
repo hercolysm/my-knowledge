@@ -51,8 +51,11 @@ var dec = atob(enc); // Decoded String: Hello World!
 var data_mysql = "2017-10-02";
 var data = data_mysql.split('-').reverse().join('/');
 
-// Selecionar elememento pelo id
+// Selecionar elemento pelo id
 var element = document.getElementById("myDIV");
+
+// Selecionar elementos pela tag
+var elements = document.getElementsByTagName("a"); 
 
 // Selecionar elemento pela classe 
 var elements = document.querySelector(".value_titulo");
