@@ -148,3 +148,12 @@ note.style.color = 'red';
 
 // Resto da divisão
 11 % 2 // 1
+
+// Abrir link em nova aba 
+window.open("https://www.google.com", "_blank");
+
+// Abrir link em nova janela 
+let url = "https://www.google.com";
+let target = "page-name";
+let specs = "toolbar=no,scrollbars=no,resizable=yes,status=no,menubar=no";
+window.open(url, target, specs);
