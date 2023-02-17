@@ -8,3 +8,7 @@ App.OnStart = Set(RecordItem,
         LookUp(<entity>, <entityIdField> = GUID(Param("recordId")))
     )
 )
+
+// Concatenar textos 
+Concatenate( LastName, ", ", FirstName );
+LastName & ", " & FirstName
