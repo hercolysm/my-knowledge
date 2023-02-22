@@ -113,6 +113,7 @@ input.addOnLookupTagClick(function(data) {
     args._preventDefault = true; // colocar como 'falso' para manter o comportamento padrão
 });
 
+
 /* App */
 
 // Get current app name
@@ -123,3 +124,12 @@ globalContext.getCurrentAppProperties().then(function successCallback(result) {
 
     }
 });
+
+
+/* Ribbon Button */
+
+// Get context in function
+function functionName(primaryControl) {
+    var formContext = primaryControl;
+    var name = formContext.getAttribute("fly_name").getValue();
+}
