@@ -59,6 +59,18 @@ Xrm.WebApi.online.retrieveMultipleRecords("table_name", "?$select=Field_Name&$fi
     }
 );
 
+// Retrieve current user with FetchXML 
+var fetchXmlUser = "?fetchXml=<fetch mapping='logical'><entity name='systemuser'><filter type='and'><condition attribute='systemuserid' operator='eq-userid' /></filter></entity></fetch>"
+
+Xrm.WebApi.retrieveMultipleRecords("systemuser", fetchXmlUser).then(
+    function success(parametros) {
+        if (parametros.entities.length > 0) {
+            let idusuario = parametros.entities[0].systemuserid;
+            console.log(idusuario);
+        }
+    }
+)
+
 /* 
 
 Query data using the Web API
