@@ -16,7 +16,7 @@ Xrm.Navigation.openForm(entityFormOptions);
 Xrm.Navigation.openAlertDialog({ confirmButtonLabel: "Ok", text: "Texto do alerta", title: "Titulo" });
 
 // Show erro 
-Xrm.Navigation.openErrorDialog({ message: "Ocorreu um erro :(" });
+Xrm.Navigation.openErrorDialog({ message: "Ocorreu um erro :(", details: "Detalhes do erro para o arquivo de log." });
 
 // Show loading 
 Xrm.Utility.showProgressIndicator("Loading...");
