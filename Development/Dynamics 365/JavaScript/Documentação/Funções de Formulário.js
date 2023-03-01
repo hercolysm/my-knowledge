@@ -133,3 +133,14 @@ function functionName(primaryControl) {
     var formContext = primaryControl;
     var name = formContext.getAttribute("fly_name").getValue();
 }
+
+
+/* Form Notification */
+
+// Show notification 
+FormContext.ui.setFormNotification("Message here", "ERROR", "notification_id");
+FormContext.ui.setFormNotification("Message here", "WARNING", "notification_id");
+FormContext.ui.setFormNotification("Message here", "INFO", "notification_id");
+
+// Hide notification 
+FormContext.ui.clearFormNotification("notification_id");
