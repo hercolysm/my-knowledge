@@ -104,3 +104,27 @@ Exemplos
 
     GET [Organization URI]/api/data/v9.2/teammemberships?$select=systemuserid,teamid&$filter=systemuserid eq 669093F1-C98D-ED11-81AE-002248381498 and (false or teamid eq 71976207-1EC4-E911-A980-000D3AC009CC or teamid eq ECAB8DFC-5428-ED11-9DB1-00224837E68F)
 */
+
+// Update a record
+
+var data = {
+    "name": "Updated Sample Account ",
+    "creditonhold": true,
+    "address1_latitude": 47.639583,
+    "description": "This is the updated description of the sample account",
+    "revenue": 6000000,
+    "accountcategorycode": 2
+}
+
+Xrm.WebApi.updateRecord("account", "5531d753-95af-e711-a94e-000d3a11e605", data).then(
+    function success(result) {
+        console.log("Account updated");
+        // perform operations on record update
+    },
+    function (error) {
+        console.log(error.message);
+        // handle error conditions
+    }
+);
+
+
