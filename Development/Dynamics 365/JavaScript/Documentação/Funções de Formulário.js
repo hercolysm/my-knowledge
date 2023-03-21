@@ -144,3 +144,35 @@ FormContext.ui.setFormNotification("Message here", "INFO", "notification_id");
 
 // Hide notification 
 FormContext.ui.clearFormNotification("notification_id");
+
+
+/* Lookup */ 
+
+// Add Custom View
+var viewDisplayName = "Custom View Name";
+var fetchXml =
+    '<fetch>' +
+        '<entity name="table_name">' +
+        '<attribute name="field_name" />' +
+        '<order attribute="field_name" />' +
+        '<link-entity name="table_reference_name" from="field_name_table" to="field_name_table_reference" link-type="inner" alias="ref">' +
+            '<filter type="and">' +
+                '<condition attribute="field_name" operator="eq" value="'+id+'" />' +
+            '</filter>' +
+        '</link-entity>' +
+        '</entity>' +
+    '</fetch>';
+
+var viewId = "00000000-0000-0000-0000-000000000001";
+var layoutXml = "<grid name='resultset' object='10082' jump='new_name' select='1' icon='1' preview='1'><row name='result' id='table_name'><cell name='field_name' width='150'/><cell name='createdon' width='125' /></row></grid>";
+var isDefault = true;
+
+formContext.getControl("field_name").addCustomView(
+    viewId,
+    "table_name",
+    viewDisplayName,
+    fetchXml,
+    layoutXml,
+    isDefault
+);
+
