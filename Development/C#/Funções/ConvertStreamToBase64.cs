@@ -1,6 +1,6 @@
 public static class StreamExtensions
 {
-    public static string ConvertToBase64(this Stream stream)
+    public static string ConvertStreamToBase64(this Stream stream)
     {
         if (stream is MemoryStream memoryStream)
         {

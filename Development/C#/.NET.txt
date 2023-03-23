@@ -1,0 +1,99 @@
+Desenvolvimento em .NET
+
+Instalações
+    .NET SDK (desenvolver) 
+    .NET Runtime (apenas executar) 
+
+Ferramentas:
+    Visual Studio 
+        Instalar extensão C# 
+            (intelisense, color da fonte) 
+        Instalar extensão C# Extensions 
+            (novo menu ao clicar com o botão direito com atalhos referente a criação de recursos em C#)
+        Instalar extensão vscode-icons
+            (troca icones para facilitar a identificação de arquivos)
+        Instalar extensão vscode-solution-explorer
+            (novo icone da solução)
+        Criar nova pasta 
+        Comando: dotnet new console 
+        Comando: dotnet run
+    Visual Studio Code
+        Criar solução 
+        Criar projeto 
+            Console 
+            Run 
+
+Comandos dotnet 
+
+dotnet --info
+
+[Criar projeto Aplicativo do Console]
+dotnet new console 
+dotnet new console --framework net5.0
+
+[Criar projeto Biblioteca de Classes]
+dotnet new "classlib" -lang "C#" -n "MyLibraryClass.NET6" -o "MyLibraryClass.NET6" --framework net6.0
+
+[Criar projeto WebAPI]
+dotnet new "webapi" -lang "C#" -n "MyWebAPI.NET6" -o "MyWebAPI.NET6" --framework net6.0
+
+dotnet run
+dotnet watch run (webapi)
+dotnet build
+
+[Criar solução]
+dotnet new sln -n "my-dotnet-solution"
+
+[Adicionar projeto na solução]
+dotnet sln "c:\Users\herco\source\repos\dotnet-projects\DOTNET\DOTNET.sln" add "c:\Users\herco\source\repos\dotnet-projects\DOTNET\DOTNET2\DOTNET2.csproj"
+
+[Adicionar referencia em um projeto]
+dotnet add "c:\Users\herco\source\repos\dotnet-projects\DOTNET\MyConsoleApplication.NET6\MyConsoleApplication.NET6.csproj" reference "c:\Users\herco\source\repos\dotnet-projects\DOTNET\MyLibraryClass.NET6\MyLibraryClass.NET6.csproj"
+
+Estrutura
+    bin/ (arquivos binários - .exe .dll) Pode apagar, pois é recriado no build
+    obj/ (arquivos de debug/compilação) Pode apagar, pois é recriado no build
+    Program.cs (arquivo C#)
+    .csproj (Arquivos de metadados - XML) Contém informações referente ao projeto (build, debug, versão)
+    .sln Contém informações que carregam um agrupamento de projetos 
+
+Converções:
+Link: https://learn.microsoft.com/pt-br/dotnet/csharp/fundamentals/coding-style/coding-conventions
+- Classe/Record/Struct: PascalCase
+- Interface: I + PascalCase
+- Propriedade: PascalCase 
+- Método: PascalCase
+- Variável (public): PascalCase
+- Variável (private/internal): _camelCase
+- Variável static (private/internal): s_camelCase
+- Thread static (private/internal): t_camelCase
+- Parametros (na definição da função): PascalCase
+- Parametros (na chamada da função): camelCase
+- Comentários:
+    - Comentar em linha separada, não no final do código 
+    - Começar com letra maiuscula e terminar com um ponto
+    - Deixar um espaço entre o delimitador // e o texto
+    - Comentar todos os membros públicos 
+- Usar o var apenas para variáveis locais quando o tipo for obviu ou não for importante, em loop for
+Dicas:
+- Evitar abreviações 
+- Nome do arquivo .cs igual o Nome da classe 
+
+Não usado:
+    snake_case 
+    spinal-case
+
+Estudar:
+ok classe 
+ok namespace 
+ok tipos de dados 
+ok operadores de atribuição 
+ok operadores condicionais 
+    if 
+    else 
+    switch/case 
+ok operadores logicos
+    AND 
+    OR 
+    NOT 
+

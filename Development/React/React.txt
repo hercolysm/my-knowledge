@@ -12,24 +12,67 @@ npm -v
 # Criar novo aplicativo react (link: https://pt-br.reactjs.org/docs/create-a-new-react-app.html)
 npx create-react-app my-app
 
+# Acessar a pasta da aplicação
 cd my-app
 
+# Rodar a aplicação 
 npm start
 
-- ok criar primeiro componente (H1)
-- ok criar componente a partir de outros componentes (ul + li)
-- ok usar props 
-    ok modo 1 
-    ok modo 2 
-- ok usar validação e valor padrão 
-- ok usar .module.css 
-- ok usar fragment 
-- ok usar eventos (click, change, submit)
-- ok injetar evento de um componente pai em um componente filho 
-- ok usar useState 
-- passar eventos por props 
-- usar renderização condicional 
-- renderizar listas 
-- usar state lift
-- usar react router
+# Rodar os testes da aplicação
+npm test
 
+# Instalar React Icons (https://react-icons.github.io/react-icons/)
+npm install react-icons --save
+
+# Instalar React Router () 
+npm install react-router-dom --save
+
+# Instalar Styled Components (https://styled-components.com/) 
+npm install styled-components --save
+
+# Estrutura das pastas 
+node_modules 
+public
+src
+    pages 
+        login 
+            index.js 
+            index.css 
+            forgetmodal
+                index.js 
+                index.css
+        home 
+            index.js 
+            index.css 
+    components 
+        title 
+            index.js 
+            index.css 
+        button
+            index.js 
+            index.css 
+    assets
+        (arquivos estáticos estruturais)
+        (fazem parte da estrutura visual aplicação)
+        ex: 
+            img 
+            aftereffects
+    conf 
+        (configurações)
+    services 
+        (configurações de serviços ex: mysql, redis)
+    store 
+        (dados da aplicação)
+        redux 
+    styles 
+        themes 
+            light.js 
+            dark.js 
+    layout 
+        navbar 
+        footer 
+    evento? 
+    project?
+    img?
+    index.js 
+    routes.js (definição das rotas)

@@ -4,7 +4,16 @@ ctrl + k + 0
 # exibir todos os blocos de cógido
 ctrl + k + j
 
-# pacotes
+# extensões
 
-PHP Intelephense
-GitLens - Git sperchanged
+(GIT)
+extensão: GitLens - Git sperchanged
+
+(PHP)
+extensão: PHP Intelephense
+
+(.NET/C#)
+extensão: C# (intelisense, color da fonte) 
+extensão: C# Extensions (novo menu ao clicar com o botão direito com atalhos referente a criação de recursos em C#)
+extensão: vscode-icon (troca icones para facilitar a identificação de arquivos)
+extensão: vscode-solution-explore (novo icone da solução)
