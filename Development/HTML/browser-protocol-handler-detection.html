@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Browser Protocol Handler Detection</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.slim.min.js"></script>
+</head>
+<body>
+    <input type="text" id="protocol" style="position: fixed; top: -500px; left: -500px;">
+    <!-- Mozilla Only -->
+    <iframe id="hiddenIframe" src="about:blank" style="display:none;"></iframe>
+    <ul>
+        <li>
+            <a href="microsoft-edge:https://www.w3schools.com/">Open link in Microsoft Edge</a>
+        </li>
+        <li>
+            <a href='custom:https://www.w3schools.com/'>Open link in Custom Protocol</a>
+        </li>
+        <li>
+            <a href='custom2:https://www.w3schools.com/'>Open link in Unknown Protocol</a>
+        </li>
+        <li>
+            <a href="bingmaps:?cp=40.726966~-74.006076">Open Maps</a>
+        </li>
+        <li>
+            <a href="file:///C:">Open diretorío C:</a>
+        </li>
+        <li>
+            <a href="ms-clock://">Clock</a>
+        </li>
+        <li>
+            <a href="ms-calculator://">Calculator</a>
+        </li>
+        <li>
+            <a href="ms-windows-store://home">Windows Store</a>
+        </li>
+        <li>
+            <a href="ms-settings://">ms-settings</a>
+        </li>
+        <li>
+            <a href="ms-settings-privacy://">ms-settings-privacy</a>
+        </li>
+        <li>
+            <a href="ms-settings-bluetooth://">ms-settings-bluetooth</a>
+        </li>
+    </ul>
+    Deu erro
+    <ul>
+        <li>
+            <a href="ms-word://">ms-word</a>
+        </li>
+        <li>
+            <a href="ms-excel://">ms-excel</a>
+        </li>
+        <li>
+            <a href="ms-powerpoint://">ms-powerpoint</a>
+        </li>
+    </ul>
+    Apenas digitando
+    <ul>
+        <li>
+            <a href="chrome://version">chrome://version</a>
+        </li>
+    </ul>
+    Referência:
+    <ul>
+        <li>
+            <a href="https://www.iana.org/assignments/uri-schemes/uri-schemes.xhtml" target="_blank">Uniform Resource Identifier (URI) Schemes (permanent scheme list)</a>
+        </li>
+        <li>
+            <a href="https://jsfiddle.net/stefansundin/0uca4h2o/" target="_blank">https://jsfiddle.net/stefansundin/0uca4h2o/</a>
+        </li>
+    </ul>
+    <script type="text/javascript">
+
+        var isSupported = false;
+
+        $('a').click(function(e) {
+            e.preventDefault();
+
+            var url = $(this).attr('href');
+
+            isSupported = false;
+
+            let protcolEl = $("#protocol")[0];
+            protcolEl.focus();
+            protcolEl.onblur = function() {
+                isSupported = true;
+                console.log("Text Field onblur called");
+            };
+
+            //will trigger onblur
+            location.href = url;
+
+            setTimeout(function() {
+                protcolEl.onblur = null;
+                alert("supported => " + isSupported);
+            }, 300);
+        });
+    </script>
+</body>
+</html>

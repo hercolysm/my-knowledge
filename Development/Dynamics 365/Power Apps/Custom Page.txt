@@ -1,0 +1,28 @@
+// Definir o valor de uma variável
+Set(VarName, "Hello World");
+
+// Receber um paramento 
+Set(VarName, Param("param_name"));
+
+// Condicional
+App.OnStart = Set(RecordItem, 
+    If (IsBlank(Param("recordId")),
+        First(<entity>),
+        LookUp(<entity>, <entityIdField> = GUID(Param("recordId")))
+    )
+)
+
+// Concatenar textos 
+Concatenate( LastName, ", ", FirstName );
+LastName & ", " & FirstName
+
+// Consultar um usuário pelo e-mail
+Set(
+    VarName,
+    First(
+        Filter(
+            TableName,
+            'Column Email' = User().Email
+        )
+    ).'Column Name'
+);

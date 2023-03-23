@@ -1,0 +1,52 @@
+Registering an Custom Application to a URI Scheme (Register) 
+https://learn.microsoft.com/pt-br/previous-versions/windows/internet-explorer/ie-developer/platform-apis/aa767914(v=vs.85)?redirectedfrom=MSDN
+
+Open Internet Explorer from CMD using a protocol handler (Register) 
+https://stackoverflow.com/questions/40531374/open-internet-explorer-from-chrome-using-a-protocol-handler-ieurl
+
+Registering an Custom Application to a URI Scheme (C#) 
+https://stackoverflow.com/questions/32694642/registering-an-application-to-a-uri-scheme-in-windows-10
+
+Launch the default app for a URI (HTML and C#)
+https://learn.microsoft.com/en-us/windows/uwp/launch-resume/launch-default-app
+
+# Estrutura da Chave
+
+HKEY_CLASSES_ROOT/
+  custom/
+    (Default) = URL:cmd Protocol
+    URL Protocol = 
+    shell/
+      open/
+        command/
+          (Default) "PathToExecutableIE" "%1"
+
+
+# Abrir Editor do Registro (Registry Editor) 
+
+Computador > HKEY_CLASSES_ROOT > Novo > Chave 
+
+    Renomear para 'custom'
+
+    Novo > Valor de Cadeia de Caracteres (URL Protocol)
+    Editar > Cadeia de Caracteres (Default) > Value Data > URL:cmd Protocol
+
+    custom > Novo > Chave > shell
+
+        shell > Novo > Chave > open
+
+            open > Novo > Chave > command
+
+                Editar > Cadeia de Caracteres (Default) > Value Data > Comandon a ser executado 
+
+Via IE (erro)
+"C:\Program Files\Internet Explorer\iexplore.exe" "%1"
+
+Via CMD
+cmd /k set myvar=%1 & call set myvar=%%myvar:custom:=%% & call "C:\Program Files\Internet Explorer\iexplore.exe" %%myvar%% & exit /B
+
+Executar IE via Executar (win + R)
+"C:\Program Files\Internet Explorer\iexplore.exe" https://www.bing.com/
+"C:\Program Files\Internet Explorer\iexplore.exe" https://www.google.com/
+"C:\Program Files\Internet Explorer\iexplore.exe" https://www.w3schools.com/
+
