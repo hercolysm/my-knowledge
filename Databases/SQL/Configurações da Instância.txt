@@ -1,5 +1,8 @@
 #windows
 
+# Listar todos os comandos 
+>sqlcmd -?
+
 # Acessar servidor (obs: o NOMESERVIDOR é o nome da máquina)
 >sqlcmd -S NOMESERVIDOR
 
