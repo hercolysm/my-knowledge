@@ -1,6 +1,5 @@
 #windows
 
-
 # Acessar servidor (obs: o NOMESERVIDOR é o nome da máquina)
 >sqlcmd -S NOMESERVIDOR
 
@@ -28,3 +27,6 @@
 
 # Listar instâncias SQl de um servidor
 osql -L
+
+# Listar usuários de um servidor 
+sqlcmd -S nome_do_servidor -U nome_do_usuario -P senha_do_usuario -Q "SELECT * FROM sys.sql_logins;"
