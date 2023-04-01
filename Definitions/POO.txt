@@ -1,0 +1,51 @@
+POO - Programação Orientada a Objetos 
+
+Pilares 
+
+Abstração
+Encapsulamento
+Herança
+Polimorfismo
+
+Abstração 
+- Abstrair conceitos do mundo real, considerando seus atributos mais relevantes ao contexto 
+
+Encapsulamento 
+- Proteger a implementação de uma classe, prevenindo acesso indevido e expondo somente o necessário 
+- Atributos privados + métodos públicos
+
+Herança 
+- As classes filhas herdam atributos e métodos da classe pai 
+
+Polimorfismo 
+- Um método pode ter comportamento diferente
+- Polimorfismo em tempo de compilação é a definição de mesmos métodos com parâmetros diferentes
+- Polimorfismo em tempo de execução usa herança e sobrescreve um metodo da classe pai
+
+Interface 
+- Não pode ser instânciada
+- A classe que implementa uma interface é obrigada a implementar todos os métodos que não implementados da interface
+   , dessa forma a classe terá disponível apenas os métodos implementados por ela 
+- É possível criar uma váriavel do tipo da interface que recebe uma instância de classe que implementa a própria interface
+- , desse forma a instância terá disponível todos os métodos da interface (métodos implementados pela interface + métodos implementados pela classe)
+Ex: InterfaceName varName = new ClasseName();
+
+Classe Abstrata 
+- Não pode ser instânciada 
+- Deve ser exclusivamente herdada 
+- Serve apenas como classe modelo 
+- Os métodos devem ser estáticos, pois a implementação é de acordo com a classe que está herdando 
+- A classe que herda os métodos de uma classe abstrata é obrigatória implementar todos os seus métodos abstratos 
+
+Tipo de Método  
+- virtual = Permite que o método possa ser sobrescrito nas classes filhas 
+- override = Sobrescreve um método (virtual) da classe pai ou método (abstract) da classe abstrata 
+- sealed = Bloquea que a classe possar ser herdada / 
+            Bloqueia que o método seja sobrescrito nas classes filhas
+
+Tipos de Visibilidade (métodos e abributos)
+- public = Permite alteração dentro e fora da classe 
+- private = Permite alteração apenas dentro da própria classe 
+- protected = Permite alteração dentro da própria classe e dentro das classes filhas 
+
+

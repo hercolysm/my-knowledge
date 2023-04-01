@@ -1,0 +1,17 @@
+{
+	"folders": [
+		{
+			"path": "\\\\wsl.localhost\\Debian\\home\\hercolysm\\simple-website"
+		},
+		{
+			"path": "\\\\wsl.localhost\\Debian\\home\\hercolysm\\gerador-de-apostas"
+		},
+		{
+			"path": "\\\\wsl.localhost\\Debian\\home\\hercolysm\\my-react-knowledge"
+		},
+		{
+			"path": "../../.."
+		}
+	],
+	"settings": {}
+}

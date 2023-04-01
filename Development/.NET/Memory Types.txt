@@ -1,0 +1,38 @@
+// Tipo de memória 
+
+Memória Stack 
+- tipos simples (tipos de valor) (tipos primitivos) (dados estáticos)
+- armazena no formato pilha
+Ex: 
+    int
+    string
+    referência de objeto
+
+Memória Heap
+- tipos complexos (tipos de referência) (dados complexos/ dados dinâmicos)
+- armazena de forma aleatória
+Ex: 
+    objeto 
+    classes 
+    interfaces 
+
+Garbage Collector 
+- limpa automaticamente objetos da memória heap
+    que não possuem referencia na memória stack 
+
+Exemplo na prática
+
+// Cópia de tipo de valor (tipos primitivos) = clona o valor
+int a1 = 1;
+int b1 = a1;
+b1 = 2;
+Console.WriteLine(a1); // 1
+Console.WriteLine(b1); // 2
+
+// Cópia de tipos de referência = clona a referência (logo o objeto é o mesmo)
+Pessoa p1_ = new Pessoa();
+p1_.Nome = "Pessoa 1";
+Pessoa p2_ = p1_;
+p2_.Nome = "Pessoa 2";
+Console.WriteLine(p1_.Nome); // Pessoa 2
+Console.WriteLine(p2_.Nome); // Pessoa 2

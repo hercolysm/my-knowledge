@@ -1,0 +1,11 @@
+{
+	"folders": [
+		{
+			"path": "../../../../dotnet-projects/my-dotnet-knowledge"
+		},
+		{
+			"path": "../../.."
+		}
+	],
+	"settings": {}
+}

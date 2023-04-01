@@ -1,0 +1,12 @@
+Verbos HTTP 
+
+GET - view 
+POST - create 
+PUT - update (all)
+PATCH - update (parts)
+DELETE - remove 
+
+2XX - sucesso 
+3XX - redirect 
+4XX - erro do cliente 
+5XX - erro do servidor 

@@ -150,3 +150,8 @@ route add default gw 192.168.0.1
     descompactar:
     unrar x nome_do_arquivo.rar
     
+# Verificar CPU 
+top
+
+# Verificar memória RAM 
+free -m

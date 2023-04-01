@@ -1,7 +1,7 @@
 Desenvolvimento em .NET
 
 Instalações
-    .NET SDK (desenvolver) 
+    .NET SDK (Source Development Kit) (desenvolver) + Runtime (executar) 
     .NET Runtime (apenas executar) 
 
 Ferramentas:
@@ -30,15 +30,20 @@ dotnet --info
 [Criar projeto Aplicativo do Console]
 dotnet new console 
 dotnet new console --framework net5.0
+dotnet run
 
 [Criar projeto Biblioteca de Classes]
 dotnet new "classlib" -lang "C#" -n "MyLibraryClass.NET6" -o "MyLibraryClass.NET6" --framework net6.0
 
 [Criar projeto WebAPI]
 dotnet new "webapi" -lang "C#" -n "MyWebAPI.NET6" -o "MyWebAPI.NET6" --framework net6.0
+dotnet watch run 
 
-dotnet run
-dotnet watch run (webapi)
+[Criar projeto MVC]
+dotnet new ""
+dotnet watch run 
+
+[Buildar projeto]
 dotnet build
 
 [Criar solução]
@@ -50,15 +55,23 @@ dotnet sln "c:\Users\herco\source\repos\dotnet-projects\DOTNET\DOTNET.sln" add "
 [Adicionar referencia em um projeto]
 dotnet add "c:\Users\herco\source\repos\dotnet-projects\DOTNET\MyConsoleApplication.NET6\MyConsoleApplication.NET6.csproj" reference "c:\Users\herco\source\repos\dotnet-projects\DOTNET\MyLibraryClass.NET6\MyLibraryClass.NET6.csproj"
 
+[Adicionar pacote]
+dotnet add package NomeDoPacote
+
+[Remover pacote instalado]
+dotnet remove package NomeDoPacote
+
 Estrutura
+    .sln Contém informações que carregam um agrupamento de projetos 
+    .csproj (Arquivos de metadados - XML) Contém informações referente ao projeto (build, debug, versão)
+    Program.cs (arquivo C#)
     bin/ (arquivos binários - .exe .dll) Pode apagar, pois é recriado no build
     obj/ (arquivos de debug/compilação) Pode apagar, pois é recriado no build
-    Program.cs (arquivo C#)
-    .csproj (Arquivos de metadados - XML) Contém informações referente ao projeto (build, debug, versão)
-    .sln Contém informações que carregam um agrupamento de projetos 
 
-Converções:
+Convenções C#:
+
 Link: https://learn.microsoft.com/pt-br/dotnet/csharp/fundamentals/coding-style/coding-conventions
+
 - Classe/Record/Struct: PascalCase
 - Interface: I + PascalCase
 - Propriedade: PascalCase 
@@ -75,6 +88,7 @@ Link: https://learn.microsoft.com/pt-br/dotnet/csharp/fundamentals/coding-style/
     - Deixar um espaço entre o delimitador // e o texto
     - Comentar todos os membros públicos 
 - Usar o var apenas para variáveis locais quando o tipo for obviu ou não for importante, em loop for
+
 Dicas:
 - Evitar abreviações 
 - Nome do arquivo .cs igual o Nome da classe 
@@ -83,17 +97,28 @@ Não usado:
     snake_case 
     spinal-case
 
-Estudar:
-ok classe 
-ok namespace 
-ok tipos de dados 
-ok operadores de atribuição 
-ok operadores condicionais 
-    if 
-    else 
-    switch/case 
-ok operadores logicos
-    AND 
-    OR 
-    NOT 
+Gerenciador de Pacotes Nuget 
+Link: https://www.nuget.org/
+
+# Pacote Newtonsoft.Json
+dotnet add package Newtonsoft.Json --version 13.0.3
+
+# Pacote Entity Framework
+    # Instalar Pacote Entity Framework 
+    dotnet add package Microsoft.EntityFrameworkCore.Design --version 7.0.4
+
+    # Instalar Pacote SqlServer  
+    dotnet add package Microsoft.EntityFrameworkCore.SqlServer --version 7.0.4
+
+    # Instalar ferramenta do Entity Framework (global - máquina)
+    dotnet tool install --global dotnet-ef --version 7.0.4
+
+    # Criar migration para a tabela contato 
+    dotnet-ef migrations add CreateContactTable
+    
+    # Remover migration (não testado)
+    dotnet-ef migrations remove
+    
+    # Realizar alterações no banco de dados 
+    dotnet-ef database update
 
