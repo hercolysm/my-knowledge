@@ -1,10 +1,16 @@
 #windows
 
+# Listar todos os comandos 
+>sqlcmd -?
+
+# Acessar servidor (obs: o NOMESERVIDOR é o nome da máquina)
+>sqlcmd -S NOMESERVIDOR
+
 # Acessar instância SQL
 >sqlcmd -S NOMESERVIDOR\NOMEINSTANCIA
 
 # Alternar a senha de um usuário (abra o 'prompt de comando' como administrador)
-1>sp_password @old = null, @newv = 'nova_senha', @loginame = 'sa'
+1>sp_password @old = null, @new = 'nova_senha', @loginame = 'sa'
 2>go
 
 # Exibir nome do servidor
@@ -24,3 +30,6 @@
 
 # Listar instâncias SQl de um servidor
 osql -L
+
+# Listar usuários de um servidor 
+sqlcmd -S nome_do_servidor -U nome_do_usuario -P senha_do_usuario -Q "SELECT * FROM sys.sql_logins;"
