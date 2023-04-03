@@ -28,19 +28,18 @@ Comandos dotnet
 dotnet --info
 
 [Criar projeto Aplicativo do Console]
-dotnet new console 
-dotnet new console --framework net5.0
+dotnet new "console" -lang "C#" -n "ProjectName" -o "NewFolderName" --framework net6.0
 dotnet run
 
 [Criar projeto Biblioteca de Classes]
-dotnet new "classlib" -lang "C#" -n "MyLibraryClass.NET6" -o "MyLibraryClass.NET6" --framework net6.0
+dotnet new "classlib" -lang "C#" -n "ProjectName" -o "NewFolderName" --framework net6.0
 
 [Criar projeto WebAPI]
-dotnet new "webapi" -lang "C#" -n "MyWebAPI.NET6" -o "MyWebAPI.NET6" --framework net6.0
+dotnet new "webapi" -lang "C#" -n "ProjectName" -o "NewFolderName" --framework net6.0
 dotnet watch run 
 
 [Criar projeto MVC]
-dotnet new ""
+dotnet new "mvc" -lang "C#" -n "ProjectName" -o "NewFolderName" --framework net6.0
 dotnet watch run 
 
 [Buildar projeto]
@@ -50,10 +49,10 @@ dotnet build
 dotnet new sln -n "my-dotnet-solution"
 
 [Adicionar projeto na solução]
-dotnet sln "c:\Users\herco\source\repos\dotnet-projects\DOTNET\DOTNET.sln" add "c:\Users\herco\source\repos\dotnet-projects\DOTNET\DOTNET2\DOTNET2.csproj"
+dotnet sln "SolutionPath\SolutionName.sln" add "ProjectPath\ProjectName.csproj"
 
 [Adicionar referencia em um projeto]
-dotnet add "c:\Users\herco\source\repos\dotnet-projects\DOTNET\MyConsoleApplication.NET6\MyConsoleApplication.NET6.csproj" reference "c:\Users\herco\source\repos\dotnet-projects\DOTNET\MyLibraryClass.NET6\MyLibraryClass.NET6.csproj"
+dotnet add "ProjectPath\ProjectName.csproj" reference "ProjectPath\ProjectName.csproj"
 
 [Adicionar pacote]
 dotnet add package NomeDoPacote
@@ -114,6 +113,11 @@ dotnet add package Newtonsoft.Json --version 13.0.3
     dotnet tool install --global dotnet-ef --version 7.0.4
 
     # Criar migration para a tabela contato 
+    (primeiro é necessário criar uma model com os atributos do objeto
+     , um context de conexão com o banco de dados
+     , um DbSet para o objeto
+     , adicionar a string de conexão nas configurações
+     e no Program.cs adicionar o service de conexão DbContext)
     dotnet-ef migrations add CreateContactTable
     
     # Remover migration (não testado)
