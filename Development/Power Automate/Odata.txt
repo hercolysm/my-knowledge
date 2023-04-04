@@ -1,0 +1,5 @@
+// Filter lookup
+_recordid_value eq '<guid here>'
+
+// Filter with search string 
+contains(column_name, 'String')
