@@ -193,3 +193,7 @@ using (object obj = new object())
 // using (without scope)
 using object obj = new object();
 obj.Method();
+
+#region Tags para delimitar trecho de código 
+// Code here
+#endregion
