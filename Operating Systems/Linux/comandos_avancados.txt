@@ -149,9 +149,18 @@ route add default gw 192.168.0.1
 
     descompactar:
     unrar x nome_do_arquivo.rar
-    
+
+# Verificar nível de carga dos últimos 1, 5 e 15 mminutos 
+update 
+
 # Verificar CPU 
 top
+shift + m (ordenar por memória)
+shift + p (ordenar por uso da CPU)
 
 # Verificar memória RAM 
 free -m
+
+# Configurar processo 'kswapd0' para usar SWAP apenas quando estiver completamente sem RAM:
+Editar arquivo: /etc/sysctl.conf
+vm.swappiness=0

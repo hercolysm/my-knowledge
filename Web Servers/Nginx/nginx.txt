@@ -1,0 +1,37 @@
+Nginx
+
+# Instalar Nginx no linux (Ubuntu)
+sudo apt update && sudo apt upgrade
+sudo apt install nginx
+
+# Gerenciar o serviço
+sudo systemctl start nginx
+sudo systemctl status nginx
+sudo systemctl enable nginx
+sudo systemctl reload nginx
+
+## Configurar sub-dominio ##
+
+# Criar arquivo de configuração do sub-dominio
+vim /etc/nginx/sites-available/subdominio.dominio.com
+server {
+    listen 80;
+    listen [::]:80;
+
+    server_name subdominio.dominio.com;
+
+    location / {
+        proxy_pass http://localhost:8080;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+    }
+}
+
+# Criar link simbólico do sub-dominio nos sites habilitados do nginx 
+ln -s /etc/nginx/sites-available/subdominio.dominio.com /etc/nginx/sites-enabled/
+
+# Testar as novas configurações 
+nginx -t
+
+# Reiniciar o serviço nginx 
+service nginx restart
