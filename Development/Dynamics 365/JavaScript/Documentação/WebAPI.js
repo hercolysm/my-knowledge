@@ -96,6 +96,8 @@ Estrutura da URL
     $expand= 
 
     $orderby=column
+    Ex:
+        &$orderby=revenue asc,name desc
 
 Exemplos 
     GET [Organization URI]/api/data/v9.2/teammemberships?$top=3&$select=systemuserid,teamid&$filter=systemuserid%20eq%20669093F1-C98D-ED11-81AE-002248381498
