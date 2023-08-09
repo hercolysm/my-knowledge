@@ -26,3 +26,17 @@ Set(
         )
     ).'Column Name'
 );
+
+// Navegação entre telas
+Navigate(ScreenName)
+Navigate( ScreenName, ScreenTransition.Fade, { ID: 12 , Shade: Color.Red } )
+Back()
+Back( ScreenTransition.Cover )
+
+Exemplos:
+ScreenTransition.Cover: a nova tela desliza da direita para a esquerda, cobrindo a tela atual.
+ScreenTransition.CoverRight: a nova tela desliza da esquerda para a direita, cobrindo a tela atual.
+ScreenTransition.Fade: a tela atual desaparece para revelar a nova tela.
+ScreenTransition.None (padrão): a nova tela substitui rapidamente a tela antiga.
+ScreenTransition.UnCover: a tela atual desliza para fora da exibição da direita para a esquerda, revelando a nova tela.
+ScreenTransition.UnCoverRightr: a tela atual desliza para fora da exibição da esquerda para a direita, revelando a nova tela.
