@@ -99,7 +99,7 @@ lookupOptions.entityType = "table_name";
 Xrm.Utility.refreshParentGrid(lookupOptions);
 
 
-/* Eventos */
+/* Events */
 
 // Add on change event
 FormContext.getAttribute("Field_Name").addOnChange(FunctionName);
@@ -112,6 +112,9 @@ input.addOnLookupTagClick(function(data) {
     var args = data._eventArgs; // impede que o registro seja aberto após o click
     args._preventDefault = true; // colocar como 'falso' para manter o comportamento padrão
 });
+
+// Call a function from HTML web resource
+Xrm.Page.getControl("WebResource_<NAME>").getObject().contentWindow.window.FunctionName();
 
 
 /* App */
