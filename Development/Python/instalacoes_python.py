@@ -26,6 +26,9 @@ pip3 install webdriver-manager # python 3
 pip install html5lib # python 2
 pip3 install html5lib # python 3
 
+# instalar pacotes pelo arquivo
+pip install -r file.txt 
+
 # instalar chrome
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 dpkg -i google-chrome-stable_current_amd64.deb
