@@ -11,6 +11,12 @@
 		},
 		{
 			"path": "../../.."
+		},
+		{
+			"path": "\\\\wsl.localhost\\Debian\\home\\hercolysm\\webrat"
+		},
+		{
+			"path": "../../../../../../Documents/Fortics/intranet"
 		}
 	],
 	"settings": {}

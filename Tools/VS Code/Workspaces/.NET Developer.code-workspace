@@ -5,6 +5,9 @@
 		},
 		{
 			"path": "../../.."
+		},
+		{
+			"path": "../../../../work/fortics/dynamics-crm/hma-customizations"
 		}
 	],
 	"settings": {}

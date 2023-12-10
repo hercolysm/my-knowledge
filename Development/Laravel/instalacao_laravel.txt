@@ -102,4 +102,11 @@ composer dump-autoload -o
 # Atualiza suas dependências para a versão mais recente de acordo com composer.json, e atualiza o arquivo composer.lock
 composer update
 
+# Criar rota para download de arquivo 
+Route::get('.well-known/pki-validation/5A33E0419A3D0CAF802A73B724D17208.txt', function () {
+    return response()->file(public_path('.well-known/pki-validation/5A33E0419A3D0CAF802A73B724D17208.txt'));
+});
 
+# Instalar Process Component
+composer require symfony/process:3.3 (for laravel 5.5)
+Link: https://symfony.com/doc/3.3/components/process.html

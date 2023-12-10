@@ -9,6 +9,7 @@ sudo systemctl start nginx
 sudo systemctl status nginx
 sudo systemctl enable nginx
 sudo systemctl reload nginx
+sudo systemctl restart nginx
 
 ## Configurar sub-dominio ##
 
@@ -29,6 +30,47 @@ server {
 
 # Criar link simbólico do sub-dominio nos sites habilitados do nginx 
 ln -s /etc/nginx/sites-available/subdominio.dominio.com /etc/nginx/sites-enabled/
+
+# Testar as novas configurações 
+nginx -t
+
+# Reiniciar o serviço nginx 
+service nginx restart
+
+
+## Habilitar acesso SSL (HTTPS) para sub-dominio ##
+
+# Gerar e baixar certificado 
+Ex: https://app.zerossl.com/
+
+# Copiar os arquivos para o servidor (ex: nginx)
+/etc/nginx/ssl/subdominio.dominio.com/ca_bundle.crt
+/etc/nginx/ssl/subdominio.dominio.com/certificate.crt
+/etc/nginx/ssl/subdominio.dominio.com/private.key
+Ou 
+/etc/ssl/certs/certificate.crt
+/etc/ssl/private/private.key
+
+# Unificar os arquivos .crt
+cat certificate.crt ca_bundle.crt >> certificate.crt 
+
+# Incluir configuração no sub-dominio
+vim /etc/nginx/sites-available/subdominio.dominio.com
+server {
+    listen 443 ssl;
+    listen [::]:443 ssl;
+
+    server_name subdominio.dominio.com;
+
+    ssl_certificate /etc/nginx/ssl/subdominio.dominio.com/certificate.crt;
+    ssl_certificate_key /etc/nginx/ssl/subdominio.dominio.com/private.key;
+
+    location / {
+        proxy_pass http://localhost:8080;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+    }
+}
 
 # Testar as novas configurações 
 nginx -t
