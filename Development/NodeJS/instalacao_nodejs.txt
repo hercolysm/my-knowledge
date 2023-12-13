@@ -18,3 +18,6 @@ apt-get install nodejs
 
 node -v
 npm -v
+
+# Desinstalar node e npm 
+apt-get remove nodejs
