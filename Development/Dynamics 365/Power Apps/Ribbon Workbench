@@ -1,0 +1,4 @@
+# Habilitar botão 'Verificador de comandos' 
+
+- Adicionar no final da URL o parametro
+&ribbondebug=true
