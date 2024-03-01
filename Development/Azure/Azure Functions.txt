@@ -1,0 +1,52 @@
+Azure Functions 
+
+Dataverse SDK for .NET
+https://learn.microsoft.com/en-us/power-apps/developer/data-platform/developer-tools
+
+visual studio 2022
+	Desenvolver o Azure Functions usando o Visual Studio
+	Link: https://learn.microsoft.com/pt-br/azure/azure-functions/functions-develop-vs?tabs=in-process
+
+	- No Visual Studio Installer, adicionar as ferramentas de Desenvolvimento do Azure (Azure Development)
+	- Criar novo projeto (File -> New -> Project...)
+		- Selecionar o template de projeto: Azure Functions
+		- Clicar em próximo:
+			Definir nome do projeto. Ex: Functions  
+			Definir local 
+			Definir nome da solução
+		- Clicar em próximo:
+			Definir a versão do .NET 
+			Definir o gatilho. Ex: http  
+			Definir o nível de acesso. Ex: Anonymous 
+		- Clicar em Criar 
+	- Adicionar funções ao projeto 
+		- Clique com botão direito no projeto (Add -> New Azure Function...)
+		- Selecionar Azure Function 
+		- Definir o nome 
+		- Definir o gatilho 
+		- Definir o nível de acesso. Ex: Anonymous 
+	- Executar o projeto com F5 
+		Se der erro de dependencia:
+			- Instalar: Visual C++ Redistributable Packages for Visual Studio 2013 (na versão X86)
+				Link: https://www.microsoft.com/en-us/download/details.aspx?id=40784
+	- Testar o função atraves de uma requisição http 
+	- Instalar pacotes: 
+		Microsoft.CrmSdk.XrmTooling.CoreAssembly (+dependencias)
+		Microsoft.CrmSdk.CoreAssemblies (documentação MS)(instalou automático)
+		Newtonsoft.Json (já instalado em versão antiga)
+        Microsoft.AspNetCore.StaticFiles (para trabalhar com extensões de arquivos)
+	- Configurar variáveis de ambiente 
+		.NET Framework v1 
+			Ex: WebConfigurationManager.AppSettings["CrmURL"];
+		.NET Framework Isolated v4 
+			Ex: Environment.GetEnvironmentVariable("CrmURL");
+	- Publicar
+		- Clicar com botão direito em Publicar
+		- Selecionar Azure 
+		- Fazer login em uma conta do Azure 
+		- Selecionar uma Assinatura 
+		- Selecionar um Grupo de recursos. Ex: fleury-poc-omnichannel3 
+		- Selecionar um Aplicativo de funções. 	
+			Ex: dev-app-functions 
+				hom-app-functions 
+				prd-app-functions 
