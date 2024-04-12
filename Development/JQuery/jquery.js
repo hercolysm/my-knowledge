@@ -177,6 +177,7 @@
 	$.ajax({
 		url: '/Controller/Action/',
 		type: 'GET',
+		async: false,
 		dataType: 'json',
 		data: {
 			param: value
