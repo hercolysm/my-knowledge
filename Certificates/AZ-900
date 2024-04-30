@@ -1,0 +1,111 @@
+Computação em nuvem
+
+    Conceitos básicos do Microsoft Azure
+        O Microsoft Azure é uma plataforma de computação em nuvem
+        Os serviços do Azure dão suporte a tudo, do simples ao complexo
+        Exemplos:
+            O Azure tem serviços Web simples para hospedar sua presença comercial na nuvem. 
+            O Azure também dá suporte à execução de computadores totalmente virtualizados que gerenciam suas soluções de software personalizadas. 
+            O Azure fornece uma infinidade de serviços baseados em nuvem, como armazenamento remoto, hospedagem de banco de dados e gerenciamento de conta centralizado. 
+            O Azure também oferece novos recursos, como IA (inteligência artificial) e serviços focados em IoT (Internet das Coisas).
+
+    Computação em nuvem
+        A computação em nuvem é a entrega de serviços de computação pela Internet
+        Exemplos de serviços de computação: 
+            - infraestrutura de TI comum
+                - máquinas virtuais
+                - armazenamento
+                - bancos de dados 
+                - rede
+            - outros recursos 
+                - IoT (Internet das Coisas)
+                - ML (machine learning)
+                - IA (inteligência artificial).
+        Vantagens:
+            - Poder expandir rapidamente infraestrutura/volume de TI 
+
+    Modelo de responsabilidade compartilhada
+        Nesse modelo as responsabilidades são compartilhadas entre o provedor de nuvem e o consumidor 
+            responsabilidade do provedor de nuvem:
+                - Segurança física
+                - energia
+                - resfriamento 
+                - conectividade de rede 
+            responsabilidade do consumidor: 
+                - dados e informações armazenados na nuvem
+                - segurança de acesso
+            modelo de serviço determinará a responsabilidade por coisas como:
+                - Sistemas operacionais
+                - Controles de rede
+                - Aplicativos
+                - Identidade e infraestrutura
+        Tipos de serviço
+            IaaS (infraestrutura como serviço)
+                coloca a maior responsabilidade sobre o consumidor, com o provedor de nuvem sendo responsável pelas questões básicas de segurança física, energia e conectividade
+            PaaS (plataforma como serviço)
+                distribui uniformemente a responsabilidade entre o provedor de nuvem e o consumidor.
+            SaaS (software como serviço)
+                coloca a maior parte da responsabilidade no provedor de nuvem
+
+    Modelos de nuvem
+        privado
+            é uma nuvem usada por uma única entidade 
+            Vantagens: fornece um controle muito maior
+            Desvantagens: tem mais custos e menos benefícios
+            - pode ser hospedada em seu datacenter local
+            - pode ser hospedada em um datacenter dedicado externo
+            - pode ser hospedada um datacenters dedicado de terceiros 
+        público
+            é criada, controlada e mantida por um provedor de nuvem de terceiros
+            - qualquer pessoa que queira comprar serviços de nuvem pode acessar e usar os recursos
+        híbrido
+            é um ambiente de computação que usa nuvens públicas e privadas em um ambiente interconectado
+        Várias nuvens
+            vários provedores de nuvem pública (Azure, AWS)
+        Azure Arc
+            é um conjunto de tecnologias que ajuda a gerenciar seu ambiente de nuvem
+        Solução VMware no Azure
+            permite executar cargas de trabalho do VMware (estabelecido em um ambiente de nuvem privada) no Azure com integração e escalabilidade total
+
+    Identificar os casos de uso apropriados para cada modelo de nuvem
+
+    Modelo baseado no consumo
+        - é o modelo de preço pago conforme o uso
+        Na computação em nuvem, você não paga pela infraestrutura física, pela eletricidade, pela segurança nem por nada que esteja associado à manutenção de um datacenter
+        Você paga pelos recursos de TI que usa. Se você não usar nenhum recurso de TI durante o mês, não pagará nada.
+        Benefícios
+            A capacidade de pagar para obter mais recursos quando necessário
+            A capacidade de parar de pagar por recursos que não são mais necessários
+            você não precisa se preocupar em acertar perfeitamente as necessidades de recursos
+
+    Comparar os modelos de preços de nuvem
+
+Gerenciamento de custos no Azure
+
+    Fatores que podem afetar os custos no Azure
+        Tipo de recurso
+        Consumo
+        Manutenção
+        painel Geografia do app's selecionado
+        Tipo de assinatura
+        Azure Marketplace
+
+    Calculadora de preços 
+        - fornece um custo estimado para provisionar recursos no Azure
+    
+    Calculadora de TCO (Custo Total de Propriedade)
+        - compara os custos entre infraestrutura local versus uma infraestrutura de nuvem do Azure
+        - permite inserir sua infraestrutura e os requisitos atuais e fornece uma estimativa para execução na nuvem
+
+    Ferramenta Gerenciamento de Custos da Microsoft
+        - permite verificar rapidamente os custos de recursos do Azure, criar alertas com base nos gastos com recursos e criar orçamentos que podem ser usados para automatizar o gerenciamento de recursos
+
+    Finalidade das marcas de recursos
+        - As marcas permitem associar metadados a um recurso para ajudar a controlar o gerenciamento de recursos, os custos e a otimização, a segurança
+        - Uma marca de recurso consiste em um nome e um valor. Você pode atribuir uma ou mais marcas a cada recurso do Azure
+        Exemplo:
+            AppName:	O nome do aplicativo do qual o recurso faz parte.
+            CostCenter:	O código do centro de custo interno.
+            Proprietário:	O nome do proprietário de negócios responsável pelo recurso.
+            Ambiente:	Um nome de ambiente, como "Prod", "Dev" ou "Test".
+            Impacto:	O grau de importância do recurso para as operações de negócios, como "Crítico", "De alto impacto" ou "De baixo impacto".
