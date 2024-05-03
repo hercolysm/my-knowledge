@@ -80,6 +80,44 @@ Computação em nuvem
 
     Comparar os modelos de preços de nuvem
 
+Benefícios do uso de serviços de nuvem
+
+    alta disponibilidade 
+        A alta disponibilidade se concentra em garantir a disponibilidade máxima, independentemente de interrupções ou eventos que possam ocorrer
+    
+    escalabilidade 
+        A escalabilidade refere-se à capacidade de ajustar recursos para atender à demanda
+            Dimensionamento vertical - escala processamento (CPUs, RAM)
+            Dimensionamento horizontal - escala recursos (VM, Containers)
+
+    confiabilidade 
+        Resiliência é a capacidade que um sistema tem de se recuperar de falhas e continuar funcionando
+        a nuvem naturalmente dá suporte a uma infraestrutura confiável e resiliente
+        a nuvem permite que você tenha recursos implantados em várias regiões do mundo
+        mesmo que ocorra um evento catastrófico em uma região, as outras regiões ainda estarão em funcionamento
+        Azure aproveita a escala global para oferecer confiabilidade
+        
+    previsibilidade 
+        previsibilidade de desempenho 
+            dimensionamento automático, o balanceamento de carga e a alta disponibilidade
+        previsibilidade de custo
+            usando a análise e as informações da nuvem, você pode prever custos futuros e ajustar os recursos conforme o necessário
+            ferramentas para estimativas: TCO (custo total de propriedade) e Calculadora de Preços
+
+    segurança e governança 
+
+    capacidade de gerenciamento 
+        maneiras de gerenciar: 
+            portal da Web
+            interface de linha de comando.
+            APIs
+            PowerShell
+        o que pode gerenciar:
+            Escalar automaticamente a implantação de recursos com base na necessidade
+            Implantar recursos com base em um modelo pré-configurado, removendo a necessidade de configuração manual
+            Monitorar a integridade dos recursos e substituir automaticamente os recursos com falha
+            Receber alertas automáticos com base em métricas configuradas, de modo a ficar ciente do desempenho em tempo real
+
 Gerenciamento de custos no Azure
 
     Fatores que podem afetar os custos no Azure
@@ -109,3 +147,27 @@ Gerenciamento de custos no Azure
             Proprietário:	O nome do proprietário de negócios responsável pelo recurso.
             Ambiente:	Um nome de ambiente, como "Prod", "Dev" ou "Test".
             Impacto:	O grau de importância do recurso para as operações de negócios, como "Crítico", "De alto impacto" ou "De baixo impacto".
+
+Recursos e as ferramentas de governança e conformidade no Azure
+
+    Microsoft Purview
+        é uma família de soluções de governança, risco e conformidade de dados
+        coleta informações sobre seus dados locais, multinuvem e software como serviço 
+        O Azure Purview ajuda você a gerenciar seu patrimônio de dados, mas não impedirá a criação de recursos fora da política
+        Soluções de risco e conformidade
+            ajuda a gerenciar e monitorar dados
+            proteja dados confidenciais entre nuvens, aplicativos e dispositivos
+        Governança de dados unificada
+            permite gerenciar dados armazenados em bancos de dados
+
+    Azure Policy
+        é um serviço do Azure que permite criar, atribuir e gerenciar políticas que controlam ou auditam os recursos
+        A política do Azure permite criar políticas e iniciativas (grupos de políticas) que impedem a criação de recursos fora de conformidade
+        Azure Policy se integra ao Azure DevOps aplicando as políticas de pipeline de entrega e integração contínua que se pertencem às fases pré e pós-implantação dos seus aplicativos
+        
+
+    bloqueios de recursos
+        Um bloqueio de recurso impede que os recursos sejam excluídos ou alterados acidentalmente
+
+    Portal de Confiança do Serviço
+        é um local que oferece acesso a vários conteúdos, ferramentas e outros recursos sobre práticas de segurança, privacidade e conformidade da Microsoft
