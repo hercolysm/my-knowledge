@@ -44,6 +44,12 @@ Xrm.Utility.getGlobalContext().getClientUrl()
 var Field_Name = Xrm.Page.getAttribute("Field_Name").getValue();
 var Field_Name = FormContext.getAttribute("Field_Name").getValue();
 
+// Get Lookup's Values
+var Lookup = FormContext.getAttribute("Lookup_Name").getValue();
+var id = Lookup[0]['id'];
+var name = Lookup[0]['name'];
+var entityType = Lookup[0]['entityType'];
+
 // Set Field's Value 
 FormContext.getAttribute("Field_Name").setValue(null);
 
