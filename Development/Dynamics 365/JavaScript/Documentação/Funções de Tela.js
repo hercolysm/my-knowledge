@@ -18,6 +18,23 @@ Xrm.Navigation.openAlertDialog({ confirmButtonLabel: "Ok", text: "Texto do alert
 // Show erro 
 Xrm.Navigation.openErrorDialog({ message: "Ocorreu um erro :(", details: "Detalhes do erro para o arquivo de log." });
 
+// Show confirmDialog
+Xrm.Navigation.openConfirmDialog({
+	title: "Tem certeza?",
+	subtitle: "Você tem certeza?",
+    text: "Escolha uma opção",
+	confirmButtonLabel: "Sim",
+	cancelButtonLabel: "Não",
+}).then(
+	function successCallback(userChoice) {
+		if (userChoice.confirmed) {
+			// do something
+		}
+	}, function errorCallback() {
+		console.log("Erro ao abrir a caixa de dialogo");
+	}
+);
+
 // Show loading 
 Xrm.Utility.showProgressIndicator("Loading...");
 
