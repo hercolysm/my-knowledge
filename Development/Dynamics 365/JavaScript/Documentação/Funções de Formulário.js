@@ -53,6 +53,9 @@ var entityType = Lookup[0]['entityType'];
 // Set Field's Value 
 FormContext.getAttribute("Field_Name").setValue(null);
 
+// Fire Onchange Event
+FormContext.getAttribute("Field_Name").fireOnChange();
+
 // Add Required
 FormContext.getAttribute("Field_Name").setRequiredLevel("required");
 
