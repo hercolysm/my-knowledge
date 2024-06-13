@@ -179,6 +179,70 @@ Serviços de computação e rede do Azure
     Rede virtual, incluindo a finalidade das Redes Virtuais do Azure, sub-redes virtuais do Azure, emparelhamento, DNS do Azure, Gateway de VPN e ExpressRoute
     Pontos de extremidade públicos e privados
 
+Serviços do armazenamento do Azure
+
+    Serviços de armazenamento do Azure
+    Camadas de armazenamento
+    Opções de redundância
+    Opções de conta de armazenamento e os tipos de armazenamento
+    Opções para mover arquivos, incluindo o AzCopy, o Gerenciador de Armazenamento do Azure e a Sincronização de Arquivos do Azure
+    Opções de migração, incluindo as Migrações para Azure e o Azure Data Box
+
+Identidade, acesso e segurança do Azure
+
+    Serviços de diretório no Azure
+        Microsoft Entra ID 
+            - é a solução de gerenciamento de identidade e acesso baseada em nuvem da Microsoft.
+            - permite fazer login e acessar aplicativos da Microsoft e também aplicativos desenvolvidos. 
+            - possui autenticação, login único (SSO), gerenciamento de aplicativos e gerenciamento de dispositivos.
+        Microsoft Entra Domain Services
+            - é a solução que fornece serviços de domínio gerenciado.
+            - possui ingresso no dominio, política de grupo, protocolo de acesso a diretórios (LDAP) e autenticação Kerberus/NTLM.
+    Métodos de autenticação no Azure
+        SSO (logon único)
+        MFA (autenticação multifator) 
+        Acesso sem senha 
+            Windows Hello para Empresas
+            Aplicativo Microsoft Authenticator
+            Chaves de segurança FIDO2
+    Identidades externas e o acesso de convidado no Azure
+        Possui recursos para gereciamento de acessos de usuários externos de fora da organização
+    Acesso condicional do Microsoft Entra
+        O Acesso Condicional é uma ferramenta que o Microsoft Entra ID usa para permitir (ou negar) o acesso a recursos com base em sinais de identidade. O Acesso Condicional poderá desafiá-lo com um segundo fator de autenticação se os sinais de entrada forem incomuns ou de um local inesperado.
+    RBAC (controle de acesso baseado em função) do Azure
+        Funções 
+            Propriétário 
+            Leitor 
+        Escopo 
+            Grupo de gerenciamento 
+            Assinatura 
+            Grupo de recursos 
+    Conceito de Confiança Zero
+        A Confiança Zero é um modelo de segurança que pressupõe o pior cenário e protege os recursos com essa expectativa.
+        Requer autenticação mesmo estando na VPN 
+    Modelo de defesa em profundidade
+        Camadas de segurança 
+            Segurança física
+            Identidade e acesso
+                Controle o acesso à infraestrutura e o controle de alterações.
+                Usar o SSO (logon único) e a autenticação multifator.
+                Faça a auditoria de eventos e alterações.
+            Perímetro (proteção da rede)
+                Proteção contra DDoS
+                Firewalls 
+            Rede 
+                Limite a comunicação entre os recursos.
+                Negue por padrão.
+                Restringir o acesso à Internet de entrada e limitar o acesso de saída quando apropriado.
+                Implemente a conectividade segura com as redes locais.
+            Computação 
+                Proteger o acesso às máquinas virtuais.
+            Aplicativo 
+                Faça com que a segurança seja um requisito de design em todo o desenvolvimento do aplicativo.
+            Dados 
+    Microsoft Defender para Nuvem
+        é uma ferramenta de monitoramento para gerenciamento da postura de segurança e proteção contra ameaças. Ele monitora os seus ambientes de nuvem, locais, híbridos e de várias nuvens
+
 Gerenciamento de custos no Azure
 
     Fatores que podem afetar os custos no Azure
@@ -356,6 +420,5 @@ Ferramentas de monitoramento no Azure
                 Contagens de sessão e usuários
                 Contadores de desempenho de máquinas de servidor Linux ou Windows server, como CPU, memória e uso da rede
 
-
-Documentar console Azure
-Link 1: https://learn.microsoft.com/pt-br/training/modules/describe-core-architectural-components-of-azure/
+Referências: 
+    https://learn.microsoft.com/pt-br/training/courses/az-900t00?wt.mc_id=studentamb_335523

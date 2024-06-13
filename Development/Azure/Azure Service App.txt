@@ -1,0 +1,20 @@
+Azure Service App
+
+Visual Studio 
+-> Novo projeto 
+    Tipo: ASP.NET Core Web API 6
+    Nome do Projeto: app-crm-dynamics-azure-api 
+    Nome da Solução: app-crm-dynamics-azure-api
+    Framework: .NET 6.0 
+    Autenticação: Nenhuma 
+
+-> Instalar pacotes
+
+
+Referências
+
+Tutorial: criar uma API Web com o ASP.NET Core
+https://learn.microsoft.com/pt-br/aspnet/core/tutorials/first-web-api?view=aspnetcore-8.0&tabs=visual-studio
+
+Publicar no Azure
+https://learn.microsoft.com/pt-br/azure/app-service/quickstart-dotnetcore
