@@ -6,3 +6,6 @@ contains(column_name, 'String')
 
 // Filter 'not in'
 Microsoft.Dynamics.CRM.NotIn(PropertyName='statecode',PropertyValues=['1','2']) 
+
+// Filter N:N
+(nome_do_relacionamento/any(o1:(o1/id eq 'valor' )))
