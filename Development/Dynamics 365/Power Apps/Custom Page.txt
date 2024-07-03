@@ -40,3 +40,23 @@ ScreenTransition.Fade: a tela atual desaparece para revelar a nova tela.
 ScreenTransition.None (padrão): a nova tela substitui rapidamente a tela antiga.
 ScreenTransition.UnCover: a tela atual desliza para fora da exibição da direita para a esquerda, revelando a nova tela.
 ScreenTransition.UnCoverRightr: a tela atual desliza para fora da exibição da esquerda para a direita, revelando a nova tela.
+
+// Tipo Cliente (Contato ou Conta)
+If (
+    Not IsBlank(ThisItem.Cliente),
+    If (
+         IsType(
+             ThisItem.Cliente,
+             [@Contas]
+         ),
+         AsType(
+             ThisItem.Cliente,
+             [@Contas]
+         ).'Razão Social (name)',
+         AsType(
+             ThisItem.Cliente,
+             [@Contatos]
+         ).'Nome (fly_nome)'
+    )
+ )
+
