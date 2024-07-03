@@ -62,8 +62,11 @@ FormContext.getAttribute("Field_Name").setRequiredLevel("required");
 // Remove Required
 FormContext.getAttribute("Field_Name").setRequiredLevel("none");
 
-// Get Field control
-var input = FormContext.getControl("input_name"); 
+// Change Submit Mode 
+Xrm.Page.getAttribute("Field_Name").getSubmitMode();
+Xrm.Page.getAttribute("Field_Name").setSubmitMode('never');
+Xrm.Page.getAttribute("Field_Name").setSubmitMode('dirty');
+Xrm.Page.getAttribute("Field_Name").setSubmitMode('always');
 
 // Show/Hide Field
 FormContext.getControl("Field_Name").setVisible(true/false);
