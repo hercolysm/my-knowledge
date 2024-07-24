@@ -78,7 +78,7 @@ Conhecimentos básicos:
     Microsoft Power Apps 
     Socket.io/Websocket 
     CRM 
-    Integraão com CRM 
+    Integração com CRM 
     API REST 
     .NET Framework
 
@@ -155,7 +155,6 @@ Ações:
 
 Vagas 
     Analista de desenvolvimento Junior 
-
         - Solidos Conheciomento em lógica de programação
         - Noção de engenharia de software
         - Método Ágil (Scrum) 
@@ -164,155 +163,122 @@ Vagas
         - Experiência em desenvolvimento de scripts em Javascript
 
     Analista Devops 
-
         Requisitos desejados:
-        - Docker
-        - Kubernetes
-        - Terraform
-        - Ansible
-        - Prometheus
-        - Grafana
-        - AlertManager
-        - Git
-        - Google cloud
-
+            - Docker
+            - Kubernetes
+            - Terraform
+            - Ansible
+            - Prometheus
+            - Grafana
+            - AlertManager
+            - Git
+            - Google cloud
         Diferencial:
-        - GitLab
-        - Vault
-        - Consul
-        - MongoDb
-        - Redis 
-        - Python
-        - Golang
-        - Bash Script
-        - Helm
+            - GitLab
+            - Vault
+            - Consul
+            - MongoDb
+            - Redis 
+            - Python
+            - Golang
+            - Bash Script
+            - Helm
 
     Desenvolvedor Backend
-
         Requisitos minimos:
-        - Laravel (Services/Repositories; Jobs/Queues; Listeners/Observers; API c/ JWT)
-        - Node
-        - Docker
-        - Experiência com Realtime (Websocket)
-        - Experiência com Banco não-relacional (Mongo)
-        - Git Flow
-
+            - Laravel (Services/Repositories; Jobs/Queues; Listeners/Observers; API c/ JWT)
+            - Node
+            - Docker
+            - Experiência com Realtime (Websocket)
+            - Experiência com Banco não-relacional (Mongo)
+            - Git Flow
         Requisitos desejados:
-        - NestJs/Adonisjs/Express.js
-        - Redis/Kafka/RabbitMQ/Google PubSub
-        - GraphQL
-        - Typescript
-        - Testes unitários
-
+            - NestJs/Adonisjs/Express.js
+            - Redis/Kafka/RabbitMQ/Google PubSub
+            - GraphQL
+            - Typescript
+            - Testes unitários
         Diferencial:
-        - GoLang
-        - Python
+            - GoLang
+            - Python
 
     Desenvolvedor Frontend
-
         Requisitos minimos:
-        - Vue, Vuex 
-        - Sass 
-        - Typescript 
-        - Git Flow
-
+            - Vue, Vuex 
+            - Sass 
+            - Typescript 
+            - Git Flow
         Requisitos desejados:
-        - Semantic ui 
-        - GraphQl 
-        - Testes (Cypress/Jest)
-
+            - Semantic ui 
+            - GraphQl 
+            - Testes (Cypress/Jest)
         Diferencial:
-        - Quasar Framework 
-        - Figma 
- 
-Pesquisar sobre Cursos:
+            - Quasar Framework 
+            - Figma 
 
-story telling 
-https://www.jivochat.com.br/blog/reviews/cursos/curso-de-oratoria.html
-https://www.ginead.com.br/curso/curso-gratuito-de-comunicacao-e-oratoria
-https://www.primecursos.com.br/oratoria-e-apresentacao-em-publico/
+    Pessoa Desenvolvedora .Net - Pleno/Sênior (Remoto)
+        Experiência:
+            Desenvolvimento .Net;
+            NET Core;
+            Angular 7+;
+            Gitlab para Integração Contínua e Entrega Contínua;
+            Git para repositório.
 
-Sugestões de filmes 
-https://www.juscibernetica.com.br/post/os-20-melhores-filmes-e-s%C3%A9ries-para-compreender-sobre-tecnologias-riscos-ciberamea%C3%A7as
+        Desejável:
+            Boas práticas de desenvolvimento e padrões de projetos;
+            Metodologias Ágeis;
+            Inglês intermediário/avançado (participação em reuniões).
 
+        O que você vai encontrar aqui:
+            Um ambiente que valoriza feedbacks, temos a prática de 1:1;
+            Somos GPTW Ceará;
+            Projetos internacionais e tecnologias inovadoras;
+            Ambiente de aprendizado contínuo;
+            Cultura de colaboração entre os times;
+            Escolha se deseja trabalhar de casa ou em nosso escritório;
+            Auxílio Home office;
+            No dress-code;
+            Plano de saúde e odontológico;
+            Vale refeição/alimentação diferenciado;
+            Plano de previdência privada;
+            Day off;
+            Horários flexíveis de trabalho e feriados ponte;
+            Apoio à formação acadêmica, certificações e curso de inglês;
+            Auxílio creche;
+            Contratação em regime CLT, e muito mais.
 
+    Pessoa Desenvolvedora Backend - Sênior (Remoto)
+        Experiência:
+            C++;
+            Go;
+            Git;
+            Docker;
+            REST API;
+            Criptografia.
 
+        Conhecimento:
+            Shell script;
+            Python;
+            Metodologias ágeis (Scrum/Kanban);
+            Infraestrutura de Chaves Públicas;
+            IoT (MQTT, etc);
+            Infraestrutura de Computação em Nuvem.
 
-Pessoa Desenvolvedora .Net - Pleno/Sênior (Remoto)
+        Desejável:
+            SSL e aplicativos distribuídos e redes;
+            Sistemas operacionais Unix/Linux;
+            Inglês;
+            Uma ou mais das tecnologias - HyperLedger, Corda, Ethereum, Quorum;
+            Arquitetura de sistemas, DLT (distributed ledger technology), Criptoativos ou Tokenização;
+            Experiência em Cloud.
 
-Experiência:
-
-Desenvolvimento .Net;
-NET Core;
-Angular 7+;
-Gitlab para Integração Contínua e Entrega Contínua;
-Git para repositório.
-
-Desejável:
-
-Boas práticas de desenvolvimento e padrões de projetos;
-Metodologias Ágeis;
-Inglês intermediário/avançado (participação em reuniões).
-
-O que você vai encontrar aqui:
-
-Um ambiente que valoriza feedbacks, temos a prática de 1:1;
-Somos GPTW Ceará;
-Projetos internacionais e tecnologias inovadoras;
-Ambiente de aprendizado contínuo;
-Cultura de colaboração entre os times;
-Escolha se deseja trabalhar de casa ou em nosso escritório;
-Auxílio Home office;
-No dress-code;
-Plano de saúde e odontológico;
-Vale refeição/alimentação diferenciado;
-Plano de previdência privada;
-Day off;
-Horários flexíveis de trabalho e feriados ponte;
-Apoio à formação acadêmica, certificações e curso de inglês;
-Auxílio creche;
-Contratação em regime CLT, e muito mais.
-
-
-Pessoa Desenvolvedora Backend - Sênior (Remoto)
-
-Experiência:
-
-C++;
-Go;
-Git;
-Docker;
-REST API;
-Criptografia.
-
-Conhecimento:
-
-Shell script;
-Python;
-Metodologias ágeis (Scrum/Kanban);
-Infraestrutura de Chaves Públicas;
-IoT (MQTT, etc);
-Infraestrutura de Computação em Nuvem.
-
-Desejável:
-
-SSL e aplicativos distribuídos e redes;
-Sistemas operacionais Unix/Linux;
-Inglês;
-Uma ou mais das tecnologias - HyperLedger, Corda, Ethereum, Quorum;
-Arquitetura de sistemas, DLT (distributed ledger technology), Criptoativos ou Tokenização;
-Experiência em Cloud.
-
-
-Pessoa Desenvolvedora Java - Pleno
-
-Experiência:
-
-Desenvolvimento Java 8/11;
-Microsserviços;
-Docker;
-AWS;
-APIs Rest;
+    Pessoa Desenvolvedora Java - Pleno
+        Experiência:
+            Desenvolvimento Java 8/11;
+            Microsserviços;
+            Docker;
+            AWS;
+            APIs Rest;
 
 
 

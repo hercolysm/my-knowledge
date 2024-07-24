@@ -23,3 +23,21 @@ public void TestPlugin()
     
     context.ExecutePluginWith<PluginName>(pluginContext);
 }
+
+[TestMethod]
+[DataRow("value 1", "value 2")]
+public void TestPluginWithVar(string var1, string var2)
+{
+    var context = new XrmRealContext(GetOrganizationService());
+    var pluginContext = context.GetDefaultPluginContext();
+    pluginContext.InputParameters.Add("var1", var1);
+    pluginContext.InputParameters.Add("var2", var2);
+    try
+    {
+        context.ExecutePluginWith<PluginName>(pluginContext);
+    }
+    catch (Exception ex)
+    {
+        Assert.Fail(ex.Message);
+    }
+}
