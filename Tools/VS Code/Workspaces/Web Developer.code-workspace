@@ -1,22 +1,24 @@
 {
 	"folders": [
 		{
-			"path": "\\\\wsl.localhost\\Debian\\home\\hercolysm\\simple-website"
+			"name": "gerador-de-apostas",
+			"path": "\\\\wsl.localhost\\Debian\\home\\hercolys\\personal\\gerador-de-apostas"
 		},
 		{
-			"path": "\\\\wsl.localhost\\Debian\\home\\hercolysm\\gerador-de-apostas"
+			"name": "simple-website",
+			"path": "\\\\wsl.localhost\\Debian\\home\\hercolys\\personal\\simple-website"
 		},
 		{
-			"path": "\\\\wsl.localhost\\Debian\\home\\hercolysm\\my-react-knowledge"
+			"name": "my-dotnet-knowledge",
+			"path": "../../../../dotnet-projects/my-dotnet-knowledge"
 		},
 		{
+			"name": "my-react-knowledge",
+			"path": "\\\\wsl.localhost\\Debian\\home\\hercolys\\personal\\my-react-knowledge"
+		},
+		{
+			"name": "my-knowledge",
 			"path": "../../.."
-		},
-		{
-			"path": "\\\\wsl.localhost\\Debian\\home\\hercolysm\\webrat"
-		},
-		{
-			"path": "../../../../../../Documents/Fortics/intranet"
 		}
 	],
 	"settings": {}

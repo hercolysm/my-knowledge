@@ -1,0 +1,63 @@
+# atalhos
+
+# ocultar todos os blocos de código
+ctrl + k + 0
+
+# exibir todos os blocos de cógido
+ctrl + k + j
+
+# copiar linha 
+shift + alt + seta para cima ou baixo 
+
+# mover linha 
+alt + seta para cima ou baixo 
+
+# apagar linha 
+ctrl + shift + k 
+
+# multipla seleção (mesmo texto)
+ctrl + d 
+
+# multipla seleção (texto diferente)
+alt + click 
+
+# ativar zen mode 
+(ctrl + k) e z
+
+# desativar zen mode 
+2x esc 
+
+# abrir intelisense 
+ctrl + espaço
+
+# ver todos os atalhos 
+ctrl + k e ctrl + s 
+
+
+# extensões
+
+(Ferramentas)
+Live Preview - abrir página web no navegador 
+CodeSnap - captura de tela bonitas 
+Prettier - Code formatter - formata o código automaticamente (indentação)
+vscode-icons (troca icones para facilitar a identificação de arquivos)
+
+(Temas) 
+Monokai Pro 
+Andromeda 
+Atom One Dark Theme 
+Dracula Official 
+
+(GIT)
+GitLens - recursos do git 
+
+(PHP)
+PHP Intelephense
+
+(.NET/C#)
+C# (intelisense, color da fonte) 
+C# Extensions (novo menu ao clicar com o botão direito com atalhos referente a criação de recursos em C#)
+vscode-solution-explore (novo icone da solução)
+
+(Python)
+Python

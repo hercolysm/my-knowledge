@@ -1,0 +1,30 @@
+Link: https://developers.freshworks.com/docs/app-sdk/v2.3/freshdesk/app-development-process/#install-the-fdk-+-cli
+
+npm init
+
+sudo npm install --save https://cdn.freshdev.io/fdk/latest.tgz -g
+
+fdk version
+
+fdk create
+? Choose a product: freshdesk
+? Choose a template: your_first_app
+
+fdk run
+
+fdk validate
+
+fdk pack
+
+Publicar app
+Link: https://developers.freshworks.com/developer/sign-in
+Account URL: domaincompany.freshdesk.com. (Ex: helpdeskclientname.freshdesk.com)
+- Entrar no app 
+- Criar nova versão 
+- Salvar e publicar 
+- Acessar o Freshdesk -> MarketingPlace -> Gerenciar app -> Webrat -> Atualizar 
+
+Ticket de teste: https://support.clientname.com.br/a/tickets/175051?dev=true
+
+Use data method
+https://developers.freshworks.com/docs/app-sdk/v2.3/freshdesk/front-end-apps/data-method/
