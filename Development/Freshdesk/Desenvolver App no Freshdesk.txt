@@ -18,7 +18,10 @@ fdk pack
 
 Publicar app
 Link: https://developers.freshworks.com/developer/sign-in
-Account URL: domaincompany.freshdesk.com. (Ex: helpdeskclientname.freshdesk.com)
+- Inserir 
+    Organization URL: clientenameservice.freshworks.com (https://support.freshworks.com/support/solutions/articles/50000002731-what-is-and-how-can-i-change-my-organization-url-)
+    OU
+    Account URL: domaincompany.freshdesk.com. (Ex: helpdeskclientname.freshdesk.com)
 - Entrar no app 
 - Criar nova versão 
 - Salvar e publicar 
