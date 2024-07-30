@@ -1,3 +1,7 @@
+# Exemplo de dados enviados no contexto
+
+Link: https://learn.microsoft.com/pt-br/power-apps/developer/data-platform/understand-the-data-context
+
 context = {PluginProfiler.Plugins.ServiceWrappers.PluginExecutionContextWrapper}
     PrimaryEntityId = {4d6a03a5-e93a-ed11-9db0-000d3a888c5b}
     PrimaryEntityName = "frt_mensagem_szchat"
@@ -8,6 +12,24 @@ context = {PluginProfiler.Plugins.ServiceWrappers.PluginExecutionContextWrapper}
             Id 
         "storageid"
         "Target"
-            LogicalName "frt_mensagem_szchat"
+            LogicalName "new_table"
             Id 
     OutputParameters = {Microsoft.Xrm.Sdk.ParameterCollection}
+
+# Detalhes
+
+InputParameters (exibe os valores de entidade antes da implementação da operação)
+    No estágio de Pré-Validação deve ser incluido a lógica responsável pela validação de dados 
+        Ex: validar o formato de um campo 
+    No estágio de Pré-Operação deve ser incluido a lógica responsável pela alteração dos dados 
+        Ex: remover caracteres não numéricos de um campo 
+
+OutputParameters (exibe os valores depois da operação ter ocorrido)
+    Na fase de PostOperation pode ser incluido a lógica responsável pela alteração dos dados 
+
+PreEntityImages (fornece uma cópia imutável dos dados antes da operação) 
+
+PostEntityImages (fornece uma cópia imutável dos dados depois da operação) 
+
+SharedVariables (As variáveis compartilhadas permitem configurar dados que podem ser passados de um plug-in para uma etapa que ocorre posteriormente no pipeline de implementação)
+
