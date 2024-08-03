@@ -1,5 +1,7 @@
 Dynamics Developer 
 
+Link: https://learn.microsoft.com/pt-br/training/modules/extend-plug-ins/exercise
+
 - Abrir Microsoft Visual Studio
 - Criar solução 'HMA'
     - Criar projeto 'Biblioteca de Classes (.NET Framework)' 

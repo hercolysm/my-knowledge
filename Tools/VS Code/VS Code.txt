@@ -36,6 +36,8 @@ ctrl + espaço
 # ver todos os atalhos 
 ctrl + k e ctrl + s 
 
+# abrir extensões 
+ctrl + shift + x
 
 # extensões
 
