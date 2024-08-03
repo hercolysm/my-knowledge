@@ -6,6 +6,9 @@ ctrl + k + 0
 # exibir todos os blocos de cógido
 ctrl + k + j
 
+# exibir/ocultar barra lateral (explorer, search, extensions etc)
+ctrl + b 
+
 # copiar linha 
 shift + alt + seta para cima ou baixo 
 
