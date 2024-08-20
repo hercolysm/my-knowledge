@@ -1,0 +1,6 @@
+Power Fx for Commands
+
+Link: https://learn.microsoft.com/en-us/power-apps/maker/model-driven-apps/commanding-use-powerfx?WT.mc_id=DX-MVP-5003873
+
+# Regra de exibição: 
+If(Or(IsBlank(Self.Selected.Item.'Nome do Campo (lookup_name)'),Self.Selected.Item.'Nome do Campo (lookup_name)'.fieldname=false),false,true)

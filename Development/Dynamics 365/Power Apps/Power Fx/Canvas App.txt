@@ -1,3 +1,8 @@
+Power Fx for Canvas Apps
+
+Link: https://learn.microsoft.com/pt-br/power-platform/power-fx/formula-reference-canvas-apps
+
+
 // Definir o valor de uma variável
 Set(VarName, "Hello World");
 
@@ -59,4 +64,3 @@ If (
          ).'Nome (fly_nome)'
     )
  )
-
