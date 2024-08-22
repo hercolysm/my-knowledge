@@ -1,0 +1,17 @@
+# Exemplo do formatação de data
+yyyy-MM-ddTHH:mm:ss
+
+# Formatar data 
+formatDateTime(utcNow(), 'yyyy-MM-dd')
+
+# Comparar horários no formato HH:mm 
+and(
+	greaterOrEquals(
+		body('Horario_Atual'), 
+		variables('hora_inicio')
+	),
+	lessOrEquals(
+		body('Horario_Atual'), 
+		variables('hora_fim')
+	)
+)

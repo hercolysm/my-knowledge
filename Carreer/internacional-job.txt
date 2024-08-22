@@ -1,0 +1,14 @@
+# Sites de vagas internacionais
+jobs.lever.co
+boards.greenhouse.io
+jobs.ashbyhq.com
+jobs.jobvite.com
+myworkdayjobs.com
+careers.jobscore.com
+ats.comparably.com
+
+# Busca de vagas internacionais (google)
+site:<portal>"<Cargo que você busca>" "remote" -"remote in the US"
+
+# Exemplo:
+site:https://jobs.lever.co "CRM Developer" "remote" -"remote only in the US"

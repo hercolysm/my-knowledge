@@ -39,12 +39,8 @@ git config --global user.email "hercolysm@gmail.com"
 
 
 # outros comandos
-
-git [--version] [--help] [-C <path>] [-c name=value]
-    [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]
-    [-p | --paginate | --no-pager] [--no-replace-objects] [--bare]
-    [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]
-           <command> [<args>]
+git -v (--version)
+git -h (--help)
 
 
 # start a working area
@@ -89,11 +85,17 @@ git [--version] [--help] [-C <path>] [-c name=value]
 # fazer um commit simples
     git commit -m "Descrição do commit"
 
+# alterar a mensagem do último commit
+    git commit --amend -m "Nova descrição do commit"
+
 # subir o commit para o servidor
     git push origin <nome_branch>
     
 # listar commits ('-p' para ver as modificações)
     git log -p
+
+# listar historico de commits (inclue commits excluidos)
+    git reflog
 
 /* trabalhando com branch */
 
@@ -135,8 +137,15 @@ git rm -r --cached .
 git add .
 git commit -m "fixed untracked files"
 
-# Resetar commits
+# Retonar para um commit anterior (alterações ficam no staged prontas para commit)
+git reset --soft id_commit_anterior
+
+# Retornar para um commit anterior (alterações ficam como untracked files, precisa adicionar e commitar)
+git reset --mixed id_commit_anterior
+
+# Retornar para o commit anterior (alterações são perdidas)
 git reset --hard HEAD~1
+git reset --hard id_commit_anterior
 
 # listar origin
 git remote -v
@@ -150,8 +159,12 @@ git remote rm origin
 # Forçar (fatal: refusing to merge unrelated histories)
 git pull origin branch --allow-unrelated-histories
 
+# desfazer uma alteração 
+git restore caminho_para_o_arquivo
+
 # resetar um 'add'
 git reset caminho_para_o_arquivo
+git restore --staged caminho_para_o_arquivo
 
 # reverter o commit anterior
 git revert HEAD
