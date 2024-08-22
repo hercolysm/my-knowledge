@@ -1,0 +1,91 @@
+# Esta é a versão da especificação do arquivo docker-compose
+version: '3'
+# Este será o nome do container. Você pode usar qualquer outro nome
+services:
+  php:
+    # O ambiente será construído a partir do Dockerfile contido neste diretório, por isso o ponto (.)
+    # Poderíamos ter especificado a URL de uma imagem específica em vez disso
+    build: .
+    image: gerador-de-apostas
+    container_name: php
+    # Redireciona a porta local 8080 para a porta 80 do container
+    #ports: 
+    #  - "8080:80"
+    # O container será reiniciado automaticamente se ele falhar
+    restart: unless-stopped
+    tty: true
+    # Monta o conteúdo do diretório atual em /usr/share/nginx no container
+    working_dir: /var/www/html
+    volumes:
+      - .:/var/www/html
+    # Especifica quais redes internas este container vai utilizar
+    # O próprio Docker gerencia os hostnames dos containers
+    networks: 
+      - app-network
+    # Dependendo do MySQL, este container só será iniciado após o MySQL
+    depends_on:
+      - mysql
+      - redis
+  
+  nginx:
+    image: nginx
+    container_name: nginx
+    restart: unless-stopped
+    tty: true
+    # Redireciona a porta local 8080 para a porta 80 do container
+    ports:
+      - "80:80"
+    volumes:
+      - .:/var/www/html
+      - ./config/nginx/nginx.conf:/etc/nginx/conf.d/default.conf
+    networks:
+      - app-network
+    depends_on:
+      - php
+
+  mysql:
+    # Em vez de definir o caminho para a imagem no Dockerfile, definimos aqui mesmo
+    image: mysql:8.0
+    container_name: mysql
+    # A porta 3307 da máquina hospedeira irá apontar para a 3306 do container
+    #ports: 
+    #  - "3307:3306"
+    # Cria um diretório oculto .docker/dbdata dentro da pasta do projeto e [...]
+      # aponta o conteúdo de /var/lib/mysql do container para ele
+    # /var/lib/mysql é onde o MySQL mantém os dados
+    # Define as variáveis de ambiente para criação da base de dados do projeto
+    environment:
+      MYSQL_ROOT_PASSWORD: 1q2w3e4r
+      MYSQL_DATABASE: goodluck
+      MYSQL_USER: user
+      MYSQL_PASSWORD: password
+    # Como o container não salva nada, os dados do MySQL precisam ser salvos fora dele
+    volumes:
+      - .docker/mysqldata:/var/lib/mysql
+    #command: --default-authentication-plugin=mysql_native_password
+    # Permite a escrita em volumes no Windows 
+    command:
+      'mysqld --innodb-flush-method=fsync'
+    # Especifica quais redes internas este container vai utilizar
+    networks: 
+      - app-network
+    # O container será reiniciado automaticamente se ele falhar
+    restart: unless-stopped
+ 
+  redis:
+    image: redis:5.0.7
+    container_name: redis
+    ports:
+      - "6379:6379"
+    command: redis-server --requirepass 1q2w3e4r
+    networks: 
+      - app-network
+    restart: unless-stopped
+    volumes:
+      - .docker/redisdata:/data
+
+# Define redes para os containers
+networks: 
+  # Cria uma rede chamada app-network do tipo bridge para interligar os containers
+  app-network:
+    driver: bridge
