@@ -13,3 +13,8 @@ Remover
 
 Ajuda 
 -> dpkg --help 
+
+# Instalação de pacotes (Debian) 
+apt-get update
+apt-get install nome_do_pacote
+apt-get remove nome_do_pacote
