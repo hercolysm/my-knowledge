@@ -105,6 +105,13 @@ docker container run -v </caminho_pasta>:</caminho_interno_container>
 # exibir logs do container
 docker container logs -f <nome_container>
 
+# Remover recursos e dados sem uso 
+    - all stopped containers
+    - all networks not used by at least one container
+    - all images without at least one container associated to them
+    - all build cache
+docker system prune -a
+
 # ip padrão da máquina
 172.17.0.x
 
@@ -136,6 +143,8 @@ docker container connect <nome_rede> <nome_container>
 # remover rede de um container
 docker container disconnect <nome_rede> <nome_container>
 
+# Verificar qual o endereço IP do container 
+docker inspect <nome_container> | grep "IPAddress"
 
 # Separar os serviços em containers 
 
