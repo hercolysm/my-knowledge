@@ -3,7 +3,7 @@
 # ocultar todos os blocos de código
 ctrl + k + 0
 
-# exibir todos os blocos de cógido
+# exibir todos os blocos de código
 ctrl + k + j
 
 # exibir/ocultar barra lateral (explorer, search, extensions etc)
@@ -39,6 +39,9 @@ ctrl + k e ctrl + s
 # abrir extensões 
 ctrl + shift + x
 
+# abrir copilot 
+ctrl + i
+
 # extensões
 
 (Ferramentas)
@@ -66,3 +69,7 @@ vscode-solution-explore (novo icone da solução)
 
 (Python)
 Python
+
+(Copilot)
+GitHub Copilot 
+GitHub Colilot Chat 
