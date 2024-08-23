@@ -1,15 +1,8 @@
-if (typeof Fortics == "undefined") { Fortics = {}; }
-if (typeof Fortics.Dyn365 == "undefined") { Fortics.Dyn365 = {}; }
+if (typeof Client == "undefined") { Client = {}; }
+if (typeof Client.Dyn365 == "undefined") { Client.Dyn365 = {}; }
 
-var FormContext = null;
-
-Fortics.Dyn365.CampanhaWhatsApp = {
-    FormContext: null,
-
-    TipoEnvio: {
-        Rpa: 173180000,
-    },
-
+Client.Dyn365.ProcessViewRecords = {
+    
     CriarCampanhaRegistrosSelecionados: function (selectedItems, entityName) {
         try {
             if (selectedItems.length == 0) {
@@ -29,6 +22,7 @@ Fortics.Dyn365.CampanhaWhatsApp = {
             Xrm.Utility.closeProgressIndicator();
         }
     },
+
     CriarCampanhaRegistrosExibicao: function (selectedControl, entityName) {
         try {
             Xrm.Utility.showProgressIndicator("Aguarde enquanto a campanha Ã© criada");
@@ -41,6 +35,7 @@ Fortics.Dyn365.CampanhaWhatsApp = {
             Xrm.Utility.closeProgressIndicator();
         }
     },
+
     ActionCriarCampanhaWhatsApp: function (entityName, listIds, fetchXml, campanhaWhatsAppId, pageNumber) {
         var parameters = {};
         parameters.entityName = entityName;
@@ -83,35 +78,6 @@ Fortics.Dyn365.CampanhaWhatsApp = {
         req.send(JSON.stringify(parameters));
     },
 
-    VisibilidadePorTipoEnvio: function () {
-        var tipoEnvio = FormContext.getAttribute("frt_tipo_envio").getValue();
-        if (tipoEnvio == this.TipoEnvio.Rpa) {
-            FormContext.getControl("frt_st_mensagem").setVisible(true);
-            FormContext.getControl("frt_lk_nome_hsm").setVisible(false);
-            FormContext.ui.tabs.get("tab_geral").sections.get("tab_geral_section_anotacoes").setVisible(true);
-
-            FormContext.getAttribute("frt_st_mensagem").setRequiredLevel("required");
-            FormContext.getAttribute("frt_lk_nome_hsm").setRequiredLevel("none");
-        }
-        else {
-            FormContext.getControl("frt_st_mensagem").setVisible(false);
-            FormContext.getControl("frt_lk_nome_hsm").setVisible(true);
-            FormContext.ui.tabs.get("tab_geral").sections.get("tab_geral_section_anotacoes").setVisible(false);
-
-            FormContext.getAttribute("frt_st_mensagem").setRequiredLevel("none");
-            FormContext.getAttribute("frt_lk_nome_hsm").setRequiredLevel("required");
-        }
-    },
-    OnLoad: function (executionContext) {
-        FormContext = SDKore.GetFormContext(executionContext);
-        FormContext.getAttribute("frt_tipo_envio").addOnChange(Fortics.Dyn365.CampanhaWhatsApp.OnChangeTipoEnvio);
-
-        Fortics.Dyn365.CampanhaWhatsApp.VisibilidadePorTipoEnvio();
-        Fortics.Dyn365.CampanhaWhatsApp.RemoverOptionSetRpa();
-    },
-    OnChangeTipoEnvio: function () {
-        Fortics.Dyn365.CampanhaWhatsApp.VisibilidadePorTipoEnvio();
-    },
     GerarWhatsApps: function () {
         try {
             FormContext.data.save(null).then(successCallback, errorCallback);
@@ -126,6 +92,7 @@ Fortics.Dyn365.CampanhaWhatsApp = {
             Xrm.Utility.closeProgressIndicator();
         }
     },
+
     ActionGerarWhatsApp: function (pageNumberContato, pageNumberLead) {
         var campanhaWhatsAppId = FormContext.data.entity.getId();
 
@@ -180,6 +147,7 @@ Fortics.Dyn365.CampanhaWhatsApp = {
             }
         );
     },
+    
     EnviarWhatsApps: function (qntEnvios) {
         try {
             Xrm.Utility.showProgressIndicator("Aguarde enquanto os WhatsApps sÃ£o enviados...Quantidade de WhatsApps processados: " + qntEnvios);
@@ -228,31 +196,4 @@ Fortics.Dyn365.CampanhaWhatsApp = {
             Xrm.Utility.closeProgressIndicator();
         }
     },
-    VisibilidadeButtonCriarCampanha: function () {
-        var currentUserRoles = Xrm.Utility.getGlobalContext().userSettings.securityRoles
-        var securityDirecao = "51D906D1-20D4-EB11-BACC-002248374527";
-        var securityGerenteVendas = "85325FD9-A136-4849-A7CC-8267DBEF07D2";
-        var securityGestaoVendas = "3C17112F-0805-EC11-B6E7-000D3AC1CAF0";
-        var securityGestorCustomerSuccess = "87859B64-AFF6-EB11-94EF-00224836BF1D";
-        var securityAdmin = "";
-
-
-        for (var i = 0; i < currentUserRoles.length; i++) {
-            var currentRole = currentUserRoles[i].toUpperCase()
-            if (currentRole == securityDirecao || currentRole == securityGerenteVendas || currentRole == securityGestaoVendas || currentRole == securityGestorCustomerSuccess || currentRole == securityAdmin)
-                return true;
-        }
-        return false;
-    },
-
-    RemoverOptionSetRpa: function () {
-        var stateCode = FormContext.getAttribute("statecode").getValue();
-        if (stateCode == 0) {
-            var tipoEnvio = FormContext.getAttribute("frt_tipo_envio").getValue();
-            if (tipoEnvio == this.TipoEnvio.Rpa)
-                FormContext.getAttribute("frt_tipo_envio").setValue(null);
-
-            FormContext.getControl("frt_tipo_envio").removeOption(this.TipoEnvio.Rpa);
-        }
-    }
 }

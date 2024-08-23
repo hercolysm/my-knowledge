@@ -4,28 +4,26 @@
 /* Form Context */
 
 // Get Form Context
-var FormContext = executionContext.getFormContext();   
+var formContext = executionContext.getFormContext();   
+// Obs: Xrm.Page foi descontinuado, utilize FormContext no lugar
 
 // Refresh form (ask about modifications) 
-FormContext.data.refresh(false).then(null, null);
-Xrm.Page.data.refresh(false).then(null, null);
+formContext.data.refresh(false).then(null, null);
 
 // Refresh form (force save)
-FormContext.data.refresh(true).then(null, null);
-Xrm.Page.data.refresh(true).then(null, null);
+formContext.data.refresh(true).then(null, null);
 
 // Refresh form with callbacks
-FormContext.data.save(null).then(successCallback, errorCallback);
+formContext.data.save(null).then(successCallback, errorCallback);
 
 
 /* Get data */ 
 
 // Get Id 
-var Id = Xrm.Page.data.entity.getId().replace('{', '').replace('}', '');
-var Id = FormContext.data.entity.getId().replace('{', '').replace('}', '');
+var Id = formContext.data.entity.getId().replace('{', '').replace('}', '');
 
 // Get EntityName
-var EntityName = Xrm.Page.data.entity.getEntityName();
+var EntityName = formContext.data.entity.getEntityName();
 
 // Get Id User
 var userSettings = Xrm.Utility.getGlobalContext().userSettings
@@ -41,66 +39,70 @@ Xrm.Utility.getGlobalContext().getClientUrl()
 /* Fields */
 
 // Get Field's Value
-var Field_Name = Xrm.Page.getAttribute("Field_Name").getValue();
-var Field_Name = FormContext.getAttribute("Field_Name").getValue();
+var Field_Name = formContext.getAttribute("Field_Name").getValue();
 
 // Get Lookup's Values
-var Lookup = FormContext.getAttribute("Lookup_Name").getValue();
+var Lookup = formContext.getAttribute("Lookup_Name").getValue();
 var id = Lookup[0]['id'];
 var name = Lookup[0]['name'];
 var entityType = Lookup[0]['entityType'];
 
 // Set Field's Value 
-FormContext.getAttribute("Field_Name").setValue(null);
+formContext.getAttribute("Field_Name").setValue(null);
 
 // Fire Onchange Event
-FormContext.getAttribute("Field_Name").fireOnChange();
+formContext.getAttribute("Field_Name").fireOnChange();
 
 // Add Required
-FormContext.getAttribute("Field_Name").setRequiredLevel("required");
+formContext.getAttribute("Field_Name").setRequiredLevel("required");
 
 // Remove Required
-FormContext.getAttribute("Field_Name").setRequiredLevel("none");
+formContext.getAttribute("Field_Name").setRequiredLevel("none");
 
 // Change Submit Mode 
-Xrm.Page.getAttribute("Field_Name").getSubmitMode();
-Xrm.Page.getAttribute("Field_Name").setSubmitMode('never');
-Xrm.Page.getAttribute("Field_Name").setSubmitMode('dirty');
-Xrm.Page.getAttribute("Field_Name").setSubmitMode('always');
+formContext.getAttribute("Field_Name").getSubmitMode();
+formContext.getAttribute("Field_Name").setSubmitMode('never');
+formContext.getAttribute("Field_Name").setSubmitMode('dirty');
+formContext.getAttribute("Field_Name").setSubmitMode('always');
 
 // Show/Hide Field
-FormContext.getControl("Field_Name").setVisible(true/false);
+formContext.getControl("Field_Name").setVisible(true/false);
 
 // Remove Option
-FormContext.getControl("Field_Name").removeOption(this.Field.Option1);
+formContext.getControl("Field_Name").removeOption(this.Field.Option1);
+
+// Show Error Message
+formContext.getControl("Field_Name").addNotification({ messages: [msgErro], notificationLevel: 'ERROR' });
+
+// Clear Error Message
+formContext.getControl("Field_Name").clearNotification();
 
 
 /* Sections */
 
 // Show/Hide section
-Xrm.Page.ui.tabs.get("Tab_Name").sections.get("Section_Name").setVisible(true/false); 
+formContext.ui.tabs.get("Tab_Name").sections.get("Section_Name").setVisible(true/false); 
 
 
 /* Tabs */
 
 // Show/Hide tab
-Xrm.Page.ui.tabs.get("Tab_Name").setVisible(true/false);
+formContext.ui.tabs.get("Tab_Name").setVisible(true/false);
 
 // Focus tab
-Xrm.Page.ui.tabs.get("Tab_Name").setFocus();
-FormContext.ui.tabs.get("Tab_Name").setFocus();
+formContext.ui.tabs.get("Tab_Name").setFocus();
 
 
 /* Header */
 
 // Show/Hide header 
-Xrm.Page.ui.headerSection.setBodyVisible(true);
+formContext.ui.headerSection.setBodyVisible(true);
 
 // Show/Hide command bar 
-Xrm.Page.ui.headerSection.setCommandBarVisible(false); 
+formContext.ui.headerSection.setCommandBarVisible(false); 
 
 // Show/Hide tab navigator 
-Xrm.Page.ui.headerSection.setTabNavigatorVisible(false); 
+formContext.ui.headerSection.setTabNavigatorVisible(false); 
 
 
 /* Grids */
@@ -114,7 +116,7 @@ Xrm.Utility.refreshParentGrid(lookupOptions);
 /* Events */
 
 // Add on change event
-FormContext.getAttribute("Field_Name").addOnChange(FunctionName);
+formContext.getAttribute("Field_Name").addOnChange(FunctionName);
 
 // Personalização do evento click em campos Lookup's
 input.addOnLookupTagClick(function(data) {
@@ -126,7 +128,7 @@ input.addOnLookupTagClick(function(data) {
 });
 
 // Call a function from HTML web resource
-Xrm.Page.getControl("WebResource_<NAME>").getObject().contentWindow.window.FunctionName();
+formContext.getControl("WebResource_<NAME>").getObject().contentWindow.window.FunctionName();
 
 
 /* App */
@@ -140,6 +142,8 @@ globalContext.getCurrentAppProperties().then(function successCallback(result) {
     }
 });
 
+// Get Client URL 
+Xrm.Utility.getGlobalContext().getClientUrl()
 
 /* Ribbon Button */
 
@@ -153,12 +157,12 @@ function functionName(primaryControl) {
 /* Form Notification */
 
 // Show notification 
-FormContext.ui.setFormNotification("Message here", "ERROR", "notification_id");
-FormContext.ui.setFormNotification("Message here", "WARNING", "notification_id");
-FormContext.ui.setFormNotification("Message here", "INFO", "notification_id");
+formContext.ui.setFormNotification("Message here", "ERROR", "notification_id");
+formContext.ui.setFormNotification("Message here", "WARNING", "notification_id");
+formContext.ui.setFormNotification("Message here", "INFO", "notification_id");
 
 // Hide notification 
-FormContext.ui.clearFormNotification("notification_id");
+formContext.ui.clearFormNotification("notification_id");
 
 
 /* Lookup */ 
@@ -191,3 +195,8 @@ formContext.getControl("field_name").addCustomView(
     isDefault
 );
 
+// Add Custom Filter
+formContext.getControl("field_name").addPreSearch(function () {    
+    var newFilter = "<filter type='and'><condition attribute='frt_produto' operator='eq' uiname='" + name + "' uitype='frt_whitelabel' value='" + id + "' /></filter>";
+    formContext.getControl("field_name").addCustomFilter(newFilter);
+});

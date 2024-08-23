@@ -12,8 +12,21 @@ let entityFormOptions = {
 };
 Xrm.Navigation.openForm(entityFormOptions);
 
+// Fechar formulário
+FormContext.ui.close();
+Xrm.Page.ui.close();
+
 // Show alert
 Xrm.Navigation.openAlertDialog({ confirmButtonLabel: "Ok", text: "Texto do alerta", title: "Titulo" });
+
+// Show alert with height and width
+Xrm.Navigation.openAlertDialog({
+    title: "Host inválido!", text: "O campo host não pode conter os seguintes valores:" +
+        "\n- Espaços" +
+        "\n- Acentuação" +
+        "\n- Caracteres especiais" +
+        "\n- Letras maiúsculas"
+}, { height: 400, width: 300 });
 
 // Show erro 
 Xrm.Navigation.openErrorDialog({ message: "Ocorreu um erro :(", details: "Detalhes do erro para o arquivo de log." });
@@ -114,3 +127,7 @@ Xrm.Navigation.navigateTo(pageInput, navigationOptions)
             // Handle error
         }
     );
+
+// Open a web resource
+var windowOptions = { height: 200, width: 800 };
+Xrm.Navigation.openWebResource("webresource_name", windowOptions, data);

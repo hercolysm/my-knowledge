@@ -1,6 +1,6 @@
 // Funções Nativas do Dynamics 365
 
-// Pernalização da ação ao clicar no botão de telefone
+// Pernalização da ação ao clicar no botão de telefone (adicionar no onload do formulário)
 if (top.MscrmControls.FieldControls.PhoneNumberControl) {
 
     top.MscrmControls.FieldControls.PhoneNumberControl.prototype.action = function () {
