@@ -5,7 +5,7 @@ Instalações
     .NET Runtime (apenas executar) 
 
 Ferramentas:
-    Visual Studio 
+    VS Code
         Instalar extensão C# 
             (intelisense, color da fonte) 
         Instalar extensão C# Extensions 
@@ -17,7 +17,7 @@ Ferramentas:
         Criar nova pasta 
         Comando: dotnet new console 
         Comando: dotnet run
-    Visual Studio Code
+    Visual Studio
         Criar solução 
         Criar projeto 
             Console 
@@ -41,6 +41,10 @@ dotnet watch run
 [Criar projeto MVC]
 dotnet new "mvc" -lang "C#" -n "ProjectName" -o "NewFolderName" --framework net6.0
 dotnet watch run 
+
+[Criar projeto Teste Unitário]
+dotnet new "xunit" -lang "C#" -n "ProjectName" -o "NewFolderName" --framework net6.0
+dotnet test
 
 [Buildar projeto]
 dotnet build

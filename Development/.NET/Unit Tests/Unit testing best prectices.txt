@@ -1,0 +1,16 @@
+Testes Unitários 
+
+Frameworks de teste 
+
+MSTest 
+NUnit 
+xUnit 
+
+Melhores práticas de teste de unidade com .NET Core e .NET Standard
+Link: https://learn.microsoft.com/pt-br/dotnet/core/testing/unit-testing-best-practices
+
+# Teste unitário
+Etapas
+- Arrange - declarar/iniciar variaveis necessárias para o teste
+- Act - realizar o teste chamando a função a ser testada
+- Assert - verificar se o resultado é o esperado
