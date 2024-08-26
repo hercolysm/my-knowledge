@@ -3,6 +3,8 @@ ctrl + alt e selecionar a linhas desejadas
 
 // Anexar ao processo (debug PluginRegistration) 
 ctrl + alt + p 
+// abrir copilot 
+atl + ;
 
 // Default location for git
 C:\Program Files\Microsoft Visual Studio\2022\Professional\Common7\IDE\CommonExtensions\Microsoft\TeamFoundation\Team Explorer\Git\cmd
