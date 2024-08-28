@@ -64,12 +64,20 @@ dotnet add package NomeDoPacote
 [Remover pacote instalado]
 dotnet remove package NomeDoPacote
 
-Estrutura
-    .sln Contém informações que carregam um agrupamento de projetos 
-    .csproj (Arquivos de metadados - XML) Contém informações referente ao projeto (build, debug, versão)
-    Program.cs (arquivo C#)
-    bin/ (arquivos binários - .exe .dll) Pode apagar, pois é recriado no build
-    obj/ (arquivos de debug/compilação) Pode apagar, pois é recriado no build
+Estrutura do Projeto:
+    Solution 
+        .sln Contém informações que carregam um agrupamento de projetos 
+        src 
+            ProjectName
+                ProjectName.csproj (Arquivos de metadados - XML) Contém informações referente ao projeto (build, debug, versão)
+                Program.cs (arquivo C#)
+                bin/ (arquivos binários - .exe .dll) Pode apagar, pois é recriado no build
+                obj/ (arquivos de debug/compilação) Pode apagar, pois é recriado no build
+        tests
+            ProjectName.UnitTests (Testes Unitários)
+                ProjectName.Test.csproj
+            ProjectName.IntegrationTests (Testes de Integração - API)
+                ProjectName.IntegrationTests.csproj
 
 Convenções C#:
 
