@@ -197,3 +197,8 @@ obj.Method();
 #region Tags para delimitar trecho de código 
 // Code here
 #endregion
+
+// Get execution path 
+var executionPath = Application.StartupPath;
+var executionPath = AppDomain.CurrentDomain.BaseDirectory;
+var executionPath = Directory.GetCurrentDirectory();
