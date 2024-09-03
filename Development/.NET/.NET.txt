@@ -78,11 +78,17 @@ Estrutura do Projeto:
                 ProjectName.Test.csproj
             ProjectName.IntegrationTests (Testes de Integração - API)
                 ProjectName.IntegrationTests.csproj
+                Integrations 
+                    Controllers
+                        UsuarioControllerTest.cs
 
 Convenções C#:
 
 Link: https://learn.microsoft.com/pt-br/dotnet/csharp/fundamentals/coding-style/coding-conventions
 
+- Solução: PascalCase
+- Projeto: PascalCase
+- Namespace: PascalCase
 - Classe/Record/Struct: PascalCase
 - Interface: I + PascalCase
 - Propriedade: PascalCase 
@@ -134,7 +140,10 @@ dotnet add package Newtonsoft.Json --version 13.0.3
     
     # Remover migration (não testado)
     dotnet-ef migrations remove
+ 
+    # Listar migrations
+    dotnet-ef migrations list
     
-    # Realizar alterações no banco de dados 
+    # Realizar alterações no banco de dados (Executa as migrations pendentes)
     dotnet-ef database update
 
