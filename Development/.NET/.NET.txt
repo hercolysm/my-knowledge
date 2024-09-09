@@ -127,6 +127,7 @@ dotnet add package Newtonsoft.Json --version 13.0.3
     # Instalar Pacote SqlServer  
     dotnet add package Microsoft.EntityFrameworkCore.SqlServer --version 7.0.4
 
+# Ferramenta do Entity Framework
     # Instalar ferramenta do Entity Framework (global - máquina)
     dotnet tool install --global dotnet-ef --version 7.0.4
 
@@ -138,12 +139,17 @@ dotnet add package Newtonsoft.Json --version 13.0.3
      e no Program.cs adicionar o service de conexão DbContext)
     dotnet-ef migrations add CreateContactTable
     
-    # Remover migration (não testado)
+    # Remover migration (remove apenas migrations não aplicadas)
     dotnet-ef migrations remove
  
     # Listar migrations
     dotnet-ef migrations list
     
-    # Realizar alterações no banco de dados (Executa as migrations pendentes)
+    # Aplicar alterações no banco de dados (Executa as migrations pendentes)
     dotnet-ef database update
 
+    # Incluir novo campo na tabela contato
+    - incluir novo campo na model Contato 
+    - na pasta do projeto, executar o comando:
+        dotnet ef migrations add AddEmailToContact
+        dotnet-ef database update

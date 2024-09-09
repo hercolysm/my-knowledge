@@ -28,7 +28,11 @@ Interface
    , dessa forma a classe terá disponível apenas os métodos implementados por ela 
 - É possível criar uma váriavel do tipo da interface que recebe uma instância de classe que implementa a própria interface
 - , desse forma a instância terá disponível todos os métodos da interface (métodos implementados pela interface + métodos implementados pela classe)
-Ex: InterfaceName varName = new ClasseName();
+   Ex: InterfaceName varName = new ClasseName();
+- Suporta herança múltipla
+- Todos os membros são implicitamente públicos e não tem modificadores de acesso
+- Não pode ter construtores
+- Não pode ter metodos com implementação
 
 Classe Abstrata 
 - Não pode ser instânciada 
@@ -36,6 +40,10 @@ Classe Abstrata
 - Serve apenas como classe modelo 
 - Os métodos devem ser estáticos, pois a implementação é de acordo com a classe que está herdando 
 - A classe que herda os métodos de uma classe abstrata é obrigatória implementar todos os seus métodos abstratos 
+- Suporta apenas herança simples
+- Pode definir modificadores de acesso (public, protected, etc.) para seus membros
+- Pode ter construtores
+- Pode ter métodos com implementação
 
 Tipo de Método  
 - virtual = Permite que o método possa ser sobrescrito nas classes filhas 
