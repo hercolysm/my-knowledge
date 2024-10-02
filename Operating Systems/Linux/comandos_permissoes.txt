@@ -45,6 +45,10 @@ Comando addgroup ou groupadd - adicionar um novo grupo
 Sintaxe:
 	sudo groupadd <nome-grupo>
 
+Comando sudo adduser <nome-usuario> - adicionar novo usuário 
+
+Comando sudo usermod -aG sudo <nome-usuario> - incluir usuário no grupo sudo 
+
 Comando passwd <nome-usuario> - alterar a senha de um usuário
 Comando passwd <nome-usuario> -d - remove a senha de um usuário
 
