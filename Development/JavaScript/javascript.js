@@ -93,6 +93,10 @@ partes.forEach(function (parte) {
     data[chave] = decodeURIComponent(valor);
 });
 
+// Capturar parametros da URL 
+var urlParams = new URLSearchParams(window.location.search);
+var appID = urlParams.get('appid');
+
 // converter para URL
 let uri = "https://test.asp?name=ståle&car=saab";
 let encoded = encodeURI(uri); // https://test.asp?name=st%C3%A5le&car=saab
