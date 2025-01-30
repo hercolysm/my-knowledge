@@ -21,3 +21,10 @@ and(
 		variables('hora_fim')
 	)
 )
+
+# Filtrar no gatilho pelo dia 
+@equals(string(formatDateTime(utcNow(), 'dd')), '01')
+@or(
+    equals(string(formatDateTime(utcNow(), 'dd')), '01'),
+    equals(string(formatDateTime(utcNow(), 'dd')), '15')
+)
