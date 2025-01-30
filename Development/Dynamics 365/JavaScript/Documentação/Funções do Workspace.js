@@ -44,3 +44,35 @@ sessao.getAllTabsForTemplate(templateName).then(function sucess(result) {
     Microsoft.Apm.closeTab(tab);
   }
 });
+
+// Create tab for open a URL (using native web resource)
+var tabInput = {
+  options: {
+      canBeClosed: true,
+      isFocused: true,
+      title: "title"
+  },
+  pageInput: {
+      pageType:"webresource",
+      data:"cif_thirdpartyurl" + uri,
+      webresourceName:"msdyn_CECExternalWebPageContainer.html"
+  }
+}
+var focusedSession = window.parent.Xrm.App.sessions.getFocusedSession().sessionId;
+window.parent.Xrm.App.sessions.getSession(focusedSession).tabs.createTab(tabInput).then(x => console.log("focused tab creation " + x));
+
+// Create tab to open a Custom Page 
+var tabInput = {
+  options: {
+      canBeClosed: true,
+      isFocused: true,
+      title: "title"
+  },
+  pageInput: {
+      pageType: "custom",
+      name: "custompagename",
+      recordId: uri
+  }
+}
+var focusedSession = window.parent.Xrm.App.sessions.getFocusedSession().sessionId;
+window.parent.Xrm.App.sessions.getSession(focusedSession).tabs.createTab(tabInput).then(x => console.log("focused tab creation " + x));
