@@ -1,5 +1,7 @@
- Funções Power Automate usadas
+Funções Power Automate usadas
 
+Informações do gatilho 
+@{triggerOutputs()?['body/cra60_nomecampo']}
  
 @{outputs('Listar_Origens')?['body/value']}
 @{first(outputs('Listar_Configurações')?['body/value'])?['frt_freshdeskservidor']}
@@ -24,3 +26,10 @@ first(outputs('Buscar_informações_da_Proposta_Principal')?['body/value'])?['fr
 
 Diferença entre datas:
 @{div(div(mul(sub(ticks(variables('data_primeira_resposta')),ticks(first(outputs('Busca_ticket')?['body/value'])?['frt_data_abertura'])),100),1000000000),60)}
+
+
+Quebra de linha: 
+concat(';',decodeUriComponent('%0A%09'))
+
+\n -> %0A
+\t -> %09

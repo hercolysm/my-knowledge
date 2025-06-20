@@ -131,3 +131,9 @@ Xrm.Navigation.navigateTo(pageInput, navigationOptions)
 // Open a web resource
 var windowOptions = { height: 200, width: 800 };
 Xrm.Navigation.openWebResource("webresource_name", windowOptions, data);
+
+// Open a URL (new tab)
+Xrm.Navigation.openUrl(url);
+
+// Open a Custom Page (new tab)
+window.open("/main.aspx?appid=" + appId + "&newWindow=true&pagetype=custom&name=" + customPageName, "_blank", "", true);

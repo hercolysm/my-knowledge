@@ -5,7 +5,7 @@ ctrl + alt e selecionar a linhas desejadas
 ctrl + alt + p 
 
 // abrir copilot 
-atl + ;
+alt + ;
 
 // tela cheia 
 shift + alt + enter

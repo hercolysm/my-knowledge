@@ -1,8 +1,14 @@
 # Exemplo do formatação de data
 yyyy-MM-ddTHH:mm:ss
 
-# Formatar data 
+# Formatar timestamp 
 formatDateTime(utcNow(), 'yyyy-MM-dd')
+formatDateTime(<coluna-de-data>, 'yyyy-MM-dd')
+
+# Formatar data brasileira
+join(reverse(split(variables('data'),'/')),'-')
+antes: 02/10/1993
+depois: 1993-10-02
 
 # Comparar horários no formato HH:mm 
 and(
@@ -14,4 +20,11 @@ and(
 		body('Horario_Atual'), 
 		variables('hora_fim')
 	)
+)
+
+# Filtrar no gatilho pelo dia 
+@equals(string(formatDateTime(utcNow(), 'dd')), '01')
+@or(
+    equals(string(formatDateTime(utcNow(), 'dd')), '01'),
+    equals(string(formatDateTime(utcNow(), 'dd')), '15')
 )
