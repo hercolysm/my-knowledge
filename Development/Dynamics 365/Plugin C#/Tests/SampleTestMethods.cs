@@ -1,3 +1,6 @@
+using FakeXrmEasy;
+using Microsoft.Xrm.Sdk;
+
 [TestMethod]
 public void TestPluginEntity()
 {
