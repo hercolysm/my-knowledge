@@ -1,0 +1,7 @@
+# Executar javascript no onload de qualquer página do Dynamics 365
+Componente: Faixas de Opções do Aplicativo (Application Ribbon) 
+Sessão: Home -> Mscrm.GlobalTab 
+Adicionar botão 
+Adicionar comando 
+Adicionar regra de habilitação (essa regra deve chamar a função javascript)
+    Obs: a função deverá retornar false para que o botão não seja exibido
