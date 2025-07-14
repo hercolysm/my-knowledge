@@ -13,6 +13,9 @@ query.Criteria.AddCondition("address1_city", ConditionOperator.Equal, "Redmond")
 // Add orders
 query.AddOrder("name", OrderType.Ascending);
 
+// Set NoLock to true to avoid locking the records during retrieval
+query.NoLock = true;
+
 // Send the request
 EntityCollection results = service.RetrieveMultiple(query);
 
