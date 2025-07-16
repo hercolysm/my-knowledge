@@ -1,3 +1,13 @@
+# Create/Update 
+
+// Preencher campo do tipo lookup 
+/systemusers(ID)
+ou
+/systemusers/ID
+
+
+# Odata Filters 
+
 // Filter lookup
 _recordid_value eq '<guid here>'
 
