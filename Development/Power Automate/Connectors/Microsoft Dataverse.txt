@@ -20,6 +20,7 @@ _recordid_value eq '<guid here>'
 
 // Filter with search string 
 contains(column_name, 'String')
+startswith(column_name, 'String')
 endswith(column_name, 'String')
 
 // Filter 'not in'
