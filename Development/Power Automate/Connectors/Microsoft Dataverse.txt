@@ -1,10 +1,17 @@
 # Create/Update 
 
-// Preencher campo do tipo lookup 
+// Preencher campo do tipo lookup (OData Path)
 /systemusers(ID)
-ou
+systemusers(ID)
 /systemusers/ID
+systemusers/ID
 
+Dica:
+-> Pesquisar nome da tabela nos metadados do Dataverse
+Link: https://hostname.crm2.dynamics.com/api/data/v9.1/$metadata
+Ex:
+    <EntitySet Name="contacts" EntityType="Microsoft.Dynamics.CRM.contact">
+    <EntitySet Name="bookingstatuses" EntityType="Microsoft.Dynamics.CRM.bookingstatus">
 
 # Odata Filters 
 
