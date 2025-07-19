@@ -33,3 +33,7 @@ concat(';',decodeUriComponent('%0A%09'))
 
 \n -> %0A
 \t -> %09
+
+// Formatar moeda
+formatNumber(triggerOutputs()?['body/frt_valor_total_assinaturas'],'C2','pt-BR')
+Ex: 1234.99 -> R$ 1.234,99
