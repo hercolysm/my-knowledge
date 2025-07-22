@@ -1,0 +1,75 @@
+AI-900 Microsoft Azure AI Fundamentals 
+
+
+
+Vertentes da Inteligência Artificial 
+	Computação Natural -> Ensinar a máquina a operar como um ser vivo 
+		- Rede neural
+			- Camadas de percepção: 
+				Quais as ações a seres tomadas? 
+				Camadas de Entrada, Camadas intermediarias (Processamento), Camadas de Saída 
+			- Plasticidade: Um neuronio tem a capacidade de se adaptar a outros 
+        - Computação evolutiva -> Capacidade de se adaptar e entender novos conceitos 
+        - Inteligência de Enxame 
+        - Sistemas Imunológicos Artificiais 
+        - Lógica Fuzzy 
+
+Machine Learning e Deep Learning 
+
+    Machine Learning
+        Aprendizado de máquina:
+            Sem reforço (Aprendizagem não supervisionada) 
+                - treinamento com outra máquina 
+            Por Reforço (Aprendizagem supervisionada) 
+                - input manual (humano)
+                - testes periodico 
+        Técnicas:
+            - Estatisticas
+            - Mineração de dados (Data Mining)
+            - Algorítmos de árvore de decisão 
+            - Redes Bayesianas
+            - Processos de clustering
+        
+    Deep Learning 
+        - maior quantidade de dados 
+        - mais processamento
+        - a propria maquina deduz que é o correto 
+        Aplicações:
+            Reconhecimento de voz 
+            Processamento de imagem 
+            Análise comportamental 
+
+    Qual o diferença?
+
+Ferramentas que operam com inteligencia artificial 
+    - Amazon Alexa, IBM Watson, Google Assistant, Apple Siri 
+    - Detecção/Simulação de fraudes 
+    - Veículos autonamos 
+    - Leitura de imagens médicas em hospitais 
+    - API Google Vision - exportação do texto da img 
+    - Chatbots 
+
+Azure Machine Learning 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
