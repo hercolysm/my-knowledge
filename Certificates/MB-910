@@ -1,0 +1,383 @@
+MB-910 Microsoft Dynamics 365 Fundamentals (CRM)
+
+Microsoft Business Applications -> Aplicativos Microsoft Dynamics Customer Engagement (Aplicativos Dynamics 365 CRM):
+- Dynamics 365 Marketing (marketing) 
+	- Dynamics 365 Customer Voice 
+	- Dynamics 365 Customer Insights 
+- Dynamics 365 Sales (vendas) 
+	- Dynamics 365 Sales Insights
+	- Dynamics 365 Sales Insights Premium 
+- Dynamics 365 Customer Service (suporte) 
+- Dynamics 365 Field Service (serviços) 
+Outros:
+- Dynamics 365 Project Operations (projetos) 
+- Dynamics 365 ERP
+
+Dataverse 
+- Fácil de gerenciar, armazenamento em núvem 
+- Fácil de proteger, segurança baseada em funções 
+- Meta dados avançados 
+- Lógica e validação 
+- Ferramentas de produtividade 
+- Os aplicativos do Dynamics usam o dataverse, logo é possível criar aplicativos no powerapps que usam os dados de negócio sem a necessidade de criar uma integração.
+
+Acesso ao aplicativos:
+https://www.office.com/apps 
+
+Recursos disponíveis em todos os aplicativos:
+
+Tipos de Filtro:
+- Filtro na coluna
+- Localização rápida 
+- Filtro Avançado 
+- Pesquisa Categorizada 
+
+Tipos de interações:
+B2B (entre empresas - CNPJ) 
+B2C (entre contatos - CPF)
+Híbrido (empresas e contatos) 
+
+Opções de relatórios:
+- Exibições
+- Gráficos 
+- Painéis 
+- Relatórios 
+- Power BI
+	- Podem ser criados usando os dados do Dynamics
+	- Depois de criados, podem ser incorporados a um aplicativo 
+
+Integrações do Dynamics 365 
+- Microsoft Word (modelos de documentos)
+- Microsoft Excel (importação e exportação de dados, planilhas estática e dinâmicas, excel online, modelos) 
+- Sharepoint (arquivos)
+	- Gereciamento de arquivos, colaboração e controle de versão 
+- Microsoft Teams 
+	- hub de colaboração
+	- integração de arquivos 
+	- aplicativo Dynamics 365 no Teams 
+	- chat incorporado usando o Teams
+- Power Apps
+	- Permite inserir aplicativos de telas do power apps em formulários do Dynamics 
+- Outlook 
+	- Dynamics 365 App for Outlook 
+	- Incorpora informações do Dynamics direto no outlook
+	- Permite associação de emails a registro do Dynamics 
+	- Permite abrir registros do Dynamics 
+	- Permite a criação de registros (padrão ou personalizado)
+	- Permite adicionar modelos de e-mail, artigos de conhecimento e especificações ao criar um email ou reunião 
+
+Dynamics 365 Marketing --------------------------------------------------------------------------------------------------
+
+Funcionalidades:
+- Criação de e-mails e conteúdos online 
+- Criação de jornadas do cliente para nutrição, com experiências personalizadas 
+- Captação de leads via linkedin 
+- Compartilhamento de informações entres as equipes 
+- Registro do histórico do cliente potencial 
+- Recursos para gestão de eventos 
+- Analise de MROI 
+- Lead scoring: regras de pontuação automatizadas 
+- Criação de pesquisas para captura de comentários 
+- Personalização do aplicativo e expansão de novos recursos disponíveis na Microsoft AppSource
+
+Incluído do Dynamics 365 Marketing:
+- Núcleo do marketing 
+- Gestão de eventos (apenas no marketing)
+- Dynamics 365 Customer Voice (pesquisas online) (disponível para outros produtos)
+- Dynamics 365 Connector for Linkedin Lead Gen Forms (disponível para outros produtos)
+- Portais do Dynamics 365 (opcional) 
+
+Segmentações:
+- Lista de marketing (incluidas no Sales)
+	- Dinamicas e estaticas 
+- Segmento de marketing 
+	- Criados no Designer de segmentação 
+	- Apenas registros de contatos são listados
+	- É possível filtrar por outras tabelas relacionadas 
+
+Tipos de dados 
+	- Dados de perfil
+	- Dados comportamentais (automáticos, abertura de emails, click em links, envio de formulario, inscrição em evento)
+
+Tipos de segmentação
+	- Demográfico (filtro de contatos)
+	- Firmográfico (filtro de empresas)
+	- Comportamental
+	- Estático 
+	- Públicos-Alvo Combinados (combinam várias lista, listam registros que estão em uma lista e não estão em outra)
+
+Jornadas do cliente (Customer Journeys)
+
+Meta: Ao concluir a jornada a meta é transformar o cliente potencial em receita 
+Recursos do fluxo:
+	- Público alvo 
+		- Segmento
+		- Formulário enviado 
+		- Registro atualizado 
+	- Mensagens (conteúdos a serem enviados)
+	- Ramificações (se/então, dividir)
+	- Aguardar/aguardar até 
+	- Ações 
+		- Criar cliente potencial 
+		- Executar fluxo de trabalho 
+		- Campanha do Linkedin 
+		- Criar atividade de vendas (Compromisso, Tarefa, Telefonema)
+
+Geração e qualificação de clientes potenciais 
+
+Gerenciamento de eventos
+- Criação de eventos
+- Criação de sessões 
+- Gerenciamento de palestrantes e patrocinadores 
+- Histórico de participação 
+- Gestão do site do evento 
+- Geração de clientes potênciais para vendas 
+
+Dynamics 365 Customer Voice 
+- Gerenciamento de comentários 
+- Pesquisas personalizadas 
+- Criar e acompanhar as métricas de satisfação dos clientes (Net Promoter Score) 
+- Acompanhar a satisfação dos clientes nos canais mais usados. Ex: email, SMS, sites e aplicativos móveis 
+- Definir gatilho para disparar quando a satisfação do cliente diminuir
+- Visualizar insights em paineis de perfis dos clientes 
+- Identificar áreas de melhoria 
+- Descobrir o sentimento, tendências e métricas 
+
+Dynamics 365 Customer Insights 
+- Ferramentas de dados dos clientes
+- Ajuda a revelar insights 
+
+Insights de público alvo
+- Ingerir dados (conexão e coletar de dados) 
+- Criar perfis do cliente (unificação dos dados) 
+	- Mapear 
+	- Correspondencia 
+	- Mesclagem 
+- Definir atividades 
+- Definir relacionamentos (conetar entidades)
+- Enriquecer os dados 
+- Definir medidas (KPIs)
+- Criar segmentos (demográficos, transacionais e comportamentais)
+- Segmentos criados no Microsoft 365 Customer Insights podem ser usados no Dinamics 365 Marketing
+
+Dynamics 365 Sales ------------------------------------------------------------------------------------------------------
+
+Ciclo de vida de vendas (padrão)
+- Cliente Potencial
+- Oportunidade 
+- Cotação 
+- Ordem 
+- Fatura 
+
+Estágios do processo de vendas
+- Qualificar
+- Desenvolver 
+- Propor 
+- Fechar 
+- Cumprir 
+
+Recursos:
+- Previsão de Vendas (Dynamics 365 Sales Forecasting) 
+- Sales Insights 
+- LinkedIn Sales Navigator 
+
+Sales e Sales Insights
+- Assistente 
+- Captura automática (de e-mails)
+- Participação com email 
+
+Sales Insights Premium
+- Assistente com Studio 
+- Captura automática premium
+- Análise de relacionamento 
+- Pontuação preditiva do cliente potencial
+- Pontuação preditiva da oportunidade 
+- Análise de anotações 
+- Pontos de discussão 
+- Quem conhece quem 
+- Previsão premium (usa IA)
+- Acelerador de Vendas 
+
+Microsoft 365 Customer Service ----------------------------------------------------------------------------------------
+
+- Ocorrências (Cases)
+- Filas (Queues)
+- Regras de roteamento de casos 
+
+Estágios do fluxo de processo empresarial (Telefone até a Ocorrência)
+- Identificar 
+- Pesquisar 
+- Resolver 
+
+Direitos (o cliente possui X minutos para atendimento em ocorrências, o cliente pode abrir X ocorrências) 
+SLAs (Contratos de Nível de Serviço) (controle de tempo de primeira resposta e resolução da ocorrência) 
+
+Obs:
+- Os artigos devem passar por uma revisão e aprovação antes de serem publicados 
+- Por padrão o titulo da ocorrência é pesquisado em artigos de conhecimento
+
+Gerenciamento do conhecimento (Knowledge Articles)
+- Criar artigos de conhecimento 
+- Gerenciar o ciclo de vida 
+- Gerenciar histórico de versões 
+- Traduzir artigos 
+- Publicar artigos aprovados, agendar publicação, definir a data de vencimento do artigo 
+- Rastrear e analisar estatisticas do artigo 
+
+Omnicanal (Omnichannel for Customer Service) 
+- Chat
+- SMS
+- Canais de entidades 
+- Mídias sociais (Facebook Messeger, WhatsApp, LINE)
+Recursos:
+- Notificação em tempo real
+- Gerenciamento de sessões 
+- Interação com o cliente
+- Contexto do cliente 
+- Vários aplicativos 
+- Ferramentas do Dynamics 
+- Integração com o Power virtual Agents 
+	- Roteamento de conversas 
+	- Recomendações para os agentes 
+- Roteamento baseado em habilidades  
+- Scripts de agente 
+- Voz do Omnicanal do Dynamics 365 (ligações nativas)
+
+Análise Histórica
+- Relatórios de análise histórica do SAC (resumo, agente, tópico da ocorrência)
+- Relatórios de análise histórica omnicanal (Conversa, Fila, Agente, Bot, Tópicos de conversa)
+
+Microsoft 365 Field Service -------------------------------------------------------------------------------------
+
+- Permite o gerenciamento de serviços de campo (serviços externos)
+Benefícios: 
+- Aumentar a eficiencia 
+- Melhorar satisfação do cliente 
+Recursos:
+- Gerenciamento de ordens de serviço 
+- Gerenciamento de agendamento e expedição 
+- Ferramentas de comunicação 
+- Aplicativo móvel 
+- Gerenciamento de ativos e recursos de manutenção preventiva 
+- Gereciamento de estoque 
+- Recursos de cobrança 
+- Acompanhamento de tempo 
+- Análises e Relatórios 
+
+Ordens de serviço podem ser criadas:
+- Automaticamente, a partir de uma oportunidade de vendas 
+- Automaticamente, a partir de ocorrências 
+- Automaticamente, com base em um contrato de serviço 
+- Automaticamente, a partir de em evento gerado por um dispositivo loT 
+- Manualmente 
+
+Status da ordem de serviço:
+- Aberta - Não agendada 
+- Aberta - Agendada 
+- Aberta - Em andamento 
+- Aberta - Concluida 
+- Fechada - Lançada 
+- Fechada - Cancelada 
+
+Estágios da ordem de serviço:
+- Criação 
+- Agenda 
+- Expedição 
+- Conclusão do Serviço (execução)
+- Revisão/Aprovação 
+- Fatura/Ajustes de estoque 
+
+Inspeções
+- Suporte off-line 
+- Ativos do cliente 
+- Gerenciamento de versões 
+
+Ordem de serviços -> Tarefas de serviço 
+
+Agendamentos
+- Definir recursos (conta, contato, usuário, equipamento, equipe técnica, instalações e pool)
+	- Funções de recurso (cargos)
+	- Habilidades do recurso (habilidades, certificações, acesso)
+- Assistente de agendamento (scheduling assistant)
+	- Agendar a partir de uma ordem de serviço 
+	- Agendar arrastando e soltando o recurso 
+	- Agendar usando a sugestão do assistente 
+- Painel Requisitos: exibir os requisitos de recursos não agendados
+Reagendamentos:
+- Reservar novamente - reagendar completamente
+- Recurso substituto - manter a data de hora da reserva e altera o recurso 
+- Mover os itens para um dia diferente 
+
+Modelos de proficiência 
+- Familiar
+- Boa 
+- Qualificada 
+- Altamente qualificada 
+- Mestre 
+
+Resource Scheduling Optimization (RSO)
+- Agendamento automatizado 
+- Dimensionamento 
+- Satisfação do cliente 
+- Eficiência técnica e custos reduzidos 
+- Redução do consumo de combustível e menos manutenção do veículos 
+- Maior retenção de clientes 
+
+Gerenciamento de ativos (equipamentos)
+- Gerenciar o cadastro de Ativos do cliente (Customer Assets)
+- Histórico de todas as ordens de serviço relacionadas ao item 
+- Monitoramento e interação com ativos loT (quando combinado com o Connected Field Service)
+
+Connected Field Service 
+- Diagnóstico de loT 
+- Monitoramento e identificação de problemas remotamente 
+- Gerenciamento remoto 
+- Agendamento, Manutenção de ativo, Estoque 
+
+Fluxo
+- Ativo do cliente criado no Dynamics 365 Field Service 
+- Registro do Dispositivo loT criado 
+	- Registro de dispositivo loT criado no Dynamics 365 
+	- Software de automação (Power Automate) registrar o dispositivo em uma solução de gerenciamento de loT (Azure loT Central ou hub loT)
+- Dispositivo loT relata anomalia (um alerta é registrado em uma solução de gerenciamento de loT)
+- Alerta enviado ao Connected Fiel Service
+	- Um registro de alerta de loT é criado e associado ao dispositivo loT  
+- Interação remota com o dispositivo
+	- Se não for possível, pode se escalonar o alerta para uma ocorrencia ou ordem de serviço 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
