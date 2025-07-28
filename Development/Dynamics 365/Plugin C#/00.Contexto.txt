@@ -1,3 +1,18 @@
+# Pipeline Stages  
+
+Pre-validation (Pré-Validação) 
+    - Executado antes de qualquer validação de dados do Dynamics 365 
+    - Útil para validar dados antes que o Dynamics 365 aplique suas próprias regras de validação
+    - Images: Pre Image 
+
+Pre-operation (Pré-Operação)
+    - Executado após a validação de dados do Dynamics 365, mas antes que a operação seja aplicada ao banco de dados
+    - Images: Pre Image 
+
+Post-operation (Pós-Operação)
+    - Executado após a operação ser aplicada ao banco de dados
+    - Images: Pre Image e Post Image
+
 # Exemplo de dados enviados no contexto
 
 Link: https://learn.microsoft.com/pt-br/power-apps/developer/data-platform/understand-the-data-context
@@ -28,8 +43,10 @@ OutputParameters (exibe os valores depois da operação ter ocorrido)
     Na fase de PostOperation pode ser incluido a lógica responsável pela alteração dos dados 
 
 PreEntityImages (fornece uma cópia imutável dos dados antes da operação) 
+    Stages: Pre-validation, Pre-operation, Post-operation 
 
 PostEntityImages (fornece uma cópia imutável dos dados depois da operação) 
+    Stage: Post-operation
 
 SharedVariables (As variáveis compartilhadas permitem configurar dados que podem ser passados de um plug-in para uma etapa que ocorre posteriormente no pipeline de implementação)
 
