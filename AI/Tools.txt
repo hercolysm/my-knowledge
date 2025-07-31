@@ -1,0 +1,29 @@
+Tools 
+
+Chatbot 
+    ChatGPT
+    Microsoft Copilot
+    Google Gemini    
+    Anthropic Claude
+ 
+Busca 
+    Perplexity
+
+Imagem 
+    DALL·E
+    Midjourney
+    Stable Diffusion
+
+Música 
+    Suno
+
+Vídeo 
+    RunwayML
+
+Avantar 
+    HeyGen
+    D-ID
+    Synthesis
+
+Texto -> Fala 
+    ElevenLabs 
