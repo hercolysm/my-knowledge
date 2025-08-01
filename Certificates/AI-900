@@ -55,7 +55,17 @@ Azure Machine Learning
         OCR (Reconhecimento óptico de caracteres)
     Detecção Facial 
 
+Modelos de linguaguem 
 
+LLMs - Modelos de linguaguem grandes 
+
+SLMs - Modelos de linguagem pequenos 
+
+Azure IA Foundry 
+    Open AI do Azure em modelos Foundry
+    Solução em núvem da Microsoft para implementar, personalizar e hospedar modelos de linguaguem
+    Playgrounds 
+    Agentes 
 
 
 
