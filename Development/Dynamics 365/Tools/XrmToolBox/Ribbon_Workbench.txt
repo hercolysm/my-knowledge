@@ -5,3 +5,28 @@ Adicionar botão
 Adicionar comando 
 Adicionar regra de habilitação (essa regra deve chamar a função javascript)
     Obs: a função deverá retornar false para que o botão não seja exibido
+
+Botão  
+    Button: 
+        Id: fly.contact.ButtonName.Button
+        Label: Button Name
+        ToolTip: Button Name 
+        Icon: 
+    Command: fly.contact.ButtonName.Command
+        Actions:
+            Custom Javascript 
+                $webresource:new_script_name
+                Function: FunctionName
+                CrmParameter: PrimaryControl
+        Display Rules: 
+            fly.contact.ButtonName.DisplayRule
+                default: false 
+                invert: false
+                ValueRule:  new_field_name = true
+        Enable Rules: 
+            fly.contact.ButtonName.EnableRule
+                CustomRule 
+                    default: false 
+                    invert: true
+                    $webresource:new_script_name
+                    Function: FunctionName
