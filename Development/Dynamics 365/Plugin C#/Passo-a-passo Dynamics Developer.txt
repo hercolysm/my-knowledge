@@ -1,6 +1,15 @@
-Dynamics Developer 
+Dynamics 365 Extensions: Plug-Ins
+
+Integrando .NET C# com o Dynamics 365
 
 Link: https://learn.microsoft.com/pt-br/training/modules/extend-plug-ins/exercise
+
+Requisitos:
+    Conhecimento básico de C# 
+    Conhecimento básico de .NET Framework (Versão recomendada para o Dynamics - v4.7.1)
+    Instância Dynamics 365
+    Visual Studio
+    CRM SDK Tools (Plugin Registration Tool)
 
 - Abrir Microsoft Visual Studio
 - Criar solução 'HMA'
@@ -60,3 +69,20 @@ Link: https://learn.microsoft.com/pt-br/training/modules/extend-plug-ins/exercis
         - Clicar em 'Attach'
     - Ir em Replay Plug-in Execution 
         - Clicar em 'Start Execution' 
+
+Ferramentas: 
+    ConfigurationMigration -> Manipulação de dados, clonagem dos dados de produção para dev 
+    CoreTools -> CrmSvcUtil -> Criar classe e tabela baseadas no ambiente do Dynamics
+    PluginRegistration -> Ferramenta que registra o plugin e os steps no Dynamics 
+    PackageDeployment
+
+Download tools 
+    https://docs.microsoft.com/en-us/power-apps/developer/data-platform/download-tools-nuget
+
+Seguindo adiante:
+    Estilos de Programação (i.e Early Bound vs. Late Bound [https://docs.microsoft.com/en-us/powerapps/developer/data-platform/org-service/early-bound-programming])
+    Melhores Práticas de Design (https://docs.microsoft.com/en-us/powerapps/developer/data-platform/best-practices/business-logic/)
+    Testes de Unidade (cf. Microsoft.Xrm.Sdk.Fakes)
+    XRMToolBox (o canivete suíço do desenvolvedor Dynamics 365)
+    Integrando D365 com Azure (e.g Function Apps)
+    Gerenciomento de versão e ciclo de vida da aplicação (c.f ALM e DevOps)
