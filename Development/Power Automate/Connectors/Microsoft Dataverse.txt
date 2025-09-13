@@ -36,3 +36,6 @@ lookupname -> referência
 _lookupname_value -> valor 
 
 obs: pode user os dois
+
+# Expand Query
+businessunitid($select=name),contact($select=name)

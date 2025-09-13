@@ -1,7 +1,5 @@
 AI-900 Microsoft Azure AI Fundamentals 
 
-
-
 Vertentes da Inteligência Artificial 
 	Computação Natural -> Ensinar a máquina a operar como um ser vivo 
 		- Rede neural
@@ -18,18 +16,26 @@ Machine Learning e Deep Learning
 
     Machine Learning
         Aprendizado de máquina:
-            Sem reforço (Aprendizagem não supervisionada) 
-                - treinamento com outra máquina 
-            Por Reforço (Aprendizagem supervisionada) 
-                - input manual (humano)
+            Supervisionado (Por Reforço) 
+                - input manual (humano) 
                 - testes periodico 
+            Não supervisionado (Sem reforço) 
+                - treinamento com outra máquina 
         Técnicas:
-            - Estatisticas
-            - Mineração de dados (Data Mining)
-            - Algorítmos de árvore de decisão 
-            - Redes Bayesianas
-            - Processos de clustering
-        
+            Supervisionado 
+                - Regressão. Ex: Qual a estimativa de sorvetes serão vendidos considerado clima, dia, hora etc 
+                    O modelo recebe dados de entrada e prever um número com base em dados de treinamento 
+                - Classificação binária. Ex: Paciente está ou não doente considerando exames e sintomas 
+                    O modelo calcula a probabilidade da entrada ser verdadeira medido como um valor entre 0,0 e 1,0 com base em dados de treinamento 
+                - Classificação multiclasse. Ex: Qual especie de pinguim considerando as caracteristicas físicas
+            Não supervisionado
+                - Processos de clustering
+            Outros
+                - Estatisticas
+                - Mineração de dados (Data Mining)
+                - Algorítmos de árvore de decisão 
+                - Redes Bayesianas
+
     Deep Learning 
         - maior quantidade de dados 
         - mais processamento
@@ -55,7 +61,17 @@ Azure Machine Learning
         OCR (Reconhecimento óptico de caracteres)
     Detecção Facial 
 
+Modelos de linguaguem 
 
+LLM,s - Modelos de linguaguem grandes 
+
+SLMs - Modelos de linguagem pequenos 
+
+Azure IA Foundry 
+    Open AI do Azure em modelos Foundry
+    Solução em núvem da Microsoft para implementar, personalizar e hospedar modelos de linguaguem
+    Playgrounds 
+    Agentes 
 
 
 
