@@ -11,7 +11,7 @@ public void TestPluginEntity()
     preImageCollection.Add("PreImage", new Entity("table_name") { Id = new Guid("00000000-0000-0000-0000-000000000000") });
     
     EntityImageCollection postImageCollection = new EntityImageCollection();
-    postImageCollection.Add("PreImage", new Entity("table_name") { Id = new Guid("00000000-0000-0000-0000-000000000000") });
+    postImageCollection.Add("PostImage", new Entity("table_name") { Id = new Guid("00000000-0000-0000-0000-000000000000") });
     
     XrmRealContext context = new XrmRealContext(service);
     XrmFakedPluginExecutionContext pluginContext = context.GetDefaultPluginContext();
@@ -82,3 +82,54 @@ public void TestFunctionWithTrace()
     var agendamentos = _object.FunctionName(service, trace, "var 1");
 }
 
+[TestMethod]
+public void RetrieveTest()
+{
+    var entity = service.Retrieve(
+        "table_name", new Guid("{00000000-0000-0000-0000-000000000000}"),
+        new ColumnSet("columnname"));
+
+    ParameterCollection outputParameters = new ParameterCollection();
+    outputParameters.Add("BusinessEntity", entity);
+
+    XrmRealContext context = new XrmRealContext(service);
+    XrmFakedPluginExecutionContext pluginContext = context.GetDefaultPluginContext();
+    pluginContext.OutputParameters = outputParameters;
+    pluginContext.MessageName = "Retrieve"; 
+    pluginContext.Mode = 1; // Sync
+    pluginContext.Stage = 40; // Post Operation
+    pluginContext.UserId = new Guid("{00000000-0000-0000-0000-000000000000}");
+    pluginContext.InitiatingUserId = new Guid("{00000000-0000-0000-0000-000000000000}");
+    
+    context.ExecutePluginWith<PluginName>(pluginContext);
+}
+
+[TestMethod]
+public void RetrieveMultipleTest()
+{
+    var entityCollection = service.RetrieveMultiple(new QueryExpression("table_name")
+    {
+        ColumnSet = new ColumnSet("columnname"),
+        Criteria = new FilterExpression
+        {
+            Conditions =
+            {
+                new ConditionExpression("columnname", ConditionOperator.Equal, "value")
+            }
+        }
+    });
+
+    ParameterCollection outputParameters = new ParameterCollection();
+    outputParameters.Add("BusinessEntityCollection", entityCollection);
+
+    XrmRealContext context = new XrmRealContext(service);
+    XrmFakedPluginExecutionContext pluginContext = context.GetDefaultPluginContext();
+    pluginContext.OutputParameters = outputParameters;
+    pluginContext.MessageName = "RetrieveMultiple"; 
+    pluginContext.Mode = 1; // Sync
+    pluginContext.Stage = 40; // Post Operation
+    pluginContext.UserId = new Guid("{00000000-0000-0000-0000-000000000000}");
+    pluginContext.InitiatingUserId = new Guid("{00000000-0000-0000-0000-000000000000}");
+    
+    context.ExecutePluginWith<PluginName>(pluginContext);
+}
