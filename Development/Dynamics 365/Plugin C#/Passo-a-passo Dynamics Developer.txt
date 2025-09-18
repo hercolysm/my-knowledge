@@ -27,6 +27,9 @@ Requisitos:
                 - Nome (ChaveAssinaturaAssembly)
                 - Senha 
 
+- Criar projeto (via pac)
+    pac plugin init -ss
+
 - Abrir Plugin Registration Tool 
     - Clicar em 'Create New Connection'
         - Logar usando acesso 'Office 365'
