@@ -1,5 +1,5 @@
 // Define the query
-QueryExpression query = new("account")
+QueryExpression query = new QueryExpression("account")
 {
     TopCount = 5
 };
