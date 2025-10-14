@@ -24,3 +24,21 @@ foreach (Entity record in results.Entities)
 {
     Console.WriteLine($"name:{record.GetAttributeValue<string>("name")}");
 }
+
+// Example with multiple conditions
+var entityCollection = service.RetrieveMultiple(new QueryExpression("table_name")
+{
+    ColumnSet = new ColumnSet("columnname"),
+    Criteria = new FilterExpression
+    {
+        Conditions =
+        {
+            new ConditionExpression("columnname", ConditionOperator.Equal, "value"),
+            new ConditionExpression("id", ConditionOperator.In, new object[]
+            {
+                new Guid("{00000000-0000-0000-0000-000000000000}"),
+                new Guid("{00000000-0000-0000-0000-000000000000}")
+            })
+        }
+    }
+});
