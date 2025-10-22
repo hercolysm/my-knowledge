@@ -2,3 +2,6 @@
 
 - Adicionar no final da URL o parametro
 &ribbondebug=true
+
+# Abrir tela da Configurações (legado)
+/main.aspx?settingsonly=true
