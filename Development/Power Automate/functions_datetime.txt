@@ -1,5 +1,6 @@
 # Exemplo do formatação de data
 yyyy-MM-ddTHH:mm:ss
+dd/MM/yyyy HH:mm:ss
 
 # Formatar timestamp 
 formatDateTime(utcNow(), 'yyyy-MM-dd')
