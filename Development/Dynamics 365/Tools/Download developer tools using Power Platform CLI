@@ -18,6 +18,9 @@ Após a instalação estará disponível no prompt de comando os comandos do PAC
 Abre o prompt de comando de digite:
 > pac
 
+# Atualizar para a versão mais recente
+> pac install latest
+
 # Verificar os comandos disponíveis para o gerenciamento das ferramentas
 > pac tool help
 
