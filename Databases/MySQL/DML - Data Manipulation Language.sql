@@ -22,6 +22,7 @@ SELECT * FROM tabela WHERE val LIKE 'PH%P'; /* php, photoshop */
 SELECT * FROM tabela WHERE val LIKE 'PH%P_'; /* php3, php4 */
 SELECT distinct coluna FROM tabela; /* distintos */
 SELECT count(id) FROM tabela; /* conta */
+SELECT count(distinct id) FROM tabela; /* conta distintos */
 SELECT max(coluna) FROM tabela; /* retorna o maior */
 SELECT min(coluna) FROM tabela; /* retorna o menor */
 SELECT sum(coluna) FROM tabela; /* retorna a soma */
@@ -71,6 +72,26 @@ CASE
 	ELSE 'Nenhuma das opções'
 END
 FROM tabela;
+
+/* Grupos de registros por data */
+SELECT 
+    YEAR(coluna_de_data) AS Ano,
+    MONTH(coluna_de_data) AS Mes,
+    COUNT(coluna) AS TotalRegistros,
+    COUNT(DISTINCT customerid) AS TotalClientes
+FROM tabela 
+WHERE coluna_de_data between '2025-01-01 00:00:00.000' and '2025-12-31 23:59:59.999'
+GROUP BY YEAR(coluna_de_data), MONTH(coluna_de_data)
+ORDER BY Ano ASC, Mes ASC;
+
+/* Grupos de registros por data */
+SELECT 
+    FORMAT(coluna_de_data, 'yyyy-MM') AS AnoMes,
+    COUNT(*) AS TotalRegistros
+FROM tabela
+WHERE coluna_de_data IS NOT NULL
+GROUP BY FORMAT(coluna_de_data, 'yyyy-MM')
+ORDER BY AnoMes DESC;
 
 # executar comando e capturar retorno
 mysql -u user -psenha banco_de_dados -e "select distinct coluna from tabela where coluna is null order by coluna" > /tmp/retorno_consulta.txt

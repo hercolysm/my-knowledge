@@ -1,0 +1,42 @@
+IA generativa
+    - IA que não apenas analisa — ela cria. Pode gerar texto, imagens, vídeos, música, código e mais, aprendendo padrões nos dados e criando novos resultados com base neles.
+
+Tipos de IA Generativa
+    - Geração de texto, áudio, imagem, vídeo e código: IA que pode criar novos conteúdos em diferentes formatos, como texto, áudio, imagens, vídeos e até mesmo código de programação.
+    - Agente de IA / IA Agente: Um sistema de IA que pode agir de forma autônoma, tomando decisões e realizando tarefas com base em dados e instruções.
+
+Ferramentas e Técnicas de IA generativa 
+    - Modelo Base 
+        - Um grande modelo de IA de uso geral treinado em conjuntos massivos de dados
+        - Pode ser usado como está ou especializado para domínios ou tarefas específicas.
+    - Ajuste Fino 
+        - O processo de pegar um modelo base pré-treinado e treiná-lo adicionalmente em dados especializados
+    - Geração Aumentada por Recuperação (RAG)
+        - Um método onde a IA acessa informações externas e atualizadas
+
+Termos 
+    - Prompt: Instrução ou pergunta dada à IA para gerar uma resposta.
+    - Modelo: O resultado do treinamento de um sistema de IA. Não é um banco de dados — é uma representação estatística dos padrões aprendidos a partir dos dados. 
+
+Capacidades e Limitações 
+    Capacidades 
+        - Não Determinístico: A IA nem sempre gera a mesma resposta para o mesmo prompt, permitindo variedade e criatividade.
+        - Contexto: A IA pode usar o contexto de conversas anteriores para gerar respostas mais relevantes.
+            - Janela de Contexto: O número de tokens (palavras ou partes de palavras) que a IA pode considerar ao gerar uma resposta.
+        - Multimodal: Descreve IA que pode entender e gerar a partir de diferentes tipos de entrada.
+    Limitações/Problemas  
+        - Alucinação: Quando a IA gera informações incorretas ou inventadas, apresentando-as como verdadeiras.
+        - Viés (em IA): Quando um sistema de IA reflete ou amplifica padrões injustos presentes em seus dados de treinamento
+
+Engenharia de Prompts
+    Prompting com Exemplos
+        - Você pode pedir para a IA completar uma tarefa fornecendo nenhum, um ou alguns exemplos, dependendo do quanto deseja guiar a resposta e do padrão esperado.
+
+    Prompting em Cadeia de Pensamento
+        - Uma técnica onde você pede à IA para explicar seu raciocínio passo a passo antes de chegar à resposta final
+
+    Prompting de Auto-Consistência 
+        - Uma técnica onde você pede para a IA gerar múltiplas respostas, depois compará-las e extrair as ideias mais consistentes.
+
+Preocupações Sociais e Éticas
+    - IA responsável: Um framework para projetar e usar IA de forma ética — com foco em justiça, segurança, transparência, privacidade e responsabilidade.

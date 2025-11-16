@@ -1,0 +1,20 @@
+# Gráficos personalizados:
+
+image grid - gráfico de imagens 
+enlighten data story - story telling 
+scroller - informações passando na tela 
+
+
+# Ferramenta de captura de cor da tela 
+
+instant eyedropper 
+
+
+# Imagens
+
+Link do drive:
+https://drive.google.com/file/d/{codigo da igm}/view?usp=sharing
+
+Link da foto no google drive 
+https://drive.google.com/uc?id={codigo da igm} 
+

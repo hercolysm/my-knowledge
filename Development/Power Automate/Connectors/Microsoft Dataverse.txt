@@ -1,0 +1,41 @@
+# Create/Update 
+
+// Preencher campo do tipo lookup (OData Path)
+/systemusers(ID)
+systemusers(ID)
+/systemusers/ID
+systemusers/ID
+
+Dica:
+-> Pesquisar nome da tabela nos metadados do Dataverse
+Link: https://hostname.crm2.dynamics.com/api/data/v9.1/$metadata
+Ex:
+    <EntitySet Name="contacts" EntityType="Microsoft.Dynamics.CRM.contact">
+    <EntitySet Name="bookingstatuses" EntityType="Microsoft.Dynamics.CRM.bookingstatus">
+
+# Odata Filters 
+
+// Filter lookup
+_recordid_value eq '<guid here>'
+
+// Filter with search string 
+contains(column_name, 'String')
+startswith(column_name, 'String')
+endswith(column_name, 'String')
+
+// Filter 'not in'
+Microsoft.Dynamics.CRM.NotIn(PropertyName='statecode',PropertyValues=['1','2']) 
+
+// Filter N:N
+(nome_do_relacionamento/any(o1:(o1/id eq 'valor' )))
+
+# Select columns 
+
+// Lookup 
+lookupname -> referência
+_lookupname_value -> valor 
+
+obs: pode user os dois
+
+# Expand Query
+businessunitid($select=name),contact($select=name)

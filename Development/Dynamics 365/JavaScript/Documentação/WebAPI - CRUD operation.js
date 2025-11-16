@@ -78,7 +78,8 @@ var entity = {
     "description": "This is the updated description of the sample account",
     "revenue": 6000000,
     "accountcategorycode": 2,
-    "relationship_name@odata.bind": "/accounts(5531d753-95af-e711-a94e-000d3a11e605)"
+    "relationship_name@odata.bind": "/accounts(5531d753-95af-e711-a94e-000d3a11e605)",
+    "opendeals_date": new Date("2024-02-03T00:00:00Z")
 }
 
 // Create a record
