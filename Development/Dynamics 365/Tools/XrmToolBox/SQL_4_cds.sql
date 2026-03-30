@@ -17,3 +17,9 @@ select top 50 plugintracelogid,createdon,correlationid,primaryentity,messagename
 from plugintracelog 
 where correlationid = '4a942006-826b-47ed-a005-aa334be549e1'
 order by performanceexecutionstarttime
+
+/* Consultar log de auditoria */ 
+SELECT TOP 1000 * FROM audit 
+WHERE 
+    operationname = 'Acesso' 
+    AND createdon BETWEEN '2026-02-01 00:00:00.00' AND '2026-02-09 23:59:59.00'
