@@ -18,3 +18,15 @@ C:\Program Files\Microsoft Visual Studio\2022\Professional\Common7\IDE\CommonExt
 
 // expandir ou ocultar todos os blocos de código
 ctrl + m, ctrl + l
+
+// Aceitar sugestão do Copilot
+tab
+
+// Corrigir atalhos de teclado
+1. Vá para "Tools" (Ferramentas) no menu superior.
+2. Selecione "Options" (Opções) no menu suspenso.
+3. Na janela "Options", expanda a seção "Environment" (Ambiente) e clique em "Keyboard" (Teclado).
+4. No campo "Show commands containing" (Mostrar comandos contendo), digite o nome do comando para o qual deseja corrigir o atalho de teclado.
+Ex: Edit.AcceptSuggestion
+5. Na lista de comandos, selecione o comando desejado. 
+6. Clicar no botão "Reset" ou definir um novo atalho de teclado para o comando selecionado.
