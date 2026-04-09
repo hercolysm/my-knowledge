@@ -3,5 +3,11 @@
 - Adicionar no final da URL o parametro
 &ribbondebug=true
 
+# Desabilitar Javascript do formulário
+&flags=DisableFormLibraries=true 
+
+# Desabilitar os eventos do formulário 
+&flags=DisableFormHandlers=onload
+
 # Abrir tela da Configurações (legado)
 /main.aspx?settingsonly=true
