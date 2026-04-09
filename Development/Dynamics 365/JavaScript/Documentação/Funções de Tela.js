@@ -105,15 +105,38 @@ getPane.close();
 getPane.badge = null; 
 getPane.badge = 2; 
 
-// Open a side dialog
+// Open a side dialog - custom page
 var pageInput = {
     pageType: "custom",
     name: "page_name",
     recordId: "id",
 };
 var navigationOptions = {
-    target: 2, 
-    position: 2,
+    target: 2, // 1: change the main window, 2: open in a dialog
+    position: 2, // 1: Center, 2: Side
+    width: {value: 400, unit: "px"},
+    title: "Dialog Title"
+};
+Xrm.Navigation.navigateTo(pageInput, navigationOptions)
+    .then(
+        function () {
+            // Called when the dialog closes
+        }
+    ).catch(
+        function (error) {
+            // Handle error
+        }
+    );
+
+// Open a side dialog - web resource
+var pageInput = {
+    pageType: "webresource",
+    webresourceName: "resource_name",
+    data: encodeURIComponent("data to pass to the web resource")
+};
+var navigationOptions = {
+    target: 2, // 1: change the main window, 2: open in a dialog
+    position: 2, // 1: Center, 2: Side
     width: {value: 400, unit: "px"},
     title: "Dialog Title"
 };
