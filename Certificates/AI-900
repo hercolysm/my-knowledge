@@ -37,13 +37,23 @@ Machine Learning e Deep Learning
                 - Redes Bayesianas
 
     Deep Learning 
-        - maior quantidade de dados 
-        - mais processamento
-        - a propria maquina deduz que é o correto 
+        Aprendizado profundo:
+            - maior quantidade de dados 
+            - mais processamento
+            - a propria maquina deduz que é o correto 
         Aplicações:
             Reconhecimento de voz 
             Processamento de imagem 
             Análise comportamental 
+        Rede neural artificial 
+            Classificação
+                Função de entrada recebe um vetor de valores 
+                A primeira camada calcula e passa para as demais
+                A camada de saída produz um vetor de valores com a probabilidade para cada opção possível 
+            Aprendizado 
+                Os neuronios aplicam seus pesos (inicialmente aleatórios)
+                Uma função de perda é usada para comparar os valores gerados com os valores conhecidos
+                O processo é repetido várias vezes 
 
     Qual o diferença?
 
