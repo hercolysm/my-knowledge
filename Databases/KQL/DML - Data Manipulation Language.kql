@@ -1,0 +1,15 @@
+AppDependencies
+| where  
+    AppRoleName <> "appname"
+    and TimeGenerated >= ago(30d)
+| summarize Success = count() by startofday(TimeGenerated), AppRoleName
+| sort by TimeGenerated asc
+| render barchart
+
+AppExceptions
+| where 
+    AppRoleName <> "appfunctions"
+    and TimeGenerated >= ago(30d)
+| summarize FailureCount = count() by startofday(TimeGenerated), AppRoleName
+| sort by TimeGenerated asc
+| render barchart
