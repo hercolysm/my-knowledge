@@ -3,11 +3,20 @@
 - Adicionar no final da URL o parametro
 &ribbondebug=true
 
+# Abrir tela da Configurações (legado)
+/main.aspx?settingsonly=true
+
+Troubleshoot form issues in model-driven apps
+Link: https://learn.microsoft.com/en-us/power-apps/developer/model-driven-apps/troubleshoot-forms
+
 # Desabilitar Javascript do formulário
 &flags=DisableFormLibraries=true 
 
 # Desabilitar os eventos do formulário 
 &flags=DisableFormHandlers=onload
 
-# Abrir tela da Configurações (legado)
-/main.aspx?settingsonly=true
+# Desabilitar a barra de comandos do formulário
+&flags=DisableFormCommandbar=true
+
+# Desabilitar mais de um recurso web do formulário
+&flags=DisableFormHandlers=true,DisableWebResourceControls=true,DisableFormCommandbar=true,DisableBusinessProcessFlow=true&navbar=off
