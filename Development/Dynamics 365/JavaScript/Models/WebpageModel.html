@@ -10,6 +10,10 @@
  <div id="results" />
  <script src="text/javascript">
     Client.Dyn365.Table.OnLoad();
+
+    const queryString = window.location.search;
+    const urlParams = new URLSearchParams(queryString);
+    const data = urlParams.get('data');
  </script>
 </body>
 </html>

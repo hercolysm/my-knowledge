@@ -13,22 +13,25 @@ Requisitos:
 
 - Abrir Microsoft Visual Studio
 - Criar solução 'HMA'
-    - Criar projeto 'Biblioteca de Classes (.NET Framework)' 
-        Versão .NET Framework 4.7.1
-        Nome do projeto 'D365Extensions'
-    - Clicar com btn direito no projeto -> Gerenciar Pacotes do NuGet
-        - Procurar e instalar pacote 'Microsoft.CrmSdk.CoreAssemblies'
-    - Desenvolver o código em C# 
-    - Assinar Assembly 
-        -> Clicar com btn direito no projeto
-        -> Propriedades -> Assinatura 
-        -> Marcar 'Assinar o assembly'
-            -> Criar Chave de Nome Forte 
-                - Nome (ChaveAssinaturaAssembly)
-                - Senha 
-
-- Criar projeto (via pac)
-    pac plugin init -ss
+- Criar projeto 
+    [Opção 1] Usando Visual Studio 
+        - Criar projeto 'Biblioteca de Classes (.NET Framework)' 
+            Versão .NET Framework 4.7.1
+            Nome do projeto 'D365Extensions'
+        - Clicar com btn direito no projeto -> Gerenciar Pacotes do NuGet
+            - Procurar e instalar pacote 'Microsoft.CrmSdk.CoreAssemblies'
+        - Desenvolver o código em C# 
+    [Opção 2] Usando CLI do .NET (dotnet new classlib --framework net471 -n D365Extensions)
+        - Criar projeto (via pac)
+            pac plugin init -ss
+            
+- Assinar Assembly 
+    -> Clicar com btn direito no projeto
+    -> Propriedades -> Assinatura 
+    -> Marcar 'Assinar o assembly'
+        -> Criar Chave de Nome Forte 
+            - Nome (ChaveAssinaturaAssembly)
+            - Senha 
 
 - Abrir Plugin Registration Tool 
     - Clicar em 'Create New Connection'

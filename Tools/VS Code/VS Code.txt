@@ -46,6 +46,7 @@ ctrl + i
 
 (Ferramentas)
 Live Preview - abrir página web no navegador 
+Mermaid - criar diagramas a partir de texto
 CodeSnap - captura de tela bonitas 
 Prettier - Code formatter - formata o código automaticamente (indentação)
 vscode-icons (troca icones para facilitar a identificação de arquivos)

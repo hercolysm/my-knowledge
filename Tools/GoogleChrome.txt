@@ -1,0 +1,2 @@
+# Configurar Local Network Access Checks 
+chrome://flags

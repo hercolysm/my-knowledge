@@ -1,2 +1,8 @@
 # Instalação no ubuntu 
 sudo snap install postman
+
+# definir a variável global com o token de acesso retornado pela requisição de autenticação
+postman.setGlobalVariable("tokencrm",JSON.parse(responseBody).access_token); // deprecado, usar pm.environment.set
+
+# definir a variável de ambiente com o token de acesso retornado pela requisição de autenticação
+pm.environment.set("dynamics_crm_access_token", JSON.parse(pm.response.text()).access_token);

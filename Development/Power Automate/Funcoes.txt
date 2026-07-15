@@ -41,3 +41,16 @@ if(
     formatNumber(triggerOutputs()?['body/valor'], 'C2', 'pt-BR')
 )
 Ex: 1234.99 -> R$ 1.234,99
+
+Array Filter 
+@equals(@{item()['NOMESERVICO']},'F-SZ-ILI-LIC-V2')
+
+Transformar tempo em segundos
+tempo: 01:30 (1 hora e 30 minutos)
+add(
+  mul(
+    int(first(split(variables('tempo'), ':'))), 
+    60
+  ),
+  int(last(split(variables('tempo'), ':')))
+)

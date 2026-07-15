@@ -1,2 +1,11 @@
 # Gravar a tela do PC
 Windows + g 
+
+# Executar 
+Windows + r
+
+- Opções de desempenho
+SystemPropertiesPerformance.exe
+
+- Opções de energia
+Powercfg.cpl

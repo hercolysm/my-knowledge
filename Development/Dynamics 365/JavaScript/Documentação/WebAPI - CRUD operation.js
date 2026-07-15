@@ -71,6 +71,13 @@ Xrm.WebApi.retrieveMultipleRecords("systemuser", fetchXmlUser).then(
     }
 )
 
+/*
+    "_frt_oportunidadesid_value@OData.Community.Display.V1.FormattedValue": "Cancelamento Oportunidade - HERCOLYS MORAES ARAUJO 05529766366 - Retido ",
+    "_frt_oportunidadesid_value@Microsoft.Dynamics.CRM.associatednavigationproperty": "frt_OportunidadesId",
+    "_frt_oportunidadesid_value@Microsoft.Dynamics.CRM.lookuplogicalname": "frt_cancelamentos",
+    "_frt_oportunidadesid_value": "b6de78fb-2d02-f111-8407-000d3a887b79", 
+ */
+
 var entity = {
     "name": "Updated Sample Account ",
     "creditonhold": true,
@@ -78,6 +85,7 @@ var entity = {
     "description": "This is the updated description of the sample account",
     "revenue": 6000000,
     "accountcategorycode": 2,
+    "frt_OportunidadesId@odata.bind": "/contacts(61a0e5b9-88df-e311-b8e5-6c3be5a8b200)", // (associatednavigationproperty)
     "relationship_name@odata.bind": "/accounts(5531d753-95af-e711-a94e-000d3a11e605)",
     "opendeals_date": new Date("2024-02-03T00:00:00Z")
 }

@@ -23,6 +23,9 @@ GET [Organization URI]/api/data/v9.2/accounts?$select=name,revenue
     - `all` 
 
 - `$expand=column1($select=column1,column2)` -> seleciona colunas do lookup
+    $expand=primarycontactid($select=contactid,fullname)
+    $expand=customerid_contact($select=firstname)
+    $expand=customerid_account($select=name)
 
 - `$orderby=column1 asc, column2 desc` -> ordena a consulta
 
