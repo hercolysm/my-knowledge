@@ -56,6 +56,7 @@ Ferramentas que operam com inteligencia artificial
     - Chatbots 
 
 Azure Machine Learning 
+    é um serviço de nuvem para treinamento, implantação e gerenciamento de modelos de machine learning
 
     Serviço Cognitivo do Azure para Visão 
         OCR (Reconhecimento óptico de caracteres)
@@ -72,8 +73,6 @@ Azure IA Foundry
     Solução em núvem da Microsoft para implementar, personalizar e hospedar modelos de linguaguem
     Playgrounds 
     Agentes 
-
-
 
 
 
