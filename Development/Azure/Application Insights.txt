@@ -1,0 +1,12 @@
+Application Insights
+Logs
+KQL
+
+traces
+| project timestamp, operation_Id, message
+| where message startswith "Payload" 
+| where message contains "123" 
+| where timestamp between (datetime(2026-07-23 16:25:00) .. datetime(2026-07-23 16:28:59))
+
+traces
+| where operation_Id =='c4436922a2fe0844783fb86c97113d3b' 
