@@ -32,3 +32,12 @@ docker-compose restart
 
 # Parar serviços
 docker-compose stop 
+
+# Refazer docker 
+docker-compose down
+
+docker-compose build
+docker-compose up --remove-orphans 
+ou
+docker-compose up -d --build --remove-orphans 
+
